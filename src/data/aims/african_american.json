@@ -23,7 +23,8 @@
     "weight": 10,
     "gene": "HBB",
     "trait": "Chamorro Ancestry Marker",
-    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap."
+    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap.",
+    "build": "GRCh38"
   },
   "rs10456292": {
     "rsid": "rs10456292",
@@ -49,7 +50,8 @@
     "weight": 10,
     "gene": "HBB",
     "trait": "Hmong Ancestry Marker",
-    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification."
+    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
+    "build": "GRCh38"
   },
   "rs10456293": {
     "rsid": "rs10456293",
@@ -73,7 +75,8 @@
     "weight": 10,
     "gene": "HBB",
     "trait": "Hmong Ancestry Marker",
-    "description": "Marker related to Central/West African origins common across African American populations."
+    "description": "Marker related to Central/West African origins common across African American populations.",
+    "build": "GRCh38"
   },
   "rs200000": {
     "rsid": "rs200000",
@@ -97,7 +100,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200001": {
     "rsid": "rs200001",
@@ -121,7 +125,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200002": {
     "rsid": "rs200002",
@@ -145,7 +150,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200003": {
     "rsid": "rs200003",
@@ -165,7 +171,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200004": {
     "rsid": "rs200004",
@@ -185,7 +192,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200005": {
     "rsid": "rs200005",
@@ -205,7 +213,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200006": {
     "rsid": "rs200006",
@@ -225,7 +234,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200007": {
     "rsid": "rs200007",
@@ -249,7 +259,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200008": {
     "rsid": "rs200008",
@@ -269,7 +280,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs200009": {
     "rsid": "rs200009",
@@ -289,7 +301,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000010": {
     "rsid": "rs2000010",
@@ -313,7 +326,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000011": {
     "rsid": "rs2000011",
@@ -333,7 +347,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000012": {
     "rsid": "rs2000012",
@@ -357,7 +372,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000013": {
     "rsid": "rs2000013",
@@ -377,7 +393,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000014": {
     "rsid": "rs2000014",
@@ -401,7 +418,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000015": {
     "rsid": "rs2000015",
@@ -421,7 +439,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000016": {
     "rsid": "rs2000016",
@@ -441,7 +460,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000017": {
     "rsid": "rs2000017",
@@ -465,7 +485,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000018": {
     "rsid": "rs2000018",
@@ -488,7 +509,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000021": {
     "rsid": "rs2000021",
@@ -508,7 +530,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000022": {
     "rsid": "rs2000022",
@@ -532,7 +555,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000023": {
     "rsid": "rs2000023",
@@ -552,7 +576,8 @@
     "weight": 9,
     "gene": "OR4C46",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000024": {
     "rsid": "rs2000024",
@@ -573,7 +598,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000025": {
     "rsid": "rs2000025",
@@ -597,7 +623,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000026": {
     "rsid": "rs2000026",
@@ -617,7 +644,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000027": {
     "rsid": "rs2000027",
@@ -641,7 +669,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000028": {
     "rsid": "rs2000028",
@@ -661,7 +690,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000029": {
     "rsid": "rs2000029",
@@ -681,7 +711,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000030": {
     "rsid": "rs2000030",
@@ -701,7 +732,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000031": {
     "rsid": "rs2000031",
@@ -725,7 +757,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000032": {
     "rsid": "rs2000032",
@@ -749,7 +782,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000033": {
     "rsid": "rs2000033",
@@ -770,7 +804,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000034": {
     "rsid": "rs2000034",
@@ -790,7 +825,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000035": {
     "rsid": "rs2000035",
@@ -810,7 +846,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000036": {
     "rsid": "rs2000036",
@@ -830,7 +867,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000037": {
     "rsid": "rs2000037",
@@ -850,7 +888,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000038": {
     "rsid": "rs2000038",
@@ -870,7 +909,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000039": {
     "rsid": "rs2000039",
@@ -890,7 +930,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000040": {
     "rsid": "rs2000040",
@@ -910,7 +951,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000041": {
     "rsid": "rs2000041",
@@ -930,7 +972,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000042": {
     "rsid": "rs2000042",
@@ -950,7 +993,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000043": {
     "rsid": "rs2000043",
@@ -973,7 +1017,8 @@
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000044": {
     "rsid": "rs2000044",
@@ -993,7 +1038,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000045": {
     "rsid": "rs2000045",
@@ -1013,7 +1059,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000046": {
     "rsid": "rs2000046",
@@ -1033,7 +1080,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000047": {
     "rsid": "rs2000047",
@@ -1053,7 +1101,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000048": {
     "rsid": "rs2000048",
@@ -1073,7 +1122,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000049": {
     "rsid": "rs2000049",
@@ -1093,7 +1143,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000050": {
     "rsid": "rs2000050",
@@ -1116,7 +1167,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000051": {
     "rsid": "rs2000051",
@@ -1136,7 +1188,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000052": {
     "rsid": "rs2000052",
@@ -1156,7 +1209,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000053": {
     "rsid": "rs2000053",
@@ -1180,7 +1234,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000054": {
     "rsid": "rs2000054",
@@ -1204,7 +1259,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000055": {
     "rsid": "rs2000055",
@@ -1228,7 +1284,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000056": {
     "rsid": "rs2000056",
@@ -1252,7 +1309,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000057": {
     "rsid": "rs2000057",
@@ -1276,7 +1334,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000058": {
     "rsid": "rs2000058",
@@ -1296,7 +1355,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000059": {
     "rsid": "rs2000059",
@@ -1320,7 +1380,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000060": {
     "rsid": "rs2000060",
@@ -1340,7 +1401,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000061": {
     "rsid": "rs2000061",
@@ -1360,7 +1422,8 @@
     "weight": 9,
     "gene": "ZNF384",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000062": {
     "rsid": "rs2000062",
@@ -1384,7 +1447,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000063": {
     "rsid": "rs2000063",
@@ -1404,7 +1468,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000064": {
     "rsid": "rs2000064",
@@ -1424,7 +1489,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000065": {
     "rsid": "rs2000065",
@@ -1444,7 +1510,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000066": {
     "rsid": "rs2000066",
@@ -1464,7 +1531,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000067": {
     "rsid": "rs2000067",
@@ -1484,7 +1552,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000068": {
     "rsid": "rs2000068",
@@ -1508,7 +1577,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000069": {
     "rsid": "rs2000069",
@@ -1528,7 +1598,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000070": {
     "rsid": "rs2000070",
@@ -1552,7 +1623,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000071": {
     "rsid": "rs2000071",
@@ -1572,7 +1644,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000072": {
     "rsid": "rs2000072",
@@ -1592,7 +1665,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000073": {
     "rsid": "rs2000073",
@@ -1616,7 +1690,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000074": {
     "rsid": "rs2000074",
@@ -1636,7 +1711,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000075": {
     "rsid": "rs2000075",
@@ -1656,7 +1732,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000076": {
     "rsid": "rs2000076",
@@ -1680,7 +1757,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000077": {
     "rsid": "rs2000077",
@@ -1704,7 +1782,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000078": {
     "rsid": "rs2000078",
@@ -1728,7 +1807,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000079": {
     "rsid": "rs2000079",
@@ -1748,7 +1828,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000080": {
     "rsid": "rs2000080",
@@ -1770,7 +1851,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000081": {
     "rsid": "rs2000081",
@@ -1794,7 +1876,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000082": {
     "rsid": "rs2000082",
@@ -1814,7 +1897,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000083": {
     "rsid": "rs2000083",
@@ -1834,7 +1918,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000086": {
     "rsid": "rs2000086",
@@ -1854,7 +1939,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000087": {
     "rsid": "rs2000087",
@@ -1878,7 +1964,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000088": {
     "rsid": "rs2000088",
@@ -1898,7 +1985,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000089": {
     "rsid": "rs2000089",
@@ -1922,7 +2010,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000090": {
     "rsid": "rs2000090",
@@ -1942,7 +2031,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000091": {
     "rsid": "rs2000091",
@@ -1962,7 +2052,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000092": {
     "rsid": "rs2000092",
@@ -1982,7 +2073,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000093": {
     "rsid": "rs2000093",
@@ -2002,7 +2094,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000094": {
     "rsid": "rs2000094",
@@ -2022,7 +2115,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000095": {
     "rsid": "rs2000095",
@@ -2042,7 +2136,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000096": {
     "rsid": "rs2000096",
@@ -2066,7 +2161,8 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000097": {
     "rsid": "rs2000097",
@@ -2086,7 +2182,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000098": {
     "rsid": "rs2000098",
@@ -2106,7 +2203,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs2000099": {
     "rsid": "rs2000099",
@@ -2126,7 +2224,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700000": {
     "rsid": "rs700000",
@@ -2146,7 +2245,8 @@
     "weight": 9,
     "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700001": {
     "rsid": "rs700001",
@@ -2166,7 +2266,8 @@
     "weight": 9,
     "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700002": {
     "rsid": "rs700002",
@@ -2186,7 +2287,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700003": {
     "rsid": "rs700003",
@@ -2210,7 +2312,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700004": {
     "rsid": "rs700004",
@@ -2234,7 +2337,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700005": {
     "rsid": "rs700005",
@@ -2254,7 +2358,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700006": {
     "rsid": "rs700006",
@@ -2274,7 +2379,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700007": {
     "rsid": "rs700007",
@@ -2298,7 +2404,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700008": {
     "rsid": "rs700008",
@@ -2322,7 +2429,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs700009": {
     "rsid": "rs700009",
@@ -2342,7 +2450,8 @@
     "weight": 9,
     "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000010": {
     "rsid": "rs7000010",
@@ -2362,7 +2471,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000011": {
     "rsid": "rs7000011",
@@ -2382,7 +2492,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000012": {
     "rsid": "rs7000012",
@@ -2406,7 +2517,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000013": {
     "rsid": "rs7000013",
@@ -2426,7 +2538,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000014": {
     "rsid": "rs7000014",
@@ -2446,7 +2559,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000015": {
     "rsid": "rs7000015",
@@ -2466,7 +2580,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000016": {
     "rsid": "rs7000016",
@@ -2486,7 +2601,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000017": {
     "rsid": "rs7000017",
@@ -2506,7 +2622,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000018": {
     "rsid": "rs7000018",
@@ -2530,7 +2647,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000019": {
     "rsid": "rs7000019",
@@ -2550,7 +2668,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000020": {
     "rsid": "rs7000020",
@@ -2574,7 +2693,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000021": {
     "rsid": "rs7000021",
@@ -2594,7 +2714,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000022": {
     "rsid": "rs7000022",
@@ -2614,7 +2735,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000023": {
     "rsid": "rs7000023",
@@ -2634,7 +2756,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000024": {
     "rsid": "rs7000024",
@@ -2654,7 +2777,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000025": {
     "rsid": "rs7000025",
@@ -2678,7 +2802,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000026": {
     "rsid": "rs7000026",
@@ -2698,7 +2823,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000027": {
     "rsid": "rs7000027",
@@ -2722,7 +2848,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000028": {
     "rsid": "rs7000028",
@@ -2742,7 +2869,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000029": {
     "rsid": "rs7000029",
@@ -2766,7 +2894,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000030": {
     "rsid": "rs7000030",
@@ -2786,7 +2915,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000031": {
     "rsid": "rs7000031",
@@ -2808,7 +2938,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000032": {
     "rsid": "rs7000032",
@@ -2832,7 +2963,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000033": {
     "rsid": "rs7000033",
@@ -2852,7 +2984,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000034": {
     "rsid": "rs7000034",
@@ -2876,7 +3009,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000035": {
     "rsid": "rs7000035",
@@ -2900,7 +3034,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000036": {
     "rsid": "rs7000036",
@@ -2920,7 +3055,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000037": {
     "rsid": "rs7000037",
@@ -2941,7 +3077,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000038": {
     "rsid": "rs7000038",
@@ -2961,7 +3098,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000039": {
     "rsid": "rs7000039",
@@ -2982,7 +3120,8 @@
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000040": {
     "rsid": "rs7000040",
@@ -3006,7 +3145,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000041": {
     "rsid": "rs7000041",
@@ -3026,7 +3166,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000042": {
     "rsid": "rs7000042",
@@ -3050,7 +3191,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000043": {
     "rsid": "rs7000043",
@@ -3070,7 +3212,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000044": {
     "rsid": "rs7000044",
@@ -3091,7 +3234,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000045": {
     "rsid": "rs7000045",
@@ -3111,7 +3255,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000046": {
     "rsid": "rs7000046",
@@ -3135,7 +3280,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000047": {
     "rsid": "rs7000047",
@@ -3155,7 +3301,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000048": {
     "rsid": "rs7000048",
@@ -3175,7 +3322,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000049": {
     "rsid": "rs7000049",
@@ -3195,7 +3343,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000050": {
     "rsid": "rs7000050",
@@ -3216,7 +3365,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000051": {
     "rsid": "rs7000051",
@@ -3236,7 +3386,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000052": {
     "rsid": "rs7000052",
@@ -3256,7 +3407,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000053": {
     "rsid": "rs7000053",
@@ -3280,7 +3432,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000054": {
     "rsid": "rs7000054",
@@ -3304,7 +3457,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000055": {
     "rsid": "rs7000055",
@@ -3328,7 +3482,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000056": {
     "rsid": "rs7000056",
@@ -3348,7 +3503,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000057": {
     "rsid": "rs7000057",
@@ -3368,7 +3524,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000058": {
     "rsid": "rs7000058",
@@ -3388,7 +3545,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000059": {
     "rsid": "rs7000059",
@@ -3412,7 +3570,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000060": {
     "rsid": "rs7000060",
@@ -3432,7 +3591,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000061": {
     "rsid": "rs7000061",
@@ -3452,7 +3612,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000062": {
     "rsid": "rs7000062",
@@ -3472,7 +3633,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000063": {
     "rsid": "rs7000063",
@@ -3492,7 +3654,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000064": {
     "rsid": "rs7000064",
@@ -3514,7 +3677,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000065": {
     "rsid": "rs7000065",
@@ -3534,7 +3698,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000066": {
     "rsid": "rs7000066",
@@ -3555,7 +3720,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000067": {
     "rsid": "rs7000067",
@@ -3575,7 +3741,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000068": {
     "rsid": "rs7000068",
@@ -3595,7 +3762,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000069": {
     "rsid": "rs7000069",
@@ -3615,7 +3783,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000070": {
     "rsid": "rs7000070",
@@ -3635,7 +3804,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000071": {
     "rsid": "rs7000071",
@@ -3655,7 +3825,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000072": {
     "rsid": "rs7000072",
@@ -3678,7 +3849,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000073": {
     "rsid": "rs7000073",
@@ -3699,7 +3871,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000074": {
     "rsid": "rs7000074",
@@ -3719,7 +3892,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000075": {
     "rsid": "rs7000075",
@@ -3743,7 +3917,8 @@
     "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000076": {
     "rsid": "rs7000076",
@@ -3764,7 +3939,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000077": {
     "rsid": "rs7000077",
@@ -3788,7 +3964,8 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000078": {
     "rsid": "rs7000078",
@@ -3812,7 +3989,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000079": {
     "rsid": "rs7000079",
@@ -3836,7 +4014,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000080": {
     "rsid": "rs7000080",
@@ -3856,7 +4035,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000081": {
     "rsid": "rs7000081",
@@ -3876,7 +4056,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000082": {
     "rsid": "rs7000082",
@@ -3898,7 +4079,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000083": {
     "rsid": "rs7000083",
@@ -3918,7 +4100,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000084": {
     "rsid": "rs7000084",
@@ -3942,7 +4125,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000085": {
     "rsid": "rs7000085",
@@ -3962,7 +4146,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000086": {
     "rsid": "rs7000086",
@@ -3986,7 +4171,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000087": {
     "rsid": "rs7000087",
@@ -4006,7 +4192,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000088": {
     "rsid": "rs7000088",
@@ -4030,7 +4217,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000089": {
     "rsid": "rs7000089",
@@ -4054,7 +4242,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000090": {
     "rsid": "rs7000090",
@@ -4074,7 +4263,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000091": {
     "rsid": "rs7000091",
@@ -4098,7 +4288,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000092": {
     "rsid": "rs7000092",
@@ -4122,7 +4313,8 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000093": {
     "rsid": "rs7000093",
@@ -4146,7 +4338,8 @@
     "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000094": {
     "rsid": "rs7000094",
@@ -4166,7 +4359,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000095": {
     "rsid": "rs7000095",
@@ -4186,7 +4380,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000096": {
     "rsid": "rs7000096",
@@ -4206,7 +4401,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs7000097": {
     "rsid": "rs7000097",
@@ -4226,7 +4422,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "build": "GRCh38"
   },
   "rs246001448": {
     "rsid": "rs246001448",
@@ -4254,7 +4451,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs509187642": {
     "rsid": "rs509187642",
@@ -4282,7 +4480,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs621720726": {
     "rsid": "rs621720726",
@@ -4310,7 +4509,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs649399890": {
     "rsid": "rs649399890",
@@ -4338,7 +4538,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs536032378": {
     "rsid": "rs536032378",
@@ -4366,7 +4567,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs340531871": {
     "rsid": "rs340531871",
@@ -4394,7 +4596,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs966870694": {
     "rsid": "rs966870694",
@@ -4422,7 +4625,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs967831883": {
     "rsid": "rs967831883",
@@ -4450,7 +4654,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs785342746": {
     "rsid": "rs785342746",
@@ -4478,7 +4683,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs182108792": {
     "rsid": "rs182108792",
@@ -4506,7 +4712,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs742688817": {
     "rsid": "rs742688817",
@@ -4534,7 +4741,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs641299729": {
     "rsid": "rs641299729",
@@ -4562,7 +4770,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs818751460": {
     "rsid": "rs818751460",
@@ -4590,7 +4799,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs735330139": {
     "rsid": "rs735330139",
@@ -4618,7 +4828,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs153238440": {
     "rsid": "rs153238440",
@@ -4646,7 +4857,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs918937436": {
     "rsid": "rs918937436",
@@ -4674,7 +4886,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs848210721": {
     "rsid": "rs848210721",
@@ -4702,7 +4915,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs441629179": {
     "rsid": "rs441629179",
@@ -4730,7 +4944,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs835751000": {
     "rsid": "rs835751000",
@@ -4758,7 +4973,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs972889368": {
     "rsid": "rs972889368",
@@ -4786,7 +5002,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs286026780": {
     "rsid": "rs286026780",
@@ -4814,7 +5031,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs148128970": {
     "rsid": "rs148128970",
@@ -4842,7 +5060,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs855254478": {
     "rsid": "rs855254478",
@@ -4870,7 +5089,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs782498446": {
     "rsid": "rs782498446",
@@ -4898,7 +5118,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs358138065": {
     "rsid": "rs358138065",
@@ -4926,7 +5147,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs126253842": {
     "rsid": "rs126253842",
@@ -4954,7 +5176,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs378949237": {
     "rsid": "rs378949237",
@@ -4982,7 +5205,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs636755626": {
     "rsid": "rs636755626",
@@ -5010,7 +5234,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs683829763": {
     "rsid": "rs683829763",
@@ -5038,7 +5263,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs509291640": {
     "rsid": "rs509291640",
@@ -5066,7 +5292,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs422477130": {
     "rsid": "rs422477130",
@@ -5094,7 +5321,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs753110109": {
     "rsid": "rs753110109",
@@ -5122,7 +5350,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs530625640": {
     "rsid": "rs530625640",
@@ -5150,7 +5379,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs302500602": {
     "rsid": "rs302500602",
@@ -5178,7 +5408,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs686071881": {
     "rsid": "rs686071881",
@@ -5206,7 +5437,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs568842235": {
     "rsid": "rs568842235",
@@ -5234,7 +5466,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs874349317": {
     "rsid": "rs874349317",
@@ -5262,7 +5495,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs751495854": {
     "rsid": "rs751495854",
@@ -5290,7 +5524,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs190256468": {
     "rsid": "rs190256468",
@@ -5318,7 +5553,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs841020683": {
     "rsid": "rs841020683",
@@ -5346,7 +5582,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs147416880": {
     "rsid": "rs147416880",
@@ -5374,7 +5611,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs361916994": {
     "rsid": "rs361916994",
@@ -5402,7 +5640,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs360787347": {
     "rsid": "rs360787347",
@@ -5430,7 +5669,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs560308251": {
     "rsid": "rs560308251",
@@ -5458,7 +5698,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs426128021": {
     "rsid": "rs426128021",
@@ -5486,7 +5727,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs125179868": {
     "rsid": "rs125179868",
@@ -5514,7 +5756,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs460501048": {
     "rsid": "rs460501048",
@@ -5542,7 +5785,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs779014032": {
     "rsid": "rs779014032",
@@ -5570,7 +5814,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs295289754": {
     "rsid": "rs295289754",
@@ -5598,7 +5843,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs520749561": {
     "rsid": "rs520749561",
@@ -5626,7 +5872,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs755587724": {
     "rsid": "rs755587724",
@@ -5654,7 +5901,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs619848539": {
     "rsid": "rs619848539",
@@ -5682,7 +5930,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs740547496": {
     "rsid": "rs740547496",
@@ -5710,7 +5959,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs310443725": {
     "rsid": "rs310443725",
@@ -5738,7 +5988,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs845662917": {
     "rsid": "rs845662917",
@@ -5766,7 +6017,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs716778863": {
     "rsid": "rs716778863",
@@ -5794,7 +6046,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs878305057": {
     "rsid": "rs878305057",
@@ -5822,7 +6075,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs420325397": {
     "rsid": "rs420325397",
@@ -5850,7 +6104,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs639724533": {
     "rsid": "rs639724533",
@@ -5878,7 +6133,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs226361935": {
     "rsid": "rs226361935",
@@ -5906,7 +6162,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs348032862": {
     "rsid": "rs348032862",
@@ -5934,7 +6191,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs447017850": {
     "rsid": "rs447017850",
@@ -5962,7 +6220,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs783863412": {
     "rsid": "rs783863412",
@@ -5990,7 +6249,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs606895785": {
     "rsid": "rs606895785",
@@ -6018,7 +6278,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs437153058": {
     "rsid": "rs437153058",
@@ -6046,7 +6307,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs546416491": {
     "rsid": "rs546416491",
@@ -6074,7 +6336,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs238699468": {
     "rsid": "rs238699468",
@@ -6102,7 +6365,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs645143671": {
     "rsid": "rs645143671",
@@ -6130,7 +6394,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs568443773": {
     "rsid": "rs568443773",
@@ -6158,7 +6423,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs811356860": {
     "rsid": "rs811356860",
@@ -6186,7 +6452,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs110609781": {
     "rsid": "rs110609781",
@@ -6214,7 +6481,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs475031932": {
     "rsid": "rs475031932",
@@ -6242,7 +6510,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs432900369": {
     "rsid": "rs432900369",
@@ -6270,7 +6539,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs489457195": {
     "rsid": "rs489457195",
@@ -6298,7 +6568,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs463992601": {
     "rsid": "rs463992601",
@@ -6326,7 +6597,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs921306930": {
     "rsid": "rs921306930",
@@ -6354,7 +6626,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs535686732": {
     "rsid": "rs535686732",
@@ -6382,7 +6655,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs138155932": {
     "rsid": "rs138155932",
@@ -6410,7 +6684,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs237436840": {
     "rsid": "rs237436840",
@@ -6438,7 +6713,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs420769744": {
     "rsid": "rs420769744",
@@ -6466,7 +6742,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs481889163": {
     "rsid": "rs481889163",
@@ -6494,7 +6771,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs287360987": {
     "rsid": "rs287360987",
@@ -6522,7 +6800,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs552605447": {
     "rsid": "rs552605447",
@@ -6550,7 +6829,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs440153986": {
     "rsid": "rs440153986",
@@ -6578,7 +6858,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs880651039": {
     "rsid": "rs880651039",
@@ -6606,7 +6887,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs215874006": {
     "rsid": "rs215874006",
@@ -6634,7 +6916,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs375442291": {
     "rsid": "rs375442291",
@@ -6662,7 +6945,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs774276520": {
     "rsid": "rs774276520",
@@ -6690,7 +6974,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs774389054": {
     "rsid": "rs774389054",
@@ -6718,7 +7003,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs668366477": {
     "rsid": "rs668366477",
@@ -6746,7 +7032,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs787997662": {
     "rsid": "rs787997662",
@@ -6774,7 +7061,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs485094062": {
     "rsid": "rs485094062",
@@ -6802,7 +7090,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs153773729": {
     "rsid": "rs153773729",
@@ -6830,7 +7119,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs553902036": {
     "rsid": "rs553902036",
@@ -6858,7 +7148,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs158634125": {
     "rsid": "rs158634125",
@@ -6886,7 +7177,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs532673298": {
     "rsid": "rs532673298",
@@ -6914,7 +7206,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs929268804": {
     "rsid": "rs929268804",
@@ -6942,7 +7235,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs178498525": {
     "rsid": "rs178498525",
@@ -6970,7 +7264,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs742549341": {
     "rsid": "rs742549341",
@@ -6998,7 +7293,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs238938684": {
     "rsid": "rs238938684",
@@ -7026,7 +7322,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs599341850": {
     "rsid": "rs599341850",
@@ -7054,7 +7351,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs706001782": {
     "rsid": "rs706001782",
@@ -7082,7 +7380,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs307853327": {
     "rsid": "rs307853327",
@@ -7110,7 +7409,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs641230431": {
     "rsid": "rs641230431",
@@ -7138,7 +7438,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs417479303": {
     "rsid": "rs417479303",
@@ -7166,7 +7467,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs844149103": {
     "rsid": "rs844149103",
@@ -7194,7 +7496,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs426017424": {
     "rsid": "rs426017424",
@@ -7222,7 +7525,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs917821731": {
     "rsid": "rs917821731",
@@ -7250,7 +7554,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs352362652": {
     "rsid": "rs352362652",
@@ -7278,7 +7583,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs158836784": {
     "rsid": "rs158836784",
@@ -7306,7 +7612,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs210845753": {
     "rsid": "rs210845753",
@@ -7334,7 +7641,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs405182771": {
     "rsid": "rs405182771",
@@ -7362,7 +7670,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs141508123": {
     "rsid": "rs141508123",
@@ -7390,7 +7699,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs732275104": {
     "rsid": "rs732275104",
@@ -7418,7 +7728,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs633519498": {
     "rsid": "rs633519498",
@@ -7446,7 +7757,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs538982409": {
     "rsid": "rs538982409",
@@ -7474,7 +7786,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs756909386": {
     "rsid": "rs756909386",
@@ -7502,7 +7815,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs406420368": {
     "rsid": "rs406420368",
@@ -7530,7 +7844,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs279627706": {
     "rsid": "rs279627706",
@@ -7558,7 +7873,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs739390504": {
     "rsid": "rs739390504",
@@ -7586,7 +7902,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs750330460": {
     "rsid": "rs750330460",
@@ -7614,7 +7931,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs654546197": {
     "rsid": "rs654546197",
@@ -7642,7 +7960,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs594470552": {
     "rsid": "rs594470552",
@@ -7670,7 +7989,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs701073639": {
     "rsid": "rs701073639",
@@ -7698,7 +8018,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs524667387": {
     "rsid": "rs524667387",
@@ -7726,7 +8047,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs763868924": {
     "rsid": "rs763868924",
@@ -7754,7 +8076,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs140142409": {
     "rsid": "rs140142409",
@@ -7782,7 +8105,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs231700321": {
     "rsid": "rs231700321",
@@ -7810,7 +8134,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs563464622": {
     "rsid": "rs563464622",
@@ -7838,7 +8163,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs137185918": {
     "rsid": "rs137185918",
@@ -7866,7 +8192,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs282616157": {
     "rsid": "rs282616157",
@@ -7894,7 +8221,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs187429184": {
     "rsid": "rs187429184",
@@ -7922,7 +8250,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs640230210": {
     "rsid": "rs640230210",
@@ -7950,7 +8279,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs781714240": {
     "rsid": "rs781714240",
@@ -7978,7 +8308,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs723663921": {
     "rsid": "rs723663921",
@@ -8006,7 +8337,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs242898454": {
     "rsid": "rs242898454",
@@ -8034,7 +8366,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs607843886": {
     "rsid": "rs607843886",
@@ -8062,7 +8395,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs453462093": {
     "rsid": "rs453462093",
@@ -8090,7 +8424,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs493680345": {
     "rsid": "rs493680345",
@@ -8118,7 +8453,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs999061642": {
     "rsid": "rs999061642",
@@ -8146,7 +8482,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs179599626": {
     "rsid": "rs179599626",
@@ -8174,7 +8511,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs127545521": {
     "rsid": "rs127545521",
@@ -8202,7 +8540,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs882427395": {
     "rsid": "rs882427395",
@@ -8230,7 +8569,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs494879275": {
     "rsid": "rs494879275",
@@ -8258,7 +8598,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs590892218": {
     "rsid": "rs590892218",
@@ -8286,7 +8627,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs682200173": {
     "rsid": "rs682200173",
@@ -8314,7 +8656,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs531118566": {
     "rsid": "rs531118566",
@@ -8342,7 +8685,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs487130700": {
     "rsid": "rs487130700",
@@ -8370,7 +8714,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs943065277": {
     "rsid": "rs943065277",
@@ -8398,7 +8743,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs860804891": {
     "rsid": "rs860804891",
@@ -8426,7 +8772,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs411204097": {
     "rsid": "rs411204097",
@@ -8454,7 +8801,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs861679272": {
     "rsid": "rs861679272",
@@ -8482,7 +8830,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs129353082": {
     "rsid": "rs129353082",
@@ -8510,7 +8859,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs920879586": {
     "rsid": "rs920879586",
@@ -8538,7 +8888,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs149437072": {
     "rsid": "rs149437072",
@@ -8566,7 +8917,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs202356503": {
     "rsid": "rs202356503",
@@ -8594,7 +8946,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs317673533": {
     "rsid": "rs317673533",
@@ -8622,7 +8975,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs260893759": {
     "rsid": "rs260893759",
@@ -8650,7 +9004,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs356408439": {
     "rsid": "rs356408439",
@@ -8678,7 +9033,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs994229777": {
     "rsid": "rs994229777",
@@ -8706,7 +9062,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs593751382": {
     "rsid": "rs593751382",
@@ -8734,7 +9091,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs679886633": {
     "rsid": "rs679886633",
@@ -8762,7 +9120,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs489008558": {
     "rsid": "rs489008558",
@@ -8790,7 +9149,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs238567343": {
     "rsid": "rs238567343",
@@ -8818,7 +9178,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs595768773": {
     "rsid": "rs595768773",
@@ -8846,7 +9207,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs196457681": {
     "rsid": "rs196457681",
@@ -8874,7 +9236,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs728596451": {
     "rsid": "rs728596451",
@@ -8902,7 +9265,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs126914299": {
     "rsid": "rs126914299",
@@ -8930,7 +9294,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs981728758": {
     "rsid": "rs981728758",
@@ -8958,7 +9323,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs836772322": {
     "rsid": "rs836772322",
@@ -8986,7 +9352,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs368719285": {
     "rsid": "rs368719285",
@@ -9014,7 +9381,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs935975417": {
     "rsid": "rs935975417",
@@ -9042,7 +9410,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs917022811": {
     "rsid": "rs917022811",
@@ -9070,7 +9439,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs342765797": {
     "rsid": "rs342765797",
@@ -9098,7 +9468,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs782863090": {
     "rsid": "rs782863090",
@@ -9126,7 +9497,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs915768853": {
     "rsid": "rs915768853",
@@ -9154,7 +9526,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs792026036": {
     "rsid": "rs792026036",
@@ -9182,7 +9555,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs609783076": {
     "rsid": "rs609783076",
@@ -9210,7 +9584,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs676727895": {
     "rsid": "rs676727895",
@@ -9238,7 +9613,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs722814490": {
     "rsid": "rs722814490",
@@ -9266,7 +9642,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs590065059": {
     "rsid": "rs590065059",
@@ -9294,7 +9671,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs788611703": {
     "rsid": "rs788611703",
@@ -9322,7 +9700,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs781821327": {
     "rsid": "rs781821327",
@@ -9350,7 +9729,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs464116093": {
     "rsid": "rs464116093",
@@ -9378,7 +9758,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs417720416": {
     "rsid": "rs417720416",
@@ -9406,7 +9787,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs957726105": {
     "rsid": "rs957726105",
@@ -9434,7 +9816,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs704527978": {
     "rsid": "rs704527978",
@@ -9462,7 +9845,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs903660484": {
     "rsid": "rs903660484",
@@ -9490,7 +9874,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs249548848": {
     "rsid": "rs249548848",
@@ -9518,7 +9903,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs308213482": {
     "rsid": "rs308213482",
@@ -9546,7 +9932,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs128464764": {
     "rsid": "rs128464764",
@@ -9574,7 +9961,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs404820373": {
     "rsid": "rs404820373",
@@ -9602,7 +9990,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs433180253": {
     "rsid": "rs433180253",
@@ -9630,7 +10019,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs302496363": {
     "rsid": "rs302496363",
@@ -9658,7 +10048,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs636895145": {
     "rsid": "rs636895145",
@@ -9686,7 +10077,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs723252108": {
     "rsid": "rs723252108",
@@ -9714,7 +10106,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs144584359": {
     "rsid": "rs144584359",
@@ -9742,7 +10135,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs866607538": {
     "rsid": "rs866607538",
@@ -9770,7 +10164,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs372385480": {
     "rsid": "rs372385480",
@@ -9798,7 +10193,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs826234989": {
     "rsid": "rs826234989",
@@ -9826,7 +10222,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs553207958": {
     "rsid": "rs553207958",
@@ -9854,7 +10251,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs862115736": {
     "rsid": "rs862115736",
@@ -9882,7 +10280,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs865406776": {
     "rsid": "rs865406776",
@@ -9910,7 +10309,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs494196463": {
     "rsid": "rs494196463",
@@ -9938,7 +10338,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs970124577": {
     "rsid": "rs970124577",
@@ -9966,7 +10367,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs349128622": {
     "rsid": "rs349128622",
@@ -9994,7 +10396,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs697231723": {
     "rsid": "rs697231723",
@@ -10022,7 +10425,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs912022300": {
     "rsid": "rs912022300",
@@ -10050,7 +10454,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs602997023": {
     "rsid": "rs602997023",
@@ -10078,7 +10483,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs405057150": {
     "rsid": "rs405057150",
@@ -10106,7 +10512,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs124644473": {
     "rsid": "rs124644473",
@@ -10134,7 +10541,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs654977048": {
     "rsid": "rs654977048",
@@ -10162,7 +10570,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs238636868": {
     "rsid": "rs238636868",
@@ -10190,7 +10599,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs788990811": {
     "rsid": "rs788990811",
@@ -10218,7 +10628,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs662453164": {
     "rsid": "rs662453164",
@@ -10246,7 +10657,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs465362032": {
     "rsid": "rs465362032",
@@ -10274,7 +10686,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs737312114": {
     "rsid": "rs737312114",
@@ -10302,7 +10715,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs556773672": {
     "rsid": "rs556773672",
@@ -10330,7 +10744,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs792001796": {
     "rsid": "rs792001796",
@@ -10358,7 +10773,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs143848396": {
     "rsid": "rs143848396",
@@ -10386,7 +10802,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs868427874": {
     "rsid": "rs868427874",
@@ -10414,7 +10831,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs248362695": {
     "rsid": "rs248362695",
@@ -10442,7 +10860,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs744965199": {
     "rsid": "rs744965199",
@@ -10470,7 +10889,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs434118749": {
     "rsid": "rs434118749",
@@ -10498,7 +10918,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs365754116": {
     "rsid": "rs365754116",
@@ -10526,7 +10947,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs173662944": {
     "rsid": "rs173662944",
@@ -10554,7 +10976,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs514869279": {
     "rsid": "rs514869279",
@@ -10582,7 +11005,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs163154815": {
     "rsid": "rs163154815",
@@ -10610,7 +11034,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs218442174": {
     "rsid": "rs218442174",
@@ -10638,7 +11063,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs197452757": {
     "rsid": "rs197452757",
@@ -10666,7 +11092,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs444219492": {
     "rsid": "rs444219492",
@@ -10694,7 +11121,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs557565851": {
     "rsid": "rs557565851",
@@ -10722,7 +11150,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs758435265": {
     "rsid": "rs758435265",
@@ -10750,7 +11179,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs343832477": {
     "rsid": "rs343832477",
@@ -10778,7 +11208,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs489790568": {
     "rsid": "rs489790568",
@@ -10806,7 +11237,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs253977318": {
     "rsid": "rs253977318",
@@ -10834,7 +11266,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs951904529": {
     "rsid": "rs951904529",
@@ -10862,7 +11295,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs891464804": {
     "rsid": "rs891464804",
@@ -10890,7 +11324,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs144656888": {
     "rsid": "rs144656888",
@@ -10918,7 +11353,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs794341186": {
     "rsid": "rs794341186",
@@ -10946,7 +11382,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs967775416": {
     "rsid": "rs967775416",
@@ -10974,7 +11411,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs266786479": {
     "rsid": "rs266786479",
@@ -11002,7 +11440,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs577643021": {
     "rsid": "rs577643021",
@@ -11030,7 +11469,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs985625022": {
     "rsid": "rs985625022",
@@ -11058,7 +11498,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs540442563": {
     "rsid": "rs540442563",
@@ -11086,7 +11527,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs821662285": {
     "rsid": "rs821662285",
@@ -11114,7 +11556,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs806603769": {
     "rsid": "rs806603769",
@@ -11142,7 +11585,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs270233559": {
     "rsid": "rs270233559",
@@ -11170,7 +11614,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs711929992": {
     "rsid": "rs711929992",
@@ -11198,7 +11643,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs540654561": {
     "rsid": "rs540654561",
@@ -11226,7 +11672,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs165840459": {
     "rsid": "rs165840459",
@@ -11254,7 +11701,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs971807692": {
     "rsid": "rs971807692",
@@ -11282,7 +11730,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs974375012": {
     "rsid": "rs974375012",
@@ -11310,7 +11759,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs851600429": {
     "rsid": "rs851600429",
@@ -11338,7 +11788,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs558266661": {
     "rsid": "rs558266661",
@@ -11366,7 +11817,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs518733879": {
     "rsid": "rs518733879",
@@ -11394,7 +11846,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs860133258": {
     "rsid": "rs860133258",
@@ -11422,7 +11875,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs810760539": {
     "rsid": "rs810760539",
@@ -11450,7 +11904,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs278708429": {
     "rsid": "rs278708429",
@@ -11478,7 +11933,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs896019977": {
     "rsid": "rs896019977",
@@ -11506,7 +11962,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs103306632": {
     "rsid": "rs103306632",
@@ -11534,7 +11991,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs480246333": {
     "rsid": "rs480246333",
@@ -11562,7 +12020,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs712935702": {
     "rsid": "rs712935702",
@@ -11590,7 +12049,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs648996290": {
     "rsid": "rs648996290",
@@ -11618,7 +12078,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs970206034": {
     "rsid": "rs970206034",
@@ -11646,7 +12107,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs145262079": {
     "rsid": "rs145262079",
@@ -11674,7 +12136,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs422774504": {
     "rsid": "rs422774504",
@@ -11702,7 +12165,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs286678960": {
     "rsid": "rs286678960",
@@ -11730,7 +12194,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs796707590": {
     "rsid": "rs796707590",
@@ -11758,7 +12223,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs171658729": {
     "rsid": "rs171658729",
@@ -11786,7 +12252,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs316618653": {
     "rsid": "rs316618653",
@@ -11814,7 +12281,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs186090411": {
     "rsid": "rs186090411",
@@ -11842,7 +12310,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs597928085": {
     "rsid": "rs597928085",
@@ -11870,7 +12339,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs164073109": {
     "rsid": "rs164073109",
@@ -11898,7 +12368,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs401049045": {
     "rsid": "rs401049045",
@@ -11926,7 +12397,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs855264862": {
     "rsid": "rs855264862",
@@ -11954,7 +12426,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs659874445": {
     "rsid": "rs659874445",
@@ -11982,7 +12455,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs937275104": {
     "rsid": "rs937275104",
@@ -12010,7 +12484,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs897779952": {
     "rsid": "rs897779952",
@@ -12038,7 +12513,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs610153600": {
     "rsid": "rs610153600",
@@ -12066,7 +12542,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs244335060": {
     "rsid": "rs244335060",
@@ -12094,7 +12571,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs136608096": {
     "rsid": "rs136608096",
@@ -12122,7 +12600,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs975441063": {
     "rsid": "rs975441063",
@@ -12150,7 +12629,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs159398593": {
     "rsid": "rs159398593",
@@ -12178,7 +12658,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs348125159": {
     "rsid": "rs348125159",
@@ -12206,7 +12687,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs905033743": {
     "rsid": "rs905033743",
@@ -12234,7 +12716,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs529661159": {
     "rsid": "rs529661159",
@@ -12262,7 +12745,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs477975583": {
     "rsid": "rs477975583",
@@ -12290,7 +12774,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs589971124": {
     "rsid": "rs589971124",
@@ -12318,7 +12803,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs642534658": {
     "rsid": "rs642534658",
@@ -12346,7 +12832,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs157767172": {
     "rsid": "rs157767172",
@@ -12374,7 +12861,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs140996893": {
     "rsid": "rs140996893",
@@ -12402,7 +12890,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs518781899": {
     "rsid": "rs518781899",
@@ -12430,7 +12919,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs636183845": {
     "rsid": "rs636183845",
@@ -12458,7 +12948,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs347354625": {
     "rsid": "rs347354625",
@@ -12486,7 +12977,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs185580569": {
     "rsid": "rs185580569",
@@ -12514,7 +13006,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs199783519": {
     "rsid": "rs199783519",
@@ -12542,7 +13035,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs420006141": {
     "rsid": "rs420006141",
@@ -12570,7 +13064,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs437538911": {
     "rsid": "rs437538911",
@@ -12598,7 +13093,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs573095402": {
     "rsid": "rs573095402",
@@ -12626,7 +13122,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs418574145": {
     "rsid": "rs418574145",
@@ -12654,7 +13151,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs709207396": {
     "rsid": "rs709207396",
@@ -12682,7 +13180,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs551378903": {
     "rsid": "rs551378903",
@@ -12710,7 +13209,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs370797815": {
     "rsid": "rs370797815",
@@ -12738,7 +13238,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs566197258": {
     "rsid": "rs566197258",
@@ -12766,7 +13267,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs431878188": {
     "rsid": "rs431878188",
@@ -12794,7 +13296,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs612585854": {
     "rsid": "rs612585854",
@@ -12822,7 +13325,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs593607118": {
     "rsid": "rs593607118",
@@ -12850,7 +13354,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs844674168": {
     "rsid": "rs844674168",
@@ -12878,7 +13383,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs385123379": {
     "rsid": "rs385123379",
@@ -12906,7 +13412,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs552678502": {
     "rsid": "rs552678502",
@@ -12934,7 +13441,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs244071518": {
     "rsid": "rs244071518",
@@ -12962,7 +13470,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs978829355": {
     "rsid": "rs978829355",
@@ -12990,7 +13499,8 @@
     "weight": 6,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs947357422": {
     "rsid": "rs947357422",
@@ -13018,7 +13528,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs356279202": {
     "rsid": "rs356279202",
@@ -13046,7 +13557,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs801236321": {
     "rsid": "rs801236321",
@@ -13074,7 +13586,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs344915660": {
     "rsid": "rs344915660",
@@ -13102,7 +13615,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs433395514": {
     "rsid": "rs433395514",
@@ -13130,7 +13644,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs964337235": {
     "rsid": "rs964337235",
@@ -13158,7 +13673,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs486101861": {
     "rsid": "rs486101861",
@@ -13186,7 +13702,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs565661547": {
     "rsid": "rs565661547",
@@ -13214,7 +13731,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs667592206": {
     "rsid": "rs667592206",
@@ -13242,7 +13760,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs329984310": {
     "rsid": "rs329984310",
@@ -13270,7 +13789,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs529780519": {
     "rsid": "rs529780519",
@@ -13298,7 +13818,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs244196830": {
     "rsid": "rs244196830",
@@ -13326,7 +13847,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs156857494": {
     "rsid": "rs156857494",
@@ -13354,7 +13876,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs791552460": {
     "rsid": "rs791552460",
@@ -13382,7 +13905,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs124189747": {
     "rsid": "rs124189747",
@@ -13410,7 +13934,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs410490054": {
     "rsid": "rs410490054",
@@ -13438,7 +13963,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs719642529": {
     "rsid": "rs719642529",
@@ -13466,7 +13992,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs957520168": {
     "rsid": "rs957520168",
@@ -13494,7 +14021,8 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs559509913": {
     "rsid": "rs559509913",
@@ -13522,7 +14050,8 @@
     "weight": 8,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   },
   "rs357019977": {
     "rsid": "rs357019977",
@@ -13550,6 +14079,7 @@
     "weight": 10,
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
-    "description": "African American admixture AIM for Atlantic diaspora deconvolution."
+    "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
+    "build": "GRCh38"
   }
 }

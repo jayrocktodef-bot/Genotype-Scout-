@@ -72,7 +72,7 @@
   "rs10456217": {
     "chromosome": "6",
     "position": 18767248,
-    "alleles": "T/A"
+    "alleles": "T/A/C"
   },
   "rs10456218": {
     "chromosome": "6",
@@ -132,7 +132,7 @@
   "rs10456231": {
     "chromosome": "6",
     "position": 10230301,
-    "alleles": "A/T"
+    "alleles": "A/T/G"
   },
   "rs10456232": {
     "chromosome": "6",
@@ -227,7 +227,7 @@
   "rs10456254": {
     "chromosome": "6",
     "position": 22236716,
-    "alleles": "C/G"
+    "alleles": "C/G/T"
   },
   "rs10456256": {
     "chromosome": "6",
@@ -262,7 +262,7 @@
   "rs10456262": {
     "chromosome": "6",
     "position": 22626969,
-    "alleles": "G/C"
+    "alleles": "G/C/T"
   },
   "rs10456263": {
     "chromosome": "6",
@@ -372,7 +372,7 @@
   "rs10456306": {
     "chromosome": "6",
     "position": 24549813,
-    "alleles": "T/A"
+    "alleles": "T/A/C/G"
   },
   "rs10456308": {
     "chromosome": "6",
@@ -417,7 +417,7 @@
   "rs10456317": {
     "chromosome": "6",
     "position": 10728219,
-    "alleles": "T/A"
+    "alleles": "A/C/G/T"
   },
   "rs10456318": {
     "chromosome": "6",
@@ -482,7 +482,7 @@
   "rs10456330": {
     "chromosome": "6",
     "position": 26436464,
-    "alleles": "C/G"
+    "alleles": "C/G/T"
   },
   "rs10456331": {
     "chromosome": "6",
@@ -542,12 +542,12 @@
   "rs10456342": {
     "chromosome": "6",
     "position": 26860652,
-    "alleles": "C/G"
+    "alleles": "C/G/T"
   },
   "rs10456343": {
     "chromosome": "6",
     "position": 26928120,
-    "alleles": "T/A"
+    "alleles": "T/A/C/G"
   },
   "rs10456344": {
     "chromosome": "6",
@@ -602,7 +602,7 @@
   "rs10456356": {
     "chromosome": "6",
     "position": 27568016,
-    "alleles": "G/C"
+    "alleles": "G/C/A"
   },
   "rs10456357": {
     "chromosome": "6",
@@ -627,7 +627,7 @@
   "rs10456361": {
     "chromosome": "6",
     "position": 28080570,
-    "alleles": "T/A"
+    "alleles": "T/A/C"
   },
   "rs10456362": {
     "chromosome": "6",
@@ -637,7 +637,7 @@
   "rs10456363": {
     "chromosome": "6",
     "position": 28297845,
-    "alleles": "T/A"
+    "alleles": "T/A/C"
   },
   "rs10456364": {
     "chromosome": "6",

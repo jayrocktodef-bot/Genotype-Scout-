@@ -27,10 +27,17 @@ export function getMarkerAllowlist(): Set<string> {
   if (cachedAllowlist) return cachedAllowlist;
   const allowlist = new Set<string>();
 
-  const addCoordinates = (rawChrom?: string | number, rawPos?: string | number) => {
+  const addCoordinates = (rawChrom?: string | number, rawPos?: string | number, build?: string) => {
     if (rawChrom && rawPos) {
       const chrom = String(rawChrom).trim().replace(/^chr/i, '').toUpperCase();
       const posStr = String(rawPos).trim();
+      const b = build ? build.trim().toLowerCase() : null;
+      if (b) {
+        allowlist.add(`${b}:chr${chrom}_${posStr}`.toLowerCase());
+        allowlist.add(`${b}:${chrom}_${posStr}`.toLowerCase());
+        allowlist.add(`${b}:chr${chrom}:${posStr}`.toLowerCase());
+        allowlist.add(`${b}:${chrom}:${posStr}`.toLowerCase());
+      }
       allowlist.add(`chr${chrom}_${posStr}`.toLowerCase());
       allowlist.add(`${chrom}_${posStr}`.toLowerCase());
       allowlist.add(`chr${chrom}:${posStr}`.toLowerCase());
@@ -41,7 +48,7 @@ export function getMarkerAllowlist(): Set<string> {
   // 1. Master Normalized Aims (includes GRAF, Forensic, Deep, Euroforgen, etc.)
   Object.values(getMasterAims()).forEach((m: any) => {
     if (m.rsid) allowlist.add(m.rsid.toLowerCase());
-    addCoordinates(m.chromosome || m.chrom, m.position || m.pos);
+    addCoordinates(m.chromosome || m.chrom, m.position || m.pos, m.build || 'GRCh38');
   });
 
   // 1.1 Health, Wellness & PGx (v5MarkersMaster)
@@ -116,7 +123,7 @@ export function getMarkerAllowlist(): Set<string> {
     if (item.aliases) {
       item.aliases.forEach((alias) => allowlist.add(alias.toLowerCase()));
     }
-    addCoordinates(item.chrom, item.posGrch37);
+    addCoordinates(item.chrom, item.posGrch37, 'GRCh37');
   });
 
   // 1.12 High-Confidence LD Proxies (r² ≥ 0.95)

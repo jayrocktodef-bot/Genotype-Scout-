@@ -25,7 +25,10 @@ async function getHoModernKernel(): Promise<any> {
  * Uses a Non-Negative Least Squares (NNLS) solver to estimate optimal population mixture proportions
  * based on the comprehensive Human Origins reference dataset.
  */
-export async function calculateHumanOriginsScores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
+export async function calculateHumanOriginsScores(
+  userSnps: Record<string, string>,
+  userBuild?: string
+): Promise<AdmixtureComponent[]> {
   const hoModernKernel = await getHoModernKernel();
 
   // Normalize user SNPs keys and extract cleaned genotypes
@@ -41,18 +44,39 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
     }
   }
 
+  const declaredUserBuild = (userBuild || (userSnps as any)?.__build || (userSnps as any)?.build || '').toUpperCase();
+
   // Helper to resolve genotype by RSID or chromosomal coordinate
+  // rsID matching is primary; coordinate fallback only when both sides declare the same build
   const getUserGenotype = (rsid: string, marker: any): string | null => {
     const rLower = rsid.toLowerCase();
     if (normalizedUserSnps[rLower]) return normalizedUserSnps[rLower];
     if (marker && marker.chr && marker.pos) {
+      const markerBuild = (marker.build || 'GRCh37').toUpperCase(); // GRAF-10k index is GRCh37
       const c = String(marker.chr).replace(/^chr/i, '').toLowerCase();
       const p = marker.pos;
-      return normalizedUserSnps[`chr${c}_${p}`] ||
-             normalizedUserSnps[`${c}_${p}`] ||
-             normalizedUserSnps[`chr${c}:${p}`] ||
-             normalizedUserSnps[`${c}:${p}`] ||
-             null;
+      const namespacedCoord = `${markerBuild.toLowerCase()}:chr${c}_${p}`;
+
+      if (declaredUserBuild) {
+        if (declaredUserBuild === markerBuild) {
+          return (
+            normalizedUserSnps[namespacedCoord] ||
+            normalizedUserSnps[`${markerBuild.toLowerCase()}:${c}_${p}`] ||
+            normalizedUserSnps[`chr${c}_${p}`] ||
+            normalizedUserSnps[`${c}_${p}`] ||
+            normalizedUserSnps[`chr${c}:${p}`] ||
+            normalizedUserSnps[`${c}:${p}`] ||
+            null
+          );
+        }
+      } else {
+        // If user build is not declared, only accept explicit build-namespaced coordinate
+        return (
+          normalizedUserSnps[namespacedCoord] ||
+          normalizedUserSnps[`${markerBuild.toLowerCase()}:${c}_${p}`] ||
+          null
+        );
+      }
     }
     return null;
   };

@@ -156,8 +156,10 @@ export function validateAIMsData(filePath: string): boolean {
       }
       if (entry.alleles && cached.alleles) {
         const allowed = cached.alleles.toUpperCase().split(/[\/,|]/);
+        const comp = (b: string) => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] || b);
         for (const a of entry.alleles) {
-          if (!allowed.includes(a.toUpperCase())) {
+          const upperA = a.toUpperCase();
+          if (!allowed.includes(upperA) && !allowed.includes(comp(upperA))) {
             errors.push(
               `Ensembl GRCh38 allele mismatch for '${key}' in ${path.basename(filePath)}: allele '${a}' not in Ensembl alleles '${cached.alleles}'`
             );
