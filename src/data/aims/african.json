@@ -1341,36 +1341,6 @@
     "trait": "Ga-Adangbe Ancestry Marker",
     "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana)."
   },
-  "rs10456220": {
-    "rsid": "rs10456220",
-    "chromosome": "12",
-    "position": 10994000,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0.05,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "Yoruba": 0.96,
-      "Esan": 0.941,
-      "Mende": 0.979,
-      "Gambian": 0.96,
-      "Luhya": 0.912
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "TAS2R10",
-    "trait": "Taste perception",
-    "description": "Ancestry Informative Marker for Ewe populations (Ghana/Togo/Benin)."
-  },
   "rs10456221": {
     "rsid": "rs10456221",
     "chromosome": "6",
@@ -1650,36 +1620,6 @@
     "gene": "N/A",
     "trait": "Mossi Ancestry Marker",
     "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana."
-  },
-  "rs10456230": {
-    "rsid": "rs10456230",
-    "chromosome": "12",
-    "position": 10994500,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.02,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Kikuyu": 0.98,
-      "Meru": 0.95,
-      "Embu": 0.94,
-      "Kamba": 0.9,
-      "Luhya": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "TAS2R10",
-    "trait": "Taste perception",
-    "description": "Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya."
   },
   "rs10456231": {
     "rsid": "rs10456231",
@@ -3715,37 +3655,6 @@
     "trait": "Malagasy Austronesian Marker",
     "description": "Captures the Austronesian genetic component in Malagasy populations."
   },
-  "rs10456345": {
-    "rsid": "rs10456345",
-    "chromosome": "3",
-    "position": 12000000,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "AMR": 0,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9999,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9702,
-      "Nilotic_East_African": 0.8415
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Khoe-San Ancestry Marker",
-    "description": "Highly specific marker for Southern African Khoe-San populations."
-  },
   "rs10456346": {
     "rsid": "rs10456346",
     "chromosome": "6",
@@ -3962,37 +3871,6 @@
     "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "description": "Ancestry Informative Marker for Mandinka populations (Gambia)."
-  },
-  "rs10456353": {
-    "rsid": "rs10456353",
-    "chromosome": "3",
-    "position": 12000500,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.04,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.988,
-      "Yoruba": 0.9999,
-      "Mende": 0.969,
-      "Esan": 0.9785,
-      "Bantu_Central_South": 0.931,
-      "Nilotic_East_African": 0.8075
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Wolof Ancestry Marker",
-    "description": "Ancestry Informative Marker for Wolof populations (Senegal)."
   },
   "rs10456354": {
     "rsid": "rs10456354",
@@ -4514,37 +4392,6 @@
     "trait": "Kalenjin Ancestry Marker",
     "description": "Highly specific marker for Kalenjin populations (Kenya)."
   },
-  "rs10456393": {
-    "rsid": "rs10456393",
-    "chromosome": "3",
-    "position": 12001000,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.02,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9984,
-      "Yoruba": 0.9999,
-      "Mende": 0.9792,
-      "Esan": 0.9888,
-      "Bantu_Central_South": 0.9408,
-      "Nilotic_East_African": 0.816
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Kamba Ancestry Marker",
-    "description": "Highly specific marker for Kamba populations (Kenya)."
-  },
   "rs10456396": {
     "rsid": "rs10456396",
     "chromosome": "6",
@@ -4669,37 +4516,6 @@
     "trait": "Biaka Pygmy Marker",
     "description": "Deep ancestry marker for Biaka populations."
   },
-  "rs10456403": {
-    "rsid": "rs10456403",
-    "chromosome": "3",
-    "position": 12001500,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "AMR": 0,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9999,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9702,
-      "Nilotic_East_African": 0.8415
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "San Ancestry Marker",
-    "description": "Deep ancestry marker for San populations."
-  },
   "rs10456404": {
     "rsid": "rs10456404",
     "chromosome": "6",
@@ -4823,37 +4639,6 @@
     "gene": "N/A",
     "trait": "Hausa Ancestry Marker",
     "description": "Deep ancestry marker for Hausa populations."
-  },
-  "rs10456418": {
-    "rsid": "rs10456418",
-    "chromosome": "3",
-    "position": 12002000,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.04,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9996,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9604,
-      "Nilotic_East_African": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Yoruba Ancestry Marker",
-    "description": "Deep ancestry marker for Yoruba populations."
   },
   "rs10456419": {
     "rsid": "rs10456419",

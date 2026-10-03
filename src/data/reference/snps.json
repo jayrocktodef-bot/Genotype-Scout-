@@ -80,7 +80,7 @@
     "alleles": [
       "C"
     ],
-    "description": "Component of the APOE-\u03b54 allele, a major genetic risk factor for late-onset Alzheimer's.",
+    "description": "Component of the APOE-ε4 allele, a major genetic risk factor for late-onset Alzheimer's.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs429358"
   },
   {
@@ -300,7 +300,7 @@
     "rsid": "rs75493593",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk \u2014 P443T",
+    "trait": "Type 2 diabetes risk — P443T",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -324,7 +324,7 @@
     "rsid": "rs13342692",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk \u2014 D127G missense",
+    "trait": "Type 2 diabetes risk — D127G missense",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -348,7 +348,7 @@
     "rsid": "rs117767867",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk \u2014 V113I missense",
+    "trait": "Type 2 diabetes risk — V113I missense",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -372,7 +372,7 @@
     "rsid": "rs75418188",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk \u2014 G40S missense",
+    "trait": "Type 2 diabetes risk — G40S missense",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -396,7 +396,7 @@
     "rsid": "rs13342232",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk \u2014 silent mutation",
+    "trait": "Type 2 diabetes risk — silent mutation",
     "continent": "Native American",
     "alleles": [
       "G"
@@ -468,7 +468,7 @@
     "rsid": "rs5219",
     "gene": "KCNJ11",
     "category": "Health",
-    "trait": "Type 2 diabetes \u2014 E23K variant",
+    "trait": "Type 2 diabetes — E23K variant",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -491,7 +491,7 @@
     "rsid": "rs1111875",
     "gene": "HHEX",
     "category": "Health",
-    "trait": "Type 2 diabetes \u2014 pancreatic development",
+    "trait": "Type 2 diabetes — pancreatic development",
     "continent": "Native American",
     "alleles": [
       "C"
@@ -514,7 +514,7 @@
     "rsid": "rs13266634",
     "gene": "SLC30A8",
     "category": "Health",
-    "trait": "Type 2 diabetes \u2014 zinc transporter ZnT8",
+    "trait": "Type 2 diabetes — zinc transporter ZnT8",
     "continent": "Native American",
     "alleles": [
       "C"
@@ -560,7 +560,7 @@
     "rsid": "rs1800404",
     "gene": "OCA2",
     "category": "Ancestry",
-    "trait": "Pigmentation \u2014 European vs. East Asian/Native American differentiation",
+    "trait": "Pigmentation — European vs. East Asian/Native American differentiation",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -583,7 +583,7 @@
     "rsid": "rs1800562",
     "gene": "HFE",
     "category": "Health",
-    "trait": "Hereditary hemochromatosis \u2014 C282Y; near-absent in Native Americans",
+    "trait": "Hereditary hemochromatosis — C282Y; near-absent in Native Americans",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -606,7 +606,7 @@
     "rsid": "rs1800961",
     "gene": "HNF4A",
     "category": "Health",
-    "trait": "Type 2 diabetes \u2014 MODY1-related hepatocyte nuclear factor",
+    "trait": "Type 2 diabetes — MODY1-related hepatocyte nuclear factor",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -3514,30 +3514,6 @@
     "subRegion": "African Continent"
   },
   {
-    "markerId": "rs10456220_Ewe",
-    "rsid": "rs10456220",
-    "gene": "N/A",
-    "trait": "Ewe Ancestry Marker",
-    "continent": "African",
-    "subpop": "Ewe",
-    "alleles": [
-      "T"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Ewe populations (Ghana/Togo/Benin).",
-    "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.05,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
     "markerId": "rs10456236_Ewe",
     "rsid": "rs10456236",
     "gene": "N/A",
@@ -3957,30 +3933,6 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
-    "markerId": "rs10456230_Kikuyu",
-    "rsid": "rs10456230",
-    "gene": "N/A",
-    "trait": "Kikuyu Ancestry Marker",
-    "continent": "African",
-    "subpop": "Kikuyu",
-    "alleles": [
-      "T"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Kikuyu populations (Kenya).",
-    "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.02,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0.01,
-      "MENA": 0.01
     },
     "subPopulation": "Sub-Saharan",
     "subRegion": "African Continent"
@@ -10900,28 +10852,6 @@
     }
   },
   {
-    "markerId": "rs10456315_Melungeon",
-    "rsid": "rs10456315",
-    "gene": "N/A",
-    "trait": "Melungeon Ancestry Marker",
-    "continent": "European",
-    "subpop": "Melungeon",
-    "alleles": [
-      "G"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Melungeon populations (Appalachian Admixture).",
-    "frequencies": {
-      "AFR": 0.14,
-      "AMR": 0.04,
-      "EAS": 0.01,
-      "EUR": 0.77,
-      "SAS": 0.02,
-      "MENA": 0.02
-    }
-  },
-  {
     "markerId": "rs9000274_NE_Euro",
     "rsid": "rs9000274",
     "gene": "N/A",
@@ -14357,10 +14287,10 @@
     "alleles": [
       "A"
     ],
-    "description": "The G2019S mutation is a major genetic risk factor for Parkinson\u2019s disease.",
+    "description": "The G2019S mutation is a major genetic risk factor for Parkinson’s disease.",
     "interpretations": {
-      "AG": "Increased risk: Carrying one copy of the G2019S mutation significantly increases the risk of Parkinson\u2019s disease.",
-      "AA": "High risk: Carrying two copies of the G2019S mutation is associated with a very high risk of Parkinson\u2019s disease.",
+      "AG": "Increased risk: Carrying one copy of the G2019S mutation significantly increases the risk of Parkinson’s disease.",
+      "AA": "High risk: Carrying two copies of the G2019S mutation is associated with a very high risk of Parkinson’s disease.",
       "GG": "Typical risk: No G2019S mutation detected."
     },
     "referenceUrl": "https://www.snpedia.com/index.php/Rs34637584"
@@ -23297,30 +23227,6 @@
     "subRegion": "African Continent"
   },
   {
-    "markerId": "rs10456345_KhoeSan",
-    "rsid": "rs10456345",
-    "gene": "N/A",
-    "trait": "Khoe-San Ancestry Marker",
-    "continent": "African",
-    "subpop": "Khoe-San",
-    "alleles": [
-      "T"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Highly specific marker for Southern African Khoe-San populations.",
-    "frequencies": {
-      "AFR": 0.99,
-      "AMR": 0,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subPopulation": "Khoisan",
-    "subRegion": "Southern Africa"
-  },
-  {
     "markerId": "rs10456346_Mbuti",
     "rsid": "rs10456346",
     "gene": "N/A",
@@ -23480,30 +23386,6 @@
     "frequencies": {
       "AFR": 0.96,
       "AMR": 0.05,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
-    "markerId": "rs10456353_Wolof",
-    "rsid": "rs10456353",
-    "gene": "N/A",
-    "trait": "Wolof Ancestry Marker",
-    "continent": "African",
-    "subpop": "Wolof",
-    "alleles": [
-      "T"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Wolof populations (Senegal).",
-    "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.04,
       "EAS": 0,
       "EUR": 0,
       "SAS": 0,
@@ -23943,30 +23825,6 @@
     "subRegion": "African Continent"
   },
   {
-    "markerId": "rs10456393_Kamba",
-    "rsid": "rs10456393",
-    "gene": "N/A",
-    "trait": "Kamba Ancestry Marker",
-    "continent": "African",
-    "subpop": "Kamba",
-    "alleles": [
-      "C"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Highly specific marker for Kamba populations (Kenya).",
-    "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.02,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
     "markerId": "rs10456396_Banyankole",
     "rsid": "rs10456396",
     "gene": "N/A",
@@ -24153,30 +24011,6 @@
     "subRegion": "African Continent"
   },
   {
-    "markerId": "rs10456403_San",
-    "rsid": "rs10456403",
-    "gene": "N/A",
-    "trait": "San Ancestry Marker",
-    "continent": "African",
-    "subpop": "San",
-    "alleles": [
-      "G"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Deep ancestry marker for San populations.",
-    "frequencies": {
-      "AFR": 0.99,
-      "AMR": 0,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
     "markerId": "rs10456404_Khoikhoi",
     "rsid": "rs10456404",
     "gene": "N/A",
@@ -24290,30 +24124,6 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.04
-    },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
-    "markerId": "rs10456418_Yoruba",
-    "rsid": "rs10456418",
-    "gene": "N/A",
-    "trait": "Yoruba Ancestry Marker",
-    "continent": "African",
-    "subpop": "Yoruba",
-    "alleles": [
-      "A"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Deep ancestry marker for Yoruba populations.",
-    "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.04,
-      "EAS": 0,
-      "EUR": 0,
-      "SAS": 0,
-      "MENA": 0
     },
     "subPopulation": "Sub-Saharan",
     "subRegion": "African Continent"
@@ -26166,7 +25976,7 @@
     "alleles": [
       "T"
     ],
-    "description": "G-protein \u03b23 subunit splice variant associated with sodium sensitivity; highest rate among East African pastoralist populations aligns with subsistence patterns heavy in animal fat and salt cycling.",
+    "description": "G-protein β3 subunit splice variant associated with sodium sensitivity; highest rate among East African pastoralist populations aligns with subsistence patterns heavy in animal fat and salt cycling.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs5443",
     "subPopulation": "Sub-Saharan",
     "subRegion": "African Continent"
@@ -26230,7 +26040,7 @@
     "alleles": [
       "A"
     ],
-    "description": "Damage-specific DNA binding protein variant co-related with skin pigmentation and UV defense\u2014differential distribution among African linguistic groups separates Niger-Kordofanian from San populations.",
+    "description": "Damage-specific DNA binding protein variant co-related with skin pigmentation and UV defense—differential distribution among African linguistic groups separates Niger-Kordofanian from San populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs3814134",
     "subPopulation": "Sub-Saharan",
     "subRegion": "African Continent"
