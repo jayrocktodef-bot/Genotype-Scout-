@@ -107,7 +107,10 @@
     "gene": "Intergenic",
     "trait": "Assyrian Ancestry Marker",
     "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs10456276": {
     "rsid": "rs10456276",
@@ -2216,7 +2219,7 @@
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.1,
@@ -2241,7 +2244,7 @@
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.7648,
@@ -2343,7 +2346,7 @@
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.0197,

@@ -1,6 +1,7 @@
 import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
 import { solveNNLS } from '../../utils/nnls';
 import { fetchJsonAsset } from '../../utils/fetchHelper';
+import { matchGenotypeAlleles } from '../../utils/strandMatcher';
 
 export interface AdmixtureComponent {
   population: string;
@@ -114,45 +115,19 @@ export async function calculateHumanOriginsScores(
   const A: number[][] = Array.from({ length: M }, () => new Array(N).fill(0));
   const b: number[] = new Array(M).fill(0);
 
-  const complement = (base: string): string => {
-    switch (base.toUpperCase()) {
-      case 'A': return 'T';
-      case 'T': return 'A';
-      case 'C': return 'G';
-      case 'G': return 'C';
-      default: return base;
-    }
-  };
-
   for (let i = 0; i < M; i++) {
     const rsid = matchedRsids[i];
     const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
     const userCall = getUserGenotype(rsid, marker)!;
-    
-    // Accurate Dosage Calculation mapped to exact Alternative Allele
-    let dosage = 0.0;
+
+    // Accurate Dosage Calculation mapped to exact Alternative Allele using unified strand matcher
     const ref = (marker.ref || '').toUpperCase();
     const alt = (marker.alt || '').toUpperCase();
-    const a1 = userCall[0].toUpperCase();
-    const a2 = userCall[1].toUpperCase();
-
-    // Palindromic guard: A/T or C/G mutations are ambiguous under reverse-strand inversion
-    const isPalindromic = (ref === 'A' && alt === 'T') || (ref === 'T' && alt === 'A') ||
-                          (ref === 'C' && alt === 'G') || (ref === 'G' && alt === 'C');
-
-    if (a1 === alt) {
-      dosage += 0.5;
-    } else if (!isPalindromic && complement(a1) === alt) {
-      dosage += 0.5;
-    }
-
-    if (a2 === alt) {
-      dosage += 0.5;
-    } else if (!isPalindromic && complement(a2) === alt) {
-      dosage += 0.5;
-    }
-
-    b[i] = dosage;
+    const matchRes = matchGenotypeAlleles(userCall, alt, {
+      refAllele: ref,
+      isPalindromic: marker.palindromic,
+    });
+    b[i] = matchRes.dosage * 0.5;
 
     for (let j = 0; j < N; j++) {
       const popName = pops[j];

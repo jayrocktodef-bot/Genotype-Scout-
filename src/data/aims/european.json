@@ -362,7 +362,7 @@
     "region": "European",
     "color": "#3498DB",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.02,
@@ -2185,7 +2185,7 @@
     "region": "European",
     "color": "#3498DB",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -4123,7 +4123,7 @@
     "region": "European",
     "color": "#3498DB",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.1679,
@@ -10459,7 +10459,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Aegean and Balkan European ancestry (Greek, Albanian)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1217": {
     "rsid": "rs1217",
@@ -10491,7 +10492,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Iberian ancestry (Spanish, Portuguese)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1184": {
     "rsid": "rs1184",

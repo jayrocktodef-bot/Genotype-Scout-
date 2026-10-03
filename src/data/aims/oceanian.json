@@ -1780,7 +1780,7 @@
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.1679,
@@ -1812,7 +1812,7 @@
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.2988,
@@ -1855,7 +1855,8 @@
     "gene": "Unknown",
     "trait": "Sotho Ancestry Marker",
     "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456225": {
     "rsid": "rs10456225",
@@ -1916,7 +1917,7 @@
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -1969,7 +1970,7 @@
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -2023,7 +2024,7 @@
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.7269,

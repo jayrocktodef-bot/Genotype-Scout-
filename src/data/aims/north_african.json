@@ -495,7 +495,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.2,
@@ -520,7 +520,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.1,
@@ -570,7 +570,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.12,
@@ -636,7 +636,8 @@
     "gene": "Unknown",
     "trait": "Berber Ancestry Marker",
     "description": "Highly specific marker for Berber (Amazigh) populations of North Africa.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456408": {
     "rsid": "rs10456408",
@@ -645,7 +646,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.25,
@@ -695,7 +696,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.18,
@@ -962,7 +963,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.7224,
@@ -1023,7 +1024,7 @@
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.7648,

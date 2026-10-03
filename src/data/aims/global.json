@@ -302284,7 +302284,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs2814778": {
     "rsid": "rs2814778",
@@ -302372,7 +302373,7 @@
     "region": "Global",
     "color": "#95A5A6",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.02,
@@ -302480,7 +302481,7 @@
     "region": "Global",
     "color": "#95A5A6",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.3646,
@@ -308078,7 +308079,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly informative AIM for Pygmy ancestry in Central Africa",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1181": {
     "rsid": "rs1181",
@@ -308105,7 +308107,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Second highly informative AIM for West African ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1182": {
     "rsid": "rs1182",
@@ -308331,7 +308334,10 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly informative AIM for Ancestral South Indian lineage, deep indigenous component",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs1190": {
     "rsid": "rs1190",
@@ -308358,7 +308364,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly informative AIM for Indigenous North American ancestry, common in Cree and Ojibwe",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1191": {
     "rsid": "rs1191",
@@ -308897,7 +308904,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly diagnostic tiebreaker for Nilotic East African ancestry (Dinka, Luo)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1207": {
     "rsid": "rs1207",
@@ -308951,7 +308959,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Semitic Ethiopian Highlands ancestry (Amhara, Tigray)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1209": {
     "rsid": "rs1209",
@@ -309229,7 +309238,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Iberian ancestry (Spanish, Portuguese)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1218": {
     "rsid": "rs1218",
@@ -309293,7 +309303,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Aegean and Balkan European ancestry (Greek, Albanian)",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1220": {
     "rsid": "rs1220",
@@ -309487,7 +309498,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly diagnostic tiebreaker for indigenous Amazigh / Berber lineage",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1227": {
     "rsid": "rs1227",
@@ -309541,7 +309553,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Kurdish and Upper Mesopotamian Highland ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1229": {
     "rsid": "rs1229",
@@ -310054,7 +310067,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Indus Valley / Sindhi ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1248": {
     "rsid": "rs1248",
@@ -310108,7 +310122,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Sri Lankan insular South Asian ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1250": {
     "rsid": "rs1250",
@@ -310324,7 +310339,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly diagnostic tiebreaker for Aymara Altiplano indigenous ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1258": {
     "rsid": "rs1258",
@@ -310378,7 +310394,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Diagnostic tiebreaker for Guarani and Southern Cone indigenous ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1260": {
     "rsid": "rs1260",
@@ -310675,7 +310692,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Highly diagnostic tiebreaker for Australian Aboriginal indigenous ancestry",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs3814134": {
     "rsid": "rs3814134",

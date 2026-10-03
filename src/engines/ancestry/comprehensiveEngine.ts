@@ -1,4 +1,5 @@
 import { loadMasterAims } from '../../data/index';
+import { matchGenotypeAlleles } from '../../utils/strandMatcher';
 
 // Initialize on first use or cache
 let masterAimsCache: any = null;
@@ -88,9 +89,10 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
     const aimAllele = alleles.length > 0 ? alleles[0] : null;
     if (!aimAllele) continue;
 
-    const a1IsAim = (genotype[0] === aimAllele) ? 1 : 0;
-    const a2IsAim = (genotype[1] && genotype[1] === aimAllele) ? 1 : 0;
-    const aimCount = a1IsAim + a2IsAim;
+    const aimCount = matchGenotypeAlleles(genotype, aimAllele, {
+      isPalindromic: marker.palindromic,
+      refAllele: alleles.length > 1 ? alleles[1] : undefined,
+    }).dosage;
 
     for (const popCode of populations) {
       const continent = CONTINENT_MAP[popCode];

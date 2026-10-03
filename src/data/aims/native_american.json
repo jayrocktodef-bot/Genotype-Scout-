@@ -3289,7 +3289,8 @@
     "gene": "N/A",
     "trait": "Inuit Ancestry Marker",
     "description": "Ancestry Informative Marker for Inuit populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456280": {
     "rsid": "rs10456280",

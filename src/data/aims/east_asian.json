@@ -169,7 +169,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -194,7 +194,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.02,
@@ -497,7 +497,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -633,7 +633,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Tibeto-Burman Border Marker - diagnostic for populations along the Himalayas and Indo-Burma border.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs13430441": {
     "rsid": "rs13430441",
@@ -673,7 +674,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.7224,
@@ -733,7 +734,10 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs1426654": {
     "rsid": "rs1426654",
@@ -1955,7 +1959,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -2162,7 +2166,7 @@
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "EAS": 0.95,

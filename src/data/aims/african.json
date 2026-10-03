@@ -867,7 +867,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -899,7 +899,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.88,
@@ -930,7 +930,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.75,
@@ -983,7 +983,8 @@
     "gene": "N/A",
     "trait": "Ethiopian Ancestry Marker",
     "description": "Ancestry Informative Marker for Ethiopian populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456204": {
     "rsid": "rs10456204",
@@ -992,7 +993,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.1,
@@ -1024,7 +1025,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.7648,
@@ -1083,7 +1084,10 @@
     "gene": "N/A",
     "trait": "Assyrian Ancestry Marker",
     "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs10456207": {
     "rsid": "rs10456207",
@@ -1212,7 +1216,8 @@
     "gene": "N/A",
     "trait": "Sudanese Marker",
     "description": "Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456213": {
     "rsid": "rs10456213",
@@ -1293,7 +1298,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.3646,
@@ -1359,7 +1364,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -1421,7 +1426,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.72,
@@ -1452,7 +1457,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.2988,
@@ -1509,7 +1514,8 @@
     "gene": "N/A",
     "trait": "Sotho Ancestry Marker",
     "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456225": {
     "rsid": "rs10456225",
@@ -1584,7 +1590,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.01,
@@ -1617,7 +1623,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -1701,7 +1707,8 @@
     "gene": "N/A",
     "trait": "Baganda Ancestry Marker",
     "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456232": {
     "rsid": "rs10456232",
@@ -1710,7 +1717,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.68,
@@ -1741,7 +1748,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.9,
@@ -1844,7 +1851,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.2012,
@@ -1971,7 +1978,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -2126,7 +2133,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.96,
@@ -2251,7 +2258,8 @@
     "gene": "N/A",
     "trait": "Grebo Ancestry Marker",
     "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456249": {
     "rsid": "rs10456249",
@@ -2282,7 +2290,8 @@
     "gene": "N/A",
     "trait": "Bassa Ancestry Marker",
     "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456250": {
     "rsid": "rs10456250",
@@ -2353,7 +2362,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -2437,7 +2446,8 @@
     "gene": "N/A",
     "trait": "Mano Ancestry Marker",
     "description": "Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456255": {
     "rsid": "rs10456255",
@@ -2477,7 +2487,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -2508,7 +2518,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -2579,7 +2589,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -2694,7 +2704,8 @@
     "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456263": {
     "rsid": "rs10456263",
@@ -2765,7 +2776,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.7269,
@@ -2827,7 +2838,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.96,
@@ -2876,7 +2887,8 @@
     "gene": "N/A",
     "trait": "Ibibio Ancestry Marker",
     "description": "High significance Ancestry Informative Marker for Ibibio populations (Nigeria).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456269": {
     "rsid": "rs10456269",
@@ -2885,7 +2897,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.02,
@@ -2990,7 +3002,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.02,
@@ -3057,7 +3069,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.0197,
@@ -3167,7 +3179,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.1679,
@@ -3199,7 +3211,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.7224,
@@ -3259,7 +3271,10 @@
     "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs10456307": {
     "rsid": "rs10456307",
@@ -3300,7 +3315,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -3362,7 +3377,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -3586,7 +3601,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.96,
@@ -3618,7 +3633,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -3641,7 +3656,8 @@
     "gene": "N/A",
     "trait": "Ewe Ancestry Marker",
     "description": "Ancestry Informative Marker for Ewe populations (Ghana/Togo).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456331": {
     "rsid": "rs10456331",
@@ -3682,7 +3698,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -3705,7 +3721,8 @@
     "gene": "N/A",
     "trait": "Nuer Ancestry Marker",
     "description": "Highly specific marker for Nuer populations of South Sudan.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456343": {
     "rsid": "rs10456343",
@@ -3737,7 +3754,10 @@
     "gene": "N/A",
     "trait": "Malagasy Austronesian Marker",
     "description": "Captures the Austronesian (Southeast Asian) genetic component in Malagasy populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true,
+    "maf_flag": true,
+    "high_maf": true
   },
   "rs10456344": {
     "rsid": "rs10456344",
@@ -3746,7 +3766,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.38,
@@ -3778,7 +3798,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -3865,7 +3885,8 @@
     "gene": "N/A",
     "trait": "Somali Ancestry Marker",
     "description": "Ancestry Informative Marker for Somali populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456349": {
     "rsid": "rs10456349",
@@ -3874,7 +3895,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.7,
@@ -3961,7 +3982,8 @@
     "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "description": "Ancestry Informative Marker for Igbo populations (Nigeria).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456352": {
     "rsid": "rs10456352",
@@ -4002,7 +4024,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -4034,7 +4056,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.96,
@@ -4098,7 +4120,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -4162,7 +4184,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -4194,7 +4216,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.99,
@@ -4217,7 +4239,8 @@
     "gene": "N/A",
     "trait": "Hadza Ancestry Marker",
     "description": "Highly specific marker for Hadza populations of Tanzania.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456362": {
     "rsid": "rs10456362",
@@ -4226,7 +4249,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -4281,7 +4304,8 @@
     "gene": "N/A",
     "trait": "Beja Ancestry Marker",
     "description": "Highly specific marker for Beja populations (Sudan/Egypt/Eritrea).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456367": {
     "rsid": "rs10456367",
@@ -4475,7 +4499,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -4539,7 +4563,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.97,
@@ -4603,7 +4627,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.99,
@@ -4635,7 +4659,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.98,
@@ -4690,7 +4714,8 @@
     "gene": "N/A",
     "trait": "Khoikhoi Ancestry Marker",
     "description": "Deep ancestry marker for Khoikhoi populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456405": {
     "rsid": "rs10456405",
@@ -4699,7 +4724,7 @@
     "region": "African",
     "color": "#2ECC71",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.99,
@@ -4818,7 +4843,8 @@
     "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "description": "Deep ancestry marker for Igbo populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs10456425": {
     "rsid": "rs10456425",
@@ -14107,7 +14133,8 @@
     "gene": "MIR1302",
     "trait": "Ancestry",
     "description": "Informative for African subcontinental across Akan/Fante vs East Coast, yet this is fictional? Please be careful.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs1240709": {
     "rsid": "rs1240709",
@@ -26195,7 +26222,8 @@
     "gene": "APOL1",
     "trait": "African ancestry, Kidney disease risk (trypanosome resistance)",
     "description": "APOL1 G2 variant is a 6-base pair deletion (N388\\(\\Delta\\Y389). This frameshift mutation provides trypanosome resistance. Found mainly in West-Central African populations but at lower frequency than G1. Both associated with kidney disease, but haplotype pattern informs regional substructure.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "palindromic": true
   },
   "rs7194392": {
     "rsid": "rs7194392",

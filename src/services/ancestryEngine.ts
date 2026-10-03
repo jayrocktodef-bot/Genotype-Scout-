@@ -68,8 +68,9 @@ const POP_CODE_TO_REGION: Record<string, string> = {
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
 import { isSubpopMatch } from '../utils/genotypeUtils';
 import { AncestryInferenceResult } from '../types/genotype';
+import { matchGenotypeAlleles } from '../utils/strandMatcher';
 
-const DOUBLE_WEIGHT_MARKERS = new Set([
+export const DOUBLE_WEIGHT_MARKERS = new Set([
   "rs10456243", "rs10456244", "rs10456245",
   "rs10456257", "rs10456259", "rs10456260", "rs10456261", "rs10456262", "rs10456263",
   "rs10456267", "rs10456268", "rs2285644", "rs334",
@@ -104,7 +105,7 @@ const DOUBLE_WEIGHT_MARKERS = new Set([
   "rs10456421", "rs10456422", "rs10456423", "rs10456425", "rs10456426"
 ]);
 
-const QUADRUPLE_WEIGHT_MARKERS = new Set([
+export const QUADRUPLE_WEIGHT_MARKERS = new Set([
   // Literature-curated continental & regional tiebreaker anchors
   "rs2814778", "rs3827760", "rs4988235", "rs12913832", "rs10456265", "rs10456266",
   "rs10456247", "rs10456249", "rs10456252", "rs10456256",
@@ -222,15 +223,7 @@ export function runAncestryInference(
   priorResults?: { graf?: any, humanOrigins?: any },
   sampleId?: string
 ): AncestryInferenceResult {
-  const complement = (base: string): string => {
-    switch (base.toUpperCase()) {
-      case 'A': return 'T';
-      case 'T': return 'A';
-      case 'C': return 'G';
-      case 'G': return 'C';
-      default: return base;
-    }
-  };
+
 
   // Check if we can directly map this known reference sample ID to a subpopulation
   let info = sampleId ? getPopulationInfo(sampleId) : null;
@@ -477,10 +470,12 @@ export function runAncestryInference(
           continue;
         }
 
-        // Compute alternative-allele dosage (0, 1, or 2)
-        let dosage = 0;
-        if (a1 === alt || complement(a1) === alt) dosage += 1;
-        if (a2 === alt || complement(a2) === alt) dosage += 1;
+        // Compute alternative-allele dosage (0, 1, or 2) using unified strand matcher
+        const matchRes = matchGenotypeAlleles(genotype, alt, {
+          isPalindromic: aim?.palindromic,
+          refAllele: aim?.alleles && aim.alleles.length > 1 ? aim.alleles[1] : undefined,
+        });
+        const dosage = matchRes.dosage;
 
         const weightFactor = 1.0;
         windowGenotypes.push(dosage);
@@ -748,13 +743,14 @@ export function runAncestryInference(
               continue;
             }
 
-            let userDosage = 0.0;
-            if (subA1 === subAlt || complement(subA1) === subAlt) userDosage += 0.5;
-            if (subA2 === subAlt || complement(subA2) === subAlt) userDosage += 0.5;
+            const aim = extendedAnchorMap.get(rsid);
+            const subMatchRes = matchGenotypeAlleles(genotype, subAlt, {
+              isPalindromic: aim?.palindromic,
+              refAllele: aim?.alleles && aim.alleles.length > 1 ? aim.alleles[1] : undefined,
+            });
+            const userDosage = subMatchRes.dosage * 0.5;
 
             const weightFactor = userDosage;
-
-            const aim = extendedAnchorMap.get(rsid);
             let freq = 0.01;
             const code = CONTINENT_TO_CODE[topContinent];
 
