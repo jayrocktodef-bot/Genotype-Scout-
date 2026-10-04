@@ -163,10 +163,12 @@ export function matchGenotypeAlleles(
     }
   }
 
+  const clampedDosage = Math.min(2, Math.max(0, dosage));
+
   return {
-    dosage,
+    dosage: clampedDosage,
     isComplement: complementUsed,
     isPalindromic: palindromic,
-    allelesMatched: matched,
+    allelesMatched: matched.slice(0, 2),
   };
 }

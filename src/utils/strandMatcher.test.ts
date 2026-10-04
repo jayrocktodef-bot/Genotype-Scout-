@@ -117,5 +117,27 @@ describe('strandMatcher', () => {
     expect(fullPairBoth.dosage).toBe(2);
     expect(fullPairBoth.isComplement).toBe(true);
   });
+
+  it('L5: clamps dosage to [0,2] on malformed 3-base calls like AAA', () => {
+    // Malformed 3-base calls (e.g. 'AAA', 'A/A/A', 'TTT') must never exceed dosage 2
+    const tripleA = matchGenotypeAlleles('AAA', 'A', { otherAllele: 'G' });
+    expect(tripleA.dosage).toBe(2);
+    expect(tripleA.allelesMatched).toEqual(['A', 'A']);
+
+    const quadA = matchGenotypeAlleles('AAAA', 'A', { otherAllele: 'G' });
+    expect(quadA.dosage).toBe(2);
+    expect(quadA.allelesMatched.length).toBe(2);
+
+    // Normal diploid and haploid calls unaffected
+    const normalDiploid = matchGenotypeAlleles('AA', 'A', { otherAllele: 'G' });
+    expect(normalDiploid.dosage).toBe(2);
+
+    const normalHet = matchGenotypeAlleles('AG', 'A', { otherAllele: 'G' });
+    expect(normalHet.dosage).toBe(1);
+
+    const normalNonMatch = matchGenotypeAlleles('GG', 'A', { otherAllele: 'G' });
+    expect(normalNonMatch.dosage).toBe(0);
+  });
 });
+
 
