@@ -165,6 +165,7 @@ export async function parseRawDNAStream(
   let yDnaCalledSnps = 0;
   let xHetCount = 0;
   let xTotalCount = 0;
+  let unknownBuildCoordinateDrops = 0;
 
   const totalBytes = file.size;
   let bytesProcessed = 0;
@@ -303,6 +304,8 @@ export async function parseRawDNAStream(
         : '';
       const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
       const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
+      const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
+      const isUnknownBuildCoordOnly = !hasValidMarkerId && (!plan.build || plan.build === 'UNKNOWN');
 
       if (
         !allowlist ||
@@ -316,7 +319,6 @@ export async function parseRawDNAStream(
           allowlist.has(coordColonChr)
         ))
       ) {
-        const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
         const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);
 
         snpCount++;
@@ -392,6 +394,10 @@ export async function parseRawDNAStream(
               mtMap[markerId.toLowerCase()] = allele;
             }
           }
+        }
+      } else {
+        if (isUnknownBuildCoordOnly) {
+          unknownBuildCoordinateDrops++;
         }
       }
     } else {
@@ -461,6 +467,10 @@ export async function parseRawDNAStream(
       zeroSnpSuggestion =
         'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard.';
       specificCode = GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH;
+    } else if (unknownBuildCoordinateDrops > 0) {
+      zeroSnpReason = `unknown_build_coordinates_dropped (${unknownBuildCoordinateDrops} coordinate-only SNPs dropped due to UNKNOWN build)`;
+      zeroSnpSuggestion =
+        'Coordinate-only SNPs require a declared genome assembly (e.g. ##reference=GRCh38 or # Assembly: GRCh38) to match the database.';
     }
 
     throw new GenomicsParseError(
@@ -497,6 +507,10 @@ export async function parseRawDNAStream(
     else chip = `${plan.format} Raw Data`;
   }
 
+  if (unknownBuildCoordinateDrops > 0) {
+    console.warn(`[Parser] Dropped ${unknownBuildCoordinateDrops} coordinate-only SNP(s) due to UNKNOWN genome build.`);
+  }
+
   return {
     format: plan.format,
     chip,
@@ -522,7 +536,8 @@ export async function parseRawDNAStream(
     phasingMethod,
     haplotype1Map: Object.keys(haplotype1Map).length > 0 ? haplotype1Map : undefined,
     haplotype2Map: Object.keys(haplotype2Map).length > 0 ? haplotype2Map : undefined,
-    phaseSets: Object.keys(phaseSets).length > 0 ? phaseSets : undefined
+    phaseSets: Object.keys(phaseSets).length > 0 ? phaseSets : undefined,
+    unknownBuildCoordinateDrops
   };
 }
 
@@ -569,6 +584,7 @@ export function parseRawDNA(
   let yDnaCalledSnps = 0;
   let xHetCount = 0;
   let xTotalCount = 0;
+  let unknownBuildCoordinateDrops = 0;
 
   let linesTotal = 0;
   let linesCommented = 0;
@@ -633,6 +649,8 @@ export function parseRawDNA(
         : '';
       const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
       const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
+      const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
+      const isUnknownBuildCoordOnly = !hasValidMarkerId && (!plan.build || plan.build === 'UNKNOWN');
 
       if (
         !allowlist ||
@@ -646,7 +664,6 @@ export function parseRawDNA(
           allowlist.has(coordColonChr)
         ))
       ) {
-        const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
         const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);
 
         snpCount++;
@@ -723,6 +740,10 @@ export function parseRawDNA(
             }
           }
         }
+      } else {
+        if (isUnknownBuildCoordOnly) {
+          unknownBuildCoordinateDrops++;
+        }
       }
     } else {
       linesMalformed++;
@@ -755,6 +776,10 @@ export function parseRawDNA(
       zeroSnpSuggestion =
         'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard.';
       specificCode = GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH;
+    } else if (unknownBuildCoordinateDrops > 0) {
+      zeroSnpReason = `unknown_build_coordinates_dropped (${unknownBuildCoordinateDrops} coordinate-only SNPs dropped due to UNKNOWN build)`;
+      zeroSnpSuggestion =
+        'Coordinate-only SNPs require a declared genome assembly (e.g. ##reference=GRCh38 or # Assembly: GRCh38) to match the database.';
     }
 
     throw new GenomicsParseError(
@@ -790,6 +815,10 @@ export function parseRawDNA(
     else chip = `${plan.format} Raw Data`;
   }
 
+  if (unknownBuildCoordinateDrops > 0) {
+    console.warn(`[Parser] Dropped ${unknownBuildCoordinateDrops} coordinate-only SNP(s) due to UNKNOWN genome build.`);
+  }
+
   return {
     format: plan.format,
     chip,
@@ -815,6 +844,7 @@ export function parseRawDNA(
     phasingMethod,
     haplotype1Map: Object.keys(haplotype1Map).length > 0 ? haplotype1Map : undefined,
     haplotype2Map: Object.keys(haplotype2Map).length > 0 ? haplotype2Map : undefined,
-    phaseSets: Object.keys(phaseSets).length > 0 ? phaseSets : undefined
+    phaseSets: Object.keys(phaseSets).length > 0 ? phaseSets : undefined,
+    unknownBuildCoordinateDrops
   };
 }

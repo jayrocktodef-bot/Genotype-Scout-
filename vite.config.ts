@@ -117,7 +117,7 @@ export default defineConfig(({mode}) => {
       },
     },
     esbuild: {
-      drop: ['console', 'debugger'],
+      drop: mode === 'production' && !process.env.VITEST ? ['console', 'debugger'] : [],
     },
     build: {
       target: 'es2022',

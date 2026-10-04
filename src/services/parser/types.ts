@@ -128,6 +128,7 @@ export interface ParsedGenomicDataset {
   haplotype1Map?: Record<string, string>;
   haplotype2Map?: Record<string, string>;
   phaseSets?: Record<string, string>;
+  unknownBuildCoordinateDrops?: number;
 }
 
 export interface SniffedPlan {

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import {
@@ -999,6 +999,56 @@ rs789\t1\t3000\tCC
       const res = computeDatasetLAI(datasetUnknown);
       // Because dataset has no valid genotypes and build-less meta fails closed, LAI cannot match
       expect(res).toBeNull();
+    });
+  });
+
+  describe('Low L8: Log unknown-build coordinate drops and test with allowlist', () => {
+    it('drops coordinate-only SNPs with UNKNOWN build when allowlist is active and logs drop count', () => {
+      const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+      try {
+        const allowlist = getMarkerAllowlist();
+
+        // Generic raw snippet with no build header: 1 allowlisted rsID + 2 coordinate-only SNPs ('.' as ID)
+        const unknownSnippet = `rsid\tchromosome\tposition\tgenotype
+rs2887286\t1\t1220751\tCC
+.\t6\t26860652\tAG
+.\t1\t1220751\tCC
+`;
+        const parsed = parseRawDNA(unknownSnippet, allowlist);
+
+        expect(parsed.build).toBe('UNKNOWN');
+        // 1 rsID kept, both coordinate-only SNPs dropped at ingest because build is unknown
+        expect(parsed.snpCount).toBe(1);
+        expect(parsed.unknownBuildCoordinateDrops).toBe(2);
+        expect(parsed.snpMap['rs2887286']).toBe('CC');
+        expect(parsed.snpMap['chr6_26860652']).toBeUndefined();
+
+        // Warning logged once per run with exact count
+        expect(warnSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Dropped 2 coordinate-only SNP(s) due to UNKNOWN genome build.')
+        );
+
+        // If all SNPs in unknown-build file are coordinate-only, parser fails closed with specific drop reason
+        expect(() => parseRawDNA(`rsid\tchromosome\tposition\tgenotype\n.\t6\t26860652\tAG\n`, allowlist))
+          .toThrow(/unknown_build_coordinates_dropped/);
+      } finally {
+        warnSpy.mockRestore();
+      }
+    });
+
+    it('retains coordinate-only SNPs when build is declared and matches allowlist', () => {
+      const allowlist = getMarkerAllowlist();
+      // GRCh38 declared header with coordinate-only SNPs
+      const grch38Snippet = `# Assembly: GRCh38
+# rsid\tchromosome\tposition\tgenotype
+.\t6\t26860652\tAG
+`;
+      const parsed = parseRawDNA(grch38Snippet, allowlist);
+      expect(parsed.build).toBe('GRCh38');
+      expect(parsed.snpCount).toBe(1);
+      expect(parsed.unknownBuildCoordinateDrops).toBe(0);
+      expect(parsed.snpMap['grch38:chr6_26860652']).toBe('AG');
     });
   });
 });
