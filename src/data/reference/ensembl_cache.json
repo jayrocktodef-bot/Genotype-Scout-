@@ -3228,7 +3228,7 @@
   "rs10456231": {
     "chromosome": "6",
     "position": 10230301,
-    "alleles": "A/T/G"
+    "alleles": "A/T"
   },
   "rs10456232": {
     "chromosome": "6",
@@ -96037,5 +96037,15 @@
     "gene": "Unknown",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:59.926162+00:00"
+  },
+  "rs1393350": {
+    "chromosome": "11",
+    "position": 89277878,
+    "alleles": "G/A"
+  },
+  "rs2567608": {
+    "chromosome": "20",
+    "position": 23036445,
+    "alleles": "T/A/C"
   }
 }

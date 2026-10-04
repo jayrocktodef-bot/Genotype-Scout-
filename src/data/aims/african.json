@@ -1535,38 +1535,6 @@
     "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana.",
     "build": "GRCh38"
   },
-  "rs10456231": {
-    "rsid": "rs10456231",
-    "chromosome": "6",
-    "position": 10230301,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.01,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Baganda": 0.98,
-      "Banyankole": 0.95,
-      "Basoga": 0.92,
-      "Kikuyu": 0.7,
-      "Luhya": 0.65
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Baganda Ancestry Marker",
-    "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda.",
-    "build": "GRCh38",
-    "palindromic": true
-  },
   "rs10456232": {
     "rsid": "rs10456232",
     "chromosome": "6",
@@ -12590,34 +12558,6 @@
     "description": "San Ancestry Marker - Informative for San populations.",
     "build": "GRCh38"
   },
-  "rs13136405": {
-    "rsid": "rs13136405",
-    "chromosome": "15",
-    "position": 28323500,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Biaka": 0.98,
-      "Mbuti": 0.99,
-      "Baka": 0.95,
-      "Twa": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "HERC2",
-    "trait": "Eye color",
-    "description": "Central African Pygmy Marker - diagnostic for the hunter-gatherer populations of the Congo Basin.",
-    "build": "GRCh38"
-  },
   "rs1321204": {
     "rsid": "rs1321204",
     "chromosome": "6",
@@ -17858,38 +17798,6 @@
     "description": "Empirical marker distinguishing Central African Rainforest hunter-gatherer (Biaka, Mbuti) lineages. (Contrast: 0.51, F_ST: 0.27).",
     "build": "GRCh38"
   },
-  "rs3814134": {
-    "rsid": "rs3814134",
-    "chromosome": "18",
-    "position": 6930659,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G",
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.18,
-      "EUR": 0.56,
-      "EAS": 0.62,
-      "AMR": 0.44,
-      "SAS": 0.42,
-      "MENA": 0.6,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Nilo-Saharan": 0.15,
-      "Niger-Congo": 0.2,
-      "Afro-Asiatic": 0.32,
-      "KhoeSan": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "DDB1",
-    "trait": "DNA repair - pigmentation",
-    "description": "Damage-specific DNA binding protein variant co-related with skin pigmentation and UV defense\u2014differential distribution among African linguistic groups separates Niger-Kordofanian from San populations.",
-    "build": "GRCh38"
-  },
   "rs3928916": {
     "rsid": "rs3928916",
     "chromosome": "19",
@@ -21492,39 +21400,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "North African Amazigh Marker - diagnostic for the indigenous Berber populations.",
-    "build": "GRCh38"
-  },
-  "rs7388531": {
-    "rsid": "rs7388531",
-    "chromosome": "16",
-    "position": 48224287,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.05,
-      "EAS": 0.95,
-      "AMR": 0.6,
-      "SAS": 0.15,
-      "MENA": 0.08
-    },
-    "subFrequencies": {
-      "Yoruba": 0.45,
-      "Igbo": 0.42,
-      "Luhya": 0.25,
-      "North_European": 0.051,
-      "South_European": 0.048,
-      "West_European": 0.05,
-      "East_European": 0.049
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "ABCC11",
-    "trait": "Kidney Health / Parasite Resistance",
-    "description": "Loss-of-function allele (538G>A) near 100% fixed in East Asians (Han, Korean, Japanese) and high in Siberian/Native American populations, producing dry earwax and reduced body odor.",
     "build": "GRCh38"
   },
   "rs73885319": {

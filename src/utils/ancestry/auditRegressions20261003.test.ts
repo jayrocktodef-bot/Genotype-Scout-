@@ -10,6 +10,8 @@ import {
   loadDbsnpMergedMap,
   PANEL_FILES,
   ensemblCache,
+  PARKED_TIEBREAKER_ANCHORS,
+  PARKED_TIEBREAKER_ANCHORS_MAP,
 } from '../dataValidator';
 import { calculateComprehensiveScores } from '../../engines/ancestry/comprehensiveEngine';
 import { calculateHumanOriginsScores } from '../../engines/ancestry/humanOriginsEngine';
@@ -477,6 +479,136 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       for (const panel of expectedPanels) {
         expect(PANEL_FILES.has(panel)).toBe(true);
       }
+    });
+  });
+
+  describe('(h) Round 3: Purge Rejected Records and Tighten Parked Exemption', () => {
+    const PURGED_ROUND3_IDS = [
+      'rs10456231',
+      'rs13136405',
+      'rs7388531',
+      'rs3814134',
+      'rs11803701',
+      'rs2032457',
+      'rs2033028',
+      'rs10735788',
+      'rs62588102',
+      'rs45523335',
+      'rs11578877',
+      'rs2284553',
+    ];
+
+    it('ensures rs10456231 and all rejected records are completely purged from all panels and master aims', () => {
+      const panelFiles = [
+        'src/data/aims/african.json',
+        'src/data/aims/african_american.json',
+        'src/data/aims/central_asian.json',
+        'src/data/aims/east_asian.json',
+        'src/data/aims/european.json',
+        'src/data/aims/global.json',
+        'src/data/aims/middle_eastern.json',
+        'src/data/aims/native_american.json',
+        'src/data/aims/north_african.json',
+        'src/data/aims/oceanian.json',
+        'src/data/aims/south_asian.json',
+        'src/data/master_aims_normalized.json',
+      ];
+
+      for (const relPath of panelFiles) {
+        const fullPath = path.join(process.cwd(), relPath);
+        if (!fs.existsSync(fullPath)) continue;
+        const data = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
+        const rsids = new Set(Object.keys(data).map(k => k.toLowerCase()));
+
+        for (const purgedId of PURGED_ROUND3_IDS) {
+          expect(rsids.has(purgedId.toLowerCase())).toBe(false);
+        }
+      }
+    });
+
+    it('ensures rs10456231 in cache has alleles A/T and rejects panel records claiming allele G', () => {
+      expect(ensemblCache['rs10456231']).toBeDefined();
+      expect(ensemblCache['rs10456231'].alleles).toBe('A/T');
+
+      const fabricatedRecord = {
+        rsid: 'rs10456231',
+        chromosome: '6',
+        position: 10230301,
+        region: 'African',
+        alleles: ['G'],
+        frequencies: { AFR: 0.96, AMR: 0.01 },
+        weight: 10,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(fabricatedRecord, 'rs10456231', 'african.json');
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('allele mismatch') || e.includes('alleles'))).toBe(true);
+    });
+
+    it('ensures no entry in parked_tiebreaker_anchors.json contains "pending"', () => {
+      const anchorsJsonPath = path.join(
+        process.cwd(),
+        'src/data/reference/parked_tiebreaker_anchors.json'
+      );
+      const rawText = fs.readFileSync(anchorsJsonPath, 'utf-8');
+      expect(rawText.toLowerCase()).not.toContain('pending');
+
+      for (const [id, reason] of Object.entries(PARKED_TIEBREAKER_ANCHORS_MAP)) {
+        expect(reason.toLowerCase()).not.toContain('pending');
+      }
+    });
+
+    it('ensures every parked entry has a documented reason citing Ensembl GRCh38 verification', () => {
+      for (const [id, reason] of Object.entries(PARKED_TIEBREAKER_ANCHORS_MAP)) {
+        expect(reason).toBeDefined();
+        expect(typeof reason).toBe('string');
+        expect(reason.length).toBeGreaterThan(20);
+        expect(reason).toContain('Ensembl GRCh38');
+      }
+    });
+
+    it('ensures Python and TypeScript parked tiebreaker lists are equal and loaded from single source of truth', () => {
+      const anchorsJsonPath = path.join(
+        process.cwd(),
+        'src/data/reference/parked_tiebreaker_anchors.json'
+      );
+      const anchorsJson = JSON.parse(fs.readFileSync(anchorsJsonPath, 'utf-8'));
+      const jsonKeys = new Set(Object.keys(anchorsJson).map(k => k.toLowerCase()));
+
+      expect(PARKED_TIEBREAKER_ANCHORS.size).toBe(jsonKeys.size);
+      for (const k of jsonKeys) {
+        expect(PARKED_TIEBREAKER_ANCHORS.has(k)).toBe(true);
+      }
+
+      // Verify build_ensembl_cache.py loads the exact same JSON file
+      const pyScript = fs.readFileSync(
+        path.join(process.cwd(), 'scripts/build_ensembl_cache.py'),
+        'utf-8'
+      );
+      expect(pyScript).toContain('parked_tiebreaker_anchors.json');
+      expect(pyScript).not.toContain('pending coordinate review');
+      expect(pyScript).not.toContain('pending coordinate resolution');
+    });
+
+    it('ensures markers with "tiebreaker" in description are not shielded unless in parked_tiebreaker_anchors.json', () => {
+      // Unparked marker with "tiebreaker" in description but wrong chromosome
+      const unshieldedMarker = {
+        rsid: 'rs686140', // real variant on chr6:18925121
+        chromosome: '7', // wrong chromosome
+        position: 18925121,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { AFR: 0.85, EUR: 0.15 },
+        weight: 10,
+        description: 'Sahel Tie-Breaker diagnostic marker',
+        trait: 'Sahel Tiebreaker',
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(unshieldedMarker, 'rs686140', 'african.json');
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('chromosome mismatch'))).toBe(true);
     });
   });
 });

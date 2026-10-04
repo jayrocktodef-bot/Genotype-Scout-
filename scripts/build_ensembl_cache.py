@@ -39,43 +39,19 @@ def is_sampled_marker(rsid: str, seed: int = SEED) -> bool:
     h = hashlib.sha256(f"{rsid.lower()}:{seed}".encode()).hexdigest()
     return (int(h[:8], 16) % 10000) < int(SAMPLE_RATE * 10000)
 
-# Carried Mediums: explicit list of parked tiebreaker anchors and lineage diagnostic markers.
-# Each entry is retained with documented justification pending subsequent audit workstreams.
-PARKED_TIEBREAKER_ANCHORS = {
-    # Core continental & pigmentation diagnostic anchors (hand-verified; carryover review)
-    "rs2814778", "rs3827760", "rs4988235", "rs12913832", "rs1426654", "rs16891982", "rs1129038", "rs16139",
-    "rs4988238", "rs60910145", "rs16847050", "rs12149627", "rs12149630", "rs13136405", "rs7252509", "rs11887534",
-    "rs60910144", "rs16892766", "rs7712345", "rs11122334", "rs10456272", "rs5857297", "rs6119471", "rs11190870",
-    "rs7431289", "rs12224928", "rs9271160", "rs13430441",
-    # Sub-Saharan African sub-lineage / ethnic group diagnostic markers (parked for liftover audit)
-    "rs10456197", "rs10456198", "rs10456213", "rs10456234", "rs10456247", "rs10456248", "rs10456249", "rs10456252",
-    "rs10456256", "rs10456258", "rs10456265", "rs10456266", "rs10456301", "rs10456302", "rs10456303", "rs10456304",
-    "rs10456305", "rs10456306", "rs10456364", "rs10456365", "rs10456366", "rs10456367", "rs10456368", "rs10456369",
-    "rs10456370", "rs10456426", "rs10456440", "rs1572319", "rs7252505", "rs7252508", "rs12149626", "rs12149628",
-    "rs12149629", "rs41525747",
-    # Amerindian / Oceanic / Regional diagnostic anchors (parked pending coordinate review)
-    "rs10456215", "rs10456216", "rs10456269", "rs10456271", "rs10954737", "rs11614913", "rs121913059",
-    "rs12203592", "rs1393350", "rs1229984", "rs671", "rs7388531", "rs17822931",
-    # High-delta / high-Fst cross-regional tiebreakers (parked pending coordinate resolution)
-    "rs2567608", "rs3814134", "rs11803701", "rs2279744", "rs2032457", "rs7327831",
-    "rs2284553", "rs174537", "rs2033028", "rs10735788", "rs62588102", "rs45523335",
-    "rs11578877", "rs373863828",
-    # Siberian vs. East Asian vs. Native American high-Fst diagnostic anchors (parked under carryover review)
-    "rs80356779", "rs2298080", "rs1800414", "rs174546", "rs738409", "rs75493593",
-    "rs7328514", "rs11868035", "rs10166942", "rs13175330"
-}
+# Single source of truth for parked tiebreaker anchors (hand-verified with documented reasons)
+PARKED_ANCHORS_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "src/data/reference/parked_tiebreaker_anchors.json",
+)
+with open(PARKED_ANCHORS_PATH, "r", encoding="utf-8") as _f:
+    PARKED_TIEBREAKER_ANCHORS_MAP = json.load(_f)
+PARKED_TIEBREAKER_ANCHORS = {k.lower() for k in PARKED_TIEBREAKER_ANCHORS_MAP.keys()}
 
 def is_parked_marker(entry, rsid: str) -> bool:
     gene = str(entry.get("gene", ""))
-    trait = str(entry.get("trait", "")).lower()
-    desc = str(entry.get("description", "")).lower()
     r = rsid.lower()
-    return (
-        "DEEP-AIM" in gene
-        or "tiebreaker" in trait
-        or "tiebreaker" in desc
-        or r in PARKED_TIEBREAKER_ANCHORS
-    )
+    return "DEEP-AIM" in gene or r in PARKED_TIEBREAKER_ANCHORS
 
 def collect_target_rsids():
     panel_files = sorted(glob.glob("src/data/aims/*.json"))
