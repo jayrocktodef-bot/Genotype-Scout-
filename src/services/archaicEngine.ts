@@ -7,7 +7,8 @@ import { ArchaicAffinityResult, ArchaicLocusMatch } from '../types/haplogroup';
 
 export function calculateArchaicAffinity(
   snpByRsid: Record<string, string>,
-  snpByPosition: Record<string, string>
+  snpByPosition: Record<string, string>,
+  options?: { userBuild?: string } | string
 ): ArchaicAffinityResult {
   let neanderthalMatches = 0;
   let denisovanMatches = 0;
@@ -16,10 +17,40 @@ export function calculateArchaicAffinity(
 
   const functionalLoci: ArchaicLocusMatch[] = [];
 
+  const declaredUserBuild = (
+    typeof options === 'string'
+      ? options
+      : options?.userBuild || (snpByRsid as any)?.__build || ''
+  ).trim().toUpperCase();
+
   for (const snp of ARCHAIC_INFORMATIVE_SNPS) {
     const rsidKey = snp.rsid.toLowerCase();
-    const posKey = `${snp.chromosome.toLowerCase()}:${snp.position}`;
-    const userGenotype = snpByRsid[rsidKey] || snpByPosition[posKey];
+    let userGenotype = snpByRsid[rsidKey];
+
+    // Coordinate fallback only when builds agree; fail closed otherwise
+    if (!userGenotype && snp.chromosome && snp.position) {
+      const snpBuild = (snp.build || 'GRCh38').toUpperCase();
+      const b = snpBuild.toLowerCase();
+      const c = snp.chromosome.toLowerCase().replace(/^chr/, '');
+      const p = snp.position;
+
+      if (declaredUserBuild && declaredUserBuild !== 'UNKNOWN') {
+        if (declaredUserBuild === snpBuild) {
+          userGenotype =
+            snpByPosition[`${b}:chr${c}:${p}`] ||
+            snpByPosition[`${b}:chr${c}_${p}`] ||
+            snpByPosition[`${b}:${c}:${p}`] ||
+            snpByPosition[`${b}:${c}_${p}`];
+        }
+      } else if (!declaredUserBuild) {
+        // If user build is undeclared, check if snpByPosition has the build-namespaced key
+        userGenotype =
+          snpByPosition[`${b}:chr${c}:${p}`] ||
+          snpByPosition[`${b}:chr${c}_${p}`] ||
+          snpByPosition[`${b}:${c}:${p}`] ||
+          snpByPosition[`${b}:${c}_${p}`];
+      }
+    }
 
     if (!userGenotype || userGenotype === '--' || userGenotype === '00' || userGenotype === '??') {
       continue;

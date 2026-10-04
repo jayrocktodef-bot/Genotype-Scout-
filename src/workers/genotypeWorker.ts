@@ -580,12 +580,21 @@ if (typeof self !== 'undefined') {
     // Build coordinate position lookup for archaic introgression engine
     const snpByPosition: Record<string, string> = { ...mergedSnpByPosition };
     for (const [rsid, genotype] of Object.entries(imputedSnpMap)) {
-      const meta = mergedSnpMetaMap[rsid];
+      const meta = mergedSnpMetaMap[rsid] as any;
       if (meta && meta.chrom && meta.pos) {
-        snpByPosition[`${meta.chrom.toLowerCase()}:${meta.pos}`] = genotype;
+        const buildPrefix = meta.build
+          ? `${meta.build.toLowerCase()}:`
+          : (datasetBuild !== 'UNKNOWN' ? `${datasetBuild.toLowerCase()}:` : '');
+        const c = String(meta.chrom).toLowerCase().replace(/^chr/, '');
+        if (buildPrefix) {
+          snpByPosition[`${buildPrefix}chr${c}:${meta.pos}`] = genotype;
+          snpByPosition[`${buildPrefix}chr${c}_${meta.pos}`] = genotype;
+        } else {
+          snpByPosition[`${c}:${meta.pos}`] = genotype;
+        }
       }
     }
-    const archaicAffinity = calculateArchaicAffinity(imputedSnpMap, snpByPosition);
+    const archaicAffinity = calculateArchaicAffinity(imputedSnpMap, snpByPosition, datasetBuild !== 'UNKNOWN' ? datasetBuild : undefined);
     
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;

@@ -24,6 +24,8 @@ import { calculateComprehensiveScores } from '../../engines/ancestry/comprehensi
 import { calculateHumanOriginsScores } from '../../engines/ancestry/humanOriginsEngine';
 import { parseRawDNA } from '../../services/parser/engine';
 import { ALL_REGION_AIMS, buildCleanAimDatabase } from '../../data/aims';
+import { calculateArchaicAffinity } from '../../services/archaicEngine';
+import { ARCHAIC_INFORMATIVE_SNPS } from '../../data/archaicSnpDatabase';
 
 const DEPRECATED_IDS = [
   'rs10456220',
@@ -870,7 +872,58 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(matchPalCG.isComplement).toBe(false);
     });
   });
+
+  describe('(o) M5: Archaic engine: declare build and namespace lookups', () => {
+    it('ensures every archaic DB entry declares build GRCh38', () => {
+      expect(ARCHAIC_INFORMATIVE_SNPS.length).toBeGreaterThan(0);
+      for (const entry of ARCHAIC_INFORMATIVE_SNPS) {
+        expect(entry.build).toBe('GRCh38');
+        expect(entry.chromosome).toBeDefined();
+        expect(entry.position).toBeGreaterThan(0);
+      }
+    });
+
+    it('ensures coordinate fallback succeeds when user and DB build agree (GRCh38)', () => {
+      // Empty rsID map, but coordinate present for OAS1 rs10774671 (chr12:112919388)
+      const snpByRsid: Record<string, string> = {};
+      const snpByPosition: Record<string, string> = {
+        'grch38:chr12:112919388': 'GG' // Archaic allele G
+      };
+
+      const result = calculateArchaicAffinity(snpByRsid, snpByPosition, { userBuild: 'GRCh38' });
+      expect(result.neanderthalPercentage).toBeGreaterThan(0);
+      const oas1 = result.functionalLoci.find(l => l.rsid === 'rs10774671');
+      expect(oas1).toBeDefined();
+      expect(oas1?.isDerivedMatch).toBe(true);
+    });
+
+    it('ensures coordinate fallback fails closed on build disagreement (GRCh37 user vs GRCh38 DB)', () => {
+      const snpByRsid: Record<string, string> = {};
+      // Even if user provides coordinate under grch37 namespace, it must NOT match GRCh38 archaic marker
+      const snpByPosition: Record<string, string> = {
+        'grch37:chr12:112919388': 'GG',
+        '12:112919388': 'GG'
+      };
+
+      const result = calculateArchaicAffinity(snpByRsid, snpByPosition, { userBuild: 'GRCh37' });
+      expect(result.neanderthalPercentage).toBe(0);
+      const oas1 = result.functionalLoci.find(l => l.rsid === 'rs10774671');
+      expect(oas1).toBeUndefined();
+    });
+
+    it('ensures build-blind bare coordinate lookup is never matched', () => {
+      const snpByRsid: Record<string, string> = {};
+      const snpByPosition: Record<string, string> = {
+        '12:112919388': 'GG'
+      };
+
+      const result = calculateArchaicAffinity(snpByRsid, snpByPosition, { userBuild: 'UNKNOWN' });
+      expect(result.neanderthalPercentage).toBe(0);
+      expect(result.functionalLoci.length).toBe(0);
+    });
+  });
 });
+
 
 
 
