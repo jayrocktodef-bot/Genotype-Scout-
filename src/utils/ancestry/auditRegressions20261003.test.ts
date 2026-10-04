@@ -63,7 +63,7 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
 
       for (const relPath of panelFiles) {
         const fullPath = path.join(process.cwd(), relPath);
-        if (!fs.existsSync(fullPath)) continue;
+        expect(fs.existsSync(fullPath), `Panel file must exist: ${relPath}`).toBe(true);
         const content = fs.readFileSync(fullPath, 'utf-8');
         const data = JSON.parse(content);
 
@@ -206,13 +206,29 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
     it('ensures same numeric coordinate across builds produces distinct non-colliding keys', () => {
       const allowlist = getMarkerAllowlist();
 
-      // Test chr6:26860652 (HLA / HFE region) which exists in both GRCh37 and GRCh38 datasets
-      const grch38Key = 'grch38:chr6_26860652';
-      const grch37Key = 'grch37:chr6_26860652';
+      // Code-derived coordinate keys extracted from the allowlist
+      const grch38CoordKeys = Array.from(allowlist).filter(k => k.startsWith('grch38:'));
+      const grch37CoordKeys = Array.from(allowlist).filter(k => k.startsWith('grch37:'));
+      expect(grch38CoordKeys.length).toBeGreaterThan(0);
+      expect(grch37CoordKeys.length).toBeGreaterThan(0);
 
-      expect(grch38Key).not.toBe(grch37Key);
-      expect(allowlist.has('chr6_26860652')).toBe(false);
-      expect(allowlist.has('6_26860652')).toBe(false);
+      // Verify that code-derived coordinates present across builds produce distinct keys and no bare collisions
+      const grch38Suffixes = new Set(grch38CoordKeys.map(k => k.replace(/^grch38:/, '')));
+      const grch37Suffixes = new Set(grch37CoordKeys.map(k => k.replace(/^grch37:/, '')));
+      const overlapping = Array.from(grch38Suffixes).filter(s => grch37Suffixes.has(s));
+      expect(overlapping.length).toBeGreaterThan(0);
+
+      for (const suffix of overlapping.slice(0, 20)) {
+        const key38 = `grch38:${suffix}`;
+        const key37 = `grch37:${suffix}`;
+        expect(key38).not.toBe(key37);
+        expect(allowlist.has(key38)).toBe(true);
+        expect(allowlist.has(key37)).toBe(true);
+        // Neither bare suffix nor bare coordinate key should ever be present in the allowlist
+        expect(allowlist.has(suffix)).toBe(false);
+        const bareNumeric = suffix.replace(/^chr/i, '');
+        expect(allowlist.has(bareNumeric)).toBe(false);
+      }
     });
 
     it('parser emits build-namespaced coordinate keys when build is known, and bare only when unknown', () => {
@@ -260,16 +276,37 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       const unknownValues = Object.values(scoresUnknown);
       expect(unknownValues.every(v => v === 0)).toBe(true);
 
-      // 4. Same test on HumanOriginsEngine with GRAF-10k marker rs2887286 (GRCh38 chr1:1220751)
+      // 4. Same test on HumanOriginsEngine with GRAF-10k markers (GRCh38)
+      // Must supply at least 10 markers so HumanOrigins NNLS executes when build agrees
       const syntheticGrafSnpMap: Record<string, string> = {
         'grch38:chr1_1220751': 'CC',
+        'grch38:chr1_2352457': 'CC',
+        'grch38:chr1_2622185': 'CC',
+        'grch38:chr1_3765267': 'CC',
+        'grch38:chr1_3826755': 'CC',
+        'grch38:chr1_4304166': 'CC',
+        'grch38:chr1_4436599': 'CC',
+        'grch38:chr1_4657331': 'CC',
+        'grch38:chr1_4927364': 'CC',
+        'grch38:chr1_5135311': 'CC',
+        'grch38:chr1_5411457': 'CC',
+        'grch38:chr1_5639415': 'CC',
+        'grch38:chr1_5705293': 'CC',
+        'grch38:chr1_5863728': 'CC',
+        'grch38:chr1_6884744': 'CC',
       };
-      const hoAgree = await calculateHumanOriginsScores(syntheticGrafSnpMap, { userBuild: 'GRCh38' });
-      expect(hoAgree).toBeDefined();
 
-      // Disagreement fails closed
+      // Build agreement: GRCh38 kit matches GRCh38 GRAF markers and computes non-empty components
+      const hoAgree = await calculateHumanOriginsScores(syntheticGrafSnpMap, { userBuild: 'GRCh38' });
+      expect(hoAgree.length).toBeGreaterThan(0);
+
+      // Build disagreement: GRCh37 kit must NOT match GRCh38 GRAF coordinates (fails closed to empty array)
       const hoDisagree = await calculateHumanOriginsScores(syntheticGrafSnpMap, { userBuild: 'GRCh37' });
-      expect(hoDisagree).toBeDefined();
+      expect(hoDisagree).toEqual([]);
+
+      // Unknown build: unknown kit must NOT fallback to coordinates (fails closed to empty array)
+      const hoUnknown = await calculateHumanOriginsScores(syntheticGrafSnpMap, { userBuild: 'UNKNOWN' });
+      expect(hoUnknown).toEqual([]);
     });
   });
 
@@ -331,7 +368,7 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
 
       for (const relPath of panelFiles) {
         const fullPath = path.join(process.cwd(), relPath);
-        if (!fs.existsSync(fullPath)) continue;
+        expect(fs.existsSync(fullPath), `Panel file must exist: ${relPath}`).toBe(true);
         const data = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
         const entries = Array.isArray(data) ? data : Object.values(data);
 
@@ -529,7 +566,7 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
 
       for (const relPath of panelFiles) {
         const fullPath = path.join(process.cwd(), relPath);
-        if (!fs.existsSync(fullPath)) continue;
+        expect(fs.existsSync(fullPath), `Panel file must exist: ${relPath}`).toBe(true);
         const data = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
         const rsids = new Set(Object.keys(data).map(k => k.toLowerCase()));
 
