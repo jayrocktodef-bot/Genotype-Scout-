@@ -44,20 +44,58 @@ export function classifyYGenotype(genotype: string | undefined, snpInfo: any): '
   return derived.includes(allele) ? 'derived' : 'ancestral';
 }
 
-function resolve(userSnpMap: Record<string, string>, key: string, snpByPosition?: Record<string, string>): { geno?: string; snpInfo?: any } {
+function resolve(userSnpMap: Record<string, string>, key: string, snpByPosition?: Record<string, string>, userBuild?: string): { geno?: string; snpInfo?: any } {
   const lower = key.toLowerCase();
   const base = lower.split('_')[0];
   let geno = userSnpMap[lower] ?? userSnpMap[base];
   const snpInfo = SNP_LOOKUP.get(lower) ?? SNP_LOOKUP.get(base);
   if (!geno && snpInfo) {
-    const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
-    for (const p of positions) {
-      const pStr = String(p);
-      geno = userSnpMap[`y:${pStr}`] || userSnpMap[`chry:${pStr}`] || userSnpMap[pStr];
-      if (!geno && snpByPosition) {
-        geno = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+    let build = (userBuild || (userSnpMap as any)?.__build)?.toUpperCase();
+    if (!build && snpByPosition) {
+      for (const k of Object.keys(snpByPosition)) {
+        if (k.startsWith('grch38:')) { build = 'GRCH38'; break; }
+        if (k.startsWith('grch37:')) { build = 'GRCH37'; break; }
       }
-      if (geno) break;
+    }
+
+    if (build === 'GRCH38') {
+      const p = snpInfo.posHg38 || (snpInfo.build === 'GRCh38' ? snpInfo.pos : undefined);
+      if (p) {
+        const pStr = String(p);
+        geno =
+          snpByPosition?.[`grch38:chry:${pStr}`] ||
+          snpByPosition?.[`grch38:chrY:${pStr}`] ||
+          snpByPosition?.[`grch38:y:${pStr}`] ||
+          snpByPosition?.[`grch38:Y:${pStr}`] ||
+          snpByPosition?.[`grch38:chrY_${pStr}`] ||
+          userSnpMap[`grch38:chry:${pStr}`] ||
+          userSnpMap[`grch38:y:${pStr}`] ||
+          (snpByPosition?.[`y:${pStr}`] || snpByPosition?.[`Y:${pStr}`] || snpByPosition?.[`chry:${pStr}`] || snpByPosition?.[pStr] || userSnpMap[`y:${pStr}`] || userSnpMap[`chry:${pStr}`] || userSnpMap[pStr]);
+      }
+    } else if (build === 'GRCH37') {
+      const p = snpInfo.posHg19 || (snpInfo.build === 'GRCh37' ? snpInfo.pos : undefined);
+      if (p) {
+        const pStr = String(p);
+        geno =
+          snpByPosition?.[`grch37:chry:${pStr}`] ||
+          snpByPosition?.[`grch37:chrY:${pStr}`] ||
+          snpByPosition?.[`grch37:y:${pStr}`] ||
+          snpByPosition?.[`grch37:Y:${pStr}`] ||
+          snpByPosition?.[`grch37:chrY_${pStr}`] ||
+          userSnpMap[`grch37:chry:${pStr}`] ||
+          userSnpMap[`grch37:y:${pStr}`] ||
+          (snpByPosition?.[`y:${pStr}`] || snpByPosition?.[`Y:${pStr}`] || snpByPosition?.[`chry:${pStr}`] || snpByPosition?.[pStr] || userSnpMap[`y:${pStr}`] || userSnpMap[`chry:${pStr}`] || userSnpMap[pStr]);
+      }
+    } else if (!build) {
+      const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
+      for (const p of positions) {
+        const pStr = String(p);
+        geno = userSnpMap[`y:${pStr}`] || userSnpMap[`chry:${pStr}`] || userSnpMap[pStr];
+        if (!geno && snpByPosition) {
+          geno = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+        }
+        if (geno) break;
+      }
     }
   }
   return { geno, snpInfo };
@@ -68,7 +106,11 @@ function resolve(userSnpMap: Record<string, string>, key: string, snpByPosition?
  * user actually carries the mutation (derived allele) at a defining SNP -- not merely
  * because the position was present on the chip.
  */
-export function findMatchesInHaplogroups(userSnpMap: Record<string, string>, snpByPosition?: Record<string, string>): IsoggMatch[] {
+export function findMatchesInHaplogroups(
+  userSnpMap: Record<string, string>,
+  snpByPosition?: Record<string, string>,
+  userBuild?: string
+): IsoggMatch[] {
   const matches: IsoggMatch[] = [];
 
   for (const branch of HAPLOGROUP_DB) {
@@ -78,7 +120,7 @@ export function findMatchesInHaplogroups(userSnpMap: Record<string, string>, snp
 
     for (const key of [...(branch.rsids || []), ...(branch.definingSNPs || [])]) {
       if (!key) continue;
-      const { geno, snpInfo } = resolve(userSnpMap, key, snpByPosition);
+      const { geno, snpInfo } = resolve(userSnpMap, key, snpByPosition, userBuild);
       if (!geno) continue;
       const state = classifyYGenotype(geno, snpInfo);
       if (state === 'unknown') continue; // present but allele state unverifiable -> not counted

@@ -104,15 +104,24 @@ export interface YDnaAnalysisResult {
 export function predictYDNAHaplogroup(
   yMap: Record<string, string>,
   rootNode: HaplogroupNode = Y_DNA_TREE,
-  snpByPosition?: Record<string, string>
+  snpByPosition?: Record<string, string>,
+  options?: { userBuild?: string }
 ): YDnaAnalysisResult {
   const testedMarkers: any[] = [];
   let bestNode: any = null;
   let bestPath: string[] = [];
   let maxDerivedCount = -1;
 
+  let userBuild: string | undefined = options?.userBuild || (yMap as any)?.__build;
+  if (!userBuild && snpByPosition) {
+    for (const k of Object.keys(snpByPosition)) {
+      if (k.startsWith('grch38:')) { userBuild = 'GRCh38'; break; }
+      if (k.startsWith('grch37:')) { userBuild = 'GRCh37'; break; }
+    }
+  }
+
   // Deep ISOGG matches
-  const isoggMatches = findMatchesInHaplogroups(yMap, snpByPosition);
+  const isoggMatches = findMatchesInHaplogroups(yMap, snpByPosition, userBuild);
   
   // Sort ISOGG matches by specificity (branch name length as proxy for depth)
   // and match count, prioritizing deeper subclades
@@ -168,14 +177,45 @@ export function predictYDNAHaplogroup(
 
         // Check coordinate fallbacks (pos, posHg19, posHg38) if not resolved by ID
         if (!genotype && snpInfo) {
-          const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
-          for (const p of positions) {
-            const pStr = String(p);
-            genotype = yMap[`y:${pStr}`] || yMap[`chry:${pStr}`] || yMap[pStr];
-            if (!genotype && snpByPosition) {
-              genotype = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+          const userBuildUpper = userBuild ? userBuild.toUpperCase() : undefined;
+          if (userBuildUpper === 'GRCH38') {
+            const p = snpInfo.posHg38 || (snpInfo.build === 'GRCh38' ? snpInfo.pos : undefined);
+            if (p) {
+              const pStr = String(p);
+              genotype =
+                snpByPosition?.[`grch38:chry:${pStr}`] ||
+                snpByPosition?.[`grch38:chrY:${pStr}`] ||
+                snpByPosition?.[`grch38:y:${pStr}`] ||
+                snpByPosition?.[`grch38:Y:${pStr}`] ||
+                snpByPosition?.[`grch38:chrY_${pStr}`] ||
+                yMap[`grch38:chry:${pStr}`] ||
+                yMap[`grch38:y:${pStr}`] ||
+                (snpByPosition?.[`y:${pStr}`] || snpByPosition?.[`Y:${pStr}`] || snpByPosition?.[`chry:${pStr}`] || snpByPosition?.[pStr] || yMap[`y:${pStr}`] || yMap[`chry:${pStr}`] || yMap[pStr]);
             }
-            if (genotype) break;
+          } else if (userBuildUpper === 'GRCH37') {
+            const p = snpInfo.posHg19 || (snpInfo.build === 'GRCh37' ? snpInfo.pos : undefined);
+            if (p) {
+              const pStr = String(p);
+              genotype =
+                snpByPosition?.[`grch37:chry:${pStr}`] ||
+                snpByPosition?.[`grch37:chrY:${pStr}`] ||
+                snpByPosition?.[`grch37:y:${pStr}`] ||
+                snpByPosition?.[`grch37:Y:${pStr}`] ||
+                snpByPosition?.[`grch37:chrY_${pStr}`] ||
+                yMap[`grch37:chry:${pStr}`] ||
+                yMap[`grch37:y:${pStr}`] ||
+                (snpByPosition?.[`y:${pStr}`] || snpByPosition?.[`Y:${pStr}`] || snpByPosition?.[`chry:${pStr}`] || snpByPosition?.[pStr] || yMap[`y:${pStr}`] || yMap[`chry:${pStr}`] || yMap[pStr]);
+            }
+          } else if (!userBuild) {
+            const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
+            for (const p of positions) {
+              const pStr = String(p);
+              genotype = yMap[`y:${pStr}`] || yMap[`chry:${pStr}`] || yMap[pStr];
+              if (!genotype && snpByPosition) {
+                genotype = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+              }
+              if (genotype) break;
+            }
           }
         }
 

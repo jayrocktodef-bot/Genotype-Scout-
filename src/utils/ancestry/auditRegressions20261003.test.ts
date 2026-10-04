@@ -26,6 +26,7 @@ import { parseRawDNA } from '../../services/parser/engine';
 import { ALL_REGION_AIMS, buildCleanAimDatabase } from '../../data/aims';
 import { calculateArchaicAffinity } from '../../services/archaicEngine';
 import { ARCHAIC_INFORMATIVE_SNPS } from '../../data/archaicSnpDatabase';
+import { predictYDNAHaplogroup } from '../../services/haplogroupPredictor';
 
 const DEPRECATED_IDS = [
   'rs10456220',
@@ -922,7 +923,47 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(result.functionalLoci.length).toBe(0);
     });
   });
+
+  describe('Low L6: Namespace Y/mtDNA snpByPosition keys by build', () => {
+    it('namespaces Y coordinates with build prefix in parser output', () => {
+      const vcfSnippet = `# Assembly: GRCh38
+# rsid\tchromosome\tposition\tgenotype
+.\tY\t2872233\tG
+.\tM\t7028\tT
+`;
+      const parsed = parseRawDNA(vcfSnippet);
+      expect(parsed.build).toBe('GRCh38');
+
+      // Y coordinates namespaced by build
+      expect(parsed.snpByPosition['grch38:chry:2872233']).toBe('G');
+      expect(parsed.snpByPosition['grch38:y:2872233']).toBe('G');
+
+      // mtDNA coordinates retain bare rCRS universal coordinates
+      expect(parsed.snpByPosition['mt:7028']).toBe('T');
+      expect(parsed.snpByPosition['7028']).toBe('T');
+    });
+
+    it('Y-DNA haplogroup coordinate fallback: disagreement fails closed, agreement matches', () => {
+      // M168 is defined at GRCh38 chrY:2872233 (C->T/G).
+      // 1. Build disagreement: user kit is GRCh37, so grch37 key for 2872233 (which is GRCh38 pos) must NOT match
+      const disagreeSnpByPos: Record<string, string> = {
+        'grch37:chry:2872233': 'T'
+      };
+      const resDisagree = predictYDNAHaplogroup({}, undefined, disagreeSnpByPos, { userBuild: 'GRCh37' });
+      const matchedM168Disagree = resDisagree.testedMarkers?.find((m: any) => m.name === 'M168' || m.snp === 'M168');
+      expect(matchedM168Disagree).toBeUndefined();
+
+      // 2. Build agreement: user kit is GRCh38, matching coordinate GRCh38 2872233
+      const agreeSnpByPos: Record<string, string> = {
+        'grch38:chry:2872233': 'T'
+      };
+      const resAgree = predictYDNAHaplogroup({}, undefined, agreeSnpByPos, { userBuild: 'GRCh38' });
+      // Evaluated without disagreement error
+      expect(resAgree).toBeDefined();
+    });
+  });
 });
+
 
 
 

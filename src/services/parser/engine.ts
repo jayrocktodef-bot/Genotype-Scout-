@@ -323,15 +323,31 @@ export async function parseRawDNAStream(
         snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[primaryId] = { chrom, pos };
-          snpByPosition[`${chrom}:${pos}`] = genotype;
-          snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          snpMetaMap[primaryId] = { chrom, pos, ...(plan.build && plan.build !== 'UNKNOWN' ? { build: plan.build } : {}) };
+          if (buildPrefix) {
+            snpByPosition[`${buildPrefix}:chr${chrom.toLowerCase()}:${pos}`] = genotype;
+            snpByPosition[`${buildPrefix}:chr${chrom}:${pos}`] = genotype;
+          } else {
+            snpByPosition[`${chrom}:${pos}`] = genotype;
+            snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          }
           if (chrom === 'Y') {
-            snpByPosition[`y:${pos}`] = genotype;
-            snpByPosition[`Y:${pos}`] = genotype;
-            snpByPosition[`chry:${pos}`] = genotype;
-            snpByPosition[`chrY:${pos}`] = genotype;
+            if (buildPrefix) {
+              snpByPosition[`${buildPrefix}:chry:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chrY:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:y:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:Y:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chry_${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chrY_${pos}`] = genotype;
+            } else {
+              snpByPosition[`y:${pos}`] = genotype;
+              snpByPosition[`Y:${pos}`] = genotype;
+              snpByPosition[`chry:${pos}`] = genotype;
+              snpByPosition[`chrY:${pos}`] = genotype;
+            }
           } else if (chrom === 'MT' || chrom === 'M') {
+            // mtDNA uses the revised Cambridge Reference Sequence (rCRS) universal coordinate frame (1-16569 bp).
+            // It is assembly-invariant across GRCh37 and GRCh38; therefore bare rCRS coordinate keys are safe and retained.
             snpByPosition[`mt:${pos}`] = genotype;
             snpByPosition[`MT:${pos}`] = genotype;
             snpByPosition[`chrm:${pos}`] = genotype;
@@ -637,15 +653,31 @@ export function parseRawDNA(
         snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[primaryId] = { chrom, pos };
-          snpByPosition[`${chrom}:${pos}`] = genotype;
-          snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          snpMetaMap[primaryId] = { chrom, pos, ...(plan.build && plan.build !== 'UNKNOWN' ? { build: plan.build } : {}) };
+          if (buildPrefix) {
+            snpByPosition[`${buildPrefix}:chr${chrom.toLowerCase()}:${pos}`] = genotype;
+            snpByPosition[`${buildPrefix}:chr${chrom}:${pos}`] = genotype;
+          } else {
+            snpByPosition[`${chrom}:${pos}`] = genotype;
+            snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          }
           if (chrom === 'Y') {
-            snpByPosition[`y:${pos}`] = genotype;
-            snpByPosition[`Y:${pos}`] = genotype;
-            snpByPosition[`chry:${pos}`] = genotype;
-            snpByPosition[`chrY:${pos}`] = genotype;
+            if (buildPrefix) {
+              snpByPosition[`${buildPrefix}:chry:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chrY:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:y:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:Y:${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chry_${pos}`] = genotype;
+              snpByPosition[`${buildPrefix}:chrY_${pos}`] = genotype;
+            } else {
+              snpByPosition[`y:${pos}`] = genotype;
+              snpByPosition[`Y:${pos}`] = genotype;
+              snpByPosition[`chry:${pos}`] = genotype;
+              snpByPosition[`chrY:${pos}`] = genotype;
+            }
           } else if (chrom === 'MT' || chrom === 'M') {
+            // mtDNA uses the revised Cambridge Reference Sequence (rCRS) universal coordinate frame (1-16569 bp).
+            // It is assembly-invariant across GRCh37 and GRCh38; therefore bare rCRS coordinate keys are safe and retained.
             snpByPosition[`mt:${pos}`] = genotype;
             snpByPosition[`MT:${pos}`] = genotype;
             snpByPosition[`chrm:${pos}`] = genotype;
