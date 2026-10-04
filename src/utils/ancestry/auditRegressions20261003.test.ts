@@ -1,7 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import { DOUBLE_WEIGHT_MARKERS, QUADRUPLE_WEIGHT_MARKERS } from '../../services/ancestryEngine';
+import {
+  DOUBLE_WEIGHT_MARKERS,
+  QUADRUPLE_WEIGHT_MARKERS,
+  ADMIXED_1000G_POPS,
+  POP_CODE_TO_REGION,
+} from '../../services/ancestryEngine';
 import { getMarkerAllowlist } from '../markerAllowlist';
 import { matchGenotypeAlleles, isPalindromicPair, complementBase } from '../strandMatcher';
 import {
@@ -609,6 +614,40 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       const result = validateAimRecord(unshieldedMarker, 'rs686140', 'african.json');
       expect(result.valid).toBe(false);
       expect(result.errors.some(e => e.includes('chromosome mismatch'))).toBe(true);
+    });
+  });
+
+  describe('(i) M-1: Stop averaging admixed 1000G pops into continental frequencies', () => {
+    it('ensures all admixed 1000G populations are in ADMIXED_1000G_POPS and excluded from POP_CODE_TO_REGION', () => {
+      const expectedAdmixed = ['ASW', 'ACB', 'MXL', 'PUR', 'CLM', 'PEL'];
+      for (const pop of expectedAdmixed) {
+        expect(ADMIXED_1000G_POPS.has(pop)).toBe(true);
+        expect(POP_CODE_TO_REGION[pop]).toBeUndefined();
+      }
+    });
+
+    it('ensures AFR relevant populations only contain unadmixed reference populations', () => {
+      const afrPops = Object.keys(POP_CODE_TO_REGION).filter(
+        p => POP_CODE_TO_REGION[p] === 'AFR' && !ADMIXED_1000G_POPS.has(p)
+      );
+      expect(afrPops).toContain('YRI');
+      expect(afrPops).toContain('LWK');
+      expect(afrPops).toContain('GWD');
+      expect(afrPops).toContain('MSL');
+      expect(afrPops).toContain('ESN');
+      expect(afrPops).not.toContain('ASW');
+      expect(afrPops).not.toContain('ACB');
+    });
+
+    it('ensures AMR continental averaging does not include PUR, CLM, MXL, PEL', () => {
+      const amrPops = Object.keys(POP_CODE_TO_REGION).filter(
+        p => POP_CODE_TO_REGION[p] === 'AMR' && !ADMIXED_1000G_POPS.has(p)
+      );
+      expect(amrPops).not.toContain('PUR');
+      expect(amrPops).not.toContain('CLM');
+      expect(amrPops).not.toContain('MXL');
+      expect(amrPops).not.toContain('PEL');
+      expect(amrPops.length).toBe(0);
     });
   });
 });

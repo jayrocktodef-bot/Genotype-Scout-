@@ -57,12 +57,13 @@ export async function initializeGlobalAnchors() {
   console.log(`📡 Ancestry Engine: Integrated ${Object.keys(global).length} Global Anchors`);
 }
 
-const POP_CODE_TO_REGION: Record<string, string> = {
+export const ADMIXED_1000G_POPS = new Set(['ASW', 'ACB', 'MXL', 'PUR', 'CLM', 'PEL']);
+
+export const POP_CODE_TO_REGION: Record<string, string> = {
   'GBR': 'EUR', 'CEU': 'EUR', 'FIN': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
-  'YRI': 'AFR', 'LWK': 'AFR', 'GWD': 'AFR', 'MSL': 'AFR', 'ESN': 'AFR', 'ASW': 'AFR', 'ACB': 'AFR',
+  'YRI': 'AFR', 'LWK': 'AFR', 'GWD': 'AFR', 'MSL': 'AFR', 'ESN': 'AFR',
   'CHB': 'EAS', 'CHS': 'EAS', 'CDX': 'EAS', 'KHV': 'EAS', 'JPT': 'EAS',
   'GIH': 'SAS', 'PJL': 'SAS', 'BEB': 'SAS', 'STU': 'SAS', 'ITU': 'SAS',
-  'PUR': 'AMR', 'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR',
   'OCE': 'OCE', 'PAP': 'OCE', 'BOU': 'OCE', 'sgdp_papuan': 'OCE', 'sgdp_bougainville': 'OCE', 'sgdp_australian': 'OCE', 'sgdp_hawaiian': 'OCE', 'sgdp_maori': 'OCE'
 };
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
@@ -515,7 +516,9 @@ export function runAncestryInference(
           }
           
           if (code) {
-            const relevantPops = Object.keys(POP_CODE_TO_REGION).filter(p => POP_CODE_TO_REGION[p] === code);
+            const relevantPops = Object.keys(POP_CODE_TO_REGION).filter(
+              p => POP_CODE_TO_REGION[p] === code && !ADMIXED_1000G_POPS.has(p)
+            );
             let totalPopFreq = 0;
             let popEntries = 0;
             const normGenotype = genotype.split('').sort().join('');
