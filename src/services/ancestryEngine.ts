@@ -470,9 +470,14 @@ export function runAncestryInference(
         }
 
         // Compute alternative-allele dosage (0, 1, or 2) using unified strand matcher
+        const refAllele =
+          (aim?.alleles && aim.alleles.length > 1 ? aim.alleles[1] : undefined) ||
+          markerInfo?.ref?.toUpperCase() ||
+          (marker.alleles && marker.alleles.length > 1 ? marker.alleles[1].toUpperCase() : undefined);
+
         const matchRes = matchGenotypeAlleles(genotype, alt, {
-          isPalindromic: aim?.palindromic,
-          refAllele: aim?.alleles && aim.alleles.length > 1 ? aim.alleles[1] : undefined,
+          isPalindromic: aim?.palindromic ?? aim?.isPalindromic,
+          refAllele,
         });
         const dosage = matchRes.dosage;
 
@@ -744,10 +749,14 @@ export function runAncestryInference(
               continue;
             }
 
-            const aim = extendedAnchorMap.get(rsid);
+            const subRefAllele =
+              (subAim?.alleles && subAim.alleles.length > 1 ? subAim.alleles[1] : undefined) ||
+              subMarkerInfo?.ref?.toUpperCase() ||
+              (marker.alleles && marker.alleles.length > 1 ? marker.alleles[1].toUpperCase() : undefined);
+            const aim = subAim;
             const subMatchRes = matchGenotypeAlleles(genotype, subAlt, {
-              isPalindromic: aim?.palindromic,
-              refAllele: aim?.alleles && aim.alleles.length > 1 ? aim.alleles[1] : undefined,
+              isPalindromic: aim?.palindromic ?? aim?.isPalindromic,
+              refAllele: subRefAllele,
             });
             const userDosage = subMatchRes.dosage * 0.5;
 

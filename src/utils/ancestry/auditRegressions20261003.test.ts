@@ -796,19 +796,19 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
 
   describe('(m) M2: ONNX extractor follows strand policy', () => {
     it('ensures minus-strand calls for non-palindromic SNPs match dosage via complement', () => {
-      // Custom feature list with one non-palindromic marker where ALT is 'A' (e.g. A/C)
-      const customFeatureList = ['rs_test_strand_non_pal'];
+      // Real AIM rs704257 with alleles ['A', 'G'] in anchor map
+      const customFeatureList = ['rs704257'];
       const customAltList = ['A'];
       
       // User has minus-strand 'TT' (complement of forward 'AA')
-      const userGenotypeMinus = { rs_test_strand_non_pal: 'TT' };
+      const userGenotypeMinus = { rs704257: 'TT' };
       const vector = extractOnnxFeatureMatrix(userGenotypeMinus, customFeatureList, customAltList);
       
       // Extractor must match 2 counts of A via complement
       expect(vector[0]).toBe(2.0);
       
       // Matcher also agrees
-      const matchRes = matchGenotypeAlleles('TT', 'A', { otherAllele: 'C' });
+      const matchRes = matchGenotypeAlleles('TT', 'A', { otherAllele: 'G' });
       expect(matchRes.dosage).toBe(2);
       expect(vector[0]).toBe(matchRes.dosage);
     });
@@ -829,7 +829,49 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(matchRes.isPalindromic).toBe(true);
     });
   });
+
+  describe('(n) M3: Fail closed on palindromics for non-AIM markers', () => {
+    it('ensures unknown-allele A/T and C/G are exact-only and never complement', () => {
+      // When alleles are unknown (options undefined or empty):
+      // User 'AA', target 'T' -> comp(A)=T would match if complement were allowed, but fails closed
+      expect(matchGenotypeAlleles('AA', 'T').dosage).toBe(0);
+      expect(matchGenotypeAlleles('TT', 'A').dosage).toBe(0);
+      expect(matchGenotypeAlleles('CC', 'G').dosage).toBe(0);
+      expect(matchGenotypeAlleles('GG', 'C').dosage).toBe(0);
+
+      // Exact forward match still works
+      expect(matchGenotypeAlleles('AA', 'A').dosage).toBe(2);
+      expect(matchGenotypeAlleles('AG', 'A').dosage).toBe(1);
+    });
+
+    it('ensures complement works when marker is known non-palindromic', () => {
+      // Known pair A/C (non-palindromic):
+      // Target 'A', user has minus-strand 'TT' -> comp('T') === 'A'
+      const matchNonPal = matchGenotypeAlleles('TT', 'A', { refAllele: 'C' });
+      expect(matchNonPal.dosage).toBe(2);
+      expect(matchNonPal.isComplement).toBe(true);
+
+      // Known pair G/T (non-palindromic):
+      // Target 'G', user has minus-strand 'CC' -> comp('C') === 'G'
+      const matchGT = matchGenotypeAlleles('CC', 'G', { refAllele: 'T' });
+      expect(matchGT.dosage).toBe(2);
+      expect(matchGT.isComplement).toBe(true);
+    });
+
+    it('ensures complement does NOT work when marker is known palindromic', () => {
+      // Known pair A/T (palindromic):
+      const matchPalAT = matchGenotypeAlleles('TT', 'A', { refAllele: 'T' });
+      expect(matchPalAT.dosage).toBe(0);
+      expect(matchPalAT.isComplement).toBe(false);
+
+      // Known pair C/G (palindromic):
+      const matchPalCG = matchGenotypeAlleles('GG', 'C', { refAllele: 'G' });
+      expect(matchPalCG.dosage).toBe(0);
+      expect(matchPalCG.isComplement).toBe(false);
+    });
+  });
 });
+
 
 
 

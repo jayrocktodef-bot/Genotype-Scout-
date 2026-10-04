@@ -100,14 +100,14 @@ export function matchGenotypeAlleles(
   const target = (targetAllele || '').toUpperCase().trim();
   const userBases = parseUserGenotype(userGenotype);
 
-  // Determine if locus is palindromic
+  // Determine if locus is palindromic and if locus is verified non-palindromic
+  const knownRef = options?.refAllele || options?.otherAllele;
+  const hasKnownPair = Boolean(knownRef && target);
   let palindromic = Boolean(options?.isPalindromic);
-  if (!palindromic) {
-    const ref = options?.refAllele || options?.otherAllele;
-    if (ref && target) {
-      palindromic = isPalindromicPair(ref, target);
-    }
+  if (!palindromic && hasKnownPair) {
+    palindromic = isPalindromicPair(knownRef, target);
   }
+  const isKnownNonPalindromic = options?.isPalindromic === false || (hasKnownPair && !palindromic);
 
   if (!target || userBases.length === 0) {
     return {
@@ -128,8 +128,10 @@ export function matchGenotypeAlleles(
       dosage += 1;
       matched.push(base);
     }
-    // 2. Complement tried only on non-match AND NEVER on palindromic SNPs
-    else if (!palindromic && complementBase(base) === target) {
+    // 2. Complement tried only on non-match AND NEVER on palindromic SNPs.
+    // If marker alleles are unknown, fail closed on potentially palindromic genotypes (exact-only).
+    // Complement only on verified/known non-palindromic markers.
+    else if (isKnownNonPalindromic && complementBase(base) === target) {
       dosage += 1;
       complementUsed = true;
       matched.push(`comp(${base})`);
