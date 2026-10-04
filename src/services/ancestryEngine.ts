@@ -704,6 +704,11 @@ export function runAncestryInference(
       wInfo.proportions.forEach((prob, i) => {
         const continent = continentsToScore[i];
         let filteredProb = prob < 0.01 ? 0 : prob; // Raised threshold to 1.0% to prune noise (Option B)
+        if (prob > 0 && prob < 0.01) {
+          console.debug(
+            `[ancestryEngine] Noise-floor: Dropping sub-1% window contribution for ${continent} (${(prob * 100).toFixed(4)}%)`
+          );
+        }
 
         continentalCounts[continent] += filteredProb;
         chromCounts[continent] += filteredProb;
@@ -829,7 +834,13 @@ export function runAncestryInference(
       chromosomeData[chrom] = {};
       continentsToScore.forEach(c => {
         const pct = (chromCounts[c] / chromTotal) * 100;
-        if (pct >= 0.01) chromosomeData[chrom][c] = pct; // Even lower threshold
+        if (pct >= 0.01) {
+          chromosomeData[chrom][c] = pct; // Even lower threshold
+        } else if (pct > 0) {
+          console.debug(
+            `[ancestryEngine] Noise-floor: Dropping sub-1% chromosome ${chrom} contribution for ${c} (${pct.toFixed(4)}%)`
+          );
+        }
       });
     }
   }
@@ -875,7 +886,13 @@ export function runAncestryInference(
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
       const pct = (continentalCounts[c] / totalSegments) * 100;
-      if (pct >= 0.01) continentalScores[c] = pct; // Even lower threshold
+      if (pct >= 0.01) {
+        continentalScores[c] = pct; // Even lower threshold
+      } else if (pct > 0) {
+        console.debug(
+          `[ancestryEngine] Noise-floor: Dropping sub-1% continental score for ${c} (${pct.toFixed(4)}%)`
+        );
+      }
     });
 
     const newTotal = Object.values(continentalScores).reduce((a, b) => a + b, 0);
@@ -999,6 +1016,10 @@ export function runAncestryInference(
       // Only keep regional scores that are statistically significant
       if (scaledPercentage >= 0.01) { // Even lower threshold
         regionalScores[pop.name] = scaledPercentage;
+      } else if (scaledPercentage > 0) {
+        console.debug(
+          `[ancestryEngine] Noise-floor: Dropping sub-1% regional score for ${pop.name} (${scaledPercentage.toFixed(4)}%)`
+        );
       }
       
       // If the population is highly dominant within its continent OR has a strong overall presence

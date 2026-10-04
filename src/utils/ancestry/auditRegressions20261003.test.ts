@@ -1139,6 +1139,15 @@ rs2887286\t1\t1220751\tCC
       expect(content).toMatch(/1000 Genomes|1000G/);
       expect(content).toMatch(/0\.500|0\.250|rounding/i);
     });
+
+    it('verifies src/data/README.md documents noise-floor provenance and sub-1% threshold', () => {
+      const readmePath = path.join(process.cwd(), 'src/data/README.md');
+      expect(fs.existsSync(readmePath)).toBe(true);
+      const content = fs.readFileSync(readmePath, 'utf-8');
+      expect(content).toMatch(/Noise-Floor|noise floor/i);
+      expect(content).toMatch(/sub-1%|1\.0%|0\.01/i);
+      expect(content).toMatch(/console\.debug/);
+    });
   });
 });
 

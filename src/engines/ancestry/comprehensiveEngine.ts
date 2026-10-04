@@ -133,6 +133,10 @@ export function calculateComprehensiveScores(
     const percentage = (relativeProbs[c] / totalProb) * 100;
     if (percentage > 0.1) {
       finalScores[c] = percentage;
+    } else if (percentage > 0) {
+      console.debug(
+        `[comprehensiveEngine] Noise-floor: Dropping sub-threshold contribution for ${c} (${percentage.toFixed(4)}%)`
+      );
     }
   });
 
