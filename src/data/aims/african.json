@@ -13565,37 +13565,6 @@
     "description": "Fox Chase African AIM panel marker (Chr 1).",
     "build": "GRCh38"
   },
-  "rs1205": {
-    "rsid": "rs1205",
-    "chromosome": "7",
-    "position": 112120500,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A",
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.6,
-      "EUR": 0.35,
-      "EAS": 0.3,
-      "AMR": 0.4,
-      "SAS": 0.38,
-      "MENA": 0.42,
-      "OCE": 0
-    },
-    "subFrequencies": {
-      "African": 0.6,
-      "AfricanAmerican": 0.5,
-      "AfricanCaribbean": 0.55
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "CRP",
-    "trait": "Ancestry",
-    "description": "Diagnostic tiebreaker for deep indigenous Khoisan lineage (Ju/'hoansi, Nama)",
-    "build": "GRCh38"
-  },
   "rs12050362": {
     "rsid": "rs12050362",
     "chromosome": "5",

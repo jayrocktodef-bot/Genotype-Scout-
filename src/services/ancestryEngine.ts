@@ -130,9 +130,7 @@ export const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs11578877", "rs373863828",
   // Siberian vs. East Asian vs. Native American high-Fst diagnostic anchors
   "rs80356779", "rs2298080", "rs1800414", "rs174546", "rs738409", "rs75493593",
-  "rs7328514", "rs11868035", "rs10166942", "rs13175330",
-  // Full regional tiebreaker grid (rs1001 through rs1270)
-  ...Array.from({ length: 270 }, (_, i) => `rs${1001 + i}`)
+  "rs7328514", "rs11868035", "rs10166942", "rs13175330"
 ]);
 
 // Viterbi decoding for HMM with physical recombination modeling and Laplace smoothing

@@ -277,4 +277,93 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(resAT.isPalindromic).toBe(true);
     });
   });
+
+  describe('(e) Workstream A: Re-source or drop the rs1001-rs1270 tiebreaker grid', () => {
+    it('ensures no panel record matches ^rs1[0-2]\\d{2}$ unless coordinates/alleles equal the cache entry', () => {
+      const panelFiles = [
+        'src/data/aims/global.json',
+        'src/data/aims/african.json',
+        'src/data/aims/african_american.json',
+        'src/data/aims/central_asian.json',
+        'src/data/aims/east_asian.json',
+        'src/data/aims/european.json',
+        'src/data/aims/middle_eastern.json',
+        'src/data/aims/native_american.json',
+        'src/data/aims/north_african.json',
+        'src/data/aims/oceanian.json',
+        'src/data/aims/south_asian.json',
+        'src/data/master_aims_normalized.json',
+      ];
+      const ensemblCache = JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), 'src/data/reference/ensembl_cache.json'), 'utf-8')
+      );
+      const gridRegex = /^rs1[0-2]\d{2}$/i;
+
+      for (const relPath of panelFiles) {
+        const fullPath = path.join(process.cwd(), relPath);
+        if (!fs.existsSync(fullPath)) continue;
+        const data = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
+        const entries = Array.isArray(data) ? data : Object.values(data);
+
+        for (const entry of entries) {
+          const rsid = (entry.rsid || '').toLowerCase();
+          if (gridRegex.test(rsid)) {
+            const cached = ensemblCache[rsid];
+            expect(cached).toBeDefined();
+            expect(cached.status).not.toBe('UNRESOLVED');
+            expect(String(entry.chromosome).toUpperCase().replace(/^CHR/, '')).toBe(
+              String(cached.chromosome).toUpperCase().replace(/^CHR/, '')
+            );
+            expect(Number(entry.position)).toBe(Number(cached.position));
+            if (entry.alleles && cached.alleles) {
+              const allowed = cached.alleles.toUpperCase().split(/[\/,|]/);
+              for (const a of entry.alleles) {
+                expect(allowed).toContain(a.toUpperCase());
+              }
+            }
+          }
+        }
+      }
+    });
+
+    it('ensures QUADRUPLE_WEIGHT_MARKERS contains no generated sequences (assert no Array.from in its source)', () => {
+      const engineSource = fs.readFileSync(
+        path.join(process.cwd(), 'src/services/ancestryEngine.ts'),
+        'utf-8'
+      );
+      const startIdx = engineSource.indexOf('QUADRUPLE_WEIGHT_MARKERS = new Set<string>([');
+      const endIdx = engineSource.indexOf(']);', startIdx);
+      const quadrupleBlock = engineSource.slice(startIdx, endIdx);
+
+      expect(quadrupleBlock).not.toContain('Array.from');
+      expect(quadrupleBlock).not.toContain('1001');
+
+      // Also assert that none of the generated grid rsIDs (rs1001..rs1270) are in the Set
+      for (let i = 1001; i <= 1270; i++) {
+        expect(QUADRUPLE_WEIGHT_MARKERS.has(`rs${i}`)).toBe(false);
+      }
+    });
+
+    it('asserts a grid-pattern rsID with wrong coordinates fails validation', () => {
+      // Fabricated coordinates for rs1010 (panel had chr7:74958034 vs real chr2:85581859)
+      const fakeGridRecord = {
+        rsid: 'rs1010',
+        chromosome: '7',
+        position: 74958034,
+        region: 'European',
+        alleles: ['C', 'T'],
+        frequencies: { EUR: 0.97, AFR: 0.01 },
+        weight: 10,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(fakeGridRecord, 'rs1010', 'global.json');
+      expect(result.valid).toBe(false);
+      expect(
+        result.errors.some(
+          e => e.includes('chromosome mismatch') || e.includes('cache miss') || e.includes('Ensembl')
+        )
+      ).toBe(true);
+    });
+  });
 });
