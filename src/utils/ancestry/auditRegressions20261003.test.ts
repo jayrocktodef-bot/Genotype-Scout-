@@ -28,6 +28,7 @@ import { calculateArchaicAffinity } from '../../services/archaicEngine';
 import { ARCHAIC_INFORMATIVE_SNPS } from '../../data/archaicSnpDatabase';
 import { predictYDNAHaplogroup } from '../../services/haplogroupPredictor';
 import { computeDatasetLAI } from './paintedAncestry';
+import { sliceSnpsForEngine } from '../engineMarkerSlicer';
 
 const DEPRECATED_IDS = [
   'rs10456220',
@@ -1049,6 +1050,22 @@ rs2887286\t1\t1220751\tCC
       expect(parsed.snpCount).toBe(1);
       expect(parsed.unknownBuildCoordinateDrops).toBe(0);
       expect(parsed.snpMap['grch38:chr6_26860652']).toBe('AG');
+    });
+  });
+
+  describe('Low L9: Slicer passes through any namespaced build key', () => {
+    it('ensures t2t-chm13:chr1_12345 fixture survives slicing in worker payloads', () => {
+      const largeMap: Record<string, string> = {};
+      for (let i = 0; i < 3000; i++) largeMap[`bg_marker_${i}`] = 'AA';
+
+      // Rare kit builds
+      largeMap['t2t-chm13:chr1_12345'] = 'CT';
+      largeMap['hg18:chr2_54321'] = 'GG';
+
+      const sliced = sliceSnpsForEngine('matchHealthAndWellness', largeMap);
+      expect(sliced.slicedSnpMap['t2t-chm13:chr1_12345']).toBe('CT');
+      expect(sliced.slicedSnpMap['hg18:chr2_54321']).toBe('GG');
+      expect(sliced.slicedSnpMap['bg_marker_0']).toBeUndefined();
     });
   });
 });

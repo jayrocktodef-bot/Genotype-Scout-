@@ -59,6 +59,14 @@ function addMarkerKey(set: Set<string>, rsid?: string, chrom?: string | number, 
       set.add(`grch37:${c}_${p}`);
       set.add(`grch37:chr${c}:${p}`);
       set.add(`grch37:${c}:${p}`);
+      set.add(`t2t-chm13:chr${c}_${p}`);
+      set.add(`t2t-chm13:${c}_${p}`);
+      set.add(`t2t-chm13:chr${c}:${p}`);
+      set.add(`t2t-chm13:${c}:${p}`);
+      set.add(`hg18:chr${c}_${p}`);
+      set.add(`hg18:${c}_${p}`);
+      set.add(`hg18:chr${c}:${p}`);
+      set.add(`hg18:${c}:${p}`);
       set.add(`chr${c}_${p}`);
       set.add(`${c}_${p}`);
       set.add(`chr${c}:${p}`);
@@ -310,6 +318,21 @@ export function sliceSnpsForEngine(
       slicedSnpMap[key] = val;
       if (slicedMetaMap && snpMetaMap && snpMetaMap[key]) {
         slicedMetaMap[key] = snpMetaMap[key];
+      }
+    }
+  }
+
+  // Pass through any *:chr...-shaped namespaced key (e.g. t2t-chm13:chr1_12345, hg18:chr1:12345)
+  // to avoid silent data loss on rare kit builds during parallel worker dispatch.
+  // Downstream engines match coordinates only when declared user build matches reference build.
+  const NAMESPACED_CHR_KEY_REGEX = /^[a-z0-9_-]+:chr[0-9xy_:]+/i;
+  for (const key of Object.keys(snpMap)) {
+    if (NAMESPACED_CHR_KEY_REGEX.test(key)) {
+      if (slicedSnpMap[key] === undefined) {
+        slicedSnpMap[key] = snpMap[key];
+        if (slicedMetaMap && snpMetaMap && snpMetaMap[key]) {
+          slicedMetaMap[key] = snpMetaMap[key];
+        }
       }
     }
   }

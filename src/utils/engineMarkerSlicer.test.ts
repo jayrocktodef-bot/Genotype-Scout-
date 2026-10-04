@@ -77,4 +77,18 @@ describe('engineMarkerSlicer', () => {
     const fallback = sliceSnpsForEngine('unknown_custom_engine', largeMap);
     expect(fallback.slicedSnpMap).toBe(largeMap);
   });
+
+  it('passes through any *:chr...-shaped namespaced build key (t2t-chm13:chr1_12345 fixture survives slicing)', () => {
+    const largeMap: Record<string, string> = {};
+    for (let i = 0; i < 3000; i++) largeMap[`bg_marker_${i}`] = 'AA';
+
+    largeMap['t2t-chm13:chr1_12345'] = 'CT';
+    largeMap['hg18:chr2_54321'] = 'GG';
+
+    const sliced = sliceSnpsForEngine('matchHealthAndWellness', largeMap);
+    expect(sliced.slicedSnpMap['t2t-chm13:chr1_12345']).toBe('CT');
+    expect(sliced.slicedSnpMap['hg18:chr2_54321']).toBe('GG');
+    // Background synthetic markers must still be dropped
+    expect(sliced.slicedSnpMap['bg_marker_0']).toBeUndefined();
+  });
 });
