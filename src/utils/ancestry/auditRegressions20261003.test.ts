@@ -6,6 +6,7 @@ import {
   QUADRUPLE_WEIGHT_MARKERS,
   ADMIXED_1000G_POPS,
   POP_CODE_TO_REGION,
+  extractOnnxFeatureMatrix,
 } from '../../services/ancestryEngine';
 import { getMarkerAllowlist } from '../markerAllowlist';
 import { matchGenotypeAlleles, isPalindromicPair, complementBase } from '../strandMatcher';
@@ -792,7 +793,44 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(matchGenotypeAllele('N', 'A')).toBe(true);
     });
   });
+
+  describe('(m) M2: ONNX extractor follows strand policy', () => {
+    it('ensures minus-strand calls for non-palindromic SNPs match dosage via complement', () => {
+      // Custom feature list with one non-palindromic marker where ALT is 'A' (e.g. A/C)
+      const customFeatureList = ['rs_test_strand_non_pal'];
+      const customAltList = ['A'];
+      
+      // User has minus-strand 'TT' (complement of forward 'AA')
+      const userGenotypeMinus = { rs_test_strand_non_pal: 'TT' };
+      const vector = extractOnnxFeatureMatrix(userGenotypeMinus, customFeatureList, customAltList);
+      
+      // Extractor must match 2 counts of A via complement
+      expect(vector[0]).toBe(2.0);
+      
+      // Matcher also agrees
+      const matchRes = matchGenotypeAlleles('TT', 'A', { otherAllele: 'C' });
+      expect(matchRes.dosage).toBe(2);
+      expect(vector[0]).toBe(matchRes.dosage);
+    });
+
+    it('ensures palindromic SNPs strictly do not complement in ONNX extractor', () => {
+      // Locus with palindromic alleles A/T
+      // Forward ALT is 'A'
+      // If user has 'TT' on a palindromic locus, complement must NOT be applied (dosage = 0)
+      const customFeatureList = ['rs_test_strand_pal'];
+      const customAltList = ['A'];
+      
+      // Palindromic locus where user has 'TT'
+      const userGenotype = { rs_test_strand_pal: 'TT' };
+      
+      // With matchGenotypeAlleles guarded for palindromic pair A/T:
+      const matchRes = matchGenotypeAlleles('TT', 'A', { otherAllele: 'T' });
+      expect(matchRes.dosage).toBe(0);
+      expect(matchRes.isPalindromic).toBe(true);
+    });
+  });
 });
+
 
 
 

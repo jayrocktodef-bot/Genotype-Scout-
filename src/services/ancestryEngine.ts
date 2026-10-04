@@ -1168,11 +1168,12 @@ export function extractOnnxFeatureMatrix(
     const aim = extendedAnchorMap.get(lowerRsid);
     const alt = (expectedAlt || aim?.alleles?.[0])?.toUpperCase();
     if (alt) {
-      let count = 0;
-      for (const char of rawGeno) {
-        if (char.toUpperCase() === alt) count++;
-      }
-      vector[index] = count;
+      const matchRes = matchGenotypeAlleles(rawGeno, alt, {
+        refAllele: aim?.alleles?.[1] || null,
+        otherAllele: aim?.alleles?.[1] || null,
+        isPalindromic: aim?.isPalindromic ?? null,
+      });
+      vector[index] = matchRes.dosage;
     } else {
       if (rawGeno[0] !== rawGeno[1]) {
         vector[index] = 1.0;
