@@ -9,6 +9,7 @@ import {
 } from '../../services/ancestryEngine';
 import { getMarkerAllowlist } from '../markerAllowlist';
 import { matchGenotypeAlleles, isPalindromicPair, complementBase } from '../strandMatcher';
+import { matchGenotypeAllele } from '../genomicMasks';
 import {
   validateAimRecord,
   validateAIMsData,
@@ -762,6 +763,36 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       }
     });
   });
+
+  describe('(l) M1: IUPAC D must not beat deletion D', () => {
+    it('ensures single D resolves to deletion across various formats', () => {
+      expect(matchGenotypeAllele('D', 'D')).toBe(true);
+      expect(matchGenotypeAllele('D', 'DEL')).toBe(true);
+      expect(matchGenotypeAllele('DD', 'D')).toBe(true);
+      expect(matchGenotypeAllele('D', '-')).toBe(true);
+      expect(matchGenotypeAllele('DEL', '<DEL>')).toBe(true);
+    });
+
+    it('ensures deletion D never matches a derived base (A, G, T, C)', () => {
+      expect(matchGenotypeAllele('D', 'A')).toBe(false);
+      expect(matchGenotypeAllele('D', 'G')).toBe(false);
+      expect(matchGenotypeAllele('D', 'T')).toBe(false);
+      expect(matchGenotypeAllele('D', 'C')).toBe(false);
+      expect(matchGenotypeAllele('DD', 'A')).toBe(false);
+    });
+
+    it('ensures genuine IUPAC codes remain functional and unaffected', () => {
+      expect(matchGenotypeAllele('R', 'A')).toBe(true);
+      expect(matchGenotypeAllele('R', 'G')).toBe(true);
+      expect(matchGenotypeAllele('R', 'T')).toBe(false);
+      expect(matchGenotypeAllele('Y', 'C')).toBe(true);
+      expect(matchGenotypeAllele('Y', 'T')).toBe(true);
+      expect(matchGenotypeAllele('Y', 'A')).toBe(false);
+      expect(matchGenotypeAllele('B', 'C')).toBe(true);
+      expect(matchGenotypeAllele('N', 'A')).toBe(true);
+    });
+  });
 });
+
 
 

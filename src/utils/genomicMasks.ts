@@ -122,22 +122,8 @@ export function matchGenotypeAllele(userGenotype: string, targetAllele: string):
   // 1. Direct equality
   if (u === t) return true;
 
-  // 2. IUPAC ambiguity codes mapping
-  const IUPAC_EXPANSION: Record<string, string> = {
-    'R': 'AG', 'Y': 'CT', 'S': 'GC', 'W': 'AT', 'K': 'GT', 'M': 'AC',
-    'B': 'CGT', 'D': 'AGT', 'H': 'ACT', 'V': 'ACG', 'N': 'ACGT'
-  };
-
-  if (u.length === 1 && IUPAC_EXPANSION[u]) {
-    return IUPAC_EXPANSION[u].includes(t);
-  }
-
-  // 3. Haploid single-letter / pseudo-homozygous match ('A' or 'AA' matches target 'A')
-  // Note: Heterozygous calls on non-PAR Y chromosome ('AG') are probe artifacts/noise and are excluded.
-  if (u.length === 2 && u[0] === u[1] && u[0] === t) return true;
-  if (u.length === 1 && u === t) return true;
-
-  // 4. Deletion normalization
+  // 2. Deletion normalization (pipeline convention: 'D' denotes Deletion per haplogroupPredictor.ts)
+  // Must execute before IUPAC expansion so single-'D' is never interpreted as IUPAC 'AGT'.
   const isUserDel = (
     u === 'D' ||
     u === 'DD' ||
@@ -155,9 +141,11 @@ export function matchGenotypeAllele(userGenotype: string, targetAllele: string):
     t === '*' ||
     t.startsWith('DEL')
   );
-  if (isUserDel && isTargetDel) return true;
+  if (isUserDel || isTargetDel) {
+    return isUserDel && isTargetDel;
+  }
 
-  // 5. Insertion normalization
+  // 3. Insertion normalization
   const isUserIns = (
     u === 'I' ||
     u === 'II' ||
@@ -173,7 +161,26 @@ export function matchGenotypeAllele(userGenotype: string, targetAllele: string):
     t === '<INS>' ||
     t.startsWith('INS')
   );
-  if (isUserIns && isTargetIns) return true;
+  if (isUserIns || isTargetIns) {
+    return isUserIns && isTargetIns;
+  }
+
+  // 4. IUPAC ambiguity codes mapping
+  // Note: IUPAC 'D' (meaning 'not C', i.e. A/G/T) is excluded here because in microarray raw data
+  // and throughout the Genotype Scout pipeline, 'D' exclusively denotes Deletion.
+  const IUPAC_EXPANSION: Record<string, string> = {
+    'R': 'AG', 'Y': 'CT', 'S': 'GC', 'W': 'AT', 'K': 'GT', 'M': 'AC',
+    'B': 'CGT', 'H': 'ACT', 'V': 'ACG', 'N': 'ACGT'
+  };
+
+  if (u.length === 1 && IUPAC_EXPANSION[u]) {
+    return IUPAC_EXPANSION[u].includes(t);
+  }
+
+  // 5. Haploid single-letter / pseudo-homozygous match ('A' or 'AA' matches target 'A')
+  // Note: Heterozygous calls on non-PAR Y chromosome ('AG') are probe artifacts/noise and are excluded.
+  if (u.length === 2 && u[0] === u[1] && u[0] === t) return true;
+  if (u.length === 1 && u === t) return true;
 
   return false;
 }
