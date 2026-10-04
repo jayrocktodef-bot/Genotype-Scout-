@@ -114,7 +114,7 @@ export interface ParsedGenomicDataset {
   mtDnaSnps: number;
   inferredBiologicalSex: 'MALE' | 'FEMALE' | 'UNKNOWN';
   snpMap: Record<string, string>;
-  snpMetaMap: Record<string, { chrom: string; pos: number }>;
+  snpMetaMap: Record<string, { chrom: string; pos: number; build?: string }>;
   xMap: Record<string, string>;
   yMap: Record<string, string>;
   mtMap: Record<string, string>;

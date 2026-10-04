@@ -556,7 +556,7 @@ export function computeDatasetLAI(
 
   try {
     const userSnpMap: Record<string, string> = dataset.mergedSnpMap || {};
-    const userMetaMap: Record<string, { chrom: string; pos: number }> = dataset.mergedSnpMetaMap || {};
+    const userMetaMap: Record<string, { chrom: string; pos: number; build?: string }> = dataset.mergedSnpMetaMap || {};
 
     // Build fast lookup map supporting direct rsID and genomic coordinate keys (chr_pos, chr:pos)
     let getGenotype: (rsid: string, chrom?: string, pos?: number) => string | undefined;
@@ -565,15 +565,19 @@ export function computeDatasetLAI(
         const direct = userSnpMap[rsid] || userSnpMap[rsid.toLowerCase()] || userSnpMap[rsid.toUpperCase()];
         if (direct) return direct;
         if (chrom && pos !== undefined) {
-          const cleanChr = String(chrom).replace(/^chr/i, '');
-          return userSnpMap[`chr${cleanChr}_${pos}`] ||
-                 userSnpMap[`${cleanChr}_${pos}`] ||
-                 userSnpMap[`chr${cleanChr}:${pos}`] ||
-                 userSnpMap[`${cleanChr}:${pos}`] ||
-                 userSnpMap[`chr${cleanChr.toLowerCase()}_${pos}`] ||
-                 userSnpMap[`${cleanChr.toLowerCase()}_${pos}`] ||
-                 userSnpMap[`chr${cleanChr.toLowerCase()}:${pos}`] ||
-                 userSnpMap[`${cleanChr.toLowerCase()}:${pos}`];
+          const userBuild = (dataset.build || dataset.userBuild || '').toUpperCase();
+          if (userBuild && userBuild !== 'UNKNOWN') {
+            if (userBuild !== 'GRCH38') return undefined;
+            const cleanChr = String(chrom).replace(/^chr/i, '');
+            const b = 'grch38';
+            return userSnpMap[`${b}:chr${cleanChr}_${pos}`] ||
+                   userSnpMap[`${b}:chr${cleanChr}:${pos}`] ||
+                   userSnpMap[`${b}:${cleanChr}_${pos}`] ||
+                   userSnpMap[`${b}:${cleanChr}:${pos}`] ||
+                   userSnpMap[`chr${cleanChr}_${pos}`] ||
+                   userSnpMap[`${cleanChr}_${pos}`];
+          }
+          return undefined;
         }
         return undefined;
       };
@@ -619,8 +623,11 @@ export function computeDatasetLAI(
 
       const meta = userMetaMap[rsid] || userMetaMap[baseRsid] || userMetaMap[rsid.toLowerCase()];
       if (meta) {
-        if (meta.chrom) chrom = meta.chrom;
-        if (meta.pos !== undefined) pos = meta.pos;
+        const metaBuild = (meta.build || dataset.build || dataset.userBuild || '').toUpperCase();
+        if (metaBuild === 'GRCH38') {
+          if (meta.chrom) chrom = meta.chrom;
+          if (meta.pos !== undefined) pos = meta.pos;
+        }
       }
 
       const geno = getGenotype(rsid, chrom, pos) || getGenotype(baseRsid, chrom, pos);

@@ -121,7 +121,7 @@ describe('Rebuilt Parser Engine — Micro-benchmarks & Edge Seams', () => {
 
     expect(parsed.snpCount).toBe(150000);
     expect(progressCallbacks).toBeGreaterThan(5);
-    expect(parsed.snpByPosition['2:100']).toBe('AG');
+    expect(parsed.snpByPosition['grch37:chr2:100']).toBe('AG');
     expect(Object.keys(parsed.snpByPosition).length).toBe(150000);
     expect(elapsed).toBeLessThan(5000);
   });
@@ -150,7 +150,7 @@ describe('Rebuilt Parser Engine — Micro-benchmarks & Edge Seams', () => {
 
     expect(parsed.snpCount).toBe(100000);
     expect(progressCallbacks).toBeGreaterThan(3);
-    expect(parsed.snpByPosition['2:100']).toBe('AG');
+    expect(parsed.snpByPosition['grch37:chr2:100']).toBe('AG');
     expect(Object.keys(parsed.snpByPosition).length).toBe(100000);
     expect(elapsed).toBeLessThan(5000);
   });

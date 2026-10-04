@@ -153,7 +153,7 @@ export async function parseRawDNAStream(
 
   const snpMap: Record<string, string> = {};
   const snpByPosition: Record<string, string> = {};
-  const snpMetaMap: Record<string, { chrom: string; pos: number }> = {};
+  const snpMetaMap: Record<string, { chrom: string; pos: number; build?: string }> = {};
   const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
   const mtMap: Record<string, string> = {};
@@ -323,7 +323,7 @@ export async function parseRawDNAStream(
         snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[primaryId] = { chrom, pos, ...(plan.build && plan.build !== 'UNKNOWN' ? { build: plan.build } : {}) };
+          snpMetaMap[primaryId] = { chrom, pos, build: plan.build };
           if (buildPrefix) {
             snpByPosition[`${buildPrefix}:chr${chrom.toLowerCase()}:${pos}`] = genotype;
             snpByPosition[`${buildPrefix}:chr${chrom}:${pos}`] = genotype;
@@ -557,7 +557,7 @@ export function parseRawDNA(
 
   const snpMap: Record<string, string> = {};
   const snpByPosition: Record<string, string> = {};
-  const snpMetaMap: Record<string, { chrom: string; pos: number }> = {};
+  const snpMetaMap: Record<string, { chrom: string; pos: number; build?: string }> = {};
   const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
   const mtMap: Record<string, string> = {};
@@ -653,7 +653,7 @@ export function parseRawDNA(
         snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[primaryId] = { chrom, pos, ...(plan.build && plan.build !== 'UNKNOWN' ? { build: plan.build } : {}) };
+          snpMetaMap[primaryId] = { chrom, pos, build: plan.build };
           if (buildPrefix) {
             snpByPosition[`${buildPrefix}:chr${chrom.toLowerCase()}:${pos}`] = genotype;
             snpByPosition[`${buildPrefix}:chr${chrom}:${pos}`] = genotype;

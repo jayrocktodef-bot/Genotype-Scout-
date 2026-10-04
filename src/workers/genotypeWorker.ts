@@ -76,10 +76,10 @@ const ENGINE_LABELS: Record<string, string> = {
 // ── Helper to filter out Y-DNA, mtDNA, and sex chromosomes (X/Y) to isolate deconvolution from haplogroups ──
 function filterAutosomalSNPs(
   snpMap: Record<string, string>,
-  snpMetaMap: Record<string, { chrom: string; pos: number }>
-): { filteredSnpMap: Record<string, string>; filteredMetaMap: Record<string, { chrom: string; pos: number }> } {
+  snpMetaMap: Record<string, { chrom: string; pos: number; build?: string }>
+): { filteredSnpMap: Record<string, string>; filteredMetaMap: Record<string, { chrom: string; pos: number; build?: string }> } {
   const filteredSnpMap: Record<string, string> = {};
-  const filteredMetaMap: Record<string, { chrom: string; pos: number }> = {};
+  const filteredMetaMap: Record<string, { chrom: string; pos: number; build?: string }> = {};
 
   const isSexOrMt = (chrom: string): boolean => {
     const c = String(chrom).toUpperCase().replace('CHR', '');
@@ -120,7 +120,7 @@ function filterAutosomalSNPs(
 type EngineTask = {
   engine: string;
   snpMap: Record<string, string>;
-  snpMetaMap?: Record<string, { chrom: string; pos: number }>;
+  snpMetaMap?: Record<string, { chrom: string; pos: number; build?: string }>;
 };
 
 function canSpawnNestedWorkers(): boolean {
@@ -582,15 +582,14 @@ if (typeof self !== 'undefined') {
     for (const [rsid, genotype] of Object.entries(imputedSnpMap)) {
       const meta = mergedSnpMetaMap[rsid] as any;
       if (meta && meta.chrom && meta.pos) {
-        const buildPrefix = meta.build
-          ? `${meta.build.toLowerCase()}:`
-          : (datasetBuild !== 'UNKNOWN' ? `${datasetBuild.toLowerCase()}:` : '');
-        const c = String(meta.chrom).toLowerCase().replace(/^chr/, '');
-        if (buildPrefix) {
+        const effectiveBuild = (meta.build && meta.build !== 'UNKNOWN')
+          ? meta.build
+          : (datasetBuild && datasetBuild !== 'UNKNOWN' && !meta.build ? datasetBuild : undefined);
+        if (effectiveBuild && effectiveBuild !== 'UNKNOWN') {
+          const buildPrefix = `${effectiveBuild.toLowerCase()}:`;
+          const c = String(meta.chrom).toLowerCase().replace(/^chr/, '');
           snpByPosition[`${buildPrefix}chr${c}:${meta.pos}`] = genotype;
           snpByPosition[`${buildPrefix}chr${c}_${meta.pos}`] = genotype;
-        } else {
-          snpByPosition[`${c}:${meta.pos}`] = genotype;
         }
       }
     }
