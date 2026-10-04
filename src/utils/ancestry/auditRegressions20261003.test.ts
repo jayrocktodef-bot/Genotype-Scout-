@@ -21,6 +21,7 @@ import {
 import { calculateComprehensiveScores } from '../../engines/ancestry/comprehensiveEngine';
 import { calculateHumanOriginsScores } from '../../engines/ancestry/humanOriginsEngine';
 import { parseRawDNA } from '../../services/parser/engine';
+import { ALL_REGION_AIMS, buildCleanAimDatabase } from '../../data/aims';
 
 const DEPRECATED_IDS = [
   'rs10456220',
@@ -650,4 +651,61 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(amrPops.length).toBe(0);
     });
   });
+
+  describe('(j) M-3: Padding filter on global loop too', () => {
+    it('ensures no marker with position 1000000 exists in ALL_REGION_AIMS', () => {
+      for (const [key, entry] of Object.entries(ALL_REGION_AIMS)) {
+        expect(Number((entry as any).position)).not.toBe(1000000);
+      }
+    });
+
+    it('ensures a padding fixture at position 1000000 never reaches database via global loop', () => {
+      const mockGlobal = {
+        rs99999901: {
+          rsid: 'rs99999901',
+          chromosome: '1',
+          position: 1000000,
+          alleles: ['A', 'G'],
+          region: 'Global',
+          frequencies: { AFR: 0.5, EUR: 0.5 }
+        },
+        rs99999902: {
+          rsid: 'rs99999902',
+          chromosome: '1',
+          position: 1000001,
+          alleles: ['C', 'T'],
+          region: 'Global',
+          frequencies: { AFR: 0.2, EUR: 0.8 }
+        }
+      };
+      const result = buildCleanAimDatabase(mockGlobal, []);
+      expect(result['rs99999901']).toBeUndefined();
+      expect(result['rs99999902']).toBeDefined();
+    });
+
+    it('ensures a padding fixture at position 1000000 never reaches database via regional loop', () => {
+      const mockRegional = {
+        rs99999903: {
+          rsid: 'rs99999903',
+          chromosome: '2',
+          position: 1000000,
+          alleles: ['A', 'C'],
+          region: 'African',
+          frequencies: { AFR: 0.9, EUR: 0.1 }
+        },
+        rs99999904: {
+          rsid: 'rs99999904',
+          chromosome: '2',
+          position: 1000002,
+          alleles: ['G', 'T'],
+          region: 'African',
+          frequencies: { AFR: 0.9, EUR: 0.1 }
+        }
+      };
+      const result = buildCleanAimDatabase({}, [mockRegional]);
+      expect(result['rs99999903']).toBeUndefined();
+      expect(result['rs99999904']).toBeDefined();
+    });
+  });
 });
+

@@ -75,11 +75,17 @@ function classifyGlobalMarker(entry: any) {
 }
 
 // Build ALL_REGION_AIMS with metric-driven classification and regional panel enrichment.
-const buildCleanAimDatabase = (): Record<string, any> => {
+export const buildCleanAimDatabase = (
+    customGlobal?: Record<string, any>,
+    customRegionalPanels?: Record<string, any>[]
+): Record<string, any> => {
     const combined: Record<string, any> = {};
+    const globalSource = customGlobal || (global as Record<string, any>);
 
     // 1. Load authoritative reference and classify global markers by population genetics metrics
-    for (const [k, v] of Object.entries(global)) {
+    for (const [k, v] of Object.entries(globalSource)) {
+        // Skip synthetic/padding markers
+        if ((v as any).position === 1000000) continue;
         const entry = { ...(v as any) };
         if (entry.region === 'Global' || !entry.region) {
             classifyGlobalMarker(entry);
@@ -88,7 +94,7 @@ const buildCleanAimDatabase = (): Record<string, any> => {
     }
 
     // 2. Augment with genuine unique regional panel markers
-    const regionalPanels = [
+    const regionalPanels = customRegionalPanels || [
         african,
         africanAmerican,
         centralAsian,
