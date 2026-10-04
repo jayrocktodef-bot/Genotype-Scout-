@@ -53,28 +53,6 @@
     "subRegion": "Central Asia"
   },
   {
-    "rsid": "rs10456345_CEN",
-    "region": "Central Asian",
-    "alleles": [
-      "C"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.2,
-      "EAS": 0.5,
-      "CAS": 0.9
-    },
-    "subFrequencies": {
-      "Kazakh": 0.95,
-      "Kyrgyz": 0.92,
-      "Mongolian_Steppe": 0.85
-    },
-    "description": "Steppe Ancestry Marker - essential for distinguishing the Siberian/Central Asian genetic component.",
-    "subPopulation": "Central Asian",
-    "subRegion": "Central Asia"
-  },
-  {
     "rsid": "rs9845457",
     "region": "Central Asian",
     "alleles": [
