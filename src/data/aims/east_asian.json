@@ -83,58 +83,6 @@
     "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations.",
     "build": "GRCh38"
   },
-  "rs10496971": {
-    "rsid": "rs10496971",
-    "chromosome": "4",
-    "position": 187428867,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.1015,
-      "EAS": 0.7709,
-      "OCE": 0.6056,
-      "SAS": 0.3751,
-      "AMR": 0.4703,
-      "EUR": 0.0962,
-      "SIB": 0.4118
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "build": "GRCh38"
-  },
-  "rs13400937": {
-    "rsid": "rs13400937",
-    "chromosome": "1",
-    "position": 151608933,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.6445,
-      "EAS": 0.7665,
-      "OCE": 0.6591,
-      "SAS": 0.5164,
-      "AMR": 0.3034,
-      "EUR": 0.2907,
-      "SIB": 0.6471
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "build": "GRCh38"
-  },
   "rs10456292": {
     "rsid": "rs10456292",
     "chromosome": "6",
@@ -21930,36 +21878,6 @@
     "description": "East Asian deep-resolution AIM for Han/Japanese/Korean/Tibetan/Southeast Asian deconvolution.",
     "build": "GRCh38"
   },
-  "rs33950507": {
-    "rsid": "rs33950507",
-    "chromosome": "11",
-    "position": 5225465,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "EAS": 0.12,
-      "SAS": 0.02,
-      "EUR": 0,
-      "AFR": 0,
-      "AMR": 0
-    },
-    "subFrequencies": {
-      "Dai": 0.22,
-      "Vietnamese": 0.15,
-      "Thai_Cambodian": 0.3,
-      "Southern_Han": 0.04,
-      "Northern_Han": 0
-    },
-    "deepFrequencies": {},
-    "weight": 12,
-    "gene": "HBB",
-    "trait": "Hemoglobinopathy & Malaria Protection",
-    "description": "Hemoglobin E (HbE) mutation in HBB providing resistance to Plasmodium falciparum malaria across Southeast Asia.",
-    "build": "GRCh38"
-  },
   "rs137852328": {
     "rsid": "rs137852328",
     "chromosome": "X",
@@ -22017,67 +21935,6 @@
     "gene": "G6PD",
     "trait": "G6PD Deficiency",
     "description": "G6PD Canton mutation (1376G>T) common in Southern Chinese and Southeast Asian lineages.",
-    "build": "GRCh38"
-  },
-  "rs2032678": {
-    "rsid": "rs2032678",
-    "chromosome": "Y",
-    "position": 15000000,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "EAS": 0.8,
-      "SAS": 0.05,
-      "EUR": 0,
-      "AFR": 0,
-      "AMR": 0
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.82,
-      "Southern_Han": 0.85,
-      "Japanese": 0.55,
-      "Korean": 0.75,
-      "Vietnamese": 0.8,
-      "Dai": 0.85
-    },
-    "deepFrequencies": {},
-    "weight": 15,
-    "gene": "M175",
-    "trait": "Paternal Lineage",
-    "description": "Root defining marker for Haplogroup O-M175, encompassing the overwhelming majority of East and Southeast Asian paternal lineages.",
-    "build": "GRCh38"
-  },
-  "rs2032128": {
-    "rsid": "rs2032128",
-    "chromosome": "Y",
-    "position": 15000000,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "EAS": 0.55,
-      "SAS": 0.02,
-      "EUR": 0,
-      "AFR": 0,
-      "AMR": 0
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.65,
-      "Southern_Han": 0.55,
-      "Korean": 0.45,
-      "Japanese": 0.2,
-      "Tibetan": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 15,
-    "gene": "M122",
-    "trait": "Paternal Lineage",
-    "description": "Defining marker for Haplogroup O2-M122, the dominant Han Chinese and Sino-Tibetan founding paternal lineage.",
     "build": "GRCh38"
   },
   "rs17269396": {

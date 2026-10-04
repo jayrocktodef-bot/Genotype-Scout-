@@ -24,7 +24,7 @@ describe('AADR & Forensic AIM Integrity and Deduplication Test Suite', () => {
     const uniqueKeys = new Set(lowerKeys);
 
     expect(uniqueKeys.size).toBe(keys.length);
-    expect(keys.length).toBeGreaterThanOrEqual(870);
+    expect(keys.length).toBeGreaterThanOrEqual(680);
   });
 
   it('should contain enriched subFrequencies for AADR ancient & regional Native American lineages', () => {

@@ -176,37 +176,6 @@
     "description": "Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast.",
     "build": "GRCh38"
   },
-  "rs11103332": {
-    "rsid": "rs11103332",
-    "chromosome": "9",
-    "position": 136103632,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.45,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.98
-    },
-    "subFrequencies": {
-      "Yoruba": 0.91,
-      "Esan": 0.892,
-      "Mende": 0.928,
-      "Gambian": 0.91,
-      "Luhya": 0.864
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "Georgian Ancestry Marker",
-    "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations.",
-    "build": "GRCh38"
-  },
   "rs11103334": {
     "rsid": "rs11103334",
     "chromosome": "9",
@@ -236,37 +205,6 @@
     "gene": "Intergenic",
     "trait": "Persian Ancestry Marker",
     "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "build": "GRCh38"
-  },
-  "rs11103335": {
-    "rsid": "rs11103335",
-    "chromosome": "9",
-    "position": 136109297,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.25,
-      "EAS": 0.03,
-      "AMR": 0.01,
-      "SAS": 0.35,
-      "MENA": 0.88
-    },
-    "subFrequencies": {
-      "Yoruba": 0.94,
-      "Esan": 0.921,
-      "Mende": 0.959,
-      "Gambian": 0.94,
-      "Luhya": 0.893
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "Persian Ancestry Marker",
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
     "build": "GRCh38"
   },
   "rs11103336": {
@@ -1281,26 +1219,6 @@
     "gene": "Unknown",
     "trait": "Kurdish Ancestry Marker",
     "description": "MENA/AFR Tie-Breaker - Distinctive to the Arabian Peninsula, filters out false Horn of Africa overlap.",
-    "build": "GRCh38"
-  },
-  "rs34459394": {
-    "rsid": "rs34459394",
-    "chromosome": "16",
-    "position": 75287869,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "MID": 0.8
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Y-DNA",
-    "trait": "Haplogroup J2a1",
-    "description": "Defining marker for the Levantine/Anatolian branch of J2.",
     "build": "GRCh38"
   },
   "rs9999902": {

@@ -85,38 +85,6 @@
     "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
     "build": "GRCh38"
   },
-  "rs11103375": {
-    "rsid": "rs11103375",
-    "chromosome": "9",
-    "position": 134573079,
-    "region": "Oceanian",
-    "color": "#E67E22",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.85,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "Micronesian Ancestry Marker",
-    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
-    "build": "GRCh38"
-  },
   "rs11103377": {
     "rsid": "rs11103377",
     "chromosome": "9",
@@ -2233,27 +2201,6 @@
     "description": "Oceanian ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs6000011": {
-    "rsid": "rs6000011",
-    "chromosome": "22",
-    "position": 35830543,
-    "region": "Oceanian",
-    "color": "#E67E22",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "OCE": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs6000012": {
     "rsid": "rs6000012",
     "chromosome": "22",
@@ -2637,27 +2584,6 @@
     "description": "Oceanian ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs6000028": {
-    "rsid": "rs6000028",
-    "chromosome": "22",
-    "position": 35897391,
-    "region": "Oceanian",
-    "color": "#E67E22",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "OCE": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs6000029": {
     "rsid": "rs6000029",
     "chromosome": "22",
@@ -2882,27 +2808,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs6000038": {
-    "rsid": "rs6000038",
-    "chromosome": "22",
-    "position": 35929938,
-    "region": "Oceanian",
-    "color": "#E67E22",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "OCE": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker.",
     "build": "GRCh38"

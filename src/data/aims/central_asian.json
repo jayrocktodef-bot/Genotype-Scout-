@@ -64,32 +64,6 @@
     "description": "Central Asian Steppe Marker - diagnostic for the admixed populations of the Silk Road.",
     "build": "GRCh38"
   },
-  "rs9845457": {
-    "rsid": "rs9845457",
-    "chromosome": "11",
-    "position": 27658369,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.2617,
-      "EAS": 0.833,
-      "OCE": 0.7444,
-      "SAS": 0.6433,
-      "AMR": 0.882,
-      "EUR": 0.6165,
-      "SIB": 0.9118
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker, informative for Central Asian populations such as the Hazara or Tajik groups.",
-    "build": "GRCh38"
-  },
   "rs4821004": {
     "rsid": "rs4821004",
     "chromosome": "22",
@@ -7629,36 +7603,6 @@
     "description": "High-frequency cold-temperature receptor allele (rs10166942-T) selected in northern continental Europe (Baltic, Slavic, Scandinavian) to adapt to sub-freezing winters.",
     "build": "GRCh38"
   },
-  "rs150877473": {
-    "rsid": "rs150877473",
-    "chromosome": "2",
-    "position": 46420000,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "CAS": 0.45,
-      "EAS": 0.03,
-      "EUR": 0,
-      "AFR": 0,
-      "SAS": 0.01,
-      "AMR": 0
-    },
-    "subFrequencies": {
-      "Tibetan": 0.86,
-      "Sherpa": 0.88,
-      "Lowland_Han": 0.02,
-      "Mongol": 0.04
-    },
-    "deepFrequencies": {},
-    "weight": 15,
-    "gene": "EPAS1",
-    "trait": "High-Altitude Adaptation",
-    "description": "Archaic Denisovan introgression variant in EPAS1 responsible for hypoxia adaptation in Tibetans and Sherpas.",
-    "build": "GRCh38"
-  },
   "rs13419896": {
     "rsid": "rs13419896",
     "chromosome": "2",
@@ -7687,37 +7631,6 @@
     "gene": "EPAS1",
     "trait": "High-Altitude Adaptation",
     "description": "Denisovan-derived haplotype tag marker in EPAS1 associated with blunted erythropoiesis at high altitude.",
-    "build": "GRCh38"
-  },
-  "rs3856448": {
-    "rsid": "rs3856448",
-    "chromosome": "Y",
-    "position": 15000000,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "CAS": 0.48,
-      "EAS": 0.08,
-      "SAS": 0.02,
-      "EUR": 0,
-      "AFR": 0,
-      "AMR": 0.02
-    },
-    "subFrequencies": {
-      "Mongol": 0.52,
-      "Kazakh": 0.4,
-      "Buryat": 0.6,
-      "Yakut": 0.35,
-      "Northern_Han": 0.1
-    },
-    "deepFrequencies": {},
-    "weight": 15,
-    "gene": "M217",
-    "trait": "Paternal Lineage",
-    "description": "Defining marker for Haplogroup C2-M217, widespread across Mongolic, Turkic, Tungusic, and Siberian steppe nomads.",
     "build": "GRCh38"
   },
   "rs693734": {

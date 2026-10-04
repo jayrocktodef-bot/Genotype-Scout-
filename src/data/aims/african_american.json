@@ -558,27 +558,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs2000023": {
-    "rsid": "rs2000023",
-    "chromosome": "11",
-    "position": 47901372,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "OR4C46",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs2000024": {
     "rsid": "rs2000024",
     "chromosome": "1",
@@ -1170,27 +1149,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs2000051": {
-    "rsid": "rs2000051",
-    "chromosome": "3",
-    "position": 195276823,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs2000052": {
     "rsid": "rs2000052",
     "chromosome": "3",
@@ -1404,27 +1362,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs2000061": {
-    "rsid": "rs2000061",
-    "chromosome": "11",
-    "position": 115593557,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "ZNF384",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs2000062": {
     "rsid": "rs2000062",
     "chromosome": "10",
@@ -1534,27 +1471,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs2000067": {
-    "rsid": "rs2000067",
-    "chromosome": "13",
-    "position": 47454844,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs2000068": {
     "rsid": "rs2000068",
     "chromosome": "9",
@@ -1621,27 +1537,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs2000071": {
-    "rsid": "rs2000071",
-    "chromosome": "1",
-    "position": 74083585,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
@@ -2227,48 +2122,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs700000": {
-    "rsid": "rs700000",
-    "chromosome": "8",
-    "position": 116116572,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "TRPS1",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs700001": {
-    "rsid": "rs700001",
-    "chromosome": "8",
-    "position": 116117404,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "TRPS1",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs700002": {
     "rsid": "rs700002",
     "chromosome": "6",
@@ -2432,27 +2285,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs700009": {
-    "rsid": "rs700009",
-    "chromosome": "8",
-    "position": 116193721,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "TRPS1",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs7000010": {
     "rsid": "rs7000010",
     "chromosome": "8",
@@ -2520,52 +2352,10 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs7000013": {
-    "rsid": "rs7000013",
-    "chromosome": "8",
-    "position": 20740275,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs7000014": {
     "rsid": "rs7000014",
     "chromosome": "8",
     "position": 87625005,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs7000015": {
-    "rsid": "rs7000015",
-    "chromosome": "8",
-    "position": 83466168,
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3037,27 +2827,6 @@
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
   },
-  "rs7000036": {
-    "rsid": "rs7000036",
-    "chromosome": "8",
-    "position": 1276437,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
   "rs7000037": {
     "rsid": "rs7000037",
     "chromosome": "8",
@@ -3143,27 +2912,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs7000041": {
-    "rsid": "rs7000041",
-    "chromosome": "8",
-    "position": 126200359,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",

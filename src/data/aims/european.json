@@ -2578,31 +2578,6 @@
     "description": "Ancestry Informative Marker for Scandinavian populations.",
     "build": "GRCh38"
   },
-  "rs10456270": {
-    "rsid": "rs10456270",
-    "chromosome": "6",
-    "position": 23105455,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "AMR": 0.05,
-      "EAS": 0.01,
-      "EUR": 0.55,
-      "SAS": 0.04,
-      "MENA": 0.3
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "Sephardic Ancestry Marker",
-    "description": "Ancestry Informative Marker for Sephardic Jewish populations.",
-    "build": "GRCh38"
-  },
   "rs4871197": {
     "rsid": "rs4871197",
     "chromosome": "8",
@@ -3630,31 +3605,6 @@
     "description": "UT-AIM250 Marker - European informative.",
     "build": "GRCh38"
   },
-  "rs1177635": {
-    "rsid": "rs1177635",
-    "chromosome": "10",
-    "position": 132724755,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.95,
-      "EAS": 0.05,
-      "AMR": 0.0,
-      "SAS": 0.0,
-      "MENA": 0.0
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "UT-AIM250 Marker - European informative.",
-    "build": "GRCh38"
-  },
   "rs1177797": {
     "rsid": "rs1177797",
     "chromosome": "1",
@@ -4653,32 +4603,6 @@
     "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
     "build": "GRCh38"
   },
-  "rs1513181": {
-    "rsid": "rs1513181",
-    "chromosome": "1",
-    "position": 114089358,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8112,
-      "EAS": 0.2194,
-      "OCE": 0.4778,
-      "SAS": 0.5333,
-      "AMR": 0.1113,
-      "EUR": 0.8244,
-      "SIB": 0.1373
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "build": "GRCh38"
-  },
   "rs200354": {
     "rsid": "rs200354",
     "chromosome": "14",
@@ -4700,32 +4624,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "build": "GRCh38"
-  },
-  "rs1040404": {
-    "rsid": "rs1040404",
-    "chromosome": "22",
-    "position": 33903102,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.3116,
-      "EAS": 0.6019,
-      "OCE": 0.65,
-      "SAS": 0.5995,
-      "AMR": 0.1793,
-      "EUR": 0.6645,
-      "SIB": 0.5098
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
@@ -4783,32 +4681,6 @@
     "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
     "build": "GRCh38"
   },
-  "rs7421394": {
-    "rsid": "rs7421394",
-    "chromosome": "5",
-    "position": 13417937,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.2858,
-      "EAS": 0.5055,
-      "OCE": 0.2278,
-      "SAS": 0.5695,
-      "AMR": 0.4275,
-      "EUR": 0.7032,
-      "SIB": 0.6078
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "build": "GRCh38"
-  },
   "rs3737597": {
     "rsid": "rs3737597",
     "chromosome": "16",
@@ -4832,31 +4704,6 @@
     "gene": "NEK1",
     "trait": "Ashkenazi Jewish Marker",
     "description": "An informative marker for Ashkenazi Jewish ancestry.",
-    "build": "GRCh38"
-  },
-  "rs1446585": {
-    "rsid": "rs1446585",
-    "chromosome": "15",
-    "position": 48425110,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.0272,
-      "AMR": 0.3012,
-      "EAS": 0.2,
-      "EUR": 0.5388,
-      "SAS": 0.1677,
-      "MENA": 0.5
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "SLC24A4",
-    "trait": "Mende Ancestry Marker",
-    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips.",
     "build": "GRCh38"
   },
   "rs10166942": {

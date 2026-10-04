@@ -66,27 +66,70 @@ export const PARKED_TIEBREAKER_ANCHORS = new Set([
   'rs7328514', 'rs11868035', 'rs10166942', 'rs13175330'
 ]);
 
+export const PANEL_FILES = new Set([
+  'global.json',
+  'african.json',
+  'african_american.json',
+  'central_asian.json',
+  'east_asian.json',
+  'european.json',
+  'middle_eastern.json',
+  'native_american.json',
+  'north_african.json',
+  'oceanian.json',
+  'south_asian.json',
+]);
+
 // 1. dbSNP Merged Accessions Map
 const MERGED_MAP_PATH = path.join(process.cwd(), 'src/data/reference/dbsnp_merged_map.json');
-export let dbsnpMergedMap: Record<string, string> = {};
-if (fs.existsSync(MERGED_MAP_PATH)) {
+
+export function loadDbsnpMergedMap(filePath: string = MERGED_MAP_PATH): Record<string, string> {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`[validate:data] dbSNP merged map missing at: ${filePath}`);
+  }
   try {
-    dbsnpMergedMap = JSON.parse(fs.readFileSync(MERGED_MAP_PATH, 'utf-8'));
-  } catch (err) {
-    console.warn(`[validate:data] Failed to load dbsnp_merged_map.json:`, err);
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const parsed = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+      throw new Error(`[validate:data] dbSNP merged map is not a valid JSON dictionary: ${filePath}`);
+    }
+    return parsed;
+  } catch (err: any) {
+    if (err.message && err.message.startsWith('[validate:data]')) {
+      throw err;
+    }
+    throw new Error(`[validate:data] Failed to parse dbSNP merged map at ${filePath}: ${err.message || err}`);
   }
 }
 
+export let dbsnpMergedMap: Record<string, string> = loadDbsnpMergedMap();
+
 // 2. Local Ensembl GRCh38 Cache for Spot-Checking & Authenticity Verification
 const ENSEMBL_CACHE_PATH = path.join(process.cwd(), 'src/data/reference/ensembl_cache.json');
-export let ensemblCache: Record<string, { chromosome: string; position: number; alleles?: string; status?: string }> = {};
-if (fs.existsSync(ENSEMBL_CACHE_PATH)) {
+
+export function loadEnsemblCache(
+  filePath: string = ENSEMBL_CACHE_PATH
+): Record<string, { chromosome: string; position: number; alleles?: string; status?: string }> {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`[validate:data] Ensembl cache missing at: ${filePath}`);
+  }
   try {
-    ensemblCache = JSON.parse(fs.readFileSync(ENSEMBL_CACHE_PATH, 'utf-8'));
-  } catch (err) {
-    console.warn(`[validate:data] Failed to load ensembl_cache.json:`, err);
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const parsed = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+      throw new Error(`[validate:data] Ensembl cache is not a valid JSON dictionary: ${filePath}`);
+    }
+    return parsed;
+  } catch (err: any) {
+    if (err.message && err.message.startsWith('[validate:data]')) {
+      throw err;
+    }
+    throw new Error(`[validate:data] Failed to parse Ensembl cache at ${filePath}: ${err.message || err}`);
   }
 }
+
+export let ensemblCache: Record<string, { chromosome: string; position: number; alleles?: string; status?: string }> =
+  loadEnsemblCache();
 
 export function validateAimRecord(
   entry: AimEntry,
@@ -166,8 +209,15 @@ export function validateAimRecord(
     errors.push(`Invalid weight '${entry.weight}': '${k}' in ${sourceName}`);
   }
 
-  // 6. Ensembl GRCh38 Authenticity & Hermetic Cache Verification
-  // All weight >= 5 markers and the seeded 5% sample in panels must be present in the cache,
+  // 6. Hard Rule: Build must be declared as GRCh38
+  if (!entry.build || entry.build !== 'GRCh38') {
+    errors.push(
+      `Missing or invalid build '${entry.build}': '${k}' in ${sourceName}. All records must declare build: 'GRCh38'.`
+    );
+  }
+
+  // 7. Ensembl GRCh38 Authenticity & Hermetic Cache Verification
+  // All weight >= 5 markers and the seeded 5% sample in all 11 panels must be present in the cache,
   // must not be UNRESOLVED, and must match chromosome and alleles.
   const isParked =
     (entry.gene && entry.gene.includes('DEEP-AIM')) ||
@@ -175,11 +225,12 @@ export function validateAimRecord(
     (entry.description && entry.description.toLowerCase().includes('tiebreaker')) ||
     PARKED_TIEBREAKER_ANCHORS.has(rsid);
 
-  const isPanelSource = sourceName === 'global.json' || sourceName === 'record';
+  const baseSourceName = path.basename(sourceName);
+  const isPanelSource = PANEL_FILES.has(baseSourceName) || baseSourceName === 'record' || sourceName === 'record';
   const isChecked = isPanelSource && !isParked && (entry.weight >= 5 || isSampledMarker(rsid));
   const cached = ensemblCache[rsid] || ensemblCache[cleanKey];
 
-  if (isChecked && entry.build === 'GRCh38' && rsid.startsWith('rs')) {
+  if (isChecked && rsid.startsWith('rs')) {
     if (!cached) {
       errors.push(
         `Ensembl GRCh38 cache miss for checked marker '${k}' (weight: ${entry.weight}) in ${sourceName}. CI and validator run hermetically; all weight>=5 and sampled markers must be in ensembl_cache.json.`
@@ -191,7 +242,7 @@ export function validateAimRecord(
     }
   }
 
-  if (isPanelSource && cached && cached.status !== 'UNRESOLVED' && entry.build === 'GRCh38' && !isParked) {
+  if (isPanelSource && cached && cached.status !== 'UNRESOLVED' && !isParked) {
     const cachedChr = String(cached.chromosome || '').trim().toUpperCase().replace(/^CHR/, '');
     if (chrStr !== cachedChr) {
       errors.push(
@@ -220,12 +271,22 @@ export function validateAimRecord(
 
 export function validateAIMsData(filePath: string): boolean {
   if (!fs.existsSync(filePath)) {
-    console.warn(`[validate:data] Skipping nonexistent file: ${filePath}`);
-    return true;
+    throw new Error(`[validate:data] Panel file does not exist: ${filePath}`);
   }
 
-  const rawData = fs.readFileSync(filePath, 'utf-8');
-  const data: Record<string, AimEntry> = JSON.parse(rawData);
+  let rawData: string;
+  try {
+    rawData = fs.readFileSync(filePath, 'utf-8');
+  } catch (err: any) {
+    throw new Error(`[validate:data] Failed to read panel file at ${filePath}: ${err.message || err}`);
+  }
+
+  let data: Record<string, AimEntry>;
+  try {
+    data = JSON.parse(rawData);
+  } catch (err: any) {
+    throw new Error(`[validate:data] Corrupt or unparseable JSON in ${filePath}: ${err.message || err}`);
+  }
 
   if (typeof data !== 'object' || data === null || Array.isArray(data)) {
     throw new Error(`File does not contain a JSON dictionary object: ${filePath}`);

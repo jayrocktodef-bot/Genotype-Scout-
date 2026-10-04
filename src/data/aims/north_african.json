@@ -263,31 +263,6 @@
     "description": "Ancestry Informative Marker for North African populations.",
     "build": "GRCh38"
   },
-  "rs6119479": {
-    "rsid": "rs6119479",
-    "chromosome": "20",
-    "position": 32843050,
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.06,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.05,
-      "SAS": 0.01,
-      "MENA": 0.78
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations.",
-    "build": "GRCh38"
-  },
   "rs6119480": {
     "rsid": "rs6119480",
     "chromosome": "20",
@@ -1249,27 +1224,6 @@
     "rsid": "rs4000013",
     "chromosome": "7",
     "position": 35075285,
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "MENA": 0.95,
-      "GLOBAL": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
-    "build": "GRCh38"
-  },
-  "rs4000014": {
-    "rsid": "rs4000014",
-    "chromosome": "7",
-    "position": 35079006,
     "region": "North African",
     "color": "#C084FC",
     "alleles": [

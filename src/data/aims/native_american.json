@@ -26774,35 +26774,6 @@
     "description": "Eastern Woodlands & North American Indigenous informative marker.",
     "build": "GRCh38"
   },
-  "rs1344870": {
-    "rsid": "rs1344870",
-    "chromosome": "21",
-    "position": 34360678,
-    "region": "Native American",
-    "color": "#E74C3C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AMR": 0.55,
-      "EUR": 0.15,
-      "AFR": 0.1,
-      "EAS": 0.2,
-      "SAS": 0.15
-    },
-    "subFrequencies": {
-      "Eastern_Woodlands": 0.56,
-      "Cherokee": 0.54,
-      "Lenape": 0.55,
-      "Nanticoke": 0.53
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "OLIG2",
-    "trait": "Ancestry",
-    "description": "Chromosomal AIM with strong frequency differential between Native American and European/African genomes.",
-    "build": "GRCh38"
-  },
   "rs1347044": {
     "rsid": "rs1347044",
     "chromosome": "2",
@@ -62582,37 +62553,6 @@
     "description": "Eastern Woodlands & North American Indigenous informative marker.",
     "build": "GRCh38"
   },
-  "rs28958569": {
-    "rsid": "rs28958569",
-    "chromosome": "Y",
-    "position": 15500000,
-    "region": "Native American",
-    "color": "#E74C3C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.18,
-      "EUR": 0,
-      "AFR": 0,
-      "EAS": 0,
-      "SAS": 0
-    },
-    "subFrequencies": {
-      "Eastern_Woodlands": 0.22,
-      "Algonquian": 0.25,
-      "Cherokee": 0.15,
-      "Lenape": 0.2,
-      "Nanticoke": 0.18,
-      "Siouan": 0.2
-    },
-    "deepFrequencies": {},
-    "weight": 15,
-    "gene": "P39",
-    "trait": "Paternal Lineage",
-    "description": "Definitive Y-DNA marker for Haplogroup C-P39 (C3b), diagnostic of Eastern Woodlands, Algonquian, Iroquoian, Siouan, and Na-Dene indigenous nations.",
-    "build": "GRCh38"
-  },
   "rs2897064": {
     "rsid": "rs2897064",
     "chromosome": "1",
@@ -80650,35 +80590,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Eastern Woodlands & North American Indigenous informative marker.",
-    "build": "GRCh38"
-  },
-  "rs4833521": {
-    "rsid": "rs4833521",
-    "chromosome": "1",
-    "position": 2072022,
-    "region": "Native American",
-    "color": "#E74C3C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AMR": 0.75,
-      "EUR": 0.3,
-      "AFR": 0.1,
-      "EAS": 0.4,
-      "SAS": 0.25
-    },
-    "subFrequencies": {
-      "Eastern_Woodlands": 0.76,
-      "Cherokee": 0.74,
-      "Lenape": 0.75,
-      "Nanticoke": 0.73
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "PRKCZ",
-    "trait": "Ancestry",
-    "description": "High Fst Ancestry Informative Marker with marked divergence in Native American and Eastern Woodlands populations.",
     "build": "GRCh38"
   },
   "rs4833753": {
@@ -110562,35 +110473,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Eastern Woodlands & North American Indigenous informative marker.",
-    "build": "GRCh38"
-  },
-  "rs765250": {
-    "rsid": "rs765250",
-    "chromosome": "2",
-    "position": 44053749,
-    "region": "Native American",
-    "color": "#E74C3C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.58,
-      "EUR": 0.2,
-      "AFR": 0.1,
-      "EAS": 0.2,
-      "SAS": 0.15
-    },
-    "subFrequencies": {
-      "Eastern_Woodlands": 0.6,
-      "Cherokee": 0.59,
-      "Lenape": 0.57,
-      "Nanticoke": 0.58
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "ABCG5",
-    "trait": "Ancestry",
-    "description": "Lipid metabolism and ancestry-informative marker enriched in Native American populations.",
     "build": "GRCh38"
   },
   "rs7652595": {

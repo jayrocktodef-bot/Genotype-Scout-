@@ -4,7 +4,13 @@ import path from 'path';
 import { DOUBLE_WEIGHT_MARKERS, QUADRUPLE_WEIGHT_MARKERS } from '../../services/ancestryEngine';
 import { getMarkerAllowlist } from '../markerAllowlist';
 import { matchGenotypeAlleles, isPalindromicPair, complementBase } from '../strandMatcher';
-import { validateAimRecord } from '../dataValidator';
+import {
+  validateAimRecord,
+  validateAIMsData,
+  loadDbsnpMergedMap,
+  PANEL_FILES,
+  ensemblCache,
+} from '../dataValidator';
 import { calculateComprehensiveScores } from '../../engines/ancestry/comprehensiveEngine';
 import { calculateHumanOriginsScores } from '../../engines/ancestry/humanOriginsEngine';
 import { parseRawDNA } from '../../services/parser/engine';
@@ -133,20 +139,29 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
     });
 
     it('fails validation when a marker is recorded as UNRESOLVED in the Ensembl cache', () => {
-      const unresolvedRecord = {
-        rsid: 'rs123456', // recorded as UNRESOLVED in ensembl_cache.json
+      ensemblCache['rs999999999'] = {
         chromosome: '1',
         position: 123456,
-        region: 'African',
-        alleles: ['A', 'G'],
-        frequencies: { EUR: 0.1, AFR: 0.9 },
-        weight: 10,
-        build: 'GRCh38',
+        status: 'UNRESOLVED',
       };
+      try {
+        const unresolvedRecord = {
+          rsid: 'rs999999999',
+          chromosome: '1',
+          position: 123456,
+          region: 'African',
+          alleles: ['A', 'G'],
+          frequencies: { EUR: 0.1, AFR: 0.9 },
+          weight: 10,
+          build: 'GRCh38',
+        };
 
-      const result = validateAimRecord(unresolvedRecord);
-      expect(result.valid).toBe(false);
-      expect(result.errors.some(e => e.includes('unresolved'))).toBe(true);
+        const result = validateAimRecord(unresolvedRecord);
+        expect(result.valid).toBe(false);
+        expect(result.errors.some(e => e.toLowerCase().includes('unresolved'))).toBe(true);
+      } finally {
+        delete ensemblCache['rs999999999'];
+      }
     });
   });
 
@@ -364,6 +379,104 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
           e => e.includes('chromosome mismatch') || e.includes('cache miss') || e.includes('Ensembl')
         )
       ).toBe(true);
+    });
+  });
+
+  describe('(g) Workstream B: Validator Ensembl Check on All Panels & Fail-Closed Hardening', () => {
+    it('ensures zero UNRESOLVED markers remain in ensembl_cache.json', () => {
+      const cachePath = path.join(process.cwd(), 'src/data/reference/ensembl_cache.json');
+      const cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+      const unresolved = Object.entries(cache).filter(
+        ([_, v]: [string, any]) => v.status === 'UNRESOLVED'
+      );
+      expect(unresolved.length).toBe(0);
+    });
+
+    it('asserts regional-panel record with merged ID fails validation (invalid)', () => {
+      // rs10456220 is merged into rs686140 in dbsnp_merged_map.json
+      const mergedRegionalRecord = {
+        rsid: 'rs10456220',
+        chromosome: '6',
+        position: 18925121,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { AFR: 0.85, EUR: 0.15 },
+        weight: 1,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(mergedRegionalRecord, 'rs10456220', 'african.json');
+      expect(result.valid).toBe(false);
+      expect(
+        result.errors.some(
+          e => e.includes('Deprecated merged dbSNP accession') || e.includes('rs686140')
+        )
+      ).toBe(true);
+    });
+
+    it('asserts regional-panel record with wrong chromosome vs cache fails with "chromosome mismatch"', () => {
+      // rs686140 is on chr6:18925121 in ensembl_cache.json. Testing on african.json with chr7.
+      const wrongChrRecord = {
+        rsid: 'rs686140',
+        chromosome: '7',
+        position: 18925121,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { AFR: 0.85, EUR: 0.15 },
+        weight: 1,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(wrongChrRecord, 'rs686140', 'african.json');
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('chromosome mismatch'))).toBe(true);
+    });
+
+    it('asserts record with no build fails validation (invalid)', () => {
+      const noBuildRecord = {
+        rsid: 'rs686140',
+        chromosome: '6',
+        position: 18925121,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { AFR: 0.85, EUR: 0.15 },
+        weight: 1,
+      } as any;
+
+      const result = validateAimRecord(noBuildRecord, 'rs686140', 'african.json');
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('Missing or invalid build'))).toBe(true);
+    });
+
+    it('asserts nonexistent panel file throws in validateAIMsData', () => {
+      expect(() => {
+        validateAIMsData(path.join(process.cwd(), 'src/data/aims/nonexistent_panel_20261003.json'));
+      }).toThrow(/does not exist/);
+    });
+
+    it('asserts missing or corrupt merged map throws in loadDbsnpMergedMap', () => {
+      expect(() => {
+        loadDbsnpMergedMap(path.join(process.cwd(), 'src/data/reference/nonexistent_merged_map.json'));
+      }).toThrow(/missing at/);
+    });
+
+    it('verifies all 11 panel files are covered by Ensembl authenticity cross-checks', () => {
+      const expectedPanels = [
+        'global.json',
+        'african.json',
+        'african_american.json',
+        'central_asian.json',
+        'east_asian.json',
+        'european.json',
+        'middle_eastern.json',
+        'native_american.json',
+        'north_african.json',
+        'oceanian.json',
+        'south_asian.json',
+      ];
+      for (const panel of expectedPanels) {
+        expect(PANEL_FILES.has(panel)).toBe(true);
+      }
     });
   });
 });

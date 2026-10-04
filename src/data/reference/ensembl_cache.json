@@ -15372,12 +15372,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:35:31.008141+00:00"
   },
-  "rs113157095": {
-    "rsid": "rs113157095",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.723992+00:00"
-  },
   "rs1132": {
     "rsid": "rs1132",
     "chromosome": "1",
@@ -20498,12 +20492,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:34:57.008772+00:00"
-  },
-  "rs123456": {
-    "rsid": "rs123456",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724022+00:00"
   },
   "rs1235": {
     "rsid": "rs1235",
@@ -28064,12 +28052,6 @@
     "gene": "NAFR-DEEP-AIM",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:35:12.653859+00:00"
-  },
-  "rs1505277": {
-    "rsid": "rs1505277",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724030+00:00"
   },
   "rs1505733": {
     "rsid": "rs1505733",
@@ -35928,12 +35910,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:35:42.841920+00:00"
   },
-  "rs2000023": {
-    "rsid": "rs2000023",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724036+00:00"
-  },
   "rs2000026": {
     "rsid": "rs2000026",
     "chromosome": "1",
@@ -36969,12 +36945,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:35:42.843676+00:00"
   },
-  "rs2020461": {
-    "rsid": "rs2020461",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724042+00:00"
-  },
   "rs202188646": {
     "rsid": "rs202188646",
     "chromosome": "19",
@@ -37190,12 +37160,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:35:42.844037+00:00"
-  },
-  "rs2032128": {
-    "rsid": "rs2032128",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724047+00:00"
   },
   "rs2032457": {
     "rsid": "rs2032457",
@@ -48636,12 +48600,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:36:13.061156+00:00"
   },
-  "rs28699429": {
-    "rsid": "rs28699429",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724056+00:00"
-  },
   "rs2869950": {
     "rsid": "rs2869950",
     "chromosome": "4",
@@ -51692,12 +51650,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:36:30.710080+00:00"
-  },
-  "rs34973368": {
-    "rsid": "rs34973368",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724061+00:00"
   },
   "rs350009": {
     "rsid": "rs350009",
@@ -55668,12 +55620,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:36:44.412264+00:00"
   },
-  "rs41272240": {
-    "rsid": "rs41272240",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724067+00:00"
-  },
   "rs4128296": {
     "rsid": "rs4128296",
     "chromosome": "4",
@@ -56159,12 +56105,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:36:44.413426+00:00"
-  },
-  "rs4242849": {
-    "rsid": "rs4242849",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724074+00:00"
   },
   "rs4244304": {
     "rsid": "rs4244304",
@@ -64661,12 +64601,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:37:59.577479+00:00"
-  },
-  "rs55668594": {
-    "rsid": "rs55668594",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724079+00:00"
   },
   "rs556765": {
     "rsid": "rs556765",
@@ -75431,12 +75365,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:01.161072+00:00"
   },
-  "rs713028": {
-    "rsid": "rs713028",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724085+00:00"
-  },
   "rs7130588": {
     "rsid": "rs7130588",
     "chromosome": "11",
@@ -77885,12 +77813,6 @@
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:19.545156+00:00"
   },
-  "rs74492728": {
-    "rsid": "rs74492728",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724090+00:00"
-  },
   "rs745442454": {
     "rsid": "rs745442454",
     "chromosome": "5",
@@ -78322,12 +78244,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:29.790563+00:00"
-  },
-  "rs75014797": {
-    "rsid": "rs75014797",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724095+00:00"
   },
   "rs7502404": {
     "rsid": "rs7502404",
@@ -80038,12 +79954,6 @@
     "gene": "EAS-DEEP-AIM",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:22.062543+00:00"
-  },
-  "rs76047600": {
-    "rsid": "rs76047600",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724101+00:00"
   },
   "rs760553468": {
     "rsid": "rs760553468",
@@ -83320,12 +83230,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:20.226070+00:00"
-  },
-  "rs78729914": {
-    "rsid": "rs78729914",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724106+00:00"
   },
   "rs787494": {
     "rsid": "rs787494",
@@ -87421,18 +87325,6 @@
     "gene": "Intergenic",
     "build": "GRCh38",
     "checked_at": "2026-10-03T18:38:45.243348+00:00"
-  },
-  "rs9000344": {
-    "rsid": "rs9000344",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724111+00:00"
-  },
-  "rs9000345": {
-    "rsid": "rs9000345",
-    "status": "UNRESOLVED",
-    "build": "GRCh38",
-    "checked_at": "2026-10-03T19:07:50.724115+00:00"
   },
   "rs900423": {
     "rsid": "rs900423",
