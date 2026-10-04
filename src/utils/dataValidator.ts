@@ -295,6 +295,54 @@ export function validateAIMsData(filePath: string): boolean {
   return true;
 }
 
+export function lintUniqueWeightSets(filePath: string): { valid: boolean; errors: string[] } {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`[validate:data] Weight set file missing: ${filePath}`);
+  }
+  let raw: string;
+  try {
+    raw = fs.readFileSync(filePath, 'utf-8');
+  } catch (err: any) {
+    throw new Error(`[validate:data] Failed to read weight set file ${filePath}: ${err.message || err}`);
+  }
+  let data: Record<string, any>;
+  try {
+    data = JSON.parse(raw);
+  } catch (err: any) {
+    throw new Error(`[validate:data] Failed to parse JSON in ${filePath}: ${err.message || err}`);
+  }
+
+  const errors: string[] = [];
+  const seenSets = new Map<string, string>();
+
+  for (const [key, weights] of Object.entries(data)) {
+    if (typeof weights !== 'object' || weights === null || Array.isArray(weights)) {
+      continue;
+    }
+    const sortedKeys = Object.keys(weights).sort();
+    const serialized = JSON.stringify(weights, sortedKeys);
+    if (seenSets.has(serialized)) {
+      const priorKey = seenSets.get(serialized)!;
+      errors.push(
+        `Byte-identical weight set twins detected in ${path.basename(filePath)}: '${key}' and '${priorKey}' share ${serialized}`
+      );
+    } else {
+      seenSets.set(serialized, key);
+    }
+  }
+
+  if (errors.length > 0) {
+    const errorDetails = errors.slice(0, 10).map(e => `  - ${e}`).join('\n') +
+      (errors.length > 10 ? `\n  ... and ${errors.length - 10} more.` : '');
+    const fullMsg = `\n❌ [validate:data] ${errors.length} BYTE-IDENTICAL WEIGHT SET VIOLATION(S) in ${path.basename(filePath)}:\n${errorDetails}`;
+    console.error(fullMsg);
+    throw new Error(fullMsg);
+  }
+
+  console.log(`✓ [validate:data] ${path.basename(filePath).padEnd(28)}: ${Object.keys(data).length.toString().padStart(5)} unique weight sets verified (No identical twins)`);
+  return { valid: true, errors: [] };
+}
+
 export function runFullValidation(customFiles?: string[]) {
   console.log('🧬 Running Hard-Rule Data Validation against synthetic/mock SNPs...\n');
 
@@ -318,6 +366,12 @@ export function runFullValidation(customFiles?: string[]) {
   for (const relPath of filesToValidate) {
     const fullPath = path.isAbsolute(relPath) ? relPath : path.join(process.cwd(), relPath);
     validateAIMsData(fullPath);
+  }
+
+  // Weight set uniqueness lint
+  const curatedWeightsPath = path.join(process.cwd(), 'src/data/raw_aims/custom_curated_markers.json');
+  if (fs.existsSync(curatedWeightsPath)) {
+    lintUniqueWeightSets(curatedWeightsPath);
   }
 
   console.log('\n🎉 All databases strictly comply with the Zero Synthetic SNPs / RSIDs Hard Rule.');

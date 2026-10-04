@@ -14,6 +14,7 @@ import { matchGenotypeAllele } from '../genomicMasks';
 import {
   validateAimRecord,
   validateAIMsData,
+  lintUniqueWeightSets,
   loadDbsnpMergedMap,
   PANEL_FILES,
   ensemblCache,
@@ -1103,6 +1104,32 @@ rs2887286\t1\t1220751\tCC
       expect(sliced.slicedSnpMap['t2t-chm13:chr1_12345']).toBe('CT');
       expect(sliced.slicedSnpMap['hg18:chr2_54321']).toBe('GG');
       expect(sliced.slicedSnpMap['bg_marker_0']).toBeUndefined();
+    });
+  });
+
+  describe('Data Lows: Weight set uniqueness and twin deduplication', () => {
+    it('verifies custom_curated_markers.json contains no byte-identical weight set twins', () => {
+      const result = lintUniqueWeightSets(
+        path.join(process.cwd(), 'src/data/raw_aims/custom_curated_markers.json')
+      );
+      expect(result.valid).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    it('asserts validator lint fails closed when byte-identical weight sets exist', () => {
+      const tempPath = path.join(process.cwd(), 'src/data/raw_aims/__temp_twin_test.json');
+      try {
+        fs.writeFileSync(
+          tempPath,
+          JSON.stringify({
+            rs10484554: { EUR: 0.6, SAS: 0.1, EAS: 0.1, AFR: 0.1, AMR: 0.1 },
+            rs2058276: { EUR: 0.6, SAS: 0.1, EAS: 0.1, AFR: 0.1, AMR: 0.1 },
+          })
+        );
+        expect(() => lintUniqueWeightSets(tempPath)).toThrow(/BYTE-IDENTICAL WEIGHT SET VIOLATION/);
+      } finally {
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+      }
     });
   });
 });
