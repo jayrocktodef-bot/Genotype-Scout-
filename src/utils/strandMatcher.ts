@@ -81,6 +81,13 @@ export function parseUserGenotype(userCall: string | null | undefined): string[]
 /**
  * Unified allele matcher conforming to H-3 Stand Invariants.
  *
+ * Contract for palindromic inference:
+ * To infer palindromicity when `isPalindromic` is not explicitly provided, both alleles
+ * of the locus must be known (either via both `refAllele` and `otherAllele`, or one allele
+ * distinct from `targetAllele`). If only a single allele is known (e.g. `refAllele === targetAllele`
+ * or only one allele provided without a distinct counterpart), palindromicity is treated as
+ * unknown and the matcher fails closed (exact forward-strand matching only, no complement).
+ *
  * @param userGenotype - Raw genotype call from user file (e.g. "AG", "A/G", "A")
  * @param targetAllele - The AIM reference/alternative allele to count dosage for (e.g. "A")
  * @param options - Additional marker context:
@@ -100,12 +107,30 @@ export function matchGenotypeAlleles(
   const target = (targetAllele || '').toUpperCase().trim();
   const userBases = parseUserGenotype(userGenotype);
 
-  // Determine if locus is palindromic and if locus is verified non-palindromic
-  const knownRef = options?.refAllele || options?.otherAllele;
-  const hasKnownPair = Boolean(knownRef && target);
+  // Determine if locus is palindromic and if locus is verified non-palindromic.
+  // Palindromic inference requires BOTH distinct alleles of the locus to be known.
+  // If only a single allele is known (e.g. refAllele === target or neither provided),
+  // locus palindromicity is unknown -> fail closed to exact forward-strand matching (no complement).
+  const ref = options?.refAllele ? options.refAllele.toUpperCase().trim() : null;
+  const other = options?.otherAllele ? options.otherAllele.toUpperCase().trim() : null;
+
+  let a1: string | null = null;
+  let a2: string | null = null;
+  if (ref && other && ref !== other) {
+    a1 = ref;
+    a2 = other;
+  } else if (ref && target && ref !== target) {
+    a1 = ref;
+    a2 = target;
+  } else if (other && target && other !== target) {
+    a1 = other;
+    a2 = target;
+  }
+
+  const hasKnownPair = Boolean(a1 && a2);
   let palindromic = Boolean(options?.isPalindromic);
   if (!palindromic && hasKnownPair) {
-    palindromic = isPalindromicPair(knownRef, target);
+    palindromic = isPalindromicPair(a1!, a2!);
   }
   const isKnownNonPalindromic = options?.isPalindromic === false || (hasKnownPair && !palindromic);
 

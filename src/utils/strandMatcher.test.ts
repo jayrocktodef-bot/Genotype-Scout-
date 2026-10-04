@@ -89,4 +89,33 @@ describe('strandMatcher', () => {
     expect(resCG.dosage).toBe(0);
     expect(resCG.isPalindromic).toBe(true);
   });
+
+  it('L4: requires both alleles for palindromic inference; single-allele fails closed to exact forward matching', () => {
+    // Edge case: target is 'A', caller passes refAllele='A' (single allele known for locus).
+    // User genotype 'TT' must NOT be complemented to 'AA' (dosage must be 0).
+    const singleAlleleRef = matchGenotypeAlleles('TT', 'A', { refAllele: 'A' });
+    expect(singleAlleleRef.dosage).toBe(0);
+    expect(singleAlleleRef.isComplement).toBe(false);
+
+    // Single allele known via otherAllele matching target
+    const singleAlleleOther = matchGenotypeAlleles('TT', 'A', { otherAllele: 'A' });
+    expect(singleAlleleOther.dosage).toBe(0);
+    expect(singleAlleleOther.isComplement).toBe(false);
+
+    // Single allele known with no options at all
+    const noOptions = matchGenotypeAlleles('TT', 'A');
+    expect(noOptions.dosage).toBe(0);
+    expect(noOptions.isComplement).toBe(false);
+
+    // Full-pair callers remain completely unaffected:
+    // Non-palindromic pair A/G with target A: TT complements to AA -> dosage 2
+    const fullPairOther = matchGenotypeAlleles('TT', 'A', { otherAllele: 'G' });
+    expect(fullPairOther.dosage).toBe(2);
+    expect(fullPairOther.isComplement).toBe(true);
+
+    const fullPairBoth = matchGenotypeAlleles('TT', 'A', { refAllele: 'C', otherAllele: 'A' });
+    expect(fullPairBoth.dosage).toBe(2);
+    expect(fullPairBoth.isComplement).toBe(true);
+  });
 });
+
