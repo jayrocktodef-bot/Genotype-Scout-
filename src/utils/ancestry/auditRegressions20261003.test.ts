@@ -1131,6 +1131,14 @@ rs2887286\t1\t1220751\tCC
         if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
       }
     });
+
+    it('verifies src/data/README.md documents frequency rounding provenance', () => {
+      const readmePath = path.join(process.cwd(), 'src/data/README.md');
+      expect(fs.existsSync(readmePath)).toBe(true);
+      const content = fs.readFileSync(readmePath, 'utf-8');
+      expect(content).toMatch(/1000 Genomes|1000G/);
+      expect(content).toMatch(/0\.500|0\.250|rounding/i);
+    });
   });
 });
 
