@@ -1,83 +1,4 @@
 {
-  "rs10456291": {
-    "rsid": "rs10456291",
-    "chromosome": "6",
-    "position": 23799312,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.04,
-      "EAS": 0.38,
-      "AMR": 0.02,
-      "SAS": 0.01,
-      "MENA": 0.01,
-      "NAFR": 0.94,
-      "OCE": 0.88
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "HBB",
-    "trait": "Chamorro Ancestry Marker",
-    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap.",
-    "build": "GRCh38"
-  },
-  "rs10456292": {
-    "rsid": "rs10456292",
-    "chromosome": "6",
-    "position": 23799474,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.15,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.1,
-      "MENA": 0.95,
-      "NAFR": 0.25,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "HBB",
-    "trait": "Hmong Ancestry Marker",
-    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
-    "build": "GRCh38"
-  },
-  "rs10456293": {
-    "rsid": "rs10456293",
-    "chromosome": "6",
-    "position": 23860396,
-    "region": "African American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.97,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "HBB",
-    "trait": "Hmong Ancestry Marker",
-    "description": "Marker related to Central/West African origins common across African American populations.",
-    "build": "GRCh38"
-  },
   "rs200000": {
     "rsid": "rs200000",
     "chromosome": "5",
@@ -98,7 +19,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -123,7 +44,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -148,7 +69,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -169,7 +90,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -190,7 +111,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -211,7 +132,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -232,7 +153,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -257,7 +178,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -278,7 +199,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -299,7 +220,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -324,7 +245,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -345,7 +266,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -370,7 +291,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -391,7 +312,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -416,7 +337,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "EGLN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -437,7 +358,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "EGLN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -458,7 +379,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "AGBL4",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -483,7 +404,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "ZNF22-AS1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -507,7 +428,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "GRHL3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -528,7 +449,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -553,7 +474,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "NRG3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -575,7 +496,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "KAZN",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -600,7 +521,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "KAZN",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -621,7 +542,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "FCGR1A",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -646,7 +567,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -667,7 +588,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -688,7 +609,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -709,7 +630,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -734,7 +655,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -759,7 +680,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -781,7 +702,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "LINC01031",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -802,7 +723,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC01031",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -823,7 +744,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -844,7 +765,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -865,7 +786,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -886,7 +807,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -907,7 +828,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -928,7 +849,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -949,7 +870,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -970,7 +891,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR2T27",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -994,7 +915,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "Unknown",
+    "gene": "OR2T6",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1015,7 +936,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ERRFI1-DT",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1036,7 +957,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1057,7 +978,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1078,7 +999,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ADAMTSL1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1099,7 +1020,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1120,7 +1041,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1144,7 +1065,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1165,7 +1086,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ACAP2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1190,7 +1111,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "PTBP3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1215,7 +1136,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1240,7 +1161,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1265,7 +1186,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1290,7 +1211,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1311,7 +1232,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1336,7 +1257,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1357,7 +1278,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1382,7 +1303,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "DOCK1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1403,7 +1324,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "GLIS3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1424,7 +1345,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1445,7 +1366,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "NEBL",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1466,7 +1387,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1491,7 +1412,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1512,7 +1433,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ABCA1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1537,7 +1458,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "DCDC2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1558,7 +1479,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC00624",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1583,7 +1504,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1604,7 +1525,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC01500",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1625,7 +1546,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "PRKCH",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1650,7 +1571,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1675,7 +1596,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1700,7 +1621,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1721,7 +1642,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1744,7 +1665,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "FUT8",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1769,7 +1690,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1790,7 +1711,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "KDM4C",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1811,7 +1732,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "RBM20",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1832,7 +1753,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1857,7 +1778,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1878,7 +1799,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "UNC5B",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1903,7 +1824,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "CDKL1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1924,7 +1845,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LRRC7",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1945,7 +1866,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LRRC7",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1966,7 +1887,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "EYA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -1987,7 +1908,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2008,7 +1929,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LRFN2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2029,7 +1950,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC00115",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2054,7 +1975,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Unknown",
+    "gene": "LINC00115",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2075,7 +1996,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2096,7 +2017,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2117,7 +2038,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ZNF438",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2138,7 +2059,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2163,7 +2084,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2188,7 +2109,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "SCIRT",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2209,7 +2130,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2230,7 +2151,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MRPL14",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2255,7 +2176,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "IGKV1D-43",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2280,7 +2201,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "ABCC10",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2301,7 +2222,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC03022",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2322,7 +2243,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ATP6V0D2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2347,7 +2268,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2368,7 +2289,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2389,7 +2310,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MSR1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2410,7 +2331,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2435,7 +2356,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "SLC7A2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2456,7 +2377,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "HPYR1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2481,7 +2402,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2502,7 +2423,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "CCDC26",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2523,7 +2444,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "EBF2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2544,7 +2465,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2565,7 +2486,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "PVT1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2590,7 +2511,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "LINC02842",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2611,7 +2532,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2636,7 +2557,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2657,7 +2578,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC02055",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2682,7 +2603,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "STAU2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2703,7 +2624,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MMP16",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2726,7 +2647,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2751,7 +2672,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "MITA1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2772,7 +2693,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ARHGAP39",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2797,7 +2718,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "ATAD2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2822,7 +2743,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "LINC01288",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2844,7 +2765,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2865,7 +2786,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "DLGAP2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2887,7 +2808,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "Unknown",
+    "gene": "ZNF34",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2912,7 +2833,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2937,7 +2858,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "KCNQ3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2958,7 +2879,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -2980,7 +2901,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3001,7 +2922,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "KCNB2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3026,7 +2947,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3047,7 +2968,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3068,7 +2989,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LINC00534",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3089,7 +3010,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3111,7 +3032,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "LINC02055",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3132,7 +3053,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "CNGB3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3153,7 +3074,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3178,7 +3099,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3203,7 +3124,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "LINC01607",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3228,7 +3149,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3249,7 +3170,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3270,7 +3191,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3291,7 +3212,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "RIMS2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3316,7 +3237,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "HTRA4",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3337,7 +3258,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3358,7 +3279,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3379,7 +3300,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LRRC69",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3400,7 +3321,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ZNF704",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3423,7 +3344,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "MTDH",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3444,7 +3365,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3466,7 +3387,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "RALYL",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3487,7 +3408,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "SGCZ",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3508,7 +3429,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "DEPTOR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3529,7 +3450,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ASAP1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3550,7 +3471,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3571,7 +3492,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3595,7 +3516,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "PPP2R2A",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3617,7 +3538,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "LINC02866",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3638,7 +3559,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3663,7 +3584,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Unknown",
+    "gene": "FAM85B",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3685,7 +3606,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3710,7 +3631,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3735,7 +3656,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3760,7 +3681,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3781,7 +3702,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "STAU2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3802,7 +3723,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3825,7 +3746,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "CLVS1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3846,7 +3767,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "MIR5681A",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3871,7 +3792,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "TUSC3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3892,7 +3813,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "COL14A1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3917,7 +3838,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "ADAM28",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3938,7 +3859,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3963,7 +3884,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "CPQ",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -3988,7 +3909,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4009,7 +3930,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4034,7 +3955,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "MSRA",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4059,7 +3980,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4084,7 +4005,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4105,7 +4026,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "LYN",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4126,7 +4047,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4147,7 +4068,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "TRAPPC9",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"
@@ -4168,7 +4089,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "CFAP418-AS1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38"

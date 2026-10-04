@@ -3390,7 +3390,7 @@
     },
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "HBB",
+    "gene": "DCDC2",
     "trait": "Phenotype",
     "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression.",
     "build": "GRCh38"

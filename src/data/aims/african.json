@@ -2992,7 +2992,7 @@
     },
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "HBB",
+    "gene": "DCDC2",
     "trait": "Phenotype",
     "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression.",
     "build": "GRCh38"
@@ -22960,7 +22960,7 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "HBB",
+    "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Bantu diagnostic SNP - informative for West-Central and Eastern African Bantu-speaking populations.",
     "build": "GRCh38"

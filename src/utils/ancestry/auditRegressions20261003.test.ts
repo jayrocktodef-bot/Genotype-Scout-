@@ -707,5 +707,61 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(result['rs99999904']).toBeDefined();
     });
   });
+
+  describe('(k) M-4: Reconcile african_american.json label/gene contradictions', () => {
+    const aaPath = path.resolve(__dirname, '../../data/aims/african_american.json');
+    const aaData = JSON.parse(fs.readFileSync(aaPath, 'utf-8'));
+
+    it('ensures contradictory markers rs10456291, rs10456292, rs10456293 are purged from african_american.json', () => {
+      expect(aaData['rs10456291']).toBeUndefined();
+      expect(aaData['rs10456292']).toBeUndefined();
+      expect(aaData['rs10456293']).toBeUndefined();
+    });
+
+    it('ensures zero records in african_american.json have gene Unknown or gene HBB', () => {
+      for (const [rs, entry] of Object.entries(aaData)) {
+        expect((entry as any).gene).not.toBe('Unknown');
+        expect((entry as any).gene).not.toBe('HBB');
+      }
+    });
+
+    it('ensures panel-lint: no record gene chromosome contradicts its coordinate chromosome', () => {
+      // Known gene-to-chromosome mappings for curated genes in african_american
+      const GENE_CHRS: Record<string, string> = {
+        HBB: '11',
+        MDGA2: '14',
+        OR2T7: '1',
+        NKAIN3: '8',
+        FCAMR: '1',
+        CSMD1: '8',
+        EGLN3: '14',
+        KAZN: '1',
+        LRRC7: '1',
+        DCDC2: '6',
+        SPTLC1P2: '6'
+      };
+
+      for (const [rs, entry] of Object.entries(aaData)) {
+        const gene = (entry as any).gene;
+        const chr = String((entry as any).chromosome).replace(/^chr/i, '');
+        if (gene && GENE_CHRS[gene]) {
+          expect(chr).toBe(GENE_CHRS[gene]);
+        }
+      }
+    });
+
+    it('ensures zero trait/description/region contradictions across african_american.json', () => {
+      for (const [rs, entry] of Object.entries(aaData)) {
+        const e = entry as any;
+        expect(e.region).toBe('African American');
+        expect(e.trait).toBe('Ancestry');
+        expect(e.description.toLowerCase()).toContain('african american');
+        expect(e.description.toLowerCase()).not.toContain('chamorro');
+        expect(e.description.toLowerCase()).not.toContain('hmong');
+        expect(e.description.toLowerCase()).not.toContain('nafr/mena');
+      }
+    });
+  });
 });
+
 

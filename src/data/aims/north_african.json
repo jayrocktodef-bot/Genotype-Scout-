@@ -926,7 +926,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "HBB",
+    "gene": "Intergenic",
     "trait": "Chamorro Ancestry Marker",
     "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap.",
     "build": "GRCh38"

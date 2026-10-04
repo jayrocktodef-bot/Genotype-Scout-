@@ -105,7 +105,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "HBB",
+    "gene": "Intergenic",
     "trait": "Hmong Ancestry Marker",
     "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
     "build": "GRCh38"
@@ -130,7 +130,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
-    "gene": "HBB",
+    "gene": "SPTLC1P2",
     "trait": "Hmong Ancestry Marker",
     "description": "Marker related to Central/West African origins common across African American populations.",
     "build": "GRCh38"
