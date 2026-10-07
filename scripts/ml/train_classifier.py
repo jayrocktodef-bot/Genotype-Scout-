@@ -37,6 +37,15 @@ def main():
     manifest['train_samples'] = list(s_train)
     manifest['test_samples'] = list(s_test)
     
+    print("Imputing missing values from train split...")
+    for i in range(X_train.shape[1]):
+        col_train = X_train[:, i]
+        valid = col_train[~np.isnan(col_train)]
+        mean_val = np.mean(valid) if len(valid) > 0 else 0.0
+        X_train[:, i] = np.nan_to_num(X_train[:, i], nan=mean_val)
+        X_test[:, i] = np.nan_to_num(X_test[:, i], nan=mean_val)
+        features_meta[i]['imputeMean'] = float(mean_val)
+    
     print("Training LogisticRegression (C=0.5)...")
     clf = LogisticRegression(C=0.5, solver='lbfgs', max_iter=1000)
     clf.fit(X_train, y_train)
@@ -87,7 +96,7 @@ def main():
     
     # Build sidecar
     sidecar = {
-        "version": "3.0.0",
+        "version": "4.0.0",
         "modelType": "LogisticRegression (ONNX)",
         "inputName": "float_input",
         "outputNames": ["output_label", "probabilities"],
