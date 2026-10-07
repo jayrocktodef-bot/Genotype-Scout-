@@ -149,16 +149,10 @@ def main():
         if fmeta['isPalindromic'] and maf > 0.40:
             continue
             
-        fmeta['imputeMean'] = float(mean_dosage)
         keep_features.append(j)
         final_features_meta.append(fmeta)
         
     dosage = dosage[:, keep_features]
-    
-    # Mean Impute
-    for j, fmeta in enumerate(final_features_meta):
-        col = dosage[:, j]
-        col[np.isnan(col)] = fmeta['imputeMean']
         
     np.savez_compressed(ML_DIR / 'dataset.npz', 
         samples=samples, 
