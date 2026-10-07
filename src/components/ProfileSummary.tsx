@@ -1388,6 +1388,11 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                   {(oracleResults.onnxClassifierResult.confidence * 100).toFixed(1)}% Confidence
                 </span>
               </div>
+              {oracleResults.onnxClassifierResult.ambiguous && (
+                <p className="text-[10px] text-indigo-500/70 dark:text-indigo-400/60 mt-1 uppercase tracking-wider font-semibold">
+                  Low confidence — close call
+                </p>
+              )}
             </div>
             {oracleResults.onnxClassifierResult.probabilities && (
               <div className="flex flex-col gap-1.5 w-full md:w-64 shrink-0">

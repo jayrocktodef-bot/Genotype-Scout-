@@ -1152,14 +1152,14 @@ export async function getClassifierMetadata(): Promise<ClassifierMetadata> {
     } catch (e) {
       console.warn('Could not load classifier metadata sidecar, falling back to defaults:', e);
       return {
-        version: '2.0.0',
+        version: '4.0.0',
         modelType: 'Multinomial Logistic Regression Softmax',
         inputName: 'float_input',
         outputNames: ['output_label', 'probabilities', 'class_labels'],
-        n_features: 1197,
+        n_features: 1117,
         n_classes: 7,
         classes: ['African', 'East_Asian', 'European', 'Indigenous_American', 'Middle_Eastern', 'Oceanian', 'South_Asian'],
-        features: ANCHOR_AIMS.map(a => a.rsid.toLowerCase()).sort().slice(0, 1197),
+        features: ANCHOR_AIMS.map(a => a.rsid.toLowerCase()).sort().slice(0, 1117),
         featureAlleles: [],
         otherAlleles: [],
         isPalindromic: [],
@@ -1171,14 +1171,14 @@ export async function getClassifierMetadata(): Promise<ClassifierMetadata> {
   return classifierMetadataPromise;
 }
 
-// Deterministically get the 1197 feature rsIDs from our candidate aims list
+// Deterministically get the feature rsIDs from our candidate aims list fallback
 export function getClassifierFeatureList(): string[] {
-  if (classifierMetadataCache?.features && classifierMetadataCache.features.length === 1197) {
+  if (classifierMetadataCache?.features && classifierMetadataCache.features.length === (classifierMetadataCache.n_features || 1117)) {
     return classifierMetadataCache.features;
   }
   const rsids = ANCHOR_AIMS.map(a => a.rsid.toLowerCase());
   const sorted = Array.from(new Set(rsids)).sort();
-  return sorted.slice(0, 1197);
+  return sorted.slice(0, classifierMetadataCache?.n_features || 1117);
 }
 
 function complementAllele(a: string): string {
@@ -1195,7 +1195,8 @@ export function extractOnnxFeatureMatrix(
   metadata: Pick<ClassifierMetadata, 'features' | 'featureAlleles' | 'otherAlleles' | 'isPalindromic' | 'imputeMeans'>
 ): Float32Array {
   const featureList = metadata.features;
-  if (!featureList || featureList.length === 0) return new Float32Array(1197); // fallback
+  const nFeat = (metadata as any).n_features || 1117;
+  if (!featureList || featureList.length === 0) return new Float32Array(nFeat); // fallback
   const vector = new Float32Array(featureList.length);
   
   for (let index = 0; index < featureList.length; index++) {
