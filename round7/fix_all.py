@@ -3,7 +3,7 @@
 import json, re, sys, os
 from collections import Counter
 
-D = "/home/hatch/workspace/aim-audit/round7/full"
+D = os.path.dirname(os.path.abspath(__file__))  # portable: repo round7/ dir
 COMP = {"A": "T", "T": "A", "C": "G", "G": "C"}
 POPMAP = {
     "AFR": ["1000GENOMES:phase_3:AFR", "gnomADg:afr"],

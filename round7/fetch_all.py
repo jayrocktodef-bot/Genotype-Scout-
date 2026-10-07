@@ -2,7 +2,7 @@
 """Full run: fetch Ensembl pops=1 for union rsIDs. Resumable. 12 parallel."""
 import json, os, subprocess, sys
 
-D = "/home/hatch/workspace/aim-audit/round7/full"
+D = os.path.dirname(os.path.abspath(__file__))  # portable: repo round7/ dir
 RAW = os.path.join(D, "ensembl_raw")
 os.makedirs(RAW, exist_ok=True)
 need = [l.strip() for l in open(os.path.join(D, "union_need.txt")) if l.strip()]
@@ -26,8 +26,10 @@ for rs in need:
     except Exception:
         pass
 # merge pilot snapshot
-pilot = json.load(open("/home/hatch/workspace/aim-audit/round7/ensembl_ref_snapshot.json"))["variants"]
-variants.update(pilot)
+pilot_path = os.path.join(D, "ensembl_ref_snapshot.json")
+if os.path.exists(pilot_path):
+    pilot = json.load(open(pilot_path))["variants"]
+    variants.update(pilot)
 from datetime import datetime, timezone
 out = {"pulled_at": datetime.now(timezone.utc).isoformat(),
        "source": "Ensembl REST variation/human?pops=1 per-variant GET (GRCh38)",
