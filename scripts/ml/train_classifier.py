@@ -56,6 +56,28 @@ def main():
     # "At least 90% on the 5 validatable classes, log loss < 0.5"
     # Actually, we can check globally or per class. Let's compute global.
     
+    import sklearn.metrics as metrics
+    from sklearn.calibration import calibration_curve
+    cm = metrics.confusion_matrix(y_test, y_pred, labels=clf.classes_)
+    
+    calib_curves = {}
+    for i, c in enumerate(clf.classes_):
+        prob_pos = y_prob[:, i]
+        y_true_bin = (y_test == c).astype(int)
+        prob_true, prob_pred = calibration_curve(y_true_bin, prob_pos, n_bins=10)
+        calib_curves[c] = {'prob_true': prob_true.tolist(), 'prob_pred': prob_pred.tolist()}
+        
+    eval_results = {
+        'accuracy': float(acc),
+        'log_loss': float(ll),
+        'classification_report': metrics.classification_report(y_test, y_pred, output_dict=True),
+        'confusion_matrix': cm.tolist(),
+        'classes': list(clf.classes_),
+        'calibration_curves': calib_curves
+    }
+    with open(ML_DIR / 'evaluation_metrics.json', 'w') as f:
+        json.dump(eval_results, f, indent=2)
+        
     print("Exporting ONNX...")
     initial_type = [('float_input', FloatTensorType([None, X.shape[1]]))]
     options = {id(clf): {'zipmap': False}}
