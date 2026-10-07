@@ -23,8 +23,8 @@ def load_metadata():
         for line in f:
             if line.startswith('sample'): continue
             parts = line.strip().split('\t')
-            if len(parts) >= 3:
-                hgdp_panel[parts[0]] = (parts[1], parts[2])
+            if len(parts) > 8:
+                hgdp_panel[parts[0]] = (parts[5], parts[8])
                 
     return tgp_panel, hgdp_panel
 
@@ -43,13 +43,12 @@ def assign_class(sample_id, source, tgp_panel, hgdp_panel):
     elif source == 'hgdp':
         if sample_id not in hgdp_panel: return None
         pop, region = hgdp_panel[sample_id]
-        if region == 'EUROPE': return 'European'
-        if region == 'AFRICA': return 'African'
-        if region == 'EAST_ASIA': return 'East_Asian'
-        if region == 'CENTRAL_SOUTH_ASIA': return 'South_Asian'
-        if region == 'AMERICA': return 'Indigenous_American'
-        if region == 'MIDDLE_EAST': return 'Middle_Eastern'
-        if region == 'OCEANIA': return 'Oceanian'
+        if pop in ['Karitiana', 'Surui', 'Pima', 'Maya']:
+            return 'Indigenous_American'
+        if pop in ['Bedouin', 'Druze', 'Palestinian', 'Mozabite']:
+            return 'Middle_Eastern'
+        if pop.startswith('Papuan') or pop == 'Bougainville':
+            return 'Oceanian'
         return None
         
 def process_source(source, tgp_panel, hgdp_panel, features_dict):
