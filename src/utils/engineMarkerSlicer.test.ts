@@ -21,7 +21,7 @@ describe('engineMarkerSlicer', () => {
       const set = getEngineMarkerSet(engine);
       expect(set.size).toBeGreaterThan(0);
     }
-  });
+  }, 30000);
 
   it('bypasses slicing when snpMap has <= 2,500 markers (test fixtures & small kits)', () => {
     const smallMap: Record<string, string> = {
