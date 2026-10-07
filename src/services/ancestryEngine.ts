@@ -1095,7 +1095,7 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   let onnxResult: OnnxInferenceOutput | null = null;
   try {
     const metadata = await getClassifierMetadata();
-    const onnxFeatures = extractOnnxFeatureMatrix(imputedGenotype, metadata.features, metadata.altAlleles);
+    const onnxFeatures = extractOnnxFeatureMatrix(imputedGenotype, metadata);
     onnxResult = await runOnnxClassifier(onnxFeatures);
   } catch (e) {
     console.warn('Could not run ONNX classifier inside calculateAncestryOracle:', e);
@@ -1116,7 +1116,10 @@ export interface ClassifierMetadata {
   n_classes: number;
   classes: string[];
   features: string[];
-  altAlleles: string[];
+  featureAlleles: string[];
+  otherAlleles: string[];
+  isPalindromic: boolean[];
+  imputeMeans: number[];
   validationAccuracy?: number;
   validationLogLoss?: number;
 }
@@ -1157,7 +1160,10 @@ export async function getClassifierMetadata(): Promise<ClassifierMetadata> {
         n_classes: 7,
         classes: ['African', 'East_Asian', 'European', 'Indigenous_American', 'Middle_Eastern', 'Oceanian', 'South_Asian'],
         features: ANCHOR_AIMS.map(a => a.rsid.toLowerCase()).sort().slice(0, 1197),
-        altAlleles: []
+        featureAlleles: [],
+        otherAlleles: [],
+        isPalindromic: [],
+        imputeMeans: []
       };
     }
   })();
@@ -1175,41 +1181,59 @@ export function getClassifierFeatureList(): string[] {
   return sorted.slice(0, 1197);
 }
 
-// Convert parsed user genome into standard Float32 array of shape [1, 1197]
+function complementAllele(a: string): string {
+  if (a === 'A') return 'T';
+  if (a === 'T') return 'A';
+  if (a === 'C') return 'G';
+  if (a === 'G') return 'C';
+  return a;
+}
+
+// Convert parsed user genome into standard Float32 array using canonical spec
 export function extractOnnxFeatureMatrix(
   userGenotype: Record<string, string>,
-  customFeatureList?: string[],
-  customAltList?: string[]
+  metadata: Pick<ClassifierMetadata, 'features' | 'featureAlleles' | 'otherAlleles' | 'isPalindromic' | 'imputeMeans'>
 ): Float32Array {
-  const featureList = customFeatureList || getClassifierFeatureList();
-  const vector = new Float32Array(1197);
+  const featureList = metadata.features;
+  if (!featureList || featureList.length === 0) return new Float32Array(1197); // fallback
+  const vector = new Float32Array(featureList.length);
   
-  for (let index = 0; index < 1197; index++) {
+  for (let index = 0; index < featureList.length; index++) {
     const rsid = featureList[index];
-    if (!rsid) continue;
     const lowerRsid = rsid.toLowerCase();
     const rawGeno = userGenotype[rsid] || userGenotype[lowerRsid] || userGenotype[rsid.toUpperCase()];
-    if (!rawGeno || rawGeno === '--') {
-      vector[index] = 0.0;
+    
+    if (!rawGeno || rawGeno === '--' || rawGeno.length !== 2) {
+      vector[index] = metadata.imputeMeans?.[index] ?? 0.0;
       continue;
     }
+
+    const gt1 = rawGeno[0].toUpperCase();
+    const gt2 = rawGeno[1].toUpperCase();
     
-    const expectedAlt = customAltList?.[index];
-    const aim = extendedAnchorMap.get(lowerRsid);
-    const alt = (expectedAlt || aim?.alleles?.[0])?.toUpperCase();
-    if (alt) {
-      const matchRes = matchGenotypeAlleles(rawGeno, alt, {
-        refAllele: aim?.alleles?.[1] || null,
-        otherAllele: aim?.alleles?.[1] || null,
-        isPalindromic: aim?.isPalindromic ?? null,
-      });
-      vector[index] = matchRes.dosage;
-    } else {
-      if (rawGeno[0] !== rawGeno[1]) {
-        vector[index] = 1.0;
-      } else {
-        vector[index] = 0.0;
+    const fAll = metadata.featureAlleles[index].toUpperCase();
+    const oAll = metadata.otherAlleles[index].toUpperCase();
+    const isPal = metadata.isPalindromic[index];
+
+    let dosage = NaN;
+
+    // 1. Exact Match
+    if ((gt1 === fAll || gt1 === oAll) && (gt2 === fAll || gt2 === oAll)) {
+      dosage = (gt1 === fAll ? 1 : 0) + (gt2 === fAll ? 1 : 0);
+    } 
+    // 2. Complement Match
+    else if (!isPal) {
+      const cf = complementAllele(fAll);
+      const co = complementAllele(oAll);
+      if ((gt1 === cf || gt1 === co) && (gt2 === cf || gt2 === co)) {
+        dosage = (gt1 === cf ? 1 : 0) + (gt2 === cf ? 1 : 0);
       }
+    }
+
+    if (Number.isNaN(dosage)) {
+      vector[index] = metadata.imputeMeans?.[index] ?? 0.0;
+    } else {
+      vector[index] = dosage;
     }
   }
   
@@ -1280,15 +1304,15 @@ export async function runOnnxClassifier(
     ? snpFeatures
     : new Float32Array(snpFeatures);
     
-  if (featuresArray.length !== 1197) {
-    throw new Error(`ONNX Inference Error: Expected feature array of length 1197, but got ${featuresArray.length}`);
+  if (featuresArray.length !== metadata.n_features) {
+    throw new Error(`ONNX Inference Error: Expected feature array of length ${metadata.n_features}, but got ${featuresArray.length}`);
   }
   
-  const inputTensor = new ort.Tensor('float32', featuresArray, [1, 1197]);
+  const inputTensor = new ort.Tensor('float32', featuresArray, [1, metadata.n_features]);
   
   console.log('🧠 ONNX: Running classification inference...');
-  const outputs = await session.run({ float_input: inputTensor }, ['output_label', 'probabilities']);
-  const predictedLabel = String(outputs.output_label.data[0]);
+  const outputs = await session.run({ float_input: inputTensor }, ['label', 'probabilities']);
+  const predictedLabel = String(outputs.label.data[0]);
   
   const probData = outputs.probabilities.data as Float32Array;
   const probabilities: Record<string, number> = {};

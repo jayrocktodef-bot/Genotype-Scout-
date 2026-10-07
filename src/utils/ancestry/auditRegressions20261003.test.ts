@@ -845,7 +845,13 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       
       // User has minus-strand 'TT' (complement of forward 'AA')
       const userGenotypeMinus = { rs704257: 'TT' };
-      const vector = extractOnnxFeatureMatrix(userGenotypeMinus, customFeatureList, customAltList);
+      const vector = extractOnnxFeatureMatrix(userGenotypeMinus, {
+        features: customFeatureList,
+        featureAlleles: customAltList,
+        otherAlleles: ['G'],
+        isPalindromic: [false],
+        imputeMeans: [0]
+      } as any);
       
       // Extractor must match 2 counts of A via complement
       expect(vector[0]).toBe(2.0);
