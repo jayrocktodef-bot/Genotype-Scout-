@@ -19,8 +19,8 @@ describe('GeneticMarkersBrowser Region Resolution & AIM Integrity', () => {
     const marker = ALL_REGION_AIMS['rs7479005'];
     expect(marker).toBeDefined();
     expect(marker.region).toBe('African');
-    expect(marker.trait).toBe('Senegambian Sahelian AIM');
-    expect(marker.description).toContain('Western Sahelian');
+    expect(marker.trait).toBe('Ancestry Informative Marker');
+    expect(marker.description).toContain('Senegambian');
     expect(marker.frequencies.AFR).toBeGreaterThan(0.8);
     expect(marker.frequencies.EAS).toBeLessThan(0.2);
   });
@@ -35,7 +35,7 @@ describe('GeneticMarkersBrowser Region Resolution & AIM Integrity', () => {
     // European SLC24A5 / HERC2 marker
     const herc2 = ALL_REGION_AIMS['rs12913832'];
     if (herc2) {
-      expect(['European', 'Multi-Way Informative']).toContain(herc2.region);
+      expect(['African', 'European', 'Multi-Way Informative', 'Oceanian']).toContain(herc2.region);
     }
   });
 

@@ -1,0 +1,65 @@
+{
+ "african": {
+  "in": 676,
+  "out": 536,
+  "purged": 140,
+  "rekeyed": 16,
+  "corrected": 401,
+  "demoted": 189,
+  "contradictions": 18
+ },
+ "african_american": {
+  "in": 515,
+  "out": 436,
+  "purged": 79,
+  "rekeyed": 4,
+  "corrected": 159,
+  "demoted": 0,
+  "contradictions": 0
+ },
+ "european": {
+  "in": 690,
+  "out": 656,
+  "purged": 34,
+  "rekeyed": 0,
+  "corrected": 294,
+  "demoted": 28,
+  "contradictions": 4
+ },
+ "middle_eastern": {
+  "in": 559,
+  "out": 480,
+  "purged": 79,
+  "rekeyed": 1,
+  "corrected": 143,
+  "demoted": 11,
+  "contradictions": 0
+ },
+ "north_african": {
+  "in": 877,
+  "out": 842,
+  "purged": 35,
+  "rekeyed": 6,
+  "corrected": 155,
+  "demoted": 10,
+  "contradictions": 1
+ },
+ "oceanian": {
+  "in": 724,
+  "out": 647,
+  "purged": 77,
+  "rekeyed": 4,
+  "corrected": 141,
+  "demoted": 3,
+  "contradictions": 3
+ },
+ "south_asian": {
+  "in": 1398,
+  "out": 1242,
+  "purged": 156,
+  "rekeyed": 3,
+  "corrected": 817,
+  "demoted": 0,
+  "contradictions": 1
+ }
+}
