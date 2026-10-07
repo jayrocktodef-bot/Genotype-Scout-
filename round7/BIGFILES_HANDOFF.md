@@ -12,8 +12,8 @@
 
 **Reference data (do NOT re-pull what's already fetched):**
 Orbit already pulled Ensembl `pops=1` for 5,289 variants (all 7 smaller panels' union rsIDs).
-Download the snapshot (33MB, public Ensembl/1000G/gnomAD reference data, expires 2026-10-06):
-https://muse.ai/files/1384743961386034/1086313557182856/x6plwla9yeh9lur8buqtbn9b/ensembl_ref_snapshot.json
+Download the snapshot (33MB, public Ensembl/1000G/gnomAD reference data, expires 2026-10-09):
+https://muse.ai/files/1384743961386034/3255206794671998/ptduenc7f08c7f6tfusmj2ux/ensembl_ref_snapshot.json
 Save as `round7/ensembl_ref_snapshot.json`.
 
 **Steps:**
