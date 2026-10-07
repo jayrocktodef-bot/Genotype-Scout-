@@ -44,3 +44,7 @@ Save as `round7/ensembl_ref_snapshot.json`.
 **Known non-issues:**
 - `subFrequencies`/`deepFrequencies` were NOT re-derived (nothing in `src/engines` reads them; engine scores on top-level `frequencies` only). Decide separately whether to re-derive or drop.
 - `frequencySource` field added to corrected entries (additive; schema-compatible).
+
+11. Judgment-call post-pass (after step 8, before step 9): `cd round7 && python3 apply_judgment_calls.py panels`
+    - Relabels false ancestry claims (trait contradicts measured peak, div > 0.5; e.g. "Bambara Ancestry Marker" peaking SAS) and demotes weights exceeding measured divergence (cap: div<0.3 -> 4, <0.5 -> 6, <0.7 -> 8). No markers are moved between panels; contrast markers are legitimate members. Pure health/trait markers are skipped.
+    - Review `panels/judgment_calls.report.json`: `relabels` and `weight_demoted` apply automatically; `manual_review` (admixed-ethnicity labels: Ashkenazi, Afrikaner, Cape Verdean...) and `purge_misses` (div < 0.15 survivors) need Jequan's ruling — do not action them unilaterally. Report all four counts.

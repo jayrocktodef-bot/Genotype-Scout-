@@ -9,6 +9,10 @@
       (5,439 → 4,839 markers; 600 purged; 2,110 corrected);
       `npm run validate:data`, vitest, and `tsc --noEmit` green;
       open PR; await Orbit diff verification before merge.
+      Includes the judgment-call post-pass (round7/apply_judgment_calls.py):
+      relabels + weight demotions apply automatically; manual_review and
+      purge_misses lists in panels/judgment_calls.report.json need Jequan's
+      ruling first — surface them, do not action unilaterally.
 
 ## Backburner
 
