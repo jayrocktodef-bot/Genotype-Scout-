@@ -230,6 +230,16 @@ export function validateAimRecord(
         `Ensembl GRCh38 chromosome mismatch for '${k}' in ${sourceName}: panel chr${chrStr} vs Ensembl chr${cachedChr}`
       );
     }
+    if (typeof entry.position === 'number' && typeof cached.position === 'number') {
+      // Coordinate conventions:
+      // Both our panel JSON files and the Ensembl variation API endpoints
+      // store and report 1-based GRCh38 genomic coordinates. We can do a direct === comparison.
+      if (entry.position !== cached.position) {
+        errors.push(
+          `Ensembl GRCh38 position mismatch for '${k}' in ${sourceName}: panel ${entry.position} vs Ensembl ${cached.position}`
+        );
+      }
+    }
     if (entry.alleles && cached.alleles) {
       const allowed = cached.alleles.toUpperCase().split(/[\/,|]/);
       const comp = (b: string) => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] || b);

@@ -179,6 +179,32 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
         delete ensemblCache['rs999999999'];
       }
     });
+
+    it('fails closed when a checked marker has a position mismatch against the Ensembl cache (e.g. 233bp drift)', () => {
+      ensemblCache['rs10456430_test'] = {
+        chromosome: '6',
+        position: 11762775,
+        alleles: 'G/A',
+      };
+      try {
+        const shiftedRecord = {
+          rsid: 'rs10456430_test',
+          chromosome: '6',
+          position: 11763008, // 11762775 + 233
+          region: 'African',
+          alleles: ['G', 'A'],
+          frequencies: { EUR: 0.1, AFR: 0.9 },
+          weight: 10,
+          build: 'GRCh38',
+        };
+
+        const result = validateAimRecord(shiftedRecord);
+        expect(result.valid).toBe(false);
+        expect(result.errors.some(e => e.includes('position mismatch'))).toBe(true);
+      } finally {
+        delete ensemblCache['rs10456430_test'];
+      }
+    });
   });
 
   describe('(c) High H-1: Build-aware coordinate matching and collision-free allowlist', () => {
