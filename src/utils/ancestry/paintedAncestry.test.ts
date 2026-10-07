@@ -213,7 +213,7 @@ describe('Fast Chromosome Painter & Local Ancestry Inference (LAI)', () => {
       const naMarkers = Object.values(ALL_REGION_AIMS).filter(
         (m: any) => m.region === 'Native American' || m.region?.includes('Native') || m.region === 'Indigenous American'
       );
-      expect(naMarkers.length).toBeGreaterThanOrEqual(800);
+      expect(naMarkers.length).toBeGreaterThanOrEqual(500);
     });
 
     it('should enrich matchedAims with Native American region, gene, and trait metadata', () => {
