@@ -1369,7 +1369,46 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
       <div className="mb-6 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/60 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
         <p><strong>Primary Mode:</strong> Uses only high-quality anchor AIMs for the most stable, conservative prediction.</p>
       </div>
-      
+
+      {oracleResults?.onnxClassifierResult && (
+        <div className="mb-6 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/40 dark:to-purple-900/20 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/60 shadow-sm relative overflow-hidden">
+          <div className="absolute -right-4 -top-4 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl"></div>
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-200 uppercase tracking-wider mb-1 flex items-center gap-2">
+                <Orbit className="w-4 h-4 text-indigo-500" />
+                Deep Learning Model (ONNX)
+              </h3>
+              <p className="text-xs text-indigo-700 dark:text-indigo-300/80 mb-3">7-Class Super-Population Global Classifier</p>
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-black text-indigo-900 dark:text-indigo-100">
+                  {humanizePopName(oracleResults.onnxClassifierResult.population)}
+                </span>
+                <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                  {(oracleResults.onnxClassifierResult.confidence * 100).toFixed(1)}% Confidence
+                </span>
+              </div>
+            </div>
+            {oracleResults.onnxClassifierResult.probabilities && (
+              <div className="flex flex-col gap-1.5 w-full md:w-64 shrink-0">
+                {Object.entries(oracleResults.onnxClassifierResult.probabilities)
+                  .sort((a: any, b: any) => Number(b[1]) - Number(a[1]))
+                  .slice(0, 3)
+                  .map(([pop, prob]: [string, any]) => (
+                    <div key={pop} className="flex items-center justify-between text-xs">
+                      <span className="text-indigo-900/70 dark:text-indigo-300 truncate w-24" title={humanizePopName(pop)}>{humanizePopName(pop)}</span>
+                      <span className="font-mono text-indigo-900 dark:text-indigo-200">{(Number(prob) * 100).toFixed(1)}%</span>
+                      <div className="w-12 md:w-20 h-1.5 bg-indigo-200 dark:bg-indigo-900/50 rounded-full overflow-hidden shrink-0 ml-2">
+                        <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${Number(prob) * 100}%` }}></div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="space-y-8">
         {/* Continental Admixture */}
         <div className="bg-slate-50/50 dark:bg-slate-950/40 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
