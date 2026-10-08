@@ -21,7 +21,7 @@ import {
   PARKED_TIEBREAKER_ANCHORS,
   PARKED_TIEBREAKER_ANCHORS_MAP,
 } from '../dataValidator';
-import { calculateComprehensiveScores } from '../../engines/ancestry/comprehensiveEngine';
+
 import { calculateHumanOriginsScores } from '../../engines/ancestry/humanOriginsEngine';
 import { parseRawDNA } from '../../services/parser/engine';
 import { ALL_REGION_AIMS, buildCleanAimDatabase } from '../../data/aims';
@@ -286,22 +286,7 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
         'grch38:chr6_26860652': 'GG',
       };
 
-      // 1. Build agreement: GRCh38 kit matches GRCh38 marker
-      const scoresAgree = calculateComprehensiveScores(syntheticGrch38SnpMap, { userBuild: 'GRCh38' });
-      // Total log likelihoods calculated from the matched marker
-      const agreeValues = Object.values(scoresAgree);
-      const hasNonZeroScore = agreeValues.some(v => v !== 0);
-      expect(hasNonZeroScore).toBe(true);
 
-      // 2. Build disagreement: GRCh37 kit must NOT match GRCh38 marker (fail closed)
-      const scoresDisagree = calculateComprehensiveScores(syntheticGrch38SnpMap, { userBuild: 'GRCh37' });
-      const disagreeValues = Object.values(scoresDisagree);
-      expect(disagreeValues.every(v => v === 0)).toBe(true);
-
-      // 3. Unknown build: unknown kit must NOT fallback to coordinates (rsID matching only, fail closed)
-      const scoresUnknown = calculateComprehensiveScores(syntheticGrch38SnpMap, { userBuild: 'UNKNOWN' });
-      const unknownValues = Object.values(scoresUnknown);
-      expect(unknownValues.every(v => v === 0)).toBe(true);
 
       // 4. Same test on HumanOriginsEngine with GRAF-10k markers (GRCh38)
       // Must supply at least 10 markers so HumanOrigins NNLS executes when build agrees

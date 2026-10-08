@@ -612,7 +612,7 @@ export const NaiveAncestryOracle = memo(({
     return () => clearTimeout(timer);
   }, []);
 
-  const naiveEstimates = results?.naiveEstimates || {};
+  const naiveEstimates = results?.oracleResults?.primary?.continentalScores || {};
   const hasData = Object.keys(naiveEstimates).length > 0;
 
   const chartData = useMemo(() => {

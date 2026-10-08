@@ -21,7 +21,6 @@ import { loadMasterAims } from '../data/index';
 import { calculateHumanOriginsScores } from "../engines/ancestry/humanOriginsEngine";
 import { calculateRegionalScores } from "../engines/ancestry/grafAncEngine";
 import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
-import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
 import { identifyRareAndNovelVariants } from "../utils/rareVariantsAnalyzer";
 import { calculatePharmacogenomics } from '../services/pgxEngine';
 import { computeAncientMatches } from '../services/ancientMatchEngine';
@@ -70,7 +69,6 @@ const ENGINE_LABELS: Record<string, string> = {
   calculateHumanOriginsScores: 'Running Human Origins K61 calculator',
   calculateRegionalScores: 'Determining regional affinity',
   identifyMicroHapSignatures: 'Detecting microhaplotype signatures',
-  calculateComprehensiveScores: 'Running comprehensive engine',
 };
 
 // ── Helper to filter out Y-DNA, mtDNA, and sex chromosomes (X/Y) to isolate deconvolution from haplogroups ──
@@ -150,7 +148,6 @@ async function runEnginesParallel(
     'calculateHumanOriginsScores',
     'calculateRegionalScores',
     'identifyMicroHapSignatures',
-    'calculateComprehensiveScores',
   ];
 
   const totalEngines = independentEngines.length + 1; // 11 total engines (includes calculateIndividualMatches)
@@ -315,7 +312,6 @@ async function runEnginesSequential(
   await run('calculateHumanOriginsScores', () => calculateHumanOriginsScores(autosomalSnpMap, { userBuild }));
   await run('calculateRegionalScores', () => calculateRegionalScores(autosomalSnpMap));
   await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(autosomalSnpMap));
-  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(autosomalSnpMap, { userBuild }));
 
   onEngineProgress(total, total, 'All engines complete');
   return results;
@@ -378,7 +374,6 @@ async function runGenotypeScout(
       humanOriginsResults_raw: engineResults.calculateHumanOriginsScores,
       grafResults_raw: engineResults.calculateRegionalScores,
       microHapResults: engineResults.identifyMicroHapSignatures,
-      comprehensiveResults: engineResults.calculateComprehensiveScores,
     };
 
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
@@ -388,7 +383,6 @@ async function runGenotypeScout(
       undefined,
       bloodResult.grafResults_raw,
       bloodResult.humanOriginsResults_raw,
-      bloodResult.comprehensiveResults,
       sampleId
     );
 
@@ -622,9 +616,7 @@ if (typeof self !== 'undefined') {
       ramos: ramosResult,
       microhap: microhapResult
     };
-    const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
-    
-    postWorkerMessage({ type: 'PROGRESS', payload: { step: "Computing Chromosome Painting (LAI)...", percent: 98 } });
+postWorkerMessage({ type: 'PROGRESS', payload: { step: "Computing Chromosome Painting (LAI)...", percent: 98 } });
     await new Promise(resolve => setTimeout(resolve, 0));
 
     // ── Rare & Novel Variants Identification ──
@@ -641,7 +633,7 @@ if (typeof self !== 'undefined') {
     let aimsUsed: any[] = [];
     let parentalDifferentiation: any = null;
     try {
-      const fallbackProportions = (oracleResults?.primary as any)?.continentalScores || naiveEstimates || {};
+      const fallbackProportions = (oracleResults?.primary as any)?.continentalScores || {};
       const laiResult = computeDatasetLAI({
         mergedSnpMap: imputedSnpMap,
         mergedSnpMetaMap,
@@ -689,8 +681,7 @@ if (typeof self !== 'undefined') {
       analysis: { 
         ...bloodResult,
         archaicIntrogression: calculateArchaicIntrogression(imputedSnpMap),
-        oracleResults, 
-        naiveEstimates,
+        oracleResults,
         subpopulationOracle,
         segments,
         paintedAncestry,
@@ -749,139 +740,3 @@ function getMacroContinentalGroup(popKey: string): string | null {
     return null;
 }
 
-export function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
-    const MIN_MARKERS = 5;
-
-    const totalProximity: Record<string, number> = {};
-    const totalWeight: Record<string, number> = {};
-    const markerCounts: Record<string, number> = {};
-
-    const aims = getMasterAims() as any;
-    const aimBaseMap = new Map<string, any[]>();
-    for (const [key, value] of Object.entries(aims)) {
-        const base = key.split('_')[0].toLowerCase();
-        if (!aimBaseMap.has(base)) aimBaseMap.set(base, []);
-        aimBaseMap.get(base)!.push(value);
-    }
-
-    const usedRsids = new Set<string>();
-
-    for (const rsid in snpMap) {
-        const base = rsid.toLowerCase();
-        const matchedAims = aimBaseMap.get(base);
-        if (!matchedAims || usedRsids.has(base)) continue;
-        usedRsids.add(base);
-
-        const genotype = snpMap[rsid];
-        const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
-        if (!cleanGenotype || cleanGenotype.includes('-') || cleanGenotype.includes('N')) continue;
-
-        let validAlleles = '';
-        for (const ch of cleanGenotype) {
-            if ('ACGTID'.includes(ch)) validAlleles += ch;
-        }
-        const ploidy = validAlleles.length;
-        if (ploidy === 0) continue;
-
-        for (const aim of matchedAims) {
-            if (!aim || (!aim.frequencies && !aim.subFrequencies)) continue;
-            // Reject any synthetic placeholder markers
-            if (aim.position === 1000000) continue;
-            if (aim.frequencies?.GLOBAL !== undefined) continue;
-
-            const effectAlleles = aim.alleles || [];
-            if (effectAlleles.length === 0) continue;
-            const effectAllele = effectAlleles[0].toUpperCase();
-
-            // Direct effect allele matching: compute user dosage in [0.0, 1.0]
-            let k = 0;
-            for (const ch of validAlleles) {
-                if (ch === effectAllele) k++;
-            }
-            const userDosage = k / ploidy;
-
-            // Informativeness / Fst marker weighting
-            const markerWeight = typeof aim.fst === 'number' && aim.fst > 0
-                ? Math.min(3.5, Math.max(0.5, aim.fst * 6.0))
-                : (typeof aim.weight === 'number' && aim.weight > 0 ? Math.min(3.5, Math.max(0.5, aim.weight)) : 1.0);
-
-            // Aggregate population frequencies into standard continental macro-groups
-            const macroFreqs: Record<string, number[]> = {};
-            if (aim.frequencies) {
-                for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                    const macroGroup = getMacroContinentalGroup(pop);
-                    if (!macroGroup || typeof freq !== 'number' || isNaN(freq)) continue;
-                    if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
-                    macroFreqs[macroGroup].push(freq);
-                }
-            }
-            if (aim.subFrequencies) {
-                for (const [pop, freq] of Object.entries(aim.subFrequencies as Record<string, number>)) {
-                    const macroGroup = getMacroContinentalGroup(pop);
-                    if (!macroGroup || typeof freq !== 'number' || isNaN(freq)) continue;
-                    if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
-                    macroFreqs[macroGroup].push(freq);
-                }
-            }
-
-            // Require at least 3 macro continental groups represented for fair cross-population evaluation
-            if (Object.keys(macroFreqs).length < 3) continue;
-
-            for (const [macroPop, freqs] of Object.entries(macroFreqs)) {
-                const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
-                // Single-Locus Raw Allele Sharing Proximity: P_locus = 1.0 - |user_dosage - f_ref|
-                const locusProximity = Math.max(0.0, Math.min(1.0, 1.0 - Math.abs(userDosage - avgFreq)));
-
-                totalProximity[macroPop] = (totalProximity[macroPop] || 0) + (markerWeight * locusProximity);
-                totalWeight[macroPop] = (totalWeight[macroPop] || 0) + markerWeight;
-                markerCounts[macroPop] = (markerCounts[macroPop] || 0) + 1;
-            }
-        }
-    }
-
-    const avgProximities: Record<string, number> = {};
-    let minAvgProx = Infinity;
-    let maxAvgProx = -Infinity;
-
-    for (const pop in totalProximity) {
-        if (markerCounts[pop] >= MIN_MARKERS && totalWeight[pop] > 0) {
-            const avg = totalProximity[pop] / totalWeight[pop];
-            avgProximities[pop] = avg;
-            if (avg < minAvgProx) minAvgProx = avg;
-            if (avg > maxAvgProx) maxAvgProx = avg;
-        }
-    }
-
-    const pops = Object.keys(avgProximities);
-    if (pops.length === 0) return {};
-
-    const spread = maxAvgProx - minAvgProx;
-    const finalScores: Record<string, number> = {};
-
-    if (spread <= 1e-6) {
-        const uniform = 100 / pops.length;
-        for (const pop of pops) finalScores[pop] = uniform;
-        return finalScores;
-    }
-
-    // Baseline contrast normalization: calculate excess proximity above baseline
-    // Contrast exponent p = 1.8 sharpens distinct signals while preserving additive linear admixture
-    const CONTRAST_POWER = 1.8;
-    const excessScores: Record<string, number> = {};
-    let sumExcess = 0;
-
-    for (const pop of pops) {
-        const excess = Math.max(0, avgProximities[pop] - minAvgProx);
-        const powered = Math.pow(excess, CONTRAST_POWER);
-        excessScores[pop] = powered;
-        sumExcess += powered;
-    }
-
-    if (sumExcess > 0) {
-        for (const pop of pops) {
-            finalScores[pop] = Math.round((excessScores[pop] / sumExcess) * 1000) / 10;
-        }
-    }
-
-    return finalScores;
-}
