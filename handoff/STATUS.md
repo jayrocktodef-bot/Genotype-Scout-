@@ -22,6 +22,26 @@
       purge_misses lists in panels/judgment_calls.report.json need Jequan's
       ruling first — surface them, do not action unilaterally.
 
+## Briefs ready — awaiting Jequan's go-ahead (do not start)
+
+- [ ] 2026-10-07 — PGx copy rewrite (remove prescribing directives)
+      Brief: `handoff/2026-10-07-pgx-copy-rewrite.md`
+      Rewrites all directive PGx copy (`pgxCalculator.ts`,
+      `pgxEngine.ts`, `PGxCard.tsx`, HealthWellnessTab PGx section) to
+      informational phenotype-first language with clinician CTA plus
+      CPIC/FDA reference links. Resolves the clickwrap contradiction
+      ("does NOT provide prescribing directives"). Do NOT start until
+      Jequan authorizes.
+
+- [ ] 2026-10-07 — Gated consent for disease-risk results
+      Brief: `handoff/2026-10-07-disease-risk-gated-consent.md`
+      18+ attestation plus separate explicit opt-in for disease-risk
+      results (APOE/Alzheimer's, cancer markers, HLA autoimmune panel,
+      PRS CAD/T2D, clinical_health categories). Removes the one-click
+      "Reveal Analysis"; trait names hidden until consent; dashboard
+      snapshot and print path gated. Do NOT start until Jequan
+      authorizes.
+
 ## Awaiting authorization (do not start)
 
 - [ ] 2026-10-07 — Romani proxy signal (v0)
