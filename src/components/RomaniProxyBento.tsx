@@ -5,7 +5,7 @@ import { RohDetector } from '../engines/ancestry/rohDetector';
 import { computeRomaniProxySignal } from '../engines/ancestry/romaniProxy';
 
 interface Props {
-  dataset: ParsedGenomicDataset;
+  dataset: any;
 }
 
 export const RomaniProxyBento: React.FC<Props> = ({ dataset }) => {

@@ -14,7 +14,7 @@ export interface RomaniProxyResult {
 }
 
 export function computeRomaniProxySignal(
-  dataset: ParsedGenomicDataset,
+  dataset: any,
   rohResult?: RohResult,
   yDnaPath?: string[],
   mtDnaPath?: string[]
