@@ -76,7 +76,7 @@ export const RomaniProxyBento: React.FC<Props> = ({ dataset }) => {
             <div className="flex justify-between items-center bg-white/5 border border-white/5 rounded-lg p-2.5">
               <span className="text-[11px] font-semibold text-slate-300">NW Indian Ancestry Trace</span>
               <span className="text-[10px] font-mono text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded border border-cyan-400/20">
-                Score: {(result.score * 100).toFixed(1)}% (Ranked)
+                Dosage: {result.score.toFixed(2)} / 1.00
               </span>
             </div>
 
