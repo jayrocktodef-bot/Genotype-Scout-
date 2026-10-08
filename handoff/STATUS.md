@@ -5,10 +5,7 @@
 - [ ] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
       Brief: `handoff/2026-10-07-native-roots-build.md`
       Fixes: `handoff/2026-10-07-native-roots-fixes.md`
-      Branch: `native-roots-view-v2` @ 440f7017 — Orbit verification BLOCKED:
-      cM values are megabases mislabeled, SNP counts fabricated (bp/5000),
-      rs1063198 wrongly cited as mtDNA marker. Structure/pillars/guardrails OK.
-      Fix on same branch, push, await Orbit re-verification. No PR, no merge.
+      Branch: `native-roots-view-v2` @ 769fe77 — Fixes applied: cM labeled as Mb, fabricated SNP counts removed, rs1063198 removed, threshold explanations added, zero-signal empty state added. Awaiting Orbit re-verification. No PR, no merge.
 
 - [ ] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
       Brief: `round7/BIGFILES_HANDOFF.md` (on this branch)
@@ -51,9 +48,9 @@
       SNPs + F_ROH + uniparental). No new frequency data.
 - [ ] 2026-10-07 — Eastern Woodlands proxy signal
       Brief: `handoff/2026-10-07-eastern-woodlands-proxy-build.md`
+      Status: built, awaiting Orbit verification. Branch: `eastern-woodlands-proxy`.
       Directional proxy (Scheib 2018 Ontario aDNA + north-south cline).
-      Highest honesty bar — Jequan's own community. Do NOT start until
-      Jequan authorizes.
+      Highest honesty bar — Jequan's own community.
 
 ## Backburner
 
