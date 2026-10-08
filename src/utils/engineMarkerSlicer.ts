@@ -222,13 +222,6 @@ function buildMarkerSetForEngine(engine: string): Set<string> {
       break;
     }
 
-    case 'calculateComprehensiveScores': {
-      const aims = loadMasterAims() as Record<string, any>;
-      for (const m of Object.values(aims)) {
-        addMarkerKey(set, m.rsid, m.chromosome || m.chrom, m.position || m.pos);
-      }
-      break;
-    }
 
     case 'matchSNPs': {
       // 1. SNP_DB

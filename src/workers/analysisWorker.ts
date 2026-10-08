@@ -18,7 +18,7 @@ import { calculatePopulationProximityOptimized } from '../engines/ancestry/fastM
 import { calculateHumanOriginsScores } from '../engines/ancestry/humanOriginsEngine';
 import { calculateRegionalScores } from '../engines/ancestry/grafAncEngine';
 import { identifyMicroHapSignatures } from '../engines/ancestry/microHapEngine';
-import { calculateComprehensiveScores } from '../engines/ancestry/comprehensiveEngine';
+
 
 import { serializeGenomicsError } from '../services/errorCaller';
 
@@ -32,8 +32,7 @@ type EngineName =
   | 'calculateMarkerBenchmarks'
   | 'calculateHumanOriginsScores'
   | 'calculateRegionalScores'
-  | 'identifyMicroHapSignatures'
-  | 'calculateComprehensiveScores';
+  | 'identifyMicroHapSignatures';
 
 // ── Global Worker Error & Unhandled Rejection Listeners ─────────────
 self.addEventListener('error', (event: ErrorEvent) => {
@@ -96,9 +95,7 @@ self.onmessage = async (e: MessageEvent) => {
       case 'identifyMicroHapSignatures':
         result = await identifyMicroHapSignatures(snpMap);
         break;
-      case 'calculateComprehensiveScores':
-        result = await calculateComprehensiveScores(snpMap, { userBuild });
-        break;
+
       default:
         throw new Error(`Unknown engine: ${engine}`);
     }

@@ -13,7 +13,7 @@ describe('engineMarkerSlicer', () => {
     'calculateHumanOriginsScores',
     'calculateRegionalScores',
     'identifyMicroHapSignatures',
-    'calculateComprehensiveScores'
+
   ];
 
   it('provides a non-empty marker set for all 11 worker engines', () => {
