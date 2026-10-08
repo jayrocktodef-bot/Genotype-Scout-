@@ -2,13 +2,13 @@
 
 ## Active
 
-- [ ] 2026-10-07 — Native Roots discovery view (AUTHORIZED)
+- [ ] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
       Brief: `handoff/2026-10-07-native-roots-build.md`
-      Three-pillar evidence framework (autosomal segments via LAI, EDAR/ABCC11
-      traits, uniparental 9-bp deletion + haplogroup badges) with tribal-honesty
-      guardrails. Reuse ChromosomePainter + LAI worker; do not rebuild.
-      Acceptance: validate:data, vitest, tsc green; side branch + PR; no merge
-      without Jequan's go-ahead + Orbit verification.
+      Fixes: `handoff/2026-10-07-native-roots-fixes.md`
+      Branch: `native-roots-view-v2` @ 440f7017 — Orbit verification BLOCKED:
+      cM values are megabases mislabeled, SNP counts fabricated (bp/5000),
+      rs1063198 wrongly cited as mtDNA marker. Structure/pillars/guardrails OK.
+      Fix on same branch, push, await Orbit re-verification. No PR, no merge.
 
 - [ ] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
       Brief: `round7/BIGFILES_HANDOFF.md` (on this branch)
