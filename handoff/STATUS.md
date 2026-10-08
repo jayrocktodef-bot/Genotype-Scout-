@@ -2,6 +2,14 @@
 
 ## Active
 
+- [ ] 2026-10-07 — Native Roots discovery view (AUTHORIZED)
+      Brief: `handoff/2026-10-07-native-roots-build.md`
+      Three-pillar evidence framework (autosomal segments via LAI, EDAR/ABCC11
+      traits, uniparental 9-bp deletion + haplogroup badges) with tribal-honesty
+      guardrails. Reuse ChromosomePainter + LAI worker; do not rebuild.
+      Acceptance: validate:data, vitest, tsc green; side branch + PR; no merge
+      without Jequan's go-ahead + Orbit verification.
+
 - [ ] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
       Brief: `round7/BIGFILES_HANDOFF.md` (on this branch)
       Branch: `round7-frequency-fixes`
@@ -14,6 +22,20 @@
       purge_misses lists in panels/judgment_calls.report.json need Jequan's
       ruling first — surface them, do not action unilaterally.
 
+## Awaiting authorization (do not start)
+
+- [ ] 2026-10-07 — Romani proxy signal (v0)
+      Brief: `handoff/2026-10-07-romani-proxy-build.md`
+      Composite signal from existing panels (NW Indian Fst SNPs + direct Roma
+      SNPs + F_ROH + uniparental). No new frequency data. Do NOT start until
+      Jequan authorizes.
+
+- [ ] 2026-10-07 — Eastern Woodlands proxy signal
+      Brief: `handoff/2026-10-07-eastern-woodlands-proxy-build.md`
+      Directional proxy (Scheib 2018 Ontario aDNA + north-south cline).
+      Highest honesty bar — Jequan's own community. Do NOT start until
+      Jequan authorizes.
+
 ## Backburner
 
 - [ ] Blog integrity fixes (writteninthegenome.blog) — ranked findings in Orbit's
@@ -21,8 +43,15 @@
       H1/H2 stats + donation block, H3/H4 policy pages + tool cards, M1-M4).
       Task brief to be written when prioritized.
 
+- [ ] Romani AIM panel (`romani.json`) — spec at
+      `~/workspace/aim-panels/ROMANI_AIM_PANEL_SPEC.md`. PARKED pending
+      retrieval of the Font-Porterias 2019 figshare genome-wide dataset.
+      Do not build from the clinical SNP supplementary alone.
+
 ## Open decisions (Jequan)
 
 - 45 low-separation markers: move to a more fitting panel vs keep as contrast
 - 77 surviving weight-10 markers: weight review after corrected divergences
 - Validator: add exact GRCh38 position comparison (currently chromosome + alleles only)
+- Romani proxy: authorize build?
+- Eastern Woodlands proxy: authorize build?
