@@ -46,10 +46,9 @@
 
 - [ ] 2026-10-07 — Romani proxy signal (v0)
       Brief: `handoff/2026-10-07-romani-proxy-build.md`
+      Status: built, awaiting Orbit verification. Branch: `romani-proxy-v0`.
       Composite signal from existing panels (NW Indian Fst SNPs + direct Roma
-      SNPs + F_ROH + uniparental). No new frequency data. Do NOT start until
-      Jequan authorizes.
-
+      SNPs + F_ROH + uniparental). No new frequency data.
 - [ ] 2026-10-07 — Eastern Woodlands proxy signal
       Brief: `handoff/2026-10-07-eastern-woodlands-proxy-build.md`
       Directional proxy (Scheib 2018 Ontario aDNA + north-south cline).
