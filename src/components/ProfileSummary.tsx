@@ -61,6 +61,7 @@ import { YDNABento } from './YDNABento';
 import { RohDetector } from '../engines/ancestry/rohDetector';
 import { HaplogroupDistributionVisualizer } from './HaplogroupDistributionVisualizer';
 import { enrichHaplogroupTree } from '../utils/haplogroupTreeUtils';
+import { RomaniProxyBento } from './RomaniProxyBento';
 
 const RANK_BADGE_STYLES = [
   { label: '#1', badge: 'bg-amber-400/20 text-amber-300 border-amber-400/40 ring-1 ring-amber-400/20 shadow-amber-400/10' },
@@ -802,6 +803,9 @@ const ProfileSummary = memo(
                   </div>
                 </div>
               )}
+              
+              {/* ===== CELL D : Romani Proxy Signal ===== */}
+              <RomaniProxyBento dataset={dataset} />
             </div>
 
             {/* ===== Ancestral Kinship & Ancient DNA Specimen Affinity ===== */}
