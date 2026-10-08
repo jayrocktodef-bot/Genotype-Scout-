@@ -1,0 +1,162 @@
+[
+  {
+    "rsid": "rs10003349",
+    "weight": 1,
+    "rationale": "Fst cline proxy: Pima=1.00, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "G",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10005483",
+    "weight": 0.25,
+    "rationale": "Fst cline proxy: Pima=0.25, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "G",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs1000579",
+    "weight": 0.5,
+    "rationale": "Fst cline proxy: Pima=0.50, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "A",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10009701",
+    "weight": 0.75,
+    "rationale": "Fst cline proxy: Pima=0.75, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "A",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10011809",
+    "weight": 0.75,
+    "rationale": "Fst cline proxy: Pima=0.75, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "C",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10017282",
+    "weight": 0.5,
+    "rationale": "Fst cline proxy: Pima=0.50, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "T",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs1001763",
+    "weight": 0.25,
+    "rationale": "Fst cline proxy: Pima=0.25, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "C",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10018031",
+    "weight": 0.25,
+    "rationale": "Fst cline proxy: Pima=0.25, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "G",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10019920",
+    "weight": 0.25,
+    "rationale": "Fst cline proxy: Pima=0.25, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "G",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs10020489",
+    "weight": 1,
+    "rationale": "Fst cline proxy: Pima=1.00, AMR=0.00, EUR=0.00",
+    "anchor": "Anchor B",
+    "targetAllele": "A",
+    "type": "cline"
+  },
+  {
+    "rsid": "rs1042531",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "G",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs10756819",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "A",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs10862024",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "G",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs10865507",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "C",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs10931559",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "T",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs10958548",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "C",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs11003444",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "A",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs11065987",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "A",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs1129038",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "T",
+    "type": "adna"
+  },
+  {
+    "rsid": "rs11618683",
+    "weight": 0.8,
+    "rationale": "Ancient DNA proxy (Scheib 2018 Ontario)",
+    "anchor": "Anchor A",
+    "targetAllele": "T",
+    "type": "adna"
+  }
+]
