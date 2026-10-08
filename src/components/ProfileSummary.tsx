@@ -58,6 +58,7 @@ import { calculateBloodType } from '../engines/bloodTypeCalculator';
 import { Phase2Panel } from './Phase2Panel';
 import { HaplogroupBento } from './HaplogroupBento';
 import { YDNABento } from './YDNABento';
+import { RohDetector } from '../engines/ancestry/rohDetector';
 import { HaplogroupDistributionVisualizer } from './HaplogroupDistributionVisualizer';
 import { enrichHaplogroupTree } from '../utils/haplogroupTreeUtils';
 
@@ -1059,6 +1060,13 @@ const AutosomalView = memo(({
   const totalDatabaseMarkers = allResults.length || 1;
   const totalMatchedCount = allResults.filter((s: any) => s.status === 'matched' || s.status === 'partial').length;
 
+  const rohResult = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset) return null;
+    const detector = new RohDetector();
+    return detector.detect(dataset);
+  }, [datasets, activeDatasetIndex]);
+
   const toggleRegion = (region: string) => {
     setExpandedRegions(prev => {
       const next = new Set(prev);
@@ -1097,6 +1105,14 @@ const AutosomalView = memo(({
                 {((totalMatchedCount / totalDatabaseMarkers) * 100).toFixed(1)}%
               </p>
             </div>
+            {rohResult && rohResult.fRoh > 0 && (
+              <div className="text-right border-l pl-6 border-slate-200 dark:border-slate-700">
+                <h4 className="text-[10px] font-bold text-purple-700 dark:text-purple-400 uppercase tracking-widest" title="Runs of Homozygosity">F(ROH)</h4>
+                <p className="text-sm font-mono font-bold text-purple-900 dark:text-purple-100" title={`${rohResult.totalRohMb.toFixed(1)} Mb in ${rohResult.intervals.length} runs`}>
+                  {(rohResult.fRoh * 100).toFixed(2)}%
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>
