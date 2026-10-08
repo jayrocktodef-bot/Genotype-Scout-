@@ -21,6 +21,7 @@ const ChromosomePainterView = lazy(() => import("./ChromosomePainterView").then(
 const AncientAncestryOracle = lazy(() => import("./AncientAncestryOracle").then(m => ({ default: m.AncientAncestryOracle })));
 const IntegrityModule = lazy(() => import("./IntegrityModule"));
 const RareVariantsView = lazy(() => import("./RareVariantsView"));
+const NativeRootsView = lazy(() => import("./NativeRootsView").then(m => ({ default: m.NativeRootsView })));
 const ArchaicIntrogressionView = lazy(() => import("./ArchaicIntrogressionView").then(m => ({ default: m.ArchaicIntrogressionView })));
 const KitComparisonModule = lazy(() => import("./KitComparisonModule").then(m => ({ default: m.KitComparisonModule })));
 import { MethodologyPage } from './MethodologyPage';

@@ -44,6 +44,18 @@ interface ScoutWorkspaceProps {
 
 const MODULES: AppConfig[] = [
   {
+    id: "native_roots",
+    name: "Native Roots",
+    icon: Globe,
+    gradient: "from-orange-500 to-rose-700",
+    glowColor: "rgba(249,115,22,0.45)",
+    targetTab: "ancestry",
+    targetSubTab: "native_roots",
+    description: "A three-pillar evidence framework for exploring Native American ancestry.",
+    imageUrl: "/assets/painter_icon.png",
+    navGroup: "primary",
+  },
+  {
     id: 'profile',
     name: 'Scout Profile',
     icon: User,
