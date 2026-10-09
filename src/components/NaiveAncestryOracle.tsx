@@ -18,7 +18,11 @@ const mapCodeToName = (code: string): string => {
     'NAT': 'Native American',
     'MID': 'Middle Eastern',
     'ASI': 'Asian',
-    'GLOBAL': 'Global Reference'
+    'GLOBAL': 'Global Reference',
+    'AFRAM': 'African American',
+    'AMER': 'American',
+    'CAS': 'Central Asian',
+    'CAU': 'Caucasus'
   };
   return mapping[code] || code;
 };
@@ -37,7 +41,11 @@ const REGION_COLORS: Record<string, string> = {
   MID: '#d97706', // Middle Eastern -> Amber
   SIB: '#14b8a6', // Siberian -> Teal
   ASI: '#6366f1', // Asian -> Indigo
-  GLOBAL: '#64748b' // Global Reference -> Slate
+  GLOBAL: '#64748b', // Global Reference -> Slate
+  AFRAM: '#059669',
+  AMER: '#c026d3',
+  CAS: '#84cc16',
+  CAU: '#eab308'
 };
 
 const POPULATION_IMPLICATIONS: Record<string, { title: string; subtitle: string; description: string; gradient: string }> = {
