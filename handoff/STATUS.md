@@ -2,6 +2,11 @@
 
 ## Active
 
+- [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
+      Branch: `fix-eastern-woodlands-snp-labels`
+      Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.
+      Status: Built, validated locally, pushed (commit: 2682e3f). Awaiting Orbit verification. Do NOT merge yet.
+
 - [ ] 2026-10-09 — Fix ProfileSummary and NativeRootsView crashes
       Branch: `fix-profile-nativeroots-crashes`
       Fixes: Added destructuring defaults in ProfileSummary.tsx, added NativeRootsView to WorkspaceRouter rendering logic and ScoutWorkspace categorizations.
