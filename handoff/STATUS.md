@@ -5,6 +5,7 @@
 - [ ] 2026-10-09 — Fix ProfileSummary and NativeRootsView crashes
       Branch: `fix-profile-nativeroots-crashes`
       Fixes: Added destructuring defaults in ProfileSummary.tsx, added NativeRootsView to WorkspaceRouter rendering logic and ScoutWorkspace categorizations.
+      Update: Added missing AFRAM, AMER, CAS, CAU to REGION_COLORS and mapCodeToName in NaiveAncestryOracle.tsx.
       Status: Built, validated locally. Awaiting Orbit verification. Do NOT merge yet.
 
 - [x] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
