@@ -2,10 +2,15 @@
 
 ## Active
 
-- [ ] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
+- [ ] 2026-10-09 — Fix ProfileSummary and NativeRootsView crashes
+      Branch: `fix-profile-nativeroots-crashes`
+      Fixes: Added destructuring defaults in ProfileSummary.tsx, added NativeRootsView to WorkspaceRouter rendering logic and ScoutWorkspace categorizations.
+      Status: Built, validated locally. Awaiting Orbit verification. Do NOT merge yet.
+
+- [x] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
       Brief: `handoff/2026-10-07-native-roots-build.md`
       Fixes: `handoff/2026-10-07-native-roots-fixes.md`
-      Branch: `native-roots-view-v2` @ 769fe77 — Fixes applied: cM labeled as Mb, fabricated SNP counts removed, rs1063198 removed, threshold explanations added, zero-signal empty state added. Awaiting Orbit re-verification. No PR, no merge.
+      Branch: `native-roots-view-v2` @ c6a6e47 — Fixes applied: cM labeled as Mb, fabricated SNP counts removed, rs1063198 removed, threshold explanations added, zero-signal empty state added. Merged.
 
 - [ ] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
       Brief: `round7/BIGFILES_HANDOFF.md` (on this branch)
@@ -46,9 +51,9 @@
       Status: built, awaiting Orbit verification. Branch: `romani-proxy-v0`.
       Composite signal from existing panels (NW Indian Fst SNPs + direct Roma
       SNPs + F_ROH + uniparental). No new frequency data.
-- [ ] 2026-10-07 — Eastern Woodlands proxy signal
+- [x] 2026-10-07 — Eastern Woodlands proxy signal
       Brief: `handoff/2026-10-07-eastern-woodlands-proxy-build.md`
-      Status: built, awaiting Orbit verification. Branch: `eastern-woodlands-proxy`.
+      Status: Merged @ fc09a4f. Branch: `eastern-woodlands-proxy`.
       Directional proxy (Scheib 2018 Ontario aDNA + north-south cline).
       Highest honesty bar — Jequan's own community.
 

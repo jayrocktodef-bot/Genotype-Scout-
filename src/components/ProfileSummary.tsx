@@ -1361,7 +1361,15 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     );
   }
 
-  const { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData || { continentalScores: {}, regionalScores: {}, deepScores: {}, subPopulations: {}, chromosomeData: {}, segments: [], confidenceIntervals: {} };
+  const {
+    continentalScores = {},
+    regionalScores = {},
+    deepScores = {},
+    subPopulations = {},
+    chromosomeData = {},
+    segments = [],
+    confidenceIntervals = {}
+  } = currentData || {};
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -1418,7 +1426,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
             </div>
             {oracleResults.onnxClassifierResult.probabilities && (
               <div className="flex flex-col gap-1.5 w-full md:w-64 shrink-0">
-                {Object.entries(oracleResults.onnxClassifierResult.probabilities)
+                {Object.entries(oracleResults.onnxClassifierResult.probabilities || {})
                   .sort((a: any, b: any) => Number(b[1]) - Number(a[1]))
                   .slice(0, 3)
                   .map(([pop, prob]: [string, any]) => (
