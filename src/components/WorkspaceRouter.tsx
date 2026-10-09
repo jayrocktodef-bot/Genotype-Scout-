@@ -142,6 +142,19 @@ export const WorkspaceRouter: React.FC<WorkspaceRouterProps> = ({
         </div>
       )}
 
+      {currentApp === 'native_roots' && (
+        <div className="animate-fade-in">
+          <NativeRootsView 
+            dataset={currentDataset}
+            oracleResults={oracleResults}
+            userSnps={userSnps}
+            mtData={activeMtData}
+            yData={activeYData}
+            onOpenMethodology={() => onOpenMethodology('native_roots')}
+          />
+        </div>
+      )}
+
       {currentApp === 'ancestry_scout' && (
         <div className="animate-fade-in">
           <NaiveAncestryOracle 

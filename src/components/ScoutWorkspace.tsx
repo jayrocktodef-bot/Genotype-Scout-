@@ -754,7 +754,7 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
   const filtered = useMemo(() => {
     let list = MODULES;
     if (selectedCategory === 'ancestry') {
-      list = list.filter(m => ['ancestry_oracle', 'glossary', 'chromosome_painter', 'ancestry_scout'].includes(m.id));
+      list = list.filter(m => ['ancestry_oracle', 'glossary', 'chromosome_painter', 'ancestry_scout', 'native_roots'].includes(m.id));
     } else if (selectedCategory === 'lineage') {
       list = list.filter(m => ['haplogroups', 'ancient_dna'].includes(m.id));
     } else if (selectedCategory === 'health') {
