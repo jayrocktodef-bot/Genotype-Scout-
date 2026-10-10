@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { MainTabType } from '../hooks/useTabNavigation';
 
-export type AncestrySubTab = 'oracle' | 'painter' | 'scout';
+export type AncestrySubTab = 'oracle' | 'painter' | 'scout' | 'native_roots';
 export type HealthSubTab = 'wellness' | 'traits' | 'blood' | 'prs';
 export type HistorySubTab = 'modern' | 'ancient';
 export type AncientSubTab = 'admixture' | 'matches' | 'archaic';
@@ -71,7 +71,7 @@ export function tabToDefaultApp(
     case 'summary':
       return 'profile';
     case 'ancestry':
-      return ancestrySub === 'painter' ? 'chromosome_painter' : ancestrySub === 'scout' ? 'ancestry_scout' : 'ancestry_oracle';
+      return ancestrySub === 'painter' ? 'chromosome_painter' : ancestrySub === 'scout' ? 'ancestry_scout' : ancestrySub === 'native_roots' ? 'native_roots' : 'ancestry_oracle';
     case 'history':
       return 'ancient_dna';
     case 'health_traits':

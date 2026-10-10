@@ -41,9 +41,9 @@ const getGenotypeStatus = (userSnps: Record<string, string>, rsid: string, ref: 
 export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
   dataset,
   oracleResults,
-  userSnps,
-  mtData,
-  yData,
+  userSnps = {},
+  mtData = {},
+  yData = {},
   onOpenMethodology
 }) => {
 
