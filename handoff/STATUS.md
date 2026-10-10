@@ -5,38 +5,38 @@
 - [x] 2026-10-10 — Siberian panel Phase 1 (Data sourcing & validation)
       Brief: `handoff/2026-10-09-siberian-panel-scope.md`
       Branch: `siberian-panel`
-      Status: Built and validated. Rebuilt 400 AIMs matching rejection standards (0.30 minimum separation enforced). Min sep: 0.3402, Mean sep: 0.4847, Median sep: 0.4900. Zero synthetic SNPs, all markers strictly hit Ensembl cache. Region correctly set to 'Siberian' and fresh descriptions applied. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged f080efd5. Built and validated. Rebuilt 400 AIMs matching rejection standards (0.30 minimum separation enforced). Min sep: 0.3402, Mean sep: 0.4847, Median sep: 0.4900. Zero synthetic SNPs, all markers strictly hit Ensembl cache. Region correctly set to 'Siberian' and fresh descriptions applied.
 
 - [x] 2026-10-10 — Round 7 marker decisions IMPLEMENTATION
       Brief: `handoff/2026-10-09-round7-marker-decisions.md`
       Branch: `round7-marker-decisions`
-      Status: Built and validated. Moved 35 Group 1a markers out of african.json, added trait_only flag and skip logic to engine for 7 Group 1b markers, applied proportional weights to Group 2 markers. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged 7f6152e7. Built and validated. Moved 35 Group 1a markers out of african.json, added trait_only flag and skip logic to engine for 7 Group 1b markers, applied proportional weights to Group 2 markers.
 
 - [x] 2026-10-10 — Validator hardening
       Branch: `harden-data-validator`
       Fixes: Added label validation (allowlists, non-generic descriptions, tiers), separation gates (warn < 0.15, fail < 0.10), and cross-field consistency checks.
-      Status: Built, pushed. Validation fails for existing panels. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged c4f4a67f. Built, pushed. Validation fails for existing panels.
 
-- [ ] 2026-10-10 — Native Roots launcher card fix
+- [x] 2026-10-10 — Native Roots launcher card fix
       Branch: `fix-nativeroots-launcher`
       Fixes: Added the Native Roots launcher card to the Dashboard module.
-      Status: Built, validated locally, pushed. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged b2608934.
 
-- [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
+- [x] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`
       Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.
-      Status: Built, validated locally, pushed (commit: 2682e3f). Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged PR #21.
 
-- [ ] 2026-10-09 — Fix ProfileSummary and NativeRootsView crashes
+- [x] 2026-10-09 — Fix ProfileSummary and NativeRootsView crashes
       Branch: `fix-profile-nativeroots-crashes`
       Fixes: Added destructuring defaults in ProfileSummary.tsx, added NativeRootsView to WorkspaceRouter rendering logic and ScoutWorkspace categorizations.
       Update: Added missing AFRAM, AMER, CAS, CAU to REGION_COLORS and mapCodeToName in NaiveAncestryOracle.tsx.
-      Status: Built, validated locally. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged PR #22.
 
-- [ ] 2026-10-10 — Broaden Native Roots detection
+- [x] 2026-10-10 — Broaden Native Roots detection
       Branch: `broaden-native-roots`
       Fixes: Expanded mtDNA B-only to A/B/C/D/X (founding haplogroups), expanded Y-DNA Q-M3 to Native American Q subclades (Q-L54, Q-Z780, C-P39), integrated the Eastern Woodlands proxy as directional evidence.
-      Status: Built, validated locally, pushed. Awaiting Orbit verification. Do NOT merge yet.
+      Status: Merged 0a01d548.
 
 - [x] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
       Brief: `handoff/2026-10-07-native-roots-build.md`
@@ -57,23 +57,23 @@
 
 ## Briefs ready — awaiting Jequan's go-ahead (do not start)
 
-- [ ] 2026-10-07 — PGx copy rewrite (remove prescribing directives)
+- [x] 2026-10-07 — PGx copy rewrite (remove prescribing directives)
       Brief: `handoff/2026-10-07-pgx-copy-rewrite.md`
       Rewrites all directive PGx copy (`pgxCalculator.ts`,
       `pgxEngine.ts`, `PGxCard.tsx`, HealthWellnessTab PGx section) to
       informational phenotype-first language with clinician CTA plus
       CPIC/FDA reference links. Resolves the clickwrap contradiction
-      ("does NOT provide prescribing directives"). Do NOT start until
-      Jequan authorizes.
+      ("does NOT provide prescribing directives").
+      Status: Merged 56999e72.
 
-- [ ] 2026-10-07 — Gated consent for disease-risk results
+- [x] 2026-10-07 — Gated consent for disease-risk results
       Brief: `handoff/2026-10-07-disease-risk-gated-consent.md`
       18+ attestation plus separate explicit opt-in for disease-risk
       results (APOE/Alzheimer's, cancer markers, HLA autoimmune panel,
       PRS CAD/T2D, clinical_health categories). Removes the one-click
       "Reveal Analysis"; trait names hidden until consent; dashboard
-      snapshot and print path gated. Do NOT start until Jequan
-      authorizes.
+      snapshot and print path gated.
+      Status: Merged b00ba5f1.
 
 ## Awaiting authorization (do not start)
 
