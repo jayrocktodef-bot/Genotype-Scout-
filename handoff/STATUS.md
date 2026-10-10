@@ -23,7 +23,7 @@
       Fixes: `handoff/2026-10-07-native-roots-fixes.md`
       Branch: `native-roots-view-v2` @ c6a6e47 — Fixes applied: cM labeled as Mb, fabricated SNP counts removed, rs1063198 removed, threshold explanations added, zero-signal empty state added. Merged.
 
-- [ ] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
+- [x] 2026-10-06 — Round 7: regenerate 5 oversized AIM panels, validate all 12
       Brief: `round7/BIGFILES_HANDOFF.md` (on this branch)
       Branch: `round7-frequency-fixes`
       Acceptance: counts match `round7/AGGREGATE.json` exactly
