@@ -139,7 +139,8 @@
     "gene": "MC1R",
     "trait": "European Red Hair",
     "description": "MC1R Red Hair Marker - Highly specific to Northern and Western European populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "trait_only": true
   },
   "rs1805008": {
     "rsid": "rs1805008",

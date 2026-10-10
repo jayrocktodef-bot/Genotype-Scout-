@@ -49098,7 +49098,8 @@
     "trait": "Low-altitude adaptation",
     "description": "Sodium transporter missense variant with inverse frequency pattern: lower than continental average in East African highland populations, suggesting altitude-dependent renal physiology adaptation.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "trait_only": true
   },
   "rs11103351": {
     "rsid": "rs11103351",
@@ -49238,6 +49239,7 @@
     "trait": "Cellular immunity",
     "description": "This SNP was identified in a scan for positive selection in the Ju|\u2019hoansi. The adaptive allele impacts the cytokine pathway and likely involved in arginine metabolism during infection. A rare variant in most other populations, its high frequency marks the Khoe-San deep ancestry.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "trait_only": true
   }
 }
