@@ -1,5 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { computeDatasetLAI, computePaintedAncestry, runDatasetLAI } from './paintedAncestry';
+import * as dataIndex from '../../data/index';
 
 describe('Fast Chromosome Painter & Local Ancestry Inference (LAI)', () => {
   it('should fall back gracefully to continental fallbackScores when segments are empty', () => {
@@ -190,12 +191,25 @@ describe('Fast Chromosome Painter & Local Ancestry Inference (LAI)', () => {
       const maleDataset = {
         mergedSnpMap: {
           rs1426654: 'AA',
-          rs137852328: 'A' // X chromosome AIM
+          rs1385699: 'A' // Valid X chromosome AIM
         },
         inferredSex: 'MALE' as const
       };
 
+      const spy = vi.spyOn(dataIndex, 'loadMasterAims').mockReturnValue({
+        ...dataIndex.loadMasterAims(),
+        'rs1385699': {
+          chromosome: 'X',
+          position: 1000,
+          alleles: ['A', 'G'],
+          frequencies: { EUR: 0.9, AFR: 0.1 },
+          region: 'European',
+          weight: 5
+        }
+      });
+
       const lai = computeDatasetLAI(maleDataset);
+      spy.mockRestore();
       expect(lai).toBeDefined();
       if (lai) {
         expect(lai.segments['X']).toBeDefined();

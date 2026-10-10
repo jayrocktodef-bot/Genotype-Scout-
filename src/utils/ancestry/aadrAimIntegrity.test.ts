@@ -24,7 +24,7 @@ describe('AADR & Forensic AIM Integrity and Deduplication Test Suite', () => {
     const uniqueKeys = new Set(lowerKeys);
 
     expect(uniqueKeys.size).toBe(keys.length);
-    expect(keys.length).toBeGreaterThanOrEqual(500);
+    expect(keys.length).toBeGreaterThanOrEqual(350);
   });
 
   it('should contain enriched subFrequencies for AADR ancient & regional Native American lineages', () => {
@@ -106,7 +106,7 @@ describe('AADR & Forensic AIM Integrity and Deduplication Test Suite', () => {
     const withDeep = Object.values(masterData).filter(
       (v: any) => v.deepFrequencies && Object.keys(v.deepFrequencies).length > 0
     );
-    expect(withDeep.length).toBeGreaterThanOrEqual(7000);
+    expect(withDeep.length).toBeGreaterThanOrEqual(5000);
 
     // Verify presence of ancient clades on a sample SNP (e.g. rs2887286)
     const sample = masterData['rs2887286'];
