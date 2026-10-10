@@ -176,6 +176,8 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
         </p>
         <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-[10px] leading-relaxed text-slate-700 dark:text-slate-300 dark:bg-slate-800">
           <strong>Important Clinical Notice:</strong> This report is for professional reference and genotyping validation. All annotations correspond to PGx database versions. Clinical verification is recommended prior to any therapeutic dosage adjustments.
+          <br /><br />
+          <strong>Research Use Only:</strong> Not a medical device, not medical advice; confirm with clinical testing and your clinician.
         </div>
       </div>
 
@@ -452,7 +454,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-              <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px] dark:text-slate-100">Pharmacogenomic Alerts</h3>
+              <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px] dark:text-slate-100">Pharmacogenomic Information</h3>
             </div>
             
             {/* Med search and filters */}
@@ -472,10 +474,10 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                 onChange={(e: any) => setSeverityFilter(e.target.value)}
                 className="px-2 py-1.5 text-[11px] bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800"
               >
-                <option value="All">All Priority</option>
-                <option value="High">High Priority</option>
-                <option value="Moderate">Moderate Priority</option>
-                <option value="Low">Low Priority</option>
+                <option value="All">All relevance</option>
+                <option value="High">High relevance</option>
+                <option value="Moderate">Moderate relevance</option>
+                <option value="Low">Low relevance</option>
               </select>
               {onOpenMethodology && (
                 <button

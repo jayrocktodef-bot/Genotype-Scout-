@@ -103,7 +103,7 @@ describe('Calculator Audit Verification Test Suite', () => {
       const statinReport = reports.find(r => r.drug === 'Simvastatin');
       expect(statinReport).toBeDefined();
       expect(statinReport?.severity).toBe('Moderate');
-      expect(statinReport?.status).toBe('Caution');
+      expect(statinReport?.status).toBe('Review with clinician');
     });
 
     it('flags Action Required (High severity) for homozygous SLCO1B1*5 CC carriers', () => {
@@ -115,7 +115,7 @@ describe('Calculator Audit Verification Test Suite', () => {
       const statinReport = reports.find(r => r.drug === 'Simvastatin');
       expect(statinReport).toBeDefined();
       expect(statinReport?.severity).toBe('High');
-      expect(statinReport?.status).toBe('Action Required');
+      expect(statinReport?.status).toBe('Discuss with clinician');
     });
   });
 
