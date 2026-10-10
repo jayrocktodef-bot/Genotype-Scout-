@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { ShieldCheck, Info, Map, Beaker, Dna, FileText } from 'lucide-react';
+import { computeEasternWoodlandsProxy } from '../engines/ancestry/easternWoodlandsProxy';
 
 export interface NativeRootsViewProps {
   dataset: any;
@@ -47,7 +48,7 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
   onOpenMethodology
 }) => {
 
-  const { segments, nativeVerdict, traitEdar, traitAbcc11, uniparental, confidenceReasons, eastAsianOverlap } = useMemo(() => {
+  const { segments, nativeVerdict, traitEdar, traitAbcc11, uniparental, confidenceReasons, eastAsianOverlap, ewProxy } = useMemo(() => {
     // 1. Pillar 1: Autosomal Segments (AMR / Indigenous American)
     let amrSegments: any[] = [];
     if (dataset?.analysis?.segments) {
@@ -95,9 +96,20 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
     const yHaplo = typeof yData?.predicted === 'string'
       ? yData.predicted : (yData?.predicted?.name || '');
     
-    const isMtB = mtHaplo.startsWith('B') || mtHaplo.includes(' Haplogroup B');
-    const isYQ = yHaplo.startsWith('Q') && yHaplo.includes('M3');
+    const NATIVE_MT_HAPLOS = ['A', 'B', 'C', 'D', 'X'];
+    const mtHaploUpper = mtHaplo.toUpperCase();
+    const isMtNative = NATIVE_MT_HAPLOS.some(h =>
+      mtHaploUpper.startsWith(h) || mtHaploUpper.includes(`HAPLOGROUP ${h}`)
+    );
+    
+    const NATIVE_Y_Q_MARKERS = ['M3', 'L54', 'Z780'];
+    const yHaploUpper = yHaplo.toUpperCase();
+    const isYQ = yHaploUpper.startsWith('Q');
+    const isYNative = (isYQ && NATIVE_Y_Q_MARKERS.some(m => yHaploUpper.includes(m))) || (yHaploUpper.startsWith('C') && yHaploUpper.includes('P39'));
     const yTested = !!yData?.predicted;
+
+    const ewProxy = computeEasternWoodlandsProxy(dataset);
+    const hasNorthernSignal = ewProxy.direction === 'northern-affiliated' && ewProxy.snpsDetected >= 5;
     
     // Confidence Framework
     let reasons: string[] = [];
@@ -110,12 +122,15 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
     } else if (autosomalSignal === 'Moderate') {
       verdict = 'Likely';
       reasons.push('Moderate-confidence autosomal segments (3-7Mb) detected. Provisional.');
-    } else if (isMtB || isYQ) {
+    } else if (isMtNative || isYNative) {
       verdict = 'Likely';
       reasons.push('Uniparental markers strongly associated with Indigenous populations detected.');
-    } else if (autosomalSignal === 'Trace' || mt9bp || traitEdar.hasTrait) {
+    } else if (hasNorthernSignal) {
+      verdict = 'Likely';
+      reasons.push('Northern-affiliated proxy signal detected (Eastern Woodlands reference).');
+    } else if (autosomalSignal === 'Trace' || mt9bp || traitEdar.hasTrait || isYQ) {
       verdict = 'Uncertain';
-      reasons.push('Trace autosomal signals or shared deep-ancestry traits present.');
+      reasons.push('Trace autosomal signals, non-specific basal haplogroups, or shared deep-ancestry traits present.');
     } else {
       reasons.push('No significant autosomal, uniparental, or trait markers detected.');
     }
@@ -130,9 +145,11 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
       nativeVerdict: verdict, 
       traitEdar, 
       traitAbcc11, 
-      uniparental: { mt9bp, mtTested, isMtB, isYQ, yTested, mtHaplo, yHaplo },
+      uniparental: { mt9bp, mtTested, isMtNative, isYNative, isYQ, yTested, mtHaplo, yHaplo },
       confidenceReasons: reasons,
-      eastAsianOverlap: eaOverlap
+      eastAsianOverlap: eaOverlap,
+      ewProxy
+
     };
   }, [dataset, oracleResults, userSnps, mtData, yData]);
 
@@ -258,7 +275,10 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
                 <div className="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
                   <div className="text-xs font-bold text-slate-500 uppercase mb-1">Maternal (mtDNA)</div>
                   <div className="text-sm font-medium text-slate-900 dark:text-white mb-2">Haplogroup: {uniparental.mtHaplo || 'Not tested'}</div>
-                  {uniparental.isMtB && <div className="text-xs bg-sky-500/10 text-sky-500 px-2 py-1 rounded inline-block font-bold">Haplogroup B Badge</div>}
+                  {uniparental.isMtNative && <div className="text-xs bg-sky-500/10 text-sky-500 px-2 py-1 rounded inline-block font-bold">Founding Lineage (A/B/C/D/X)</div>}
+                  {uniparental.mtHaplo.toUpperCase().startsWith('X') && !uniparental.mtHaplo.toUpperCase().includes('X2A') && (
+                    <div className="text-[10px] text-amber-500 mt-1">Note: X2a is the primary Native American subclade. Other X subclades are common in Eurasia.</div>
+                  )}
                   
                   <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700">
                     <div className="text-xs text-slate-500 mb-1">9-bp Deletion (8272–8289)</div>
@@ -271,10 +291,36 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
                 <div className="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
                   <div className="text-xs font-bold text-slate-500 uppercase mb-1">Paternal (Y-DNA)</div>
                   <div className="text-sm font-medium text-slate-900 dark:text-white mb-2">Haplogroup: {uniparental.yHaplo || 'Not tested'}</div>
-                  {uniparental.isYQ && <div className="text-xs bg-indigo-500/10 text-indigo-500 px-2 py-1 rounded inline-block font-bold">Haplogroup Q Badge</div>}
-                  {!uniparental.isYQ && uniparental.yTested && uniparental.yHaplo.startsWith('Q') && (
-                    <div className="text-xs text-amber-500 mt-1">Resolution does not reach Q-M3.</div>
+                  {uniparental.isYNative && <div className="text-xs bg-indigo-500/10 text-indigo-500 px-2 py-1 rounded inline-block font-bold">Native American Lineage</div>}
+                  {uniparental.isYQ && !uniparental.isYNative && (
+                    <div className="text-xs text-amber-500 mt-1">Found Haplogroup Q, but lacks resolution for Native subclades (e.g. Q-M3, L54, Z780).</div>
                   )}
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 4: Eastern Woodlands Proxy */}
+            <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:col-span-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <Map className="w-5 h-5 text-emerald-500" /> Eastern Woodlands Proxy (Directional)
+              </h3>
+              <p className="text-xs text-slate-500 mb-4 border-b border-slate-200 dark:border-slate-700 pb-4">
+                This directional proxy compares genetic affinities along a North-South axis relative to Central/South American baseline.
+              </p>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-sm font-bold text-slate-700 dark:text-slate-200">Directional Signal</div>
+                  <div className={`text-xs font-medium px-3 py-1 rounded-full ${
+                    ewProxy.direction === 'northern-affiliated' ? 'bg-emerald-500/10 text-emerald-600' :
+                    ewProxy.direction === 'southern-affiliated' ? 'bg-indigo-500/10 text-indigo-600' :
+                    'bg-slate-200 dark:bg-slate-800 text-slate-600'
+                  }`}>
+                    {ewProxy.direction === 'northern-affiliated' ? 'Northern Affiliated' : 
+                     ewProxy.direction === 'southern-affiliated' ? 'Southern Affiliated' : 'Neutral / Mixed'}
+                  </div>
+                </div>
+                <div className="text-xs text-slate-500">
+                  Proxy SNPs detected: {ewProxy.snpsDetected}
                 </div>
               </div>
             </div>
