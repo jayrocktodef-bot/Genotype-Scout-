@@ -33,6 +33,11 @@
       Update: Added missing AFRAM, AMER, CAS, CAU to REGION_COLORS and mapCodeToName in NaiveAncestryOracle.tsx.
       Status: Built, validated locally. Awaiting Orbit verification. Do NOT merge yet.
 
+- [ ] 2026-10-10 — Broaden Native Roots detection
+      Branch: `broaden-native-roots`
+      Fixes: Expanded mtDNA B-only to A/B/C/D/X (founding haplogroups), expanded Y-DNA Q-M3 to Native American Q subclades (Q-L54, Q-Z780, C-P39), integrated the Eastern Woodlands proxy as directional evidence.
+      Status: Built, validated locally, pushed. Awaiting Orbit verification. Do NOT merge yet.
+
 - [x] 2026-10-07 — Native Roots discovery view (FIXES REQUIRED)
       Brief: `handoff/2026-10-07-native-roots-build.md`
       Fixes: `handoff/2026-10-07-native-roots-fixes.md`
