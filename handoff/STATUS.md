@@ -2,6 +2,11 @@
 
 ## Active
 
+- [ ] 2026-10-10 — Native Roots launcher card fix
+      Branch: `fix-nativeroots-launcher`
+      Fixes: Added the Native Roots launcher card to the Dashboard module.
+      Status: Built, validated locally, pushed. Awaiting Orbit verification. Do NOT merge yet.
+
 - [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`
       Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.

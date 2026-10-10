@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { 
   Droplet, Eye, Activity, Map, ArrowRight, 
-  Shield, HeartPulse, Sparkles, Fingerprint
+  Shield, HeartPulse, Sparkles, Fingerprint, Compass
 } from 'lucide-react';
 
 interface DashboardProps {
@@ -327,6 +327,28 @@ const Dashboard: React.FC<DashboardProps> = ({
               </p>
             </div>
             <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-amber-500 transition-colors" />
+          </motion.div>
+
+          {/* Native Roots Launcher */}
+          <motion.div
+            onClick={() => onNavigateToTab('ancestry', 'native_roots')}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="lg:col-span-4 tactile-3d-card p-5 cursor-pointer group flex items-center justify-between"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/20 flex items-center justify-center text-teal-600 dark:text-teal-400 avatar-icon">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Discovery Module</h3>
+                <p className="text-lg font-black text-slate-800 dark:text-slate-200">Native Roots</p>
+              </div>
+            </div>
+            <div className="flex items-center text-teal-600 dark:text-teal-400 text-xs font-black uppercase tracking-widest gap-2">
+              Explore <ArrowRight className="w-4 h-4" />
+            </div>
           </motion.div>
         </div>
       </div>
