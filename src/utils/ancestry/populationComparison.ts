@@ -39,18 +39,13 @@ export async function calculatePopulationProximity(
   const EPSILON = 1e-6;
   const D_MAX = 3.5; // Constant to scale average negative log-likelihood to a 0-100% score
 
-  // Pre-resolve all valid user genotypes that exist in the reference database
-  const firstPop = Object.values(hoReferenceKernel)[0];
-  const refSnpKeys = firstPop ? Object.keys((firstPop as any).frequencies) : [];
-  
   const activeUserSnps: { rsid: string; rsidLower: string; dosage: number }[] = [];
 
-  for (const rsid of refSnpKeys) {
-    const rsidLower = rsid.toLowerCase();
+  for (const rsidLower in normalizedUserSnps) {
     const rawUserCall = normalizedUserSnps[rsidLower];
     if (!rawUserCall || rawUserCall.length !== 2) continue;
 
-    const marker = (graf10kIndex as any)[rsid] ?? (graf10kIndex as any)[rsid.toUpperCase()];
+    const marker = (graf10kIndex as any)[rsidLower] ?? (graf10kIndex as any)[rsidLower.toUpperCase()];
     if (!marker || !marker.ref || !marker.alt) continue;
 
     const ref = marker.ref.toUpperCase();
@@ -83,7 +78,7 @@ export async function calculatePopulationProximity(
     if (allele2 === alt) dosage += 0.5;
 
     activeUserSnps.push({
-      rsid,
+      rsid: rsidLower,
       rsidLower,
       dosage
     });
