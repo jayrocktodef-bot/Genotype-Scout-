@@ -1,6 +1,7 @@
 import { ParsedGenomicDataset } from '../../services/parser/types';
 import proxyData from '../../data/aims/romaniProxySNPs.json';
 import { RohResult } from './rohDetector';
+import { getAncestryIndex } from '../../data';
 
 export interface RomaniProxyResult {
   score: number;
@@ -25,6 +26,7 @@ export function computeRomaniProxySignal(
   const directSnpsDetected: string[] = [];
 
   const userSnps = dataset.snpMap || {};
+  const ancestryIndex = getAncestryIndex();
 
   // Uniparental checks
   // Y-DNA H-M69; mtDNA M5a1, M18, M35b
@@ -35,9 +37,41 @@ export function computeRomaniProxySignal(
     const genotype = userSnps[snp.rsid];
     if (!genotype || genotype === '--' || genotype === '-') continue;
 
+    let targetAllele = snp.targetAllele;
+    let isAntiTarget = false;
+
+    if (!targetAllele && snp.type === 'nw_indian') {
+      const marker = ancestryIndex.getMarker(snp.rsid);
+      if (marker && marker.alleles && marker.alleles.length > 0) {
+        const panelAllele = marker.alleles[0];
+        const rationale = snp.rationale || '';
+        const nwMatch = rationale.match(/NW=([0-9.]+)/);
+        const eurMatch = rationale.match(/EUR=([0-9.]+)/);
+        
+        if (nwMatch && eurMatch) {
+          const nwFreq = parseFloat(nwMatch[1]);
+          const eurFreq = parseFloat(eurMatch[1]);
+          
+          if (nwFreq > eurFreq) {
+             targetAllele = panelAllele;
+          } else {
+             targetAllele = panelAllele;
+             isAntiTarget = true;
+          }
+        }
+      }
+    }
+
     let dosage = 0;
-    if (genotype[0] === snp.targetAllele) dosage++;
-    if (genotype.length > 1 && genotype[1] === snp.targetAllele) dosage++;
+    if (targetAllele) {
+      if (!isAntiTarget) {
+        if (genotype[0] === targetAllele) dosage++;
+        if (genotype.length > 1 && genotype[1] === targetAllele) dosage++;
+      } else {
+        if (genotype[0] !== targetAllele) dosage++;
+        if (genotype.length > 1 && genotype[1] !== targetAllele) dosage++;
+      }
+    }
 
     if (snp.type === 'nw_indian') {
       maxNwScore += snp.weight * 2;
