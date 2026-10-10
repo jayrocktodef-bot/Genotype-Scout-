@@ -4,6 +4,7 @@ import { HealthImpact } from '../utils/healthMatching';
 import { PGxCard } from './PGxCard';
 import { SafetyDisclaimer } from './SafetyDisclaimer';
 import { Loader2, Sparkles, TrendingUp, Search, Printer, BookOpen } from 'lucide-react';
+import { useLegalConsentStore, useDiseaseRiskAccess } from '../stores/useLegalConsentStore';
 
 interface HealthWellnessTabProps {
   impacts: HealthImpact[];
@@ -31,6 +32,9 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
   const [expandedPrs, setExpandedPrs] = useState<Record<string, boolean>>({});
   const [medSearch, setMedSearch] = useState('');
   const [severityFilter, setSeverityFilter] = useState<'All' | 'High' | 'Moderate' | 'Low'>('All');
+
+  const hasDiseaseRiskAccess = useDiseaseRiskAccess();
+  const { ageAttested18Plus, openLegalModal } = useLegalConsentStore();
 
   const togglePrs = (key: string) => {
     setExpandedPrs(prev => ({ ...prev, [key]: !prev[key] }));
@@ -104,7 +108,11 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
 
   const filteredImpacts = (activeCategory === 'All' 
     ? impacts 
-    : impacts.filter(i => i.category === activeCategory)) || [];
+    : impacts.filter(i => i.category === activeCategory))?.filter(i => {
+      // Minors receive full non-disease app experience with these sections completely absent
+      if (i.masked && !ageAttested18Plus) return false;
+      return true;
+    }) || [];
 
   const showPrs = activeCategory === 'All' || activeCategory === 'Polygenic Risk';
   const showPgx = activeCategory === 'All' || activeCategory === 'Pharmacogenomics';
@@ -216,7 +224,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       </header>
 
 
-      {showPrs && polygenicRisks && Object.keys(polygenicRisks).length > 0 && (
+      {showPrs && polygenicRisks && Object.keys(polygenicRisks).length > 0 && ageAttested18Plus && (
         <section className="space-y-6">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
@@ -229,6 +237,8 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {Object.entries(polygenicRisks).map(([key, prs]: [string, any], idx: number) => {
               const userZ = getZScoreFromPercentile(prs.percentile);
+              const isGated = !hasDiseaseRiskAccess;
+
               return (
                 <motion.div
                   key={key}
@@ -241,13 +251,16 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest border ${
+                          isGated ? 'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-100 dark:border-slate-700' :
                           prs.riskCategory === 'Elevated' ? 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 border-red-100 dark:border-red-900/30' :
                           prs.riskCategory === 'Low' ? 'bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-400 border-green-100 dark:border-green-900/30' :
                           'bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-100 dark:border-slate-700'
                         }`}>
-                          {prs.riskCategory}
+                          {isGated ? 'MASKED' : prs.riskCategory}
                         </span>
-                        <h4 className="text-xl font-black text-slate-900 dark:text-slate-100 mt-2 leading-tight">{prs.name}</h4>
+                        <h4 className="text-xl font-black text-slate-900 dark:text-slate-100 mt-2 leading-tight">
+                          {isGated ? 'Disease-risk PRS' : prs.name}
+                        </h4>
                       </div>
                       <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
                         <TrendingUp className="w-5 h-5 text-blue-500" />
@@ -255,10 +268,19 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                     </div>
 
                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-6 font-medium">
-                      {prs.description}
+                      {isGated ? 'Hidden until consent' : prs.description}
                     </p>
                   </div>
 
+                  {isGated ? (
+                    <div className="mt-8 flex flex-col items-center justify-center p-6 bg-slate-50 dark:bg-slate-950/40 rounded-xl border border-dashed border-slate-200 dark:border-slate-800 text-center space-y-4">
+                      <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 dark:text-slate-500">🔒</div>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Sensitive Health Info Masked</p>
+                      <button onClick={openLegalModal} className="px-4 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest cursor-pointer">
+                        Opt-in to Reveal
+                      </button>
+                    </div>
+                  ) : (
                   <div>
                     {/* Z-score and Statistical Parameters Box in Analyst Mode */}
                     {mode === 'analyst' && (
@@ -439,6 +461,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                       </div>
                     )}
                   </div>
+                  )}
                 </motion.div>
               );
             })}
@@ -572,7 +595,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredImpacts.map((item, idx) => (
-              <HealthItemCard key={`${item.rsid}-${idx}`} item={item} idx={idx} />
+              <HealthItemCard key={`${item.rsid}-${idx}`} item={item} idx={idx} hasAccess={hasDiseaseRiskAccess} onOpenModal={openLegalModal} />
             ))}
           </div>
         )
@@ -581,8 +604,8 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
   );
 };
 
-const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, idx }) => {
-  const [revealed, setRevealed] = useState(!item.masked);
+const HealthItemCard: React.FC<{ item: HealthImpact; idx: number; hasAccess: boolean; onOpenModal: () => void }> = ({ item, idx, hasAccess, onOpenModal }) => {
+  const isGated = item.masked && !hasAccess;
 
   return (
     <motion.div
@@ -596,20 +619,25 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
           <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 tracking-widest uppercase mb-1 block">
             {item.category}
           </span>
-          <h3 className="text-lg font-black text-slate-900 dark:text-slate-100 leading-tight">{item.trait}</h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{item.name}</p>
+          <h3 className="text-lg font-black text-slate-900 dark:text-slate-100 leading-tight">
+            {isGated ? 'Hidden until consent' : item.trait}
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            {isGated ? 'Disease-risk result' : item.name}
+          </p>
         </div>
         <div className={`px-2 py-1 rounded text-[9px] font-bold uppercase ${
+          isGated ? 'bg-slate-100 dark:bg-slate-800 text-slate-500' :
           item.impact === 'high' ? 'bg-red-100 dark:bg-red-950/40 text-red-700 dark:text-red-400' :
           item.impact === 'moderate' ? 'bg-orange-100 dark:bg-orange-950/40 text-orange-700 dark:text-orange-400' :
           'bg-green-100 dark:bg-green-950/40 text-green-700 dark:text-green-400'
         }`}>
-          {item.impact} {item.impact !== 'neutral' ? 'impact' : ''}
+          {isGated ? 'MASKED' : `${item.impact} ${item.impact !== 'neutral' ? 'impact' : ''}`}
         </div>
       </div>
 
       <div className="mb-4 flex-1">
-        {revealed ? (
+        {!isGated ? (
           <>
             <div className="p-3 bg-slate-50 dark:bg-slate-950/40 rounded-xl border border-slate-100 dark:border-slate-800/60 mb-3">
               <div className="text-[9px] font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Your Genotype: {item.genotype}</div>
@@ -650,14 +678,14 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
             </div>
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Sensitive Health Info Masked</p>
             <button 
-              onClick={() => setRevealed(true)}
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest cursor-pointer"
+              onClick={onOpenModal}
+              className="px-4 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest cursor-pointer"
             >
-              Reveal Analysis
+              Opt-in to Reveal
             </button>
           </div>
         )}
-        {item.evidence && (
+        {!isGated && item.evidence && (
           <p className="text-[10px] text-slate-400 dark:text-slate-500 italic mt-3">{item.evidence}</p>
         )}
       </div>

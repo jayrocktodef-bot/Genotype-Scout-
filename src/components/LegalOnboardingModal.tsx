@@ -14,12 +14,16 @@ export const LegalOnboardingModal: React.FC = () => {
     acceptTerms,
     closeLegalModal,
     revokeConsent,
+    ageAttested18Plus,
+    diseaseRiskConsentAccepted,
   } = useLegalConsentStore();
 
   const [ackMicroarray, setAckMicroarray] = useState(false);
   const [ackRUO, setAckRUO] = useState(false);
   const [ackCLIA, setAckCLIA] = useState(false);
   const [ackTerms, setAckTerms] = useState(false);
+  const [ackAge, setAckAge] = useState(false);
+  const [optInDisease, setOptInDisease] = useState(false);
   const [hasDeclined, setHasDeclined] = useState(false);
 
   // If already accepted, auto-fill checkboxes for review display
@@ -29,27 +33,33 @@ export const LegalOnboardingModal: React.FC = () => {
       setAckRUO(true);
       setAckCLIA(true);
       setAckTerms(true);
+      setAckAge(ageAttested18Plus);
+      setOptInDisease(diseaseRiskConsentAccepted);
       setHasDeclined(false);
     } else {
       setAckMicroarray(false);
       setAckRUO(false);
       setAckCLIA(false);
       setAckTerms(false);
+      setAckAge(false);
+      setOptInDisease(false);
     }
   }, [hasAcceptedTerms, isLegalModalOpen]);
 
   if (!isLegalModalOpen) return null;
 
-  const allChecked = ackMicroarray && ackRUO && ackCLIA && ackTerms;
+  const allChecked = ackMicroarray && ackRUO && ackCLIA && ackTerms && ackAge;
 
   const handleAccept = () => {
     if (!allChecked) return;
-    acceptTerms([
+    const clauses = [
       'microarray_error_rate_ack',
       'research_use_only_ack',
       'clia_cap_confirmation_ack',
       'terms_of_service_liability_release_ack',
-    ]);
+    ];
+    if (optInDisease) clauses.push('disease_risk_opt_in_ack');
+    acceptTerms(clauses, ackAge, optInDisease);
   };
 
   const handleToggleAll = () => {
@@ -58,6 +68,7 @@ export const LegalOnboardingModal: React.FC = () => {
     setAckRUO(target);
     setAckCLIA(target);
     setAckTerms(target);
+    setAckAge(target);
   };
 
   const handleAcceptAll = () => {
@@ -65,12 +76,15 @@ export const LegalOnboardingModal: React.FC = () => {
     setAckRUO(true);
     setAckCLIA(true);
     setAckTerms(true);
-    acceptTerms([
+    setAckAge(true);
+    const clauses = [
       'microarray_error_rate_ack',
       'research_use_only_ack',
       'clia_cap_confirmation_ack',
       'terms_of_service_liability_release_ack',
-    ]);
+    ];
+    if (optInDisease) clauses.push('disease_risk_opt_in_ack');
+    acceptTerms(clauses, true, optInDisease);
   };
 
   const handleDecline = () => {
@@ -241,12 +255,24 @@ export const LegalOnboardingModal: React.FC = () => {
                     type="button"
                     onClick={handleToggleAll}
                     className="text-[11px] font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all cursor-pointer"
-                    title="Toggle all 4 requirements at once"
+                    title="Toggle all 5 requirements at once"
                   >
                     <CheckCheck className="w-3.5 h-3.5" />
                     <span>{allChecked ? 'Deselect All' : 'Select All (1-Click)'}</span>
                   </button>
                 </div>
+
+                <label className="flex items-start gap-3 p-3 rounded-xl bg-zinc-900/90 border border-zinc-800 hover:border-amber-500/40 transition-colors cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={ackAge}
+                    onChange={(e) => setAckAge(e.target.checked)}
+                    className="mt-0.5 w-4 h-4 rounded border-zinc-700 text-amber-500 focus:ring-amber-400 focus:ring-offset-zinc-900 bg-zinc-800 cursor-pointer"
+                  />
+                  <span className="text-xs text-zinc-300 group-hover:text-zinc-100">
+                    <strong>18+ Age Confirmation:</strong> I confirm I am 18 years of age or older, or I am the parent/legal guardian uploading and viewing results on behalf of my minor child.
+                  </span>
+                </label>
 
                 <label className="flex items-start gap-3 p-3 rounded-xl bg-zinc-900/90 border border-zinc-800 hover:border-amber-500/40 transition-colors cursor-pointer group">
                   <input
@@ -296,6 +322,24 @@ export const LegalOnboardingModal: React.FC = () => {
                   </span>
                 </label>
               </div>
+
+              {/* Disease-risk Opt-in Section */}
+              <div className="pt-6 border-t border-zinc-800 space-y-3">
+                <h4 className="text-xs font-black uppercase tracking-wider text-rose-400">
+                  Disease-Risk Results (Optional)
+                </h4>
+                <label className="flex items-start gap-3 p-3 sm:p-4 rounded-xl bg-zinc-900/90 border border-zinc-800 hover:border-rose-500/40 transition-colors cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={optInDisease}
+                    onChange={(e) => setOptInDisease(e.target.checked)}
+                    className="mt-0.5 w-4 h-4 rounded border-zinc-700 text-rose-500 focus:ring-rose-400 focus:ring-offset-zinc-900 bg-zinc-800 cursor-pointer"
+                  />
+                  <span className="text-xs text-zinc-300 group-hover:text-zinc-100">
+                    <strong>Disease-risk results opt-in:</strong> Genotype Scout can show research-grade estimates related to disease risk (for example APOE/Alzheimer's markers, cancer-risk markers, autoimmune markers, and polygenic risk scores). These are exploratory, not diagnoses. Consumer microarrays have documented 40-50%+ false positive rates on rare clinical alleles. These results can cause distress. They are hidden unless you explicitly opt in here, and you can revoke access at any time.
+                  </span>
+                </label>
+              </div>
             </>
           )}
 
@@ -308,7 +352,7 @@ export const LegalOnboardingModal: React.FC = () => {
               {allChecked ? (
                 <span className="text-emerald-400 font-bold flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  All 4 mandatory requirements acknowledged
+                  All 5 mandatory requirements acknowledged
                 </span>
               ) : (
                 <span className="text-zinc-400">
