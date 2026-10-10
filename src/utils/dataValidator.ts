@@ -28,6 +28,7 @@ export interface AimEntry {
   gene?: string;
   trait?: string;
   description?: string;
+  tier?: string | number;
   build?: string;
   palindromic?: boolean;
   status?: string;
@@ -252,6 +253,82 @@ export function validateAimRecord(
           );
         }
       }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // NEW HARDENING RULES
+  // ---------------------------------------------------------------------------
+
+  // RULE 1a: Label validation — region allowlist per panel
+  const PANEL_REGION_ALLOWLIST: Record<string, string[]> = {
+    'african.json': ['African'],
+    'african_american.json': ['African American'],
+    'central_asian.json': ['Central Asian'],
+    'east_asian.json': ['East Asian'],
+    'european.json': ['European'],
+    'middle_eastern.json': ['Middle Eastern', 'Middle Eastern / North African'],
+    'native_american.json': ['Native American'],
+    'north_african.json': ['North African', 'Middle Eastern / North African'],
+    'oceanian.json': ['Oceanian'],
+    'south_asian.json': ['South Asian'],
+    'siberian.json': ['Siberian']
+  };
+
+  const allowedRegions = PANEL_REGION_ALLOWLIST[baseSourceName];
+  if (allowedRegions && !allowedRegions.includes(entry.region)) {
+    errors.push(`Invalid region '${entry.region}' for panel ${baseSourceName}. Allowed: ${allowedRegions.join(', ')}`);
+  }
+
+  // RULE 1b: Descriptions non-generic
+  const descLower = (entry.description || '').toLowerCase().trim();
+  if (!descLower || descLower === 'ancestry informative marker' || descLower === 'ancestry informative marker.' || descLower === 'informative marker') {
+    errors.push(`Generic or missing description in ${sourceName}`);
+  }
+
+  // RULE 1c: Tiers assigned (no "?")
+  if (entry.tier === undefined || entry.tier === null || String(entry.tier).trim() === '' || String(entry.tier) === '?') {
+    errors.push(`Tier not assigned (value: '${entry.tier}') in ${sourceName}`);
+  }
+
+  // RULE 2: Separation gate (warn below 0.15, fail below 0.10)
+  const REGION_TO_FREQ_CODE: Record<string, string> = {
+    'African': 'AFR',
+    'African American': 'AFRAM',
+    'Central Asian': 'CAS',
+    'East Asian': 'EAS',
+    'European': 'EUR',
+    'Middle Eastern': 'MENA',
+    'Middle Eastern / North African': 'MENA',
+    'Native American': 'AMR',
+    'North African': 'MENA',
+    'Oceanian': 'OCE',
+    'South Asian': 'SAS',
+    'Siberian': 'SIB'
+  };
+
+  const targetCode = REGION_TO_FREQ_CODE[entry.region];
+  if (targetCode && entry.frequencies && entry.frequencies[targetCode] !== undefined) {
+    const targetFreq = entry.frequencies[targetCode];
+    const others = Object.keys(entry.frequencies).filter(k => k !== targetCode).map(k => entry.frequencies[k]);
+    if (others.length > 0) {
+      const separation = Math.min(...others.map(o => Math.abs(targetFreq - o)));
+      if (separation < 0.10) {
+        errors.push(`Separation below 0.10 (separation: ${separation.toFixed(4)}) for region ${entry.region} (${targetCode}) in ${sourceName}`);
+      } else if (separation < 0.15) {
+        console.warn(`⚠️  [WARN] Separation below 0.15 (separation: ${separation.toFixed(4)}) for ${k} in ${sourceName}`);
+      }
+    }
+  }
+
+  // RULE 3: Cross-field consistency — region and description can't contradict
+  const regex = /(African|European|Asian|Native American|Oceanian|Siberian|Middle Eastern|North African) Ancestry/i;
+  const match = descLower.match(regex);
+  if (match) {
+    const descRegion = match[1].toLowerCase();
+    const entryRegionLower = (entry.region || '').toLowerCase();
+    if (!entryRegionLower.includes(descRegion) && !descRegion.includes(entryRegionLower)) {
+      errors.push(`Cross-field contradiction: Region is '${entry.region}' but description implies '${match[1]}' in ${sourceName}`);
     }
   }
 
