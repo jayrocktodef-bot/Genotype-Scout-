@@ -344416,78 +344416,6 @@
     "build": "GRCh38",
     "tier": "informative"
   },
-  "rs2298080": {
-    "rsid": "rs2298080",
-    "chromosome": "1",
-    "position": 119027472,
-    "region": "Native American",
-    "color": "#C25C1A",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.02,
-      "EAS": 0.15,
-      "AMR": 0.65,
-      "SAS": 0.02,
-      "MENA": 0.01,
-      "OCE": 0.05,
-      "CAS": 0.6
-    },
-    "subFrequencies": {
-      "Inuit": 0.88,
-      "Yupik": 0.82,
-      "Yakut": 0.65,
-      "Ojibwe": 0.6,
-      "Han": 0.12,
-      "Yoruba": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "TBX15/WARS2",
-    "trait": "Brown Adipose Tissue Thermogenesis (Denisovan Haplotype)",
-    "description": "[Orbit Review: separation < 0.10] Archaic Denisovan-derived adaptive cold-tolerance haplotype in TBX15/WARS2 that promotes brown adipose tissue thermogenesis. Enriched in Siberian and Native American lineages, low in temperate East Asians.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs174546": {
-    "rsid": "rs174546",
-    "chromosome": "11",
-    "position": 61802358,
-    "region": "Native American",
-    "color": "#C25C1A",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.65,
-      "EAS": 0.55,
-      "AMR": 0.99,
-      "SAS": 0.7,
-      "MENA": 0.68,
-      "OCE": 0.85,
-      "CAS": 0.6
-    },
-    "subFrequencies": {
-      "Karitiana": 1,
-      "Pima": 0.98,
-      "Maya": 0.98,
-      "Ojibwe": 0.97,
-      "Han": 0.55,
-      "Yakut": 0.6
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "FADS1/FADS2",
-    "trait": "Amerindian Fatty Acid Synthesis Selection",
-    "description": "[Orbit Review: separation < 0.10] Fixed selective sweep marker in ancestral Native Americans during the Beringian Standstill (~15-20 kya) optimizing endogenously synthesized polyunsaturated fatty acids. Nearly 100% fixed across unadmixed Amerindians.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs75493593": {
     "rsid": "rs75493593",
     "chromosome": "17",
@@ -344556,47 +344484,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "diagnostic"
-  },
-  "rs10166942": {
-    "rsid": "rs10166942",
-    "chromosome": "2",
-    "position": 233916448,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0976,
-      "EUR": 0.826,
-      "EAS": 0.3671,
-      "AMR": 0.2,
-      "SAS": 0.4969,
-      "MENA": 0.7585,
-      "OCE": 0.15,
-      "CAS": 0.84
-    },
-    "subFrequencies": {
-      "Yakut": 0.88,
-      "Even": 0.85,
-      "Chukchi": 0.82,
-      "Han": 0.35,
-      "Maya": 0.38,
-      "Polish": 0.92,
-      "Russian": 0.9,
-      "Finnish": 0.94,
-      "Swedish": 0.89,
-      "Lithuanian": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "TRPM8",
-    "trait": "Siberian Cold Sensation & Vascular Regulation",
-    "description": "[Orbit Review: separation < 0.10] High-frequency cold-temperature receptor allele (rs10166942-T) selected in northern continental Europe (Baltic, Slavic, Scandinavian) to adapt to sub-freezing winters.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs13175330": {
     "rsid": "rs13175330",
@@ -344751,73 +344638,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs10456249": {
-    "rsid": "rs10456249",
-    "chromosome": "6",
-    "position": 21967059,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.2277,
-      "EUR": 0.2425,
-      "EAS": 0.0288,
-      "SAS": 0.229,
-      "MENA": 0.2823
-    },
-    "subFrequencies": {
-      "Bassa": 0.98,
-      "Kru": 0.9,
-      "Grebo": 0.85,
-      "Kpelle": 0.7,
-      "Mano": 0.65
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia.",
-    "build": "GRCh38",
-    "palindromic": true,
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs10456252": {
-    "rsid": "rs10456252",
-    "chromosome": "6",
-    "position": 22106750,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.9932,
-      "EUR": 0.83,
-      "EAS": 0.998,
-      "SAS": 0.955,
-      "MENA": 0.9728
-    },
-    "subFrequencies": {
-      "Kpelle": 0.98,
-      "Loma": 0.94,
-      "Mano": 0.92,
-      "Dan": 0.88,
-      "Mende": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456243": {
     "rsid": "rs10456243",
     "chromosome": "6",
@@ -344914,39 +344734,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs10456261": {
-    "rsid": "rs10456261",
-    "chromosome": "6",
-    "position": 22623242,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.916,
-      "EUR": 0.9304,
-      "EAS": 0.6667,
-      "SAS": 0.8262,
-      "MENA": 0.8027
-    },
-    "subFrequencies": {
-      "Bemba": 0.97,
-      "Lunda": 0.94,
-      "Lozi": 0.85,
-      "Chewa": 0.8,
-      "Tonga": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456267": {
     "rsid": "rs10456267",
     "chromosome": "6",
@@ -345039,77 +344826,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
-  },
-  "rs1572318": {
-    "rsid": "rs1572318",
-    "chromosome": "1",
-    "position": 42446395,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5257,
-      "EUR": 0.6431,
-      "EAS": 0.4008,
-      "SAS": 0.4335,
-      "MENA": 0.6392
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "NFIA",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs10456207": {
-    "rsid": "rs10456207",
-    "chromosome": "6",
-    "position": 17563583,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0136,
-      "EUR": 0.2107,
-      "EAS": 0.0119,
-      "SAS": 0.1012,
-      "MENA": 0.0578
-    },
-    "subFrequencies": {
-      "Yoruba": 0.85,
-      "Esan": 0.833,
-      "Mende": 0.867,
-      "Gambian": 0.85,
-      "Luhya": 0.807,
-      "Nubian": 0.95,
-      "Beja": 0.88,
-      "Sudanese": 0.85,
-      "Amhara": 0.6,
-      "Oromo": 0.55
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs10456218": {
     "rsid": "rs10456218",
@@ -345591,39 +345307,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
   },
-  "rs10456253": {
-    "rsid": "rs10456253",
-    "chromosome": "6",
-    "position": 22222360,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.2519,
-      "EUR": 0.1491,
-      "EAS": 0.2907,
-      "SAS": 0.3088,
-      "MENA": 0.2177
-    },
-    "subFrequencies": {
-      "Loma": 0.98,
-      "Kpelle": 0.94,
-      "Mano": 0.92,
-      "Dan": 0.88,
-      "Mende": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456235": {
     "rsid": "rs10456235",
     "chromosome": "6",
@@ -345655,41 +345338,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Fon Ancestry Marker.",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs10456297": {
-    "rsid": "rs10456297",
-    "chromosome": "6",
-    "position": 23995628,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8699,
-      "EAS": 0.9127,
-      "EUR": 0.7893,
-      "MENA": 0.863,
-      "NAFR": 0.01,
-      "SAS": 0.9243,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.96,
-      "Esan": 0.941,
-      "Mende": 0.979,
-      "Gambian": 0.96,
-      "Luhya": 0.912
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "South Asian Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs4871195": {
     "rsid": "rs4871195",
@@ -345787,39 +345435,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Zulu Ancestry Marker.",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs10456255": {
-    "rsid": "rs10456255",
-    "chromosome": "6",
-    "position": 22435857,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.0734,
-      "EUR": 0.1074,
-      "EAS": 0.2054,
-      "SAS": 0.2352,
-      "MENA": 0.1224
-    },
-    "subFrequencies": {
-      "Dan": 0.98,
-      "Mano": 0.94,
-      "Kpelle": 0.85,
-      "Loma": 0.8,
-      "Gola": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs10456254": {
     "rsid": "rs10456254",
@@ -346347,73 +345962,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "highly-informative"
-  },
-  "rs9659519": {
-    "rsid": "rs137856800",
-    "chromosome": "11",
-    "position": 5248232,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.0001,
-      "Yoruba": 0.0001,
-      "Mende": 0.0001,
-      "Esan": 0.0001,
-      "Bantu_Central_South": 0.0001,
-      "Nilotic_East_African": 0.0001
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "HBB",
-    "trait": "Hemoglobinopathy",
-    "description": "[Orbit Review: separation < 0.10] Fox Chase African AIM panel marker (Chr 1).",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs4833103": {
-    "rsid": "rs4833103",
-    "chromosome": "4",
-    "position": 38813881,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.0182,
-      "EUR": 0.505,
-      "EAS": 0.15,
-      "SAS": 0.0143,
-      "AMR": 0.2075
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.0173,
-      "Yoruba": 0.0167,
-      "Mende": 0.0175,
-      "Esan": 0.0171,
-      "Bantu_Central_South": 0.0186,
-      "Nilotic_East_African": 0.0209
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "intergenic",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] African vs. Native American Marker - Useful for discriminating ancestry in admixed individuals.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs4242382": {
     "rsid": "rs4242382",
@@ -347428,40 +346976,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
   },
-  "rs10456323": {
-    "rsid": "rs10456323",
-    "chromosome": "6",
-    "position": 25550490,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1467,
-      "EAS": 0.0486,
-      "EUR": 0.159,
-      "SAS": 0.1554,
-      "MENA": 0.2143
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.728,
-      "Yoruba": 0.742,
-      "Mende": 0.714,
-      "Esan": 0.721,
-      "Bantu_Central_South": 0.686,
-      "Nilotic_East_African": 0.595
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Tigrayan Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456327": {
     "rsid": "rs10456327",
     "chromosome": "6",
@@ -347800,40 +347314,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "diagnostic"
   },
-  "rs10456362": {
-    "rsid": "rs10456362",
-    "chromosome": "6",
-    "position": 28254038,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.2118,
-      "EAS": 0.128,
-      "EUR": 0.1153,
-      "SAS": 0.0828,
-      "MENA": 0.0442
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9996,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9604,
-      "Nilotic_East_African": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Sandawe Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Highly specific marker for Sandawe populations of Tanzania.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456363": {
     "rsid": "rs10456363",
     "chromosome": "6",
@@ -347932,74 +347412,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "informative"
-  },
-  "rs10456388": {
-    "rsid": "rs10456388",
-    "chromosome": "6",
-    "position": 9357674,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.9448,
-      "EAS": 0.9613,
-      "EUR": 0.7674,
-      "SAS": 0.8824,
-      "MENA": 0.7931
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9999,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9702,
-      "Nilotic_East_African": 0.8415
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Shilluk Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Highly specific marker for Shilluk populations (South Sudan).",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs10456389": {
-    "rsid": "rs10456389",
-    "chromosome": "6",
-    "position": 31044403,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.9259,
-      "EAS": 0.9345,
-      "EUR": 0.7952,
-      "SAS": 0.8476,
-      "MENA": 0.7245
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9996,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9604,
-      "Nilotic_East_African": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Anuak Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Highly specific marker for Anuak populations (Ethiopia/South Sudan).",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs10456391": {
     "rsid": "rs10456391",
@@ -348236,37 +347648,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
   },
-  "rs33930165": {
-    "rsid": "rs33930165",
-    "chromosome": "11",
-    "position": 5227003,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.08,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0.02,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "Mossi": 0.15,
-      "Fulani": 0.05,
-      "Yoruba": 0.03
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "HBB",
-    "trait": "Malaria resistance (HbC), Ancestry",
-    "description": "[Orbit Review: separation < 0.10] HbC allele (G>A at codon 6) is found predominantly in West African populations, particularly in Burkina Faso, Mali, and northern Ghana. Part of the adaptive response to malaria in savanna/agricultural communities. Differentiates Western vs Central/Eastern African ancestry.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs28371706": {
     "rsid": "rs28371706",
     "chromosome": "22",
@@ -348296,37 +347677,6 @@
     "description": "CYP2D6*17 (C1023T, p.T107I) is an African-enriched reduced-function allele (~20-34% frequency in Black/African populations) altering metabolism of codeine, tamoxifen, beta-blockers, and antidepressants.",
     "build": "GRCh38",
     "tier": "informative"
-  },
-  "rs59421388": {
-    "rsid": "rs59421388",
-    "chromosome": "22",
-    "position": 42127941,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1,
-      "EUR": 0.001,
-      "EAS": 0.001,
-      "AMR": 0.01,
-      "SAS": 0.001,
-      "MENA": 0.005
-    },
-    "subFrequencies": {
-      "Yoruba": 0.12,
-      "Esan": 0.1,
-      "Mende": 0.08
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "CYP2D6",
-    "trait": "CYP2D6*29 Reduced Drug Metabolism",
-    "description": "[Orbit Review: separation < 0.10] CYP2D6*29 (g.3183G>A, p.V343A) is a key African-specific reduced-function metabolizer variant (~7-12% frequency in populations of African descent).",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs776746": {
     "rsid": "rs776746",
@@ -348389,39 +347739,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "diagnostic"
   },
-  "rs762642": {
-    "rsid": "rs762642",
-    "chromosome": "1",
-    "position": 207807885,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1997,
-      "EUR": 0.4085,
-      "EAS": 0.373,
-      "AMR": 0.15,
-      "SAS": 0.3098,
-      "MENA": 0.4762
-    },
-    "subFrequencies": {
-      "Yoruba": 0.4,
-      "Fon": 0.45,
-      "Mende": 0.35,
-      "Esan": 0.42
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "CR1",
-    "trait": "Malaria resistance",
-    "description": "[Orbit Review: separation < 0.10] In West Africa, CR1 alleles affect complement regulation and are under malaria selection. The allele frequencies show distinct latitudinal gradients. Useful when combined with other haplotype markers of malaria‑resistance genes on chromosome 1.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs2289356": {
     "rsid": "rs2289356",
     "chromosome": "8",
@@ -348482,70 +347799,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
-  },
-  "rs2856725": {
-    "rsid": "rs2856725",
-    "chromosome": "5",
-    "position": 1212550,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.674,
-      "EUR": 0.6541,
-      "EAS": 0.8135,
-      "SAS": 0.7321,
-      "MENA": 0.7109
-    },
-    "subFrequencies": {
-      "Ju_'hoansi": 0.8,
-      "Khomani": 0.65,
-      "Nama": 0.6,
-      "Zulu": 0.1
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC6A19",
-    "trait": "Cellular immunity",
-    "description": "[Orbit Review: separation < 0.10] This SNP was identified in a scan for positive selection in the Ju|’hoansi. The adaptive allele impacts the cytokine pathway and likely involved in arginine metabolism during infection. A rare variant in most other populations, its high frequency marks the Khoe-San deep ancestry.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs1876482": {
-    "rsid": "rs1876482",
-    "chromosome": "15",
-    "position": 48426484,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.9977,
-      "EUR": 0.9225,
-      "EAS": 0.2252,
-      "SAS": 0.7751,
-      "MENA": 0.9728
-    },
-    "subFrequencies": {
-      "Herero": 0.35,
-      "Tswana": 0.45,
-      "Zulu": 0.25,
-      "Yoruba": 0.15
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "SLC24A5",
-    "trait": "Pigmentation & admixture",
-    "description": "[Orbit Review: separation < 0.10] In southern African Bantu, this SNP has elevated frequency due to earlier Khoe-San admixture but also shows a selective sweep from rain/UV environment differences. GWAS pigment locus separates Khoe-San*Bantu mix. This adds detail to internal African migrations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs13447447": {
     "rsid": "rs13447447",
@@ -348609,69 +347862,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "highly-informative"
   },
-  "rs5994349": {
-    "rsid": "rs11089480",
-    "chromosome": "15",
-    "position": 48426484,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.1,
-      "EAS": 0.02,
-      "AMR": 0.05,
-      "SAS": 0.1,
-      "MENA": 0.3
-    },
-    "subFrequencies": {
-      "Amhara": 0.05,
-      "Somali": 0.15,
-      "Yoruba": 0.001
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC24A5",
-    "trait": "Uses of MENA in African ancestry",
-    "description": "[Orbit Review: separation < 0.10] Detects recent middle-eastern admixture in the Horn of Africa. This allele is at high frequency in Egypt, Ethiopia’s Semitic groups (Amhara), and Somali populations due to historical gene flow from the Levant. Very low in West and Central Africa.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs12951053": {
-    "rsid": "rs12951053",
-    "chromosome": "11",
-    "position": 66560624,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.8896,
-      "EUR": 0.9016,
-      "EAS": 0.6766,
-      "SAS": 0.7802,
-      "MENA": 0.9592
-    },
-    "subFrequencies": {
-      "Yoruba": 0.7,
-      "Igbo": 0.65,
-      "Fon": 0.6,
-      "Zulu": 0.2
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "ACTN3",
-    "trait": "Muscle function",
-    "description": "[Orbit Review: separation < 0.10] Only recently discovered that the derived allele in ACTN3 is at very high frequency in certain Nigerian subpopulations. Likely relates to muscle strength and ancestral West African athletic abilities. Shares similarities with the null-allele frequency gradient within Africa.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs205632": {
     "rsid": "rs1150501",
     "chromosome": "2",
@@ -348701,39 +347891,6 @@
     "description": "Associated with expression of IL-1 antagonist. In West African Sahel, frequencies of this SNP separate drought-adapted farming communities. Since it is associated with the RAS pathway it also ensures resistance to some enteric pathogens. Good for internal West African geography.",
     "build": "GRCh38",
     "tier": "highly-informative"
-  },
-  "rs1476415": {
-    "rsid": "rs1476415",
-    "chromosome": "2",
-    "position": 136608146,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5204,
-      "EUR": 0.4632,
-      "EAS": 0.2837,
-      "AMR": 0.03,
-      "SAS": 0.3466,
-      "MENA": 0.4422
-    },
-    "subFrequencies": {
-      "Oromo": 0.6,
-      "Amhara": 0.4,
-      "Somalian": 0.55,
-      "Yoruba": 0.05
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "MCM6/LCT",
-    "trait": "Lactase persistence, Ancestry",
-    "description": "[Orbit Review: separation < 0.10] This SNP (mis-specified as also on IL1RN, but context shows it’s a marker in intron of MCM6 gene) is yet another lactase persistence allele, found mainly in the Horn of Africa. This particular variant is more frequent in the Cushitic Afro-Asiatic populations (Oromo, Somali) rather than in Nilotic groups.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs11980360": {
     "rsid": "rs11980360",
@@ -349294,38 +348451,6 @@
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
   },
-  "rs3024496": {
-    "rsid": "rs3024496",
-    "chromosome": "1",
-    "position": 206768519,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.6135,
-      "EUR": 0.5437,
-      "EAS": 0.9692,
-      "SAS": 0.7658,
-      "MENA": 0.6599
-    },
-    "subFrequencies": {
-      "Turkana": 0.83,
-      "Urhobo": 0.85,
-      "Afar": 0.81,
-      "Ibibio": 0.79
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "IL10",
-    "trait": "Inflammation modulation",
-    "description": "[Orbit Review: separation < 0.10] IL-10 gene variant showing a clear frequency cline from West Africa to East Africa with elevated rates in equatorial populations reflecting regional immune adaptation.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs240543": {
     "rsid": "rs676858",
     "chromosome": "16",
@@ -349356,38 +348481,6 @@
     "description": "Thiazide-sensitive sodium-chloride cotransporter variant linked to salt retention adaptations; distinguished frequencies in Kalahari San groups indicates thermal and hydration environment-specific selection.",
     "build": "GRCh38",
     "tier": "informative"
-  },
-  "rs11085825": {
-    "rsid": "rs11085825",
-    "chromosome": "16",
-    "position": 56833459,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8222,
-      "EUR": 0.673,
-      "EAS": 0.8562,
-      "SAS": 0.7352,
-      "MENA": 0.6973
-    },
-    "subFrequencies": {
-      "Kalenjin": 0.09,
-      "Samburu": 0.08,
-      "Tigray": 0.1,
-      "Ethiopian High": 0.11
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC12A3",
-    "trait": "Low-altitude adaptation",
-    "description": "[Orbit Review: separation < 0.10] Sodium transporter missense variant with inverse frequency pattern: lower than continental average in East African highland populations, suggesting altitude-dependent renal physiology adaptation.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs11356730": {
     "rsid": "rs35878731",
@@ -387795,34 +386888,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs2228479": {
-    "rsid": "rs2228479",
-    "chromosome": "16",
-    "position": 89985940,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0038,
-      "AMR": 0.0231,
-      "EAS": 0.2887,
-      "EUR": 0.0686,
-      "SAS": 0.0184,
-      "MENA": 0.0102
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "MC1R",
-    "trait": "Scandinavian Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] VDR variant - informative for European ancestry and localized vitamin D metabolism.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs12916300": {
     "rsid": "rs12916300",
     "chromosome": "15",
@@ -387903,39 +386968,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Basque Ancestry Marker.",
     "build": "GRCh38",
     "tier": "supporting"
-  },
-  "rs2395129": {
-    "rsid": "rs2395129",
-    "chromosome": "10",
-    "position": 76812741,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.3608,
-      "AMR": 0.0821,
-      "EAS": 0.1389,
-      "EUR": 0.0298,
-      "SAS": 0.0613,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "Italian": 0.3,
-      "Spanish": 0.25,
-      "German": 0.2,
-      "British": 0.2,
-      "Greek": 0.35
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "HLA-DQA1",
-    "trait": "Celiac Disease Risk",
-    "description": "[Orbit Review: separation < 0.10] Associated with an increased risk of Celiac disease, with higher prevalence in European populations.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs112735431": {
     "rsid": "rs112735431",
@@ -388362,60 +387394,6 @@
     "build": "GRCh38",
     "tier": "highly-informative"
   },
-  "rs10456314": {
-    "rsid": "rs10456314",
-    "chromosome": "6",
-    "position": 24675948,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.82,
-      "EAS": 0.7718,
-      "EUR": 0.5547,
-      "SAS": 0.7382,
-      "MENA": 0.5578
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Melungeon Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Melungeon populations (Appalachian Admixture).",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs12913836": {
-    "rsid": "rs12913836",
-    "chromosome": "15",
-    "position": 60269122,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.2663,
-      "EAS": 0.002,
-      "EUR": 0.1491,
-      "SAS": 0.0481,
-      "MENA": 0.1259
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "HERC2",
-    "trait": "Portuguese Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Portuguese populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs13116550": {
     "rsid": "rs13116550",
     "chromosome": "4",
@@ -388494,60 +387472,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs4988233": {
-    "rsid": "rs4988233",
-    "chromosome": "2",
-    "position": 135851177,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0015,
-      "EAS": 0.01,
-      "EUR": 0.001,
-      "SAS": 0.0031,
-      "MENA": 0.2
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "MCM6",
-    "trait": "Lactase Persistence (European)",
-    "description": "[Orbit Review: separation < 0.10] The primary European variant for lactase persistence, allowing for the digestion of dairy into adulthood. Extremely high frequency in Northern Europe.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs333": {
-    "rsid": "rs333",
-    "chromosome": "3",
-    "position": 46414944,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "D"
-    ],
-    "frequencies": {
-      "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.1,
-      "SAS": 0,
-      "MENA": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "CCR5",
-    "trait": "HIV Resistance (CCR5-delta32)",
-    "description": "[Orbit Review: separation < 0.10] The delta32 deletion (represented here as 'D') provides resistance to HIV infection and is most common in Northern European populations.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs10456287": {
     "rsid": "rs10456287",
     "chromosome": "6",
@@ -388603,64 +387527,6 @@
     "build": "GRCh38",
     "tier": "informative"
   },
-  "rs80357906": {
-    "rsid": "rs80357906",
-    "chromosome": "17",
-    "position": 43057064,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "D"
-    ],
-    "frequencies": {
-      "AFR": 0.0001,
-      "EUR": 0.025,
-      "EAS": 0.0001,
-      "AMR": 0.001,
-      "SAS": 0.0001,
-      "MENA": 0.005
-    },
-    "subFrequencies": {
-      "Ashkenazi Jewish": 0.025
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "BRCA1",
-    "trait": "Ashkenazi Jewish Founder Mutation (BRCA1 185delAG)",
-    "description": "[Orbit Review: separation < 0.10] High-frequency founder mutation in BRCA1 (185delAG) resulting from historical medieval bottlenecks in Rhineland/Polish Ashkenazi Jewish communities.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs80359550": {
-    "rsid": "rs80359550",
-    "chromosome": "13",
-    "position": 32338166,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "D"
-    ],
-    "frequencies": {
-      "AFR": 0.0001,
-      "EUR": 0.015,
-      "EAS": 0.0001,
-      "AMR": 0.001,
-      "SAS": 0.0001,
-      "MENA": 0.003
-    },
-    "subFrequencies": {
-      "Ashkenazi Jewish": 0.015
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "BRCA2",
-    "trait": "Ashkenazi Jewish Founder Mutation (BRCA2 6174delT)",
-    "description": "[Orbit Review: separation < 0.10] Major Ashkenazi Jewish founder allele (6174delT in BRCA2) enriched by medieval population bottlenecks.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs1801282": {
     "rsid": "rs1801282",
     "chromosome": "16",
@@ -388691,38 +387557,6 @@
     "description": "Loss-of-function MC1R variant (Arg151Cys) producing pheomelanin, red hair, and freckling; highly enriched in Insular Atlantic Celtic populations.",
     "build": "GRCh38",
     "tier": "informative"
-  },
-  "rs121908698": {
-    "rsid": "rs121908698",
-    "chromosome": "11",
-    "position": 5225676,
-    "region": "European",
-    "color": "#3498DB",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.04,
-      "EAS": 0.001,
-      "AMR": 0.005,
-      "SAS": 0.01,
-      "MENA": 0.06
-    },
-    "subFrequencies": {
-      "Cypriot": 0.1,
-      "Greek": 0.07,
-      "Sicilian": 0.05,
-      "Italian": 0.03
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "HBB",
-    "trait": "Beta-Thalassemia Mediterranean Founder Variant",
-    "description": "[Orbit Review: separation < 0.10] The most common Mediterranean beta-thalassemia mutation (IVS-I-110 G>A), diagnostic for Aegean, Cypriot, and Southern Italian lineages.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs10456280": {
     "rsid": "rs10456280",
@@ -388783,33 +387617,6 @@
     "description": "Highly specific marker for Middle Eastern populations.",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs6601495": {
-    "rsid": "rs6601495",
-    "chromosome": "8",
-    "position": 10622867,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.2269,
-      "EAS": 0.999,
-      "EUR": 0.994,
-      "SAS": 1,
-      "MENA": 0.932
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "South Asian Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs1333048": {
     "rsid": "rs1333048",
@@ -389023,35 +387830,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "supporting"
-  },
-  "rs10456284": {
-    "rsid": "rs10456284",
-    "chromosome": "6",
-    "position": 23731548,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.1566,
-      "EAS": 0.1935,
-      "EUR": 0.3111,
-      "SAS": 0.2474,
-      "MENA": 0.4207,
-      "NAFR": 0.01,
-      "OCE": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "N/A",
-    "trait": "West Asian Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs5857297": {
     "rsid": "rs5857297",
@@ -402438,51 +401216,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs174570": {
-    "rsid": "rs174570",
-    "chromosome": "11",
-    "position": 61829740,
-    "region": "Native American",
-    "color": "#9B59B6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0091,
-      "EUR": 0.16,
-      "EAS": 0.5556,
-      "AMR": 0.487,
-      "SAS": 0.0736,
-      "MENA": 0.3,
-      "NAT": 0.8,
-      "OCE": 0.3691
-    },
-    "subFrequencies": {
-      "Maya": 0.92,
-      "Pima": 0.911,
-      "Karitiana": 0.929,
-      "Surui": 0.92,
-      "Quechua": 0.902,
-      "Gujarati": 0.0194,
-      "Punjabi": 0.099,
-      "Bengali": 0.1221,
-      "Tamil": 0.9069,
-      "Telugu": 0.0441,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {
-      "WHG": 0.7105263157894737,
-      "EEF": 0.7686567164179104,
-      "Yamnaya": 0.7426229508196721
-    },
-    "weight": 8,
-    "gene": "FADS2",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Tied to adapting to cold weather and diets high in fat and protein. Found in groups like the Inuit.",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs20424": {
     "rsid": "rs20424",
     "chromosome": "1",
@@ -402646,75 +401379,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "diagnostic"
-  },
-  "rs117767867": {
-    "rsid": "rs117767867",
-    "chromosome": "17",
-    "position": 7043011,
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.09,
-      "AMR": 0.2421,
-      "Native_American": 0.48,
-      "SAS": 0.02,
-      "AMR_admixed": 0.28,
-      "Native_American_unadmixed": 0.48
-    },
-    "subFrequencies": {
-      "Mexican_Indigenous": 0.5,
-      "Pima": 0.52,
-      "Mesoamerican": 0.46,
-      "Northern_Native": 0.38,
-      "Amazonian_Andean": 0.42
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC16A11",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Part of the 4-missense-SNP SLC16A11 risk haplotype; rare outside Native American and East Asian populations",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
-  "rs75418188": {
-    "rsid": "rs75418188",
-    "chromosome": "17",
-    "position": 7042164,
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR": 0.29,
-      "Native_American": 0.49,
-      "SAS": 0.03,
-      "AMR_admixed": 0.29,
-      "Native_American_unadmixed": 0.49
-    },
-    "subFrequencies": {
-      "Mexican_Indigenous": 0.5,
-      "Pima": 0.52,
-      "Mesoamerican": 0.46,
-      "Northern_Native": 0.38
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC16A11",
-    "trait": "Ancestry",
-    "description": "[Orbit Review: separation < 0.10] Third missense variant in the SLC16A11 haplotype block; functionally tolerated per SIFT",
-    "build": "GRCh38",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs7089424": {
     "rsid": "rs7089424",
@@ -411980,34 +410644,6 @@
     "build": "GRCh38",
     "tier": "diagnostic"
   },
-  "rs9999903": {
-    "rsid": "rs9999903",
-    "chromosome": "4",
-    "position": 9462956,
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.407,
-      "AMR": 0.05,
-      "EAS": 0.3075,
-      "EUR": 0.3608,
-      "SAS": 0.5869,
-      "MENA": 0.5141
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "N/A",
-    "trait": "North South Asian Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
-  },
   "rs6119478": {
     "rsid": "rs6119478",
     "chromosome": "20",
@@ -412137,33 +410773,6 @@
     "description": "Highly specific marker for Maghreb populations (Morocco, Algeria, Tunisia).",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs10456322": {
-    "rsid": "rs10456322",
-    "chromosome": "6",
-    "position": 25550276,
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1392,
-      "EAS": 0.0486,
-      "EUR": 0.159,
-      "SAS": 0.1554,
-      "MENA": 0.2143
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Sahrawi Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Sahrawi populations of Western Sahara.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs10456356": {
     "rsid": "rs10456356",
@@ -431309,35 +429918,6 @@
     "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia.",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs10456288": {
-    "rsid": "rs10456288",
-    "chromosome": "6",
-    "position": 23797406,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.9675,
-      "EAS": 0.8631,
-      "EUR": 0.7545,
-      "SAS": 0.8395,
-      "MENA": 0.7153,
-      "OCE": 0.02,
-      "NAFR": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "[Orbit Review: separation < 0.10] SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs11014200": {
     "rsid": "rs11014200",
@@ -465993,40 +464573,6 @@
     "description": "Definitive Y-DNA marker for Haplogroup Q-M3, the dominant founding paternal lineage across North and South America.",
     "build": "GRCh38",
     "tier": "diagnostic"
-  },
-  "rs13419896": {
-    "rsid": "rs13419896",
-    "chromosome": "2",
-    "position": 46329206,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "CAS": 0.4,
-      "EAS": 0.3046,
-      "EUR": 0.0258,
-      "AFR": 0.2685,
-      "SAS": 0.2035,
-      "AMR": 0,
-      "MENA": 0.0034
-    },
-    "subFrequencies": {
-      "Tibetan": 0.75,
-      "Sherpa": 0.8,
-      "Lowland_Han": 0.05,
-      "Mongol": 0.06
-    },
-    "deepFrequencies": {},
-    "weight": 12,
-    "gene": "EPAS1",
-    "trait": "High-Altitude Adaptation",
-    "description": "[Orbit Review: separation < 0.10] Denisovan-derived haplotype tag marker in EPAS1 associated with blunted erythropoiesis at high altitude.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "tier": "supporting",
-    "status": "orbit_review"
   },
   "rs2032644": {
     "rsid": "rs2032644",

@@ -311092,78 +311092,6 @@
     "build": "GRCh38",
     "tier": "informative"
   },
-  "rs2298080": {
-    "rsid": "rs2298080",
-    "chromosome": "1",
-    "position": 119027472,
-    "region": "Native American",
-    "color": "#C25C1A",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.02,
-      "EAS": 0.15,
-      "AMR": 0.65,
-      "SAS": 0.02,
-      "MENA": 0.01,
-      "OCE": 0.05,
-      "CAS": 0.6
-    },
-    "subFrequencies": {
-      "Inuit": 0.88,
-      "Yupik": 0.82,
-      "Yakut": 0.65,
-      "Ojibwe": 0.6,
-      "Han": 0.12,
-      "Yoruba": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "TBX15/WARS2",
-    "trait": "Brown Adipose Tissue Thermogenesis (Denisovan Haplotype)",
-    "description": "[Orbit Review: separation < 0.10] Archaic Denisovan-derived adaptive cold-tolerance haplotype in TBX15/WARS2 that promotes brown adipose tissue thermogenesis. Enriched in Siberian and Native American lineages, low in temperate East Asians.",
-    "build": "GRCh38",
-    "status": "orbit_review",
-    "tier": "supporting"
-  },
-  "rs174546": {
-    "rsid": "rs174546",
-    "chromosome": "11",
-    "position": 61802358,
-    "region": "Native American",
-    "color": "#C25C1A",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.65,
-      "EAS": 0.55,
-      "AMR": 0.99,
-      "SAS": 0.7,
-      "MENA": 0.68,
-      "OCE": 0.85,
-      "CAS": 0.6
-    },
-    "subFrequencies": {
-      "Karitiana": 1,
-      "Pima": 0.98,
-      "Maya": 0.98,
-      "Ojibwe": 0.97,
-      "Han": 0.55,
-      "Yakut": 0.6
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "FADS1/FADS2",
-    "trait": "Amerindian Fatty Acid Synthesis Selection",
-    "description": "[Orbit Review: separation < 0.10] Fixed selective sweep marker in ancestral Native Americans during the Beringian Standstill (~15-20 kya) optimizing endogenously synthesized polyunsaturated fatty acids. Nearly 100% fixed across unadmixed Amerindians.",
-    "build": "GRCh38",
-    "status": "orbit_review",
-    "tier": "supporting"
-  },
   "rs75493593": {
     "rsid": "rs75493593",
     "chromosome": "17",
@@ -311232,47 +311160,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
     "tier": "diagnostic"
-  },
-  "rs10166942": {
-    "rsid": "rs10166942",
-    "chromosome": "2",
-    "position": 233916448,
-    "region": "Central Asian",
-    "color": "#f59e0b",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0976,
-      "EUR": 0.826,
-      "EAS": 0.3671,
-      "AMR": 0.2,
-      "SAS": 0.4969,
-      "MENA": 0.7585,
-      "OCE": 0.15,
-      "CAS": 0.84
-    },
-    "subFrequencies": {
-      "Yakut": 0.88,
-      "Even": 0.85,
-      "Chukchi": 0.82,
-      "Han": 0.35,
-      "Maya": 0.38,
-      "Polish": 0.92,
-      "Russian": 0.9,
-      "Finnish": 0.94,
-      "Swedish": 0.89,
-      "Lithuanian": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "TRPM8",
-    "trait": "Siberian Cold Sensation & Vascular Regulation",
-    "description": "[Orbit Review: separation < 0.10] High-frequency cold-temperature receptor allele (rs10166942-T) selected in northern continental Europe (Baltic, Slavic, Scandinavian) to adapt to sub-freezing winters.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "status": "orbit_review",
-    "tier": "supporting"
   },
   "rs13175330": {
     "rsid": "rs13175330",
