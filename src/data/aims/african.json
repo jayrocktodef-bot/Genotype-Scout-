@@ -950,40 +950,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs10456224": {
-    "rsid": "rs10456224",
-    "chromosome": "6",
-    "position": 19666612,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.02,
-      "EUR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.98
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.0095,
-      "Yoruba": 0.0092,
-      "Mende": 0.0096,
-      "Esan": 0.0094,
-      "Bantu_Central_South": 0.0102,
-      "Nilotic_East_African": 0.0115
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Oceanian Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Sotho Ancestry Marker.",
-    "build": "GRCh38",
-    "palindromic": true
-  },
   "rs10456226": {
     "rsid": "rs10456226",
     "chromosome": "6",
@@ -1150,69 +1116,6 @@
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Fon Ancestry Marker.",
     "build": "GRCh38"
-  },
-  "rs10456236": {
-    "rsid": "rs10456236",
-    "chromosome": "6",
-    "position": 20797988,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.2012,
-      "AMR": 0.1513,
-      "EAS": 0.0913,
-      "EUR": 0.0785,
-      "SAS": 0.1217,
-      "MENA": 0.25
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.1911,
-      "Yoruba": 0.1851,
-      "Mende": 0.1932,
-      "Esan": 0.1891,
-      "Bantu_Central_South": 0.2052,
-      "Nilotic_East_African": 0.2314
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Ewe Ancestry Marker.",
-    "build": "GRCh38"
-  },
-  "rs10456237": {
-    "rsid": "rs10456237",
-    "chromosome": "6",
-    "position": 21081675,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.9705,
-      "EUR": 0.838,
-      "EAS": 0.994,
-      "SAS": 0.8978,
-      "MENA": 0.8264
-    },
-    "subFrequencies": {
-      "Bamileke": 0.96,
-      "Bamoun": 0.92,
-      "Tikar": 0.88,
-      "Fang": 0.7,
-      "Bubi": 0.65
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Bamileke Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
   "rs10456239": {
     "rsid": "rs10456239",
@@ -1401,37 +1304,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs10456245": {
-    "rsid": "rs10456245",
-    "chromosome": "6",
-    "position": 10360468,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.8222,
-      "EUR": 0.7495,
-      "EAS": 0.9702,
-      "SAS": 0.8896,
-      "MENA": 0.7619
-    },
-    "subFrequencies": {
-      "Limba": 0.98,
-      "Temne": 0.9,
-      "Mende": 0.85,
-      "Loko": 0.82,
-      "Kuranko": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Limba Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs10456246": {
     "rsid": "rs10456246",
     "chromosome": "6",
@@ -1596,37 +1468,6 @@
     "gene": "N/A",
     "trait": "Kpelle Ancestry Marker",
     "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456253": {
-    "rsid": "rs10456253",
-    "chromosome": "6",
-    "position": 22222360,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.2519,
-      "EUR": 0.1491,
-      "EAS": 0.2907,
-      "SAS": 0.3088,
-      "MENA": 0.2177
-    },
-    "subFrequencies": {
-      "Loma": 0.98,
-      "Kpelle": 0.94,
-      "Mano": 0.92,
-      "Dan": 0.88,
-      "Mende": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Loma Ancestry Marker",
-    "description": "Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia.",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
@@ -2153,38 +1994,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs10456304": {
-    "rsid": "rs10456304",
-    "chromosome": "6",
-    "position": 24319250,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1679,
-      "EAS": 0.1796,
-      "EUR": 0.1561,
-      "SAS": 0.2505,
-      "MENA": 0.2069,
-      "NAFR": 0.1,
-      "OCE": 0.99
-    },
-    "subFrequencies": {
-      "Bougainville": 0.99,
-      "Solomon_Islands": 0.97,
-      "Fiji": 0.85,
-      "Samoa": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Oceanian Ancestry Marker",
-    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs10456305": {
     "rsid": "rs10456305",
     "chromosome": "6",
@@ -2318,38 +2127,6 @@
     "gene": "N/A",
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Luhya Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456323": {
-    "rsid": "rs10456323",
-    "chromosome": "6",
-    "position": 25550490,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1467,
-      "EAS": 0.0486,
-      "EUR": 0.159,
-      "SAS": 0.1554,
-      "MENA": 0.2143
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.728,
-      "Yoruba": 0.742,
-      "Mende": 0.714,
-      "Esan": 0.721,
-      "Bantu_Central_South": 0.686,
-      "Nilotic_East_African": 0.595
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "Tigrayan Ancestry Marker",
-    "description": "Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
@@ -3128,38 +2905,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs10456432": {
-    "rsid": "rs10456432",
-    "chromosome": "6",
-    "position": 35703874,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.174,
-      "EAS": 0.0516,
-      "EUR": 0.1859,
-      "SAS": 0.2137,
-      "MENA": 0.0884
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.9999,
-      "Yoruba": 0.9999,
-      "Mende": 0.9999,
-      "Esan": 0.9999,
-      "Bantu_Central_South": 0.9702,
-      "Nilotic_East_African": 0.8415
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Mbuti Pygmy Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs10456440": {
     "rsid": "rs10456440",
     "chromosome": "6",
@@ -3246,35 +2991,6 @@
     "description": "The A allele is in very high frequency in East African populations near the Horn of Africa, supporting strong selection for lighter skin in a region with lower UV radiation compared to equatorial Africa.",
     "build": "GRCh38"
   },
-  "rs10486573": {
-    "rsid": "rs10486573",
-    "chromosome": "7",
-    "position": 28040874,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.0711,
-      "EUR": 0.166,
-      "EAS": 0.002,
-      "SAS": 0.044,
-      "MENA": 0.1633
-    },
-    "subFrequencies": {
-      "Bantu": 0.95,
-      "Yoruba": 0.85,
-      "Igbo": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Bantu Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs10486575": {
     "rsid": "rs10486575",
     "chromosome": "7",
@@ -3303,49 +3019,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Bantu Marker.",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10502493": {
-    "rsid": "rs10502493",
-    "chromosome": "18",
-    "position": 27447966,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.4425,
-      "AMR": 0.3444,
-      "EAS": 0.496,
-      "EUR": 0.335,
-      "SAS": 0.41
-    },
-    "subFrequencies": {
-      "Ju_hoansi": 0.875,
-      "Mbuti": 0.125,
-      "Luo": 0.75,
-      "Maasai": 0.25,
-      "Somali": 1,
-      "Herero": 0.5,
-      "Tswana": 0.5,
-      "Gambian": 0.25,
-      "Yoruba": 0.6667,
-      "Mende": 0.25,
-      "Esan": 1,
-      "Luhya": 0.25,
-      "ASW": 0.4672,
-      "ACB": 0.4531
-    },
-    "deepFrequencies": {
-      "WHG": 0.8571428571428571,
-      "EEF": 0.8557692307692307,
-      "Yamnaya": 0.7359550561797753
-    },
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Central African Pygmy AIM.",
-    "build": "GRCh38"
   },
   "rs10520478": {
     "rsid": "rs10520478",
@@ -4209,36 +3882,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs11085825": {
-    "rsid": "rs11085825",
-    "chromosome": "16",
-    "position": 56833459,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8222,
-      "EUR": 0.673,
-      "EAS": 0.8562,
-      "SAS": 0.7352,
-      "MENA": 0.6973
-    },
-    "subFrequencies": {
-      "Kalenjin": 0.09,
-      "Samburu": 0.08,
-      "Tigray": 0.1,
-      "Ethiopian High": 0.11
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC12A3",
-    "trait": "Low-altitude adaptation",
-    "description": "Sodium transporter missense variant with inverse frequency pattern: lower than continental average in East African highland populations, suggesting altitude-dependent renal physiology adaptation.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs5994349": {
     "rsid": "rs11089480",
     "chromosome": "15",
@@ -4655,38 +4298,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs11103351": {
-    "rsid": "rs11103351",
-    "chromosome": "9",
-    "position": 136143916,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.6853,
-      "EUR": 0.6014,
-      "EAS": 0.7649,
-      "SAS": 0.6779,
-      "MENA": 0.7152,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.97,
-      "Esan": 0.951,
-      "Mende": 0.989,
-      "Gambian": 0.97,
-      "Luhya": 0.921
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "East African Marker",
-    "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs11103352": {
     "rsid": "rs11103352",
     "chromosome": "9",
@@ -4879,38 +4490,6 @@
     "gene": "N/A",
     "trait": "Afrikaner Ancestry Marker",
     "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11103362": {
-    "rsid": "rs11103362",
-    "chromosome": "9",
-    "position": 136166363,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.2405,
-      "EAS": 0.1637,
-      "EUR": 0.1491,
-      "SAS": 0.3088,
-      "MENA": 0.1259,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.94,
-      "Esan": 0.921,
-      "Mende": 0.959,
-      "Gambian": 0.94,
-      "Luhya": 0.893
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
@@ -5138,70 +4717,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs11103378": {
-    "rsid": "rs11103378",
-    "chromosome": "9",
-    "position": 136205359,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.466,
-      "EUR": 0.3738,
-      "EAS": 0.5774,
-      "SAS": 0.5409,
-      "MENA": 0.4218,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.97,
-      "Esan": 0.951,
-      "Mende": 0.989,
-      "Gambian": 0.97,
-      "Luhya": 0.921
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "N/A",
-    "trait": "East Asian Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Polynesian Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11103379": {
-    "rsid": "rs11103379",
-    "chromosome": "9",
-    "position": 136205504,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.6059,
-      "EUR": 0.501,
-      "EAS": 0.6438,
-      "SAS": 0.6002,
-      "MENA": 0.4694,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.96,
-      "Esan": 0.941,
-      "Mende": 0.979,
-      "Gambian": 0.96,
-      "Luhya": 0.912
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "N/A",
-    "trait": "East Asian Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Micronesian Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs11103380": {
     "rsid": "rs11103380",
     "chromosome": "9",
@@ -5329,38 +4844,6 @@
     "trait": "East Asian Ancestry Marker",
     "description": "African Informative Marker - strong sub-Saharan African signal.",
     "build": "GRCh38"
-  },
-  "rs11103387": {
-    "rsid": "rs11103387",
-    "chromosome": "9",
-    "position": 136216033,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.2905,
-      "EAS": 0.1944,
-      "EUR": 0.338,
-      "SAS": 0.409,
-      "MENA": 0.2959,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.94,
-      "Esan": 0.921,
-      "Mende": 0.959,
-      "Gambian": 0.94,
-      "Luhya": 0.893
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
   "rs11103388": {
     "rsid": "rs11103388",
@@ -5906,38 +5389,6 @@
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
-  "rs11103417": {
-    "rsid": "rs11103417",
-    "chromosome": "9",
-    "position": 134602941,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.8389,
-      "EAS": 0.9187,
-      "EUR": 0.7525,
-      "SAS": 0.7249,
-      "MENA": 0.7211,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.94,
-      "Esan": 0.93,
-      "Mende": 0.95,
-      "Gambian": 0.94,
-      "Luhya": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs11103419": {
     "rsid": "rs11103419",
     "chromosome": "9",
@@ -6322,70 +5773,6 @@
     "description": "African Informative Marker - strong differentiation from non-African populations.",
     "build": "GRCh38"
   },
-  "rs11103444": {
-    "rsid": "rs11103444",
-    "chromosome": "9",
-    "position": 134632408,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.003,
-      "AMR": 0.0216,
-      "EAS": 0.001,
-      "EUR": 0.0268,
-      "SAS": 0.0644,
-      "MENA": 0.02,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.97,
-      "Esan": 0.96,
-      "Mende": 0.97,
-      "Gambian": 0.97,
-      "Luhya": 0.96
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "build": "GRCh38"
-  },
-  "rs11103445": {
-    "rsid": "rs11103445",
-    "chromosome": "9",
-    "position": 134632440,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.003,
-      "AMR": 0.0216,
-      "EAS": 0.001,
-      "EUR": 0.0278,
-      "SAS": 0.0644,
-      "MENA": 0.03,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.96,
-      "Esan": 0.95,
-      "Mende": 0.94,
-      "Gambian": 0.95,
-      "Luhya": 0.97
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "build": "GRCh38"
-  },
   "rs11118131": {
     "rsid": "rs11118131",
     "chromosome": "1",
@@ -6508,65 +5895,6 @@
     "trait": "Ancestry",
     "description": "UT-AIM250 Marker - African informative.",
     "build": "GRCh38"
-  },
-  "rs11143399": {
-    "rsid": "rs11143399",
-    "chromosome": "1",
-    "position": 134189364,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.4,
-      "EUR": 0.52,
-      "EAS": 0.44,
-      "AMR": 0.55,
-      "SAS": 0.51,
-      "MENA": 0.53
-    },
-    "subFrequencies": {
-      "Luba": 0.51,
-      "Sotho": 0.36
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "CEP85",
-    "trait": "Ancestry",
-    "description": "Used to differentiate Congolese and Pongwe/Luba populations from those of East Africa. The variant peaks at the Africa's great lakes and separates eastern African populations from those of the Congo basin.",
-    "build": "GRCh38"
-  },
-  "rs11162487": {
-    "rsid": "rs11162487",
-    "chromosome": "1",
-    "position": 78413552,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.9259,
-      "EAS": 0.7976,
-      "EUR": 0.9443,
-      "SAS": 0.8712,
-      "MENA": 0.9524
-    },
-    "subFrequencies": {
-      "Yoruba": 0.94,
-      "Esan": 0.921,
-      "Mende": 0.959,
-      "Gambian": 0.94,
-      "Luhya": 0.893
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "UT-AIM250 Marker - African informative.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   },
   "rs11206168": {
     "rsid": "rs11206168",
@@ -6808,37 +6136,6 @@
     "description": "Associated with expression of IL-1 antagonist. In West African Sahel, frequencies of this SNP separate drought-adapted farming communities. Since it is associated with the RAS pathway it also ensures resistance to some enteric pathogens. Good for internal West African geography.",
     "build": "GRCh38"
   },
-  "rs11547466": {
-    "rsid": "rs11547466",
-    "chromosome": "13",
-    "position": 113235795,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.112,
-      "EUR": 0.1521,
-      "EAS": 0.003,
-      "SAS": 0.2035,
-      "MENA": 0.2619
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Igbo": 0.94,
-      "Mandinka": 0.9,
-      "Luhya": 0.85,
-      "Maasai": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Luo Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs11580984": {
     "rsid": "rs11580984",
     "chromosome": "1",
@@ -7035,49 +6332,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "UT-AIM250 Marker - African informative.",
-    "build": "GRCh38"
-  },
-  "rs11704546": {
-    "rsid": "rs11704546",
-    "chromosome": "22",
-    "position": 27808809,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1581,
-      "AMR": 0.2118,
-      "EAS": 0.0823,
-      "EUR": 0.2942,
-      "SAS": 0.1708
-    },
-    "subFrequencies": {
-      "Khomani_San": 0.25,
-      "Ju_hoansi": 0.375,
-      "Biaka": 0,
-      "Luo": 0.25,
-      "Maasai": 0.25,
-      "Somali": 0.5,
-      "Herero": 0.25,
-      "Gambian": 0.1372,
-      "Yoruba": 0.5,
-      "Mende": 0.1647,
-      "Esan": 0.25,
-      "Luhya": 0.25,
-      "ASW": 0.2131,
-      "ACB": 0.2187
-    },
-    "deepFrequencies": {
-      "WHG": 1,
-      "EEF": 0.5,
-      "Yamnaya": 0.9166666666666666
-    },
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Central African Pygmy AIM.",
     "build": "GRCh38"
   },
   "rs11706377": {
@@ -8233,76 +7487,6 @@
     "description": "Near-fixed non-synonymous variant in East Asian and European populations found at only low frequency in sub-Saharan Africans; variation within Africa distinguishes mainland from coastal populations.\n",
     "build": "GRCh38"
   },
-  "rs12149626": {
-    "rsid": "rs12149626",
-    "chromosome": "16",
-    "position": 75521882,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1641,
-      "EAS": 0.2113,
-      "EUR": 0.2068,
-      "SAS": 0.0583,
-      "MENA": 0.2245
-    },
-    "subFrequencies": {
-      "Dinka": 0.98,
-      "Nuer": 0.97,
-      "Shilluk": 0.95,
-      "Luo": 0.85,
-      "Maasai": 0.7,
-      "Mbuti": 0.99,
-      "Biaka": 0.97,
-      "Baka": 0.95,
-      "Twa": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "N/A",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Pygmy Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs12149627": {
-    "rsid": "rs12149627",
-    "chromosome": "16",
-    "position": 70943643,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.1,
-      "EAS": 0.1,
-      "SAS": 0.05,
-      "AMR": 0.85,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Somali": 0.98,
-      "Oromo": 0.92,
-      "Afar": 0.9,
-      "Beja": 0.85,
-      "Maya": 0.85,
-      "Pima": 0.842,
-      "Karitiana": 0.858,
-      "Surui": 0.85,
-      "Quechua": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "N/A",
-    "trait": "Native American Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Pygmy Marker.",
-    "build": "GRCh38"
-  },
   "rs12149628": {
     "rsid": "rs12149628",
     "chromosome": "16",
@@ -8694,38 +7878,6 @@
     "gene": "N/A",
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Congolese Marker.",
-    "build": "GRCh38"
-  },
-  "rs12779790": {
-    "rsid": "rs12779790",
-    "chromosome": "10",
-    "position": 12286011,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.1165,
-      "EUR": 0.2038,
-      "EAS": 0.1994,
-      "SAS": 0.1247,
-      "MENA": 0.1,
-      "AMR": 0.1571
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 0.1107,
-      "Yoruba": 0.1072,
-      "Mende": 0.1118,
-      "Esan": 0.1095,
-      "Bantu_Central_South": 0.1188,
-      "Nilotic_East_African": 0.134
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "CDC123/CAMK1D",
-    "trait": "Type 2 diabetes susceptibility",
-    "description": "African Ancestry Marker - Informative for Sub-Saharan African populations.",
     "build": "GRCh38"
   },
   "rs12913832": {
@@ -9334,7 +8486,8 @@
     "gene": "HBB",
     "trait": "Hemoglobinopathy",
     "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "trait_only": true
   },
   "rs1383290": {
     "rsid": "rs1383290",
@@ -9652,52 +8805,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
     "build": "GRCh38"
   },
-  "rs1449308": {
-    "rsid": "rs1449308",
-    "chromosome": "3",
-    "position": 100990152,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.2254,
-      "AMR": 0.1686,
-      "EAS": 0.3373,
-      "EUR": 0.1571,
-      "SAS": 0.1319
-    },
-    "subFrequencies": {
-      "Khomani_San": 0.25,
-      "Biaka": 0.25,
-      "Mbuti": 0.25,
-      "Luo": 0.25,
-      "Maasai": 0.25,
-      "Somali": 0,
-      "Herero": 0.25,
-      "Fula": 0.2228,
-      "Wolof": 0.2194,
-      "Jola": 0.2959,
-      "Gambian": 0.5,
-      "Yoruba": 0.3333,
-      "Mende": 0.5,
-      "Esan": 0.25,
-      "Luhya": 0.25,
-      "ASW": 0.2131,
-      "ACB": 0.1875
-    },
-    "deepFrequencies": {
-      "WHG": 0.8421052631578947,
-      "EEF": 0.743801652892562,
-      "Yamnaya": 0.7542857142857143
-    },
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
-    "build": "GRCh38"
-  },
   "rs1450036": {
     "rsid": "rs1450036",
     "chromosome": "4",
@@ -9984,79 +9091,6 @@
     "gene": "Intergenic",
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
-    "build": "GRCh38"
-  },
-  "rs1572318": {
-    "rsid": "rs1572318",
-    "chromosome": "1",
-    "position": 42446395,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5257,
-      "EUR": 0.6431,
-      "EAS": 0.4008,
-      "SAS": 0.4335,
-      "MENA": 0.6392
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "NFIA",
-    "trait": "Basal African Marker",
-    "description": "High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1613660": {
-    "rsid": "rs1613660",
-    "chromosome": "13",
-    "position": 31492468,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.6263,
-      "AMR": 0.5303,
-      "EAS": 0.5952,
-      "EUR": 0.5427,
-      "SAS": 0.6452
-    },
-    "subFrequencies": {
-      "Ju_hoansi": 0.75,
-      "Biaka": 0.75,
-      "Mbuti": 0.625,
-      "Luo": 1,
-      "Somali": 0.5,
-      "Tswana": 0.75,
-      "Gambian": 0.5,
-      "Yoruba": 0.6667,
-      "Mende": 0.75,
-      "Esan": 0.5,
-      "Luhya": 0.5,
-      "ASW": 0.623,
-      "ACB": 0.6719
-    },
-    "deepFrequencies": {
-      "WHG": 0.8571428571428571,
-      "EEF": 0.8040201005025126,
-      "Yamnaya": 0.7574750830564784
-    },
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: East African Nilotic AIM.",
     "build": "GRCh38"
   },
   "rs1679012": {
@@ -10436,38 +9470,6 @@
     "description": "IL-10 -1082 promoter variant regulates cytokine production; African-specific haplotype frequencies differ significantly between highland East African pastoralists and other populations.",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1805007": {
-    "rsid": "rs1805007",
-    "chromosome": "16",
-    "position": 89919709,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "C",
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.995,
-      "AMR": 0.98,
-      "EAS": 0.999,
-      "EUR": 0.89,
-      "SAS": 0.99,
-      "OCE": 0.999,
-      "MENA": 0.97
-    },
-    "subFrequencies": {
-      "West_African_Coastal": 1,
-      "Yoruba": 1,
-      "Esan": 1,
-      "Bantu_Central_South": 1,
-      "Nilotic_East_African": 0.995
-    },
-    "weight": 10,
-    "gene": "MC1R",
-    "trait": "Pigmentation Constraint",
-    "description": "Strong functional purifying selection in tropical African populations conserving ancestral eumelanin synthesis.",
-    "build": "GRCh38"
   },
   "rs1806503": {
     "rsid": "rs1806503",
@@ -11779,48 +10781,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Southern African Bantu AIM.",
     "build": "GRCh38"
   },
-  "rs2346689": {
-    "rsid": "rs2346689",
-    "chromosome": "17",
-    "position": 33299837,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.6641,
-      "AMR": 0.6052,
-      "EAS": 0.5556,
-      "EUR": 0.7207,
-      "SAS": 0.7485
-    },
-    "subFrequencies": {
-      "Ju_hoansi": 0.875,
-      "Biaka": 0.75,
-      "Luo": 1,
-      "Somali": 0.5,
-      "Herero": 0.5,
-      "Tswana": 0.5,
-      "Gambian": 0.75,
-      "Yoruba": 0.8333,
-      "Mende": 0.5,
-      "Esan": 0.5,
-      "Luhya": 0.75,
-      "ASW": 0.6475,
-      "ACB": 0.6875
-    },
-    "deepFrequencies": {
-      "WHG": 1,
-      "EEF": 0.88,
-      "Yamnaya": 0.74
-    },
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: East African Nilotic AIM.",
-    "build": "GRCh38"
-  },
   "rs2373455": {
     "rsid": "rs2373455",
     "chromosome": "12",
@@ -12842,36 +11802,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Southern African Bantu AIM.",
     "build": "GRCh38"
   },
-  "rs2856725": {
-    "rsid": "rs2856725",
-    "chromosome": "5",
-    "position": 1212550,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.674,
-      "EUR": 0.6541,
-      "EAS": 0.8135,
-      "SAS": 0.7321,
-      "MENA": 0.7109
-    },
-    "subFrequencies": {
-      "Ju_'hoansi": 0.8,
-      "Khomani": 0.65,
-      "Nama": 0.6,
-      "Zulu": 0.1
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC6A19",
-    "trait": "Cellular immunity",
-    "description": "This SNP was identified in a scan for positive selection in the Ju|\u2019hoansi. The adaptive allele impacts the cytokine pathway and likely involved in arginine metabolism during infection. A rare variant in most other populations, its high frequency marks the Khoe-San deep ancestry.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs2862": {
     "rsid": "rs2862",
     "chromosome": "15",
@@ -13519,7 +12449,8 @@
     "gene": "HBB",
     "trait": "Malaria resistance (HbC), Ancestry",
     "description": "HbC allele (G>A at codon 6) is found predominantly in West African populations, particularly in Burkina Faso, Mali, and northern Ghana. Part of the adaptive response to malaria in savanna/agricultural communities. Differentiates Western vs Central/Eastern African ancestry.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "trait_only": true
   },
   "rs352743": {
     "rsid": "rs352743",
@@ -14393,48 +13324,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: East African Nilotic AIM.",
     "build": "GRCh38"
   },
-  "rs4746969": {
-    "rsid": "rs4746969",
-    "chromosome": "10",
-    "position": 70140433,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.7965,
-      "AMR": 0.7882,
-      "EAS": 0.7669,
-      "EUR": 0.8668,
-      "SAS": 0.82
-    },
-    "subFrequencies": {
-      "Khomani_San": 0.75,
-      "Biaka": 0.5,
-      "Mbuti": 0.625,
-      "Luo": 0.75,
-      "Somali": 1,
-      "Herero": 0.75,
-      "Gambian": 0.75,
-      "Yoruba": 0.8333,
-      "Mende": 0.8353,
-      "Esan": 0.7374,
-      "Luhya": 0.8131,
-      "ASW": 0.877,
-      "ACB": 0.7656
-    },
-    "deepFrequencies": {
-      "WHG": 0.7368421052631579,
-      "EEF": 0.8090452261306532,
-      "Yamnaya": 0.714516129032258
-    },
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
-    "build": "GRCh38"
-  },
   "rs4761981": {
     "rsid": "rs4761981",
     "chromosome": "12",
@@ -15306,7 +14195,8 @@
     "gene": "CYP2D6",
     "trait": "CYP2D6*29 Reduced Drug Metabolism",
     "description": "CYP2D6*29 (g.3183G>A, p.V343A) is a key African-specific reduced-function metabolizer variant (~7-12% frequency in populations of African descent).",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "trait_only": true
   },
   "rs59459799": {
     "rsid": "rs59459799",
@@ -15990,48 +14880,6 @@
       "Yamnaya": 0.7488372093023256
     },
     "weight": 6,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Southern African Bantu AIM.",
-    "build": "GRCh38"
-  },
-  "rs6594987": {
-    "rsid": "rs6594987",
-    "chromosome": "5",
-    "position": 116892616,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.2277,
-      "AMR": 0.2291,
-      "EAS": 0.1597,
-      "EUR": 0.1779,
-      "SAS": 0.1564
-    },
-    "subFrequencies": {
-      "Ju_hoansi": 0.125,
-      "Mbuti": 0.125,
-      "Luo": 0.25,
-      "Maasai": 0.25,
-      "Somali": 0.5,
-      "Tswana": 0.25,
-      "Gambian": 0.5,
-      "Yoruba": 0.1667,
-      "Mende": 0.25,
-      "Esan": 0.25,
-      "Luhya": 0.1263,
-      "ASW": 0.1475,
-      "ACB": 0.1979
-    },
-    "deepFrequencies": {
-      "WHG": 0.7142857142857143,
-      "EEF": 0.7475247524752475,
-      "Yamnaya": 0.7877813504823151
-    },
-    "weight": 2,
     "gene": "Intergenic",
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Southern African Bantu AIM.",
@@ -16913,7 +15761,8 @@
     "trait": "African ancestry, Kidney disease risk (trypanosome resistance)",
     "description": "APOL1 G2 variant is a 6-base pair deletion (N388\\(\\Delta\\Y389). This frameshift mutation provides trypanosome resistance. Found mainly in West-Central African populations but at lower frequency than G1. Both associated with kidney disease, but haplotype pattern informs regional substructure.",
     "build": "GRCh38",
-    "palindromic": true
+    "palindromic": true,
+    "trait_only": true
   },
   "rs7194392": {
     "rsid": "rs7194392",
@@ -18175,50 +17024,6 @@
       "Yamnaya": 0.7692307692307693
     },
     "weight": 4,
-    "gene": "Intergenic",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Khoe-San deep lineage AIM.",
-    "build": "GRCh38"
-  },
-  "rs918727": {
-    "rsid": "rs918727",
-    "chromosome": "16",
-    "position": 86556474,
-    "region": "African",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.3926,
-      "AMR": 0.4424,
-      "EAS": 0.369,
-      "EUR": 0.2535,
-      "SAS": 0.2955
-    },
-    "subFrequencies": {
-      "Ju_hoansi": 0.125,
-      "Biaka": 0.5,
-      "Mbuti": 0.375,
-      "Luo": 0.25,
-      "Maasai": 0.5,
-      "Somali": 0,
-      "Herero": 0.25,
-      "Tswana": 0.25,
-      "Gambian": 0.25,
-      "Yoruba": 0.5,
-      "Mende": 0.2824,
-      "Esan": 0.25,
-      "Luhya": 0.25,
-      "ASW": 0.4672,
-      "ACB": 0.3958
-    },
-    "deepFrequencies": {
-      "WHG": 1,
-      "EEF": 1,
-      "Yamnaya": 0.9967532467532467
-    },
-    "weight": 2,
     "gene": "Intergenic",
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Khoe-San deep lineage AIM.",

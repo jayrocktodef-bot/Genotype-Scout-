@@ -14740,5 +14740,134 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38"
+  },
+  "rs10456323": {
+    "rsid": "rs10456323",
+    "chromosome": "6",
+    "position": 25550490,
+    "region": "Middle Eastern",
+    "color": "#2ECC71",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.1467,
+      "EAS": 0.0486,
+      "EUR": 0.159,
+      "SAS": 0.1554,
+      "MENA": 0.2143
+    },
+    "subFrequencies": {
+      "West_African_Coastal": 0.728,
+      "Yoruba": 0.742,
+      "Mende": 0.714,
+      "Esan": 0.721,
+      "Bantu_Central_South": 0.686,
+      "Nilotic_East_African": 0.595
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "N/A",
+    "trait": "Tigrayan Ancestry Marker",
+    "description": "Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs11162487": {
+    "rsid": "rs11162487",
+    "chromosome": "1",
+    "position": 78413552,
+    "region": "Middle Eastern",
+    "color": "#2ECC71",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.9259,
+      "EAS": 0.7976,
+      "EUR": 0.9443,
+      "SAS": 0.8712,
+      "MENA": 0.9524
+    },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "Intergenic",
+    "trait": "Ancestry",
+    "description": "UT-AIM250 Marker - African informative.",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs11547466": {
+    "rsid": "rs11547466",
+    "chromosome": "13",
+    "position": 113235795,
+    "region": "Middle Eastern",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.112,
+      "EUR": 0.1521,
+      "EAS": 0.003,
+      "SAS": 0.2035,
+      "MENA": 0.2619
+    },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Igbo": 0.94,
+      "Mandinka": 0.9,
+      "Luhya": 0.85,
+      "Maasai": 0.7
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "N/A",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Luo Ancestry Marker.",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs12149626": {
+    "rsid": "rs12149626",
+    "chromosome": "16",
+    "position": 75521882,
+    "region": "Middle Eastern",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.1641,
+      "EAS": 0.2113,
+      "EUR": 0.2068,
+      "SAS": 0.0583,
+      "MENA": 0.2245
+    },
+    "subFrequencies": {
+      "Dinka": 0.98,
+      "Nuer": 0.97,
+      "Shilluk": 0.95,
+      "Luo": 0.85,
+      "Maasai": 0.7,
+      "Mbuti": 0.99,
+      "Biaka": 0.97,
+      "Baka": 0.95,
+      "Twa": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "N/A",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Pygmy Marker.",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
   }
 }

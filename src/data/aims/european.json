@@ -19388,5 +19388,182 @@
     "description": "Native American / Indigenous New World informative marker.",
     "build": "GRCh38",
     "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs10486573": {
+    "rsid": "rs10486573",
+    "chromosome": "7",
+    "position": 28040874,
+    "region": "European",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.0711,
+      "EUR": 0.166,
+      "EAS": 0.002,
+      "SAS": 0.044,
+      "MENA": 0.1633
+    },
+    "subFrequencies": {
+      "Bantu": 0.95,
+      "Yoruba": 0.85,
+      "Igbo": 0.88
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "N/A",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Bantu Marker.",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs11704546": {
+    "rsid": "rs11704546",
+    "chromosome": "22",
+    "position": 27808809,
+    "region": "European",
+    "color": "#2ECC71",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.1581,
+      "AMR": 0.2118,
+      "EAS": 0.0823,
+      "EUR": 0.2942,
+      "SAS": 0.1708
+    },
+    "subFrequencies": {
+      "Khomani_San": 0.25,
+      "Ju_hoansi": 0.375,
+      "Biaka": 0,
+      "Luo": 0.25,
+      "Maasai": 0.25,
+      "Somali": 0.5,
+      "Herero": 0.25,
+      "Gambian": 0.1372,
+      "Yoruba": 0.5,
+      "Mende": 0.1647,
+      "Esan": 0.25,
+      "Luhya": 0.25,
+      "ASW": 0.2131,
+      "ACB": 0.2187
+    },
+    "deepFrequencies": {
+      "WHG": 1,
+      "EEF": 0.5,
+      "Yamnaya": 0.9166666666666666
+    },
+    "weight": 4,
+    "gene": "Intergenic",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Central African Pygmy AIM.",
+    "build": "GRCh38"
+  },
+  "rs12779790": {
+    "rsid": "rs12779790",
+    "chromosome": "10",
+    "position": 12286011,
+    "region": "European",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.1165,
+      "EUR": 0.2038,
+      "EAS": 0.1994,
+      "SAS": 0.1247,
+      "MENA": 0.1,
+      "AMR": 0.1571
+    },
+    "subFrequencies": {
+      "West_African_Coastal": 0.1107,
+      "Yoruba": 0.1072,
+      "Mende": 0.1118,
+      "Esan": 0.1095,
+      "Bantu_Central_South": 0.1188,
+      "Nilotic_East_African": 0.134
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "gene": "CDC123/CAMK1D",
+    "trait": "Type 2 diabetes susceptibility",
+    "description": "African Ancestry Marker - Informative for Sub-Saharan African populations.",
+    "build": "GRCh38"
+  },
+  "rs1572318": {
+    "rsid": "rs1572318",
+    "chromosome": "1",
+    "position": 42446395,
+    "region": "European",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.5257,
+      "EUR": 0.6431,
+      "EAS": 0.4008,
+      "SAS": 0.4335,
+      "MENA": 0.6392
+    },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "NFIA",
+    "trait": "Basal African Marker",
+    "description": "High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry.",
+    "build": "GRCh38",
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+  },
+  "rs4746969": {
+    "rsid": "rs4746969",
+    "chromosome": "10",
+    "position": 70140433,
+    "region": "European",
+    "color": "#2ECC71",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.7965,
+      "AMR": 0.7882,
+      "EAS": 0.7669,
+      "EUR": 0.8668,
+      "SAS": 0.82
+    },
+    "subFrequencies": {
+      "Khomani_San": 0.75,
+      "Biaka": 0.5,
+      "Mbuti": 0.625,
+      "Luo": 0.75,
+      "Somali": 1,
+      "Herero": 0.75,
+      "Gambian": 0.75,
+      "Yoruba": 0.8333,
+      "Mende": 0.8353,
+      "Esan": 0.7374,
+      "Luhya": 0.8131,
+      "ASW": 0.877,
+      "ACB": 0.7656
+    },
+    "deepFrequencies": {
+      "WHG": 0.7368421052631579,
+      "EEF": 0.8090452261306532,
+      "Yamnaya": 0.714516129032258
+    },
+    "weight": 2,
+    "gene": "Intergenic",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
+    "build": "GRCh38"
   }
 }

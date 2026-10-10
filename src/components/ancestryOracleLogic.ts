@@ -825,7 +825,7 @@ export async function processSubpopulations(
 
     const dbKey = dbBaseMap.get(rsid) || rsid;
     const aim = normalizedDatabase[dbKey] || normalizedDatabase[dbKey.toUpperCase()] || normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
-    if (aim) {
+    if (aim && !aim.trait_only) {
       // Find chromosome and position from metadata or database entry
       const meta = snpMetaMap?.[rsid] || snpMetaMap?.[rsid.toUpperCase()] || snpMetaMap?.[dbKey] || snpMetaMap?.[dbKey.toUpperCase()];
       const chrom = meta?.chrom || aim.chromosome;

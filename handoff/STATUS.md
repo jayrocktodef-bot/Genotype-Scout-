@@ -2,6 +2,11 @@
 
 ## Active
 
+- [x] 2026-10-10 — Round 7 marker decisions IMPLEMENTATION
+      Brief: `handoff/2026-10-09-round7-marker-decisions.md`
+      Branch: `round7-marker-decisions`
+      Status: Built and validated. Moved 35 Group 1a markers out of african.json, added trait_only flag and skip logic to engine for 7 Group 1b markers, applied proportional weights to Group 2 markers. Awaiting Orbit verification. Do NOT merge yet.
+
 - [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`
       Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.
