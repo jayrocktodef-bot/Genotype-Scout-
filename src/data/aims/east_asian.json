@@ -49070,37 +49070,6 @@
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Central African Pygmy AIM.",
     "build": "GRCh38"
   },
-  "rs11085825": {
-    "rsid": "rs11085825",
-    "chromosome": "16",
-    "position": 56833459,
-    "region": "East Asian",
-    "color": "#2ECC71",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8222,
-      "EUR": 0.673,
-      "EAS": 0.8562,
-      "SAS": 0.7352,
-      "MENA": 0.6973
-    },
-    "subFrequencies": {
-      "Kalenjin": 0.09,
-      "Samburu": 0.08,
-      "Tigray": 0.1,
-      "Ethiopian High": 0.11
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC12A3",
-    "trait": "Low-altitude adaptation",
-    "description": "Sodium transporter missense variant with inverse frequency pattern: lower than continental average in East African highland populations, suggesting altitude-dependent renal physiology adaptation.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "trait_only": true
-  },
   "rs11103351": {
     "rsid": "rs11103351",
     "chromosome": "9",
@@ -49210,36 +49179,5 @@
     "trait": "African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Horn of Africa Cushitic AIM.",
     "build": "GRCh38"
-  },
-  "rs2856725": {
-    "rsid": "rs2856725",
-    "chromosome": "5",
-    "position": 1212550,
-    "region": "East Asian",
-    "color": "#2ECC71",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.674,
-      "EUR": 0.6541,
-      "EAS": 0.8135,
-      "SAS": 0.7321,
-      "MENA": 0.7109
-    },
-    "subFrequencies": {
-      "Ju_'hoansi": 0.8,
-      "Khomani": 0.65,
-      "Nama": 0.6,
-      "Zulu": 0.1
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "SLC6A19",
-    "trait": "Cellular immunity",
-    "description": "This SNP was identified in a scan for positive selection in the Ju|\u2019hoansi. The adaptive allele impacts the cytokine pathway and likely involved in arginine metabolism during infection. A rare variant in most other populations, its high frequency marks the Khoe-San deep ancestry.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
-    "trait_only": true
   }
 }
