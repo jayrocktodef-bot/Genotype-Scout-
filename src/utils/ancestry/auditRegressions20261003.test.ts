@@ -113,6 +113,8 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
         frequencies: { EUR: 0.1, AFR: 0.9 },
         weight: 1,
         build: 'GRCh38',
+        description: 'Valid test description',
+        tier: 1,
       };
 
       const result = validateAimRecord(validRecord);
