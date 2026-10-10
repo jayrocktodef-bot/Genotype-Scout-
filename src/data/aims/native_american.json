@@ -21200,7 +21200,7 @@
     "chromosome": "16",
     "position": 70943643,
     "region": "Native American",
-    "color": "#95A5A6",
+    "color": "#2ECC71",
     "alleles": [
       "T"
     ],
@@ -122855,6 +122855,120 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Native American / Indigenous New World informative marker.",
+    "build": "GRCh38"
+  },
+  "rs11143399": {
+    "rsid": "rs11143399",
+    "chromosome": "1",
+    "position": 134189364,
+    "region": "Native American",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4,
+      "EUR": 0.52,
+      "EAS": 0.44,
+      "AMR": 0.55,
+      "SAS": 0.51,
+      "MENA": 0.53
+    },
+    "subFrequencies": {
+      "Luba": 0.51,
+      "Sotho": 0.36
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "gene": "CEP85",
+    "trait": "Ancestry",
+    "description": "Used to differentiate Congolese and Pongwe/Luba populations from those of East Africa. The variant peaks at the Africa's great lakes and separates eastern African populations from those of the Congo basin.",
+    "build": "GRCh38"
+  },
+  "rs6594987": {
+    "rsid": "rs6594987",
+    "chromosome": "5",
+    "position": 116892616,
+    "region": "Native American",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.2277,
+      "AMR": 0.2291,
+      "EAS": 0.1597,
+      "EUR": 0.1779,
+      "SAS": 0.1564
+    },
+    "subFrequencies": {
+      "Ju_hoansi": 0.125,
+      "Mbuti": 0.125,
+      "Luo": 0.25,
+      "Maasai": 0.25,
+      "Somali": 0.5,
+      "Tswana": 0.25,
+      "Gambian": 0.5,
+      "Yoruba": 0.1667,
+      "Mende": 0.25,
+      "Esan": 0.25,
+      "Luhya": 0.1263,
+      "ASW": 0.1475,
+      "ACB": 0.1979
+    },
+    "deepFrequencies": {
+      "WHG": 0.7142857142857143,
+      "EEF": 0.7475247524752475,
+      "Yamnaya": 0.7877813504823151
+    },
+    "weight": 2,
+    "gene": "Intergenic",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Southern African Bantu AIM.",
+    "build": "GRCh38"
+  },
+  "rs918727": {
+    "rsid": "rs918727",
+    "chromosome": "16",
+    "position": 86556474,
+    "region": "Native American",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.3926,
+      "AMR": 0.4424,
+      "EAS": 0.369,
+      "EUR": 0.2535,
+      "SAS": 0.2955
+    },
+    "subFrequencies": {
+      "Ju_hoansi": 0.125,
+      "Biaka": 0.5,
+      "Mbuti": 0.375,
+      "Luo": 0.25,
+      "Maasai": 0.5,
+      "Somali": 0,
+      "Herero": 0.25,
+      "Tswana": 0.25,
+      "Gambian": 0.25,
+      "Yoruba": 0.5,
+      "Mende": 0.2824,
+      "Esan": 0.25,
+      "Luhya": 0.25,
+      "ASW": 0.4672,
+      "ACB": 0.3958
+    },
+    "deepFrequencies": {
+      "WHG": 1,
+      "EEF": 1,
+      "Yamnaya": 0.9967532467532467
+    },
+    "weight": 2,
+    "gene": "Intergenic",
+    "trait": "African Ancestry Marker",
+    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Khoe-San deep lineage AIM.",
     "build": "GRCh38"
   }
 }
