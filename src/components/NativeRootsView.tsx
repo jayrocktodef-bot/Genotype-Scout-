@@ -90,8 +90,10 @@ export const NativeRootsView: React.FC<NativeRootsViewProps> = ({
     // 3. Pillar 3: Uniparental
     const { tested: mtTested, present: mt9bp } = check9bpDeletion(userSnps);
     
-    const mtHaplo = mtData?.predicted || '';
-    const yHaplo = yData?.predicted || '';
+    const mtHaplo = typeof mtData?.predicted === 'string'
+      ? mtData.predicted : (mtData?.predicted?.name || '');
+    const yHaplo = typeof yData?.predicted === 'string'
+      ? yData.predicted : (yData?.predicted?.name || '');
     
     const isMtB = mtHaplo.startsWith('B') || mtHaplo.includes(' Haplogroup B');
     const isYQ = yHaplo.startsWith('Q') && yHaplo.includes('M3');
