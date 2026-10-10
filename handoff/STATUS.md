@@ -2,6 +2,11 @@
 
 ## Active
 
+- [ ] 2026-10-10 — Siberian panel Phase 1 (Data sourcing & validation)
+      Brief: `handoff/2026-10-09-siberian-panel-scope.md`
+      Branch: `siberian-panel`
+      Status: Started. Plink binary and open-access PLINK datasets (Fedorova 2013, Yunusbayev 2015, Tambets 2018) are currently downloading and computing allele frequencies in the background. Awaiting completion to begin AIM selection and validation. Orbit verification will be requested next.
+
 - [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`
       Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.
