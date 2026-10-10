@@ -49,14 +49,14 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'CYP2C19',
       drug: 'Clopidogrel (Plavix)',
       severity: 'High',
-      message: 'You are a Poor Metabolizer for CYP2C19. Clopidogrel may be ineffective, significantly increasing the risk of adverse cardiovascular events. CPIC recommends alternative antiplatelet therapy (e.g., prasugrel or ticagrelor).',
+      message: 'CYP2C19 poor metabolizer phenotype predicted from your raw file. Research links this phenotype with reduced clopidogrel activation. Do not change antiplatelet therapy based on this app. Your prescriber can order confirmatory testing; published guidance is available from CPIC (https://cpicpgx.org/guidelines/).',
       phenotype: cyp2c19_phenotype
     });
     reports.push({
       gene: 'CYP2C19',
       drug: 'SSRIs (Escitalopram / Citalopram)',
       severity: 'Moderate',
-      message: 'As a Poor Metabolizer, you may experience elevated plasma concentrations of certain SSRIs. CPIC recommends considering a 50% reduction of starting dose or selecting an alternative drug.',
+      message: 'CYP2C19 poor metabolizer phenotype predicted from your raw file. Research links this phenotype with slower clearance of some SSRIs (escitalopram, citalopram). Do not change dose or stop antidepressants based on this app. Discuss with your prescriber.',
       phenotype: cyp2c19_phenotype
     });
   } else if (cyp2c19_phenotype === 'Ultrarapid Metabolizer') {
@@ -64,7 +64,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'CYP2C19',
       drug: 'SSRIs (Escitalopram / Citalopram)',
       severity: 'Moderate',
-      message: 'As an Ultrarapid Metabolizer, these drugs may be cleared too quickly from your system leading to therapy failure. CPIC recommends considering an alternative antidepressant.',
+      message: 'CYP2C19 ultrarapid metabolizer phenotype predicted from your raw file. Research links this phenotype with faster clearance of some SSRIs. Do not change or stop medication based on this app. Discuss with your prescriber.',
       phenotype: cyp2c19_phenotype
     });
   }
@@ -100,7 +100,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'CYP2D6',
       drug: 'Codeine / Tramadol',
       severity: 'High',
-      message: 'As a Poor Metabolizer, codeine will not be effectively converted to morphine, providing very little to no pain relief. CPIC recommends avoiding codeine and using alternative analgesics.',
+      message: 'CYP2D6 poor metabolizer phenotype predicted from your raw file. Codeine needs CYP2D6 to become active, so pain relief may be reduced. Do not change pain medication based on this app. Talk to your doctor or pharmacist.',
       phenotype: cyp2d6_phenotype
     });
   }
@@ -118,7 +118,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'SLCO1B1',
       drug: 'Simvastatin',
       severity: 'High',
-      message: 'You have significantly decreased SLCO1B1 function. This confers a high risk for statin-induced myopathy (muscle toxicity). CPIC recommends prescribing a lower dose or an alternative statin.',
+      message: 'An SLCO1B1 poor-function genotype was found in your raw file, associated in research with higher rates of statin-related muscle symptoms. Do not change or stop your statin based on this app. Discuss with your prescriber.',
       phenotype: 'Poor Function'
     });
   } else if (slco1b1_risk === 1) {
@@ -126,7 +126,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'SLCO1B1',
       drug: 'Simvastatin',
       severity: 'Moderate',
-      message: 'You have intermediate SLCO1B1 function. There is an increased risk for statin-induced myopathy. CPIC recommends prescribing a lower dose or considering an alternative.',
+      message: 'An SLCO1B1 intermediate-function genotype was found in your raw file, associated in research with a modest increase in statin-related muscle symptoms. Do not change dosing based on this app. Discuss with your prescriber.',
       phenotype: 'Intermediate Function'
     });
   }
@@ -145,9 +145,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'VKORC1 / CYP2C9',
       drug: 'Warfarin (Coumadin)',
       severity: isHighSensitivity ? 'High' : 'Moderate',
-      message: isHighSensitivity
-        ? 'You carry high-sensitivity variants in VKORC1 and/or CYP2C9 that significantly slow warfarin clearance and increase bleeding risk. CPIC recommends starting with a substantially lower dose.'
-        : 'You carry intermediate-sensitivity variants in VKORC1 or CYP2C9. CPIC recommends cautious dose titration and frequent INR monitoring.',
+      message: 'VKORC1/CYP2C9 variants associated with warfarin sensitivity were found in your raw file. Warfarin is dosed by clinicians using INR blood tests. Do not adjust any dose based on this app. Bring this result to your prescriber.',
       phenotype: isHighSensitivity ? 'High Sensitivity' : 'Intermediate Sensitivity'
     });
   }
@@ -159,7 +157,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
       gene: 'DPYD',
       drug: 'Fluorouracil (5-FU) / Capecitabine',
       severity: 'High',
-      message: 'You carry a DPYD loss-of-function allele (*2A). DPYD deficiency severely impairs fluoropyrimidine breakdown, carrying extreme risk for severe or fatal chemotherapy toxicity. CPIC recommends alternative agents or 50%+ dose reduction.',
+      message: 'A DPYD loss-of-function allele (*2A, rs3918290) was found in your raw file. In clinical care this gene is tested before fluoropyrimidine chemotherapy because deficiency raises toxicity risk. This app is not a clinical test and the microarray call may be wrong. If you ever face this treatment decision, tell your oncology team and ask about clinical DPYD testing.',
       phenotype: rs3918290 === 'AA' ? 'Complete Deficiency' : 'Partial Deficiency'
     });
   }

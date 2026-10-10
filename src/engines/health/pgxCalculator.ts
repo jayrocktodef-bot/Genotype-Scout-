@@ -4,7 +4,7 @@ import { calculateCYP2D6Status, MetabolizerStatus } from '../../utils/pgxAdvance
 export interface MedicationReport {
   drug: string;
   category: string;
-  status: 'Normal' | 'Caution' | 'Action Required';
+  status: 'Typical' | 'Review with clinician' | 'Discuss with clinician';
   insight: string;
   gene?: string;
   severity?: 'High' | 'Moderate' | 'Low';
@@ -26,19 +26,19 @@ export function calculateMedicationSafety(userSnps: Record<string, string>): Med
     reports.push({
       drug: 'Codeine / Tramadol',
       category: 'Pain Management',
-      status: 'Action Required',
+      status: 'Discuss with clinician',
       severity: 'High',
       gene: 'CYP2D6',
-      insight: 'Poor metabolizer status detected. These medications may be ineffective or lead to toxicity due to inability to process the prodrug into its active form.'
+      insight: 'CYP2D6 poor metabolizer phenotype predicted from your raw file. Codeine and tramadol are prodrugs that need CYP2D6 to become active, so pain relief may be reduced. Consumer microarray calls can be wrong, especially for rare variants. Share this result with your doctor or pharmacist before any medication change.'
     });
   } else if (cyp2d6.status === MetabolizerStatus.ULTRARAPID) {
     reports.push({
       drug: 'Codeine',
       category: 'Pain Management',
-      status: 'Action Required',
+      status: 'Discuss with clinician',
       severity: 'High',
       gene: 'CYP2D6',
-      insight: 'Ultrarapid metabolizer status detected. Dangerous risk of morphine toxicity even at standard doses. Avoid use.'
+      insight: 'CYP2D6 ultrarapid metabolizer phenotype predicted from your raw file. Codeine can convert to morphine faster than usual. Do not change or stop any medication on the basis of this app. Talk to your doctor or pharmacist, who can confirm with clinical testing.'
     });
   }
 
@@ -48,10 +48,10 @@ export function calculateMedicationSafety(userSnps: Record<string, string>): Med
     reports.push({
       drug: 'Warfarin',
       category: 'Blood Thinner',
-      status: 'Action Required',
+      status: 'Discuss with clinician',
       severity: 'High',
       gene: 'VKORC1',
-      insight: 'High sensitivity detected. Lower initial doses may be required to prevent bleeding risk.'
+      insight: 'A VKORC1 variant associated with higher warfarin sensitivity was found in your raw file. Warfarin dosing is managed by clinicians using INR blood tests. Do not adjust any dose based on this app. Bring this result to your prescriber.'
     });
   }
 
@@ -64,19 +64,19 @@ export function calculateMedicationSafety(userSnps: Record<string, string>): Med
       reports.push({
         drug: 'Simvastatin',
         category: 'Cholesterol',
-        status: 'Action Required',
+        status: 'Discuss with clinician',
         severity: 'High',
         gene: 'SLCO1B1',
-        insight: 'Markedly increased risk of statin-induced myopathy (muscle pain/rhabdomyolysis) due to poor SLCO1B1 transporter function. Consider alternative statin (e.g. pravastatin, rosuvastatin) or reduced starting dose.'
+        insight: 'An SLCO1B1 reduced-function genotype was found in your raw file, associated in research with higher rates of statin-related muscle symptoms. Do not change or stop your statin based on this app. Discuss with your prescriber.'
       });
     } else if (isHetRisk) {
       reports.push({
         drug: 'Simvastatin',
         category: 'Cholesterol',
-        status: 'Caution',
+        status: 'Review with clinician',
         severity: 'Moderate',
         gene: 'SLCO1B1',
-        insight: 'Increased risk of statin-induced myopathy (muscle pain) due to intermediate SLCO1B1 transporter function. Consider lower starting dose.'
+        insight: 'An SLCO1B1 intermediate-function genotype was found in your raw file, associated in research with a modest increase in statin-related muscle symptoms. Do not change dosing based on this app. Discuss with your prescriber.'
       });
     }
   }

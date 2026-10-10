@@ -34,7 +34,7 @@ export function analyzeHealthProfile(userSnps: Record<string, string>): HealthPr
                 clinicalRisks.push({
                     drug: p.drug,
                     category: 'Pharmacogenomics',
-                    status: p.severity === 'High' ? 'Action Required' : p.severity === 'Moderate' ? 'Caution' : 'Normal',
+                    status: p.severity === 'High' ? 'Review with clinician' : p.severity === 'Moderate' ? 'Discuss with clinician' : 'Typical',
                     severity: p.severity,
                     gene: p.gene,
                     insight: p.message
