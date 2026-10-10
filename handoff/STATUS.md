@@ -2,6 +2,11 @@
 
 ## Active
 
+- [x] 2026-10-10 — Siberian panel Phase 1 (Data sourcing & validation)
+      Brief: `handoff/2026-10-09-siberian-panel-scope.md`
+      Branch: `siberian-panel`
+      Status: Built and validated. Rebuilt 400 AIMs matching rejection standards (0.30 minimum separation enforced). Min sep: 0.3402, Mean sep: 0.4847, Median sep: 0.4900. Zero synthetic SNPs, all markers strictly hit Ensembl cache. Region correctly set to 'Siberian' and fresh descriptions applied. Awaiting Orbit verification. Do NOT merge yet.
+
 - [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`
       Fixes: Reverted 2,568 contaminated "Eastern Woodlands..." descriptions in `native_american.json` to "Native American / Indigenous New World informative marker." and synced 1,385 occurrences out of `master_aims_normalized.json`.
