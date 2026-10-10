@@ -447921,7 +447921,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs200001": {
     "rsid": "rs200001",
@@ -447946,7 +447947,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs200002": {
     "rsid": "rs200002",
@@ -447971,7 +447973,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs200003": {
     "rsid": "rs200003",
@@ -447997,7 +448000,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs200005": {
     "rsid": "rs200005",
@@ -448023,7 +448027,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs200007": {
     "rsid": "rs200007",
@@ -448048,7 +448053,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs200008": {
     "rsid": "rs200008",
@@ -448074,7 +448080,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs200009": {
     "rsid": "rs200009",
@@ -448100,7 +448107,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000010": {
     "rsid": "rs2000010",
@@ -448125,7 +448133,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000011": {
     "rsid": "rs2000011",
@@ -448151,7 +448160,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000012": {
     "rsid": "rs2000012",
@@ -448176,7 +448186,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000013": {
     "rsid": "rs2000013",
@@ -448202,7 +448213,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000014": {
     "rsid": "rs2000014",
@@ -448227,7 +448239,8 @@
     "gene": "EGLN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000015": {
     "rsid": "rs2000015",
@@ -448253,7 +448266,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000017": {
     "rsid": "rs2000017",
@@ -448278,7 +448292,8 @@
     "gene": "ZNF22-AS1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000018": {
     "rsid": "rs2000018",
@@ -448302,7 +448317,8 @@
     "gene": "GRHL3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000021": {
     "rsid": "rs2000021",
@@ -448328,7 +448344,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000022": {
     "rsid": "rs2000022",
@@ -448353,7 +448370,8 @@
     "gene": "NRG3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000024": {
     "rsid": "rs2000024",
@@ -448375,7 +448393,8 @@
     "gene": "KAZN",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000025": {
     "rsid": "rs2000025",
@@ -448401,7 +448420,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000027": {
     "rsid": "rs2000027",
@@ -448427,7 +448447,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000028": {
     "rsid": "rs2000028",
@@ -448453,7 +448474,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000030": {
     "rsid": "rs2000030",
@@ -448474,7 +448496,8 @@
     "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000031": {
     "rsid": "rs2000031",
@@ -448499,7 +448522,8 @@
     "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000032": {
     "rsid": "rs2000032",
@@ -448524,7 +448548,8 @@
     "gene": "MDGA2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000033": {
     "rsid": "rs2000033",
@@ -448546,7 +448571,8 @@
     "gene": "LINC01031",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000035": {
     "rsid": "rs2000035",
@@ -448572,7 +448598,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000036": {
     "rsid": "rs2000036",
@@ -448598,7 +448625,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000037": {
     "rsid": "rs2000037",
@@ -448624,7 +448652,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000038": {
     "rsid": "rs2000038",
@@ -448650,7 +448679,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000039": {
     "rsid": "rs2000039",
@@ -448676,7 +448706,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000040": {
     "rsid": "rs2000040",
@@ -448702,7 +448733,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000041": {
     "rsid": "rs2000041",
@@ -448728,7 +448760,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000042": {
     "rsid": "rs2000042",
@@ -448754,7 +448787,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000044": {
     "rsid": "rs2000044",
@@ -448780,7 +448814,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000045": {
     "rsid": "rs2000045",
@@ -448806,7 +448841,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000046": {
     "rsid": "rs2000046",
@@ -448832,7 +448868,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000047": {
     "rsid": "rs2000047",
@@ -448858,7 +448895,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000048": {
     "rsid": "rs2000048",
@@ -448879,7 +448917,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000049": {
     "rsid": "rs2000049",
@@ -448900,7 +448939,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000050": {
     "rsid": "rs2000050",
@@ -448924,7 +448964,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000052": {
     "rsid": "rs2000052",
@@ -448950,7 +448991,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000053": {
     "rsid": "rs2000053",
@@ -448975,7 +449017,8 @@
     "gene": "PTBP3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000054": {
     "rsid": "rs2000054",
@@ -449000,7 +449043,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000055": {
     "rsid": "rs2000055",
@@ -449025,7 +449069,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000056": {
     "rsid": "rs2000056",
@@ -449050,7 +449095,8 @@
     "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000057": {
     "rsid": "rs2000057",
@@ -449075,7 +449121,8 @@
     "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000058": {
     "rsid": "rs2000058",
@@ -449101,7 +449148,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000059": {
     "rsid": "rs2000059",
@@ -449126,7 +449174,8 @@
     "gene": "FCAMR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000060": {
     "rsid": "rs2000060",
@@ -449152,7 +449201,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000062": {
     "rsid": "rs2000062",
@@ -449177,7 +449227,8 @@
     "gene": "DOCK1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000063": {
     "rsid": "rs2000063",
@@ -449198,7 +449249,8 @@
     "gene": "GLIS3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000064": {
     "rsid": "rs2000064",
@@ -449224,7 +449276,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000065": {
     "rsid": "rs2000065",
@@ -449250,7 +449303,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000066": {
     "rsid": "rs2000066",
@@ -449276,7 +449330,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000068": {
     "rsid": "rs2000068",
@@ -449301,7 +449356,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000069": {
     "rsid": "rs2000069",
@@ -449327,7 +449383,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000070": {
     "rsid": "rs2000070",
@@ -449352,7 +449409,8 @@
     "gene": "DCDC2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000072": {
     "rsid": "rs2000072",
@@ -449378,7 +449436,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000073": {
     "rsid": "rs2000073",
@@ -449403,7 +449462,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000074": {
     "rsid": "rs2000074",
@@ -449429,7 +449489,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000075": {
     "rsid": "rs2000075",
@@ -449455,7 +449516,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000076": {
     "rsid": "rs2000076",
@@ -449480,7 +449542,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000077": {
     "rsid": "rs2000077",
@@ -449506,7 +449569,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000078": {
     "rsid": "rs2000078",
@@ -449531,7 +449595,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000079": {
     "rsid": "rs2000079",
@@ -449557,7 +449622,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000080": {
     "rsid": "rs2000080",
@@ -449580,7 +449646,8 @@
     "gene": "FUT8",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000081": {
     "rsid": "rs2000081",
@@ -449605,7 +449672,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000083": {
     "rsid": "rs2000083",
@@ -449631,7 +449699,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000086": {
     "rsid": "rs2000086",
@@ -449652,7 +449721,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000087": {
     "rsid": "rs2000087",
@@ -449677,7 +449747,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000088": {
     "rsid": "rs2000088",
@@ -449703,7 +449774,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000089": {
     "rsid": "rs2000089",
@@ -449728,7 +449800,8 @@
     "gene": "CDKL1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000091": {
     "rsid": "rs2000091",
@@ -449754,7 +449827,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000092": {
     "rsid": "rs2000092",
@@ -449780,7 +449854,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000094": {
     "rsid": "rs2000094",
@@ -449806,7 +449881,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000095": {
     "rsid": "rs2000095",
@@ -449832,7 +449908,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000096": {
     "rsid": "rs2000096",
@@ -449857,7 +449934,8 @@
     "gene": "LINC00115",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2000097": {
     "rsid": "rs2000097",
@@ -449883,7 +449961,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs2000099": {
     "rsid": "rs2000099",
@@ -449909,7 +449988,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs700002": {
     "rsid": "rs700002",
@@ -449935,7 +450015,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs700003": {
     "rsid": "rs700003",
@@ -449960,7 +450041,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs700004": {
     "rsid": "rs700004",
@@ -449985,7 +450067,8 @@
     "gene": "SCIRT",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs700005": {
     "rsid": "rs700005",
@@ -450006,7 +450089,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs700007": {
     "rsid": "rs700007",
@@ -450031,7 +450115,8 @@
     "gene": "IGKV1D-43",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs700008": {
     "rsid": "rs700008",
@@ -450056,7 +450141,8 @@
     "gene": "ABCC10",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000011": {
     "rsid": "rs7000011",
@@ -450082,7 +450168,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000012": {
     "rsid": "rs7000012",
@@ -450107,7 +450194,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000014": {
     "rsid": "rs7000014",
@@ -450128,7 +450216,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000016": {
     "rsid": "rs7000016",
@@ -450154,7 +450243,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000017": {
     "rsid": "rs7000017",
@@ -450180,7 +450270,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000018": {
     "rsid": "rs7000018",
@@ -450205,7 +450296,8 @@
     "gene": "SLC7A2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000019": {
     "rsid": "rs7000019",
@@ -450231,7 +450323,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000020": {
     "rsid": "rs7000020",
@@ -450256,7 +450349,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000021": {
     "rsid": "rs7000021",
@@ -450282,7 +450376,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000022": {
     "rsid": "rs7000022",
@@ -450308,7 +450403,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000023": {
     "rsid": "rs7000023",
@@ -450334,7 +450430,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000025": {
     "rsid": "rs7000025",
@@ -450359,7 +450456,8 @@
     "gene": "LINC02842",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000027": {
     "rsid": "rs7000027",
@@ -450384,7 +450482,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000028": {
     "rsid": "rs7000028",
@@ -450405,7 +450504,8 @@
     "gene": "LINC02055",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000029": {
     "rsid": "rs7000029",
@@ -450430,7 +450530,8 @@
     "gene": "STAU2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000030": {
     "rsid": "rs7000030",
@@ -450456,7 +450557,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000031": {
     "rsid": "rs7000031",
@@ -450479,7 +450581,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000032": {
     "rsid": "rs7000032",
@@ -450504,7 +450607,8 @@
     "gene": "MITA1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000033": {
     "rsid": "rs7000033",
@@ -450525,7 +450629,8 @@
     "gene": "ARHGAP39",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000034": {
     "rsid": "rs7000034",
@@ -450550,7 +450655,8 @@
     "gene": "ATAD2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000035": {
     "rsid": "rs7000035",
@@ -450575,7 +450681,8 @@
     "gene": "LINC01288",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000037": {
     "rsid": "rs7000037",
@@ -450597,7 +450704,8 @@
     "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000038": {
     "rsid": "rs7000038",
@@ -450623,7 +450731,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000040": {
     "rsid": "rs7000040",
@@ -450648,7 +450757,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000042": {
     "rsid": "rs7000042",
@@ -450673,7 +450783,8 @@
     "gene": "KCNQ3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000043": {
     "rsid": "rs7000043",
@@ -450698,7 +450809,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000044": {
     "rsid": "rs7000044",
@@ -450720,7 +450832,8 @@
     "gene": "CSMD1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000045": {
     "rsid": "rs7000045",
@@ -450746,7 +450859,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000046": {
     "rsid": "rs7000046",
@@ -450771,7 +450885,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000047": {
     "rsid": "rs7000047",
@@ -450797,7 +450912,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000049": {
     "rsid": "rs7000049",
@@ -450823,7 +450939,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000050": {
     "rsid": "rs7000050",
@@ -450845,7 +450962,8 @@
     "gene": "LINC02055",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000051": {
     "rsid": "rs7000051",
@@ -450871,7 +450989,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000052": {
     "rsid": "rs7000052",
@@ -450897,7 +451016,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000053": {
     "rsid": "rs7000053",
@@ -450922,7 +451042,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000054": {
     "rsid": "rs7000054",
@@ -450947,7 +451068,8 @@
     "gene": "LINC01607",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000055": {
     "rsid": "rs7000055",
@@ -450972,7 +451094,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000056": {
     "rsid": "rs7000056",
@@ -450997,7 +451120,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000057": {
     "rsid": "rs7000057",
@@ -451023,7 +451147,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000058": {
     "rsid": "rs7000058",
@@ -451044,7 +451169,8 @@
     "gene": "RIMS2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000059": {
     "rsid": "rs7000059",
@@ -451069,7 +451195,8 @@
     "gene": "HTRA4",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000062": {
     "rsid": "rs7000062",
@@ -451095,7 +451222,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000063": {
     "rsid": "rs7000063",
@@ -451116,7 +451244,8 @@
     "gene": "ZNF704",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000064": {
     "rsid": "rs7000064",
@@ -451139,7 +451268,8 @@
     "gene": "MTDH",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000065": {
     "rsid": "rs7000065",
@@ -451160,7 +451290,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000066": {
     "rsid": "rs7000066",
@@ -451182,7 +451313,8 @@
     "gene": "RALYL",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000067": {
     "rsid": "rs7000067",
@@ -451203,7 +451335,8 @@
     "gene": "SGCZ",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000068": {
     "rsid": "rs7000068",
@@ -451224,7 +451357,8 @@
     "gene": "DEPTOR",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000069": {
     "rsid": "rs7000069",
@@ -451245,7 +451379,8 @@
     "gene": "ASAP1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000070": {
     "rsid": "rs7000070",
@@ -451266,7 +451401,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000071": {
     "rsid": "rs7000071",
@@ -451292,7 +451428,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000072": {
     "rsid": "rs7000072",
@@ -451316,7 +451453,8 @@
     "gene": "PPP2R2A",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000073": {
     "rsid": "rs7000073",
@@ -451338,7 +451476,8 @@
     "gene": "LINC02866",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000074": {
     "rsid": "rs7000074",
@@ -451363,7 +451502,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000075": {
     "rsid": "rs7000075",
@@ -451388,7 +451528,8 @@
     "gene": "FAM85B",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000076": {
     "rsid": "rs7000076",
@@ -451410,7 +451551,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000077": {
     "rsid": "rs7000077",
@@ -451435,7 +451577,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000078": {
     "rsid": "rs7000078",
@@ -451460,7 +451603,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000079": {
     "rsid": "rs7000079",
@@ -451485,7 +451629,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000080": {
     "rsid": "rs7000080",
@@ -451506,7 +451651,8 @@
     "gene": "STAU2",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000082": {
     "rsid": "rs7000082",
@@ -451529,7 +451675,8 @@
     "gene": "CLVS1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000083": {
     "rsid": "rs7000083",
@@ -451555,7 +451702,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000084": {
     "rsid": "rs7000084",
@@ -451580,7 +451728,8 @@
     "gene": "TUSC3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000085": {
     "rsid": "rs7000085",
@@ -451601,7 +451750,8 @@
     "gene": "COL14A1",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000086": {
     "rsid": "rs7000086",
@@ -451626,7 +451776,8 @@
     "gene": "ADAM28",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000087": {
     "rsid": "rs7000087",
@@ -451652,7 +451803,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000088": {
     "rsid": "rs7000088",
@@ -451677,7 +451829,8 @@
     "gene": "CPQ",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000089": {
     "rsid": "rs7000089",
@@ -451702,7 +451855,8 @@
     "gene": "NKAIN3",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000090": {
     "rsid": "rs7000090",
@@ -451728,7 +451882,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000091": {
     "rsid": "rs7000091",
@@ -451753,7 +451908,8 @@
     "gene": "MSRA",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000092": {
     "rsid": "rs7000092",
@@ -451778,7 +451934,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000093": {
     "rsid": "rs7000093",
@@ -451803,7 +451960,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs7000094": {
     "rsid": "rs7000094",
@@ -451829,7 +451987,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs7000095": {
     "rsid": "rs7000095",
@@ -451855,7 +452014,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs246001448": {
     "rsid": "rs246001448",
@@ -451884,7 +452044,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs509187642": {
     "rsid": "rs509187642",
@@ -451913,7 +452074,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs621720726": {
     "rsid": "rs621720726",
@@ -451942,7 +452104,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs649399890": {
     "rsid": "rs649399890",
@@ -451971,7 +452134,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs340531871": {
     "rsid": "rs340531871",
@@ -452000,7 +452164,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs966870694": {
     "rsid": "rs966870694",
@@ -452029,7 +452194,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs785342746": {
     "rsid": "rs785342746",
@@ -452058,7 +452224,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs742688817": {
     "rsid": "rs742688817",
@@ -452087,7 +452254,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs641299729": {
     "rsid": "rs641299729",
@@ -452116,7 +452284,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs818751460": {
     "rsid": "rs818751460",
@@ -452145,7 +452314,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs735330139": {
     "rsid": "rs735330139",
@@ -452174,7 +452344,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs153238440": {
     "rsid": "rs153238440",
@@ -452203,7 +452374,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs848210721": {
     "rsid": "rs848210721",
@@ -452232,7 +452404,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs441629179": {
     "rsid": "rs441629179",
@@ -452261,7 +452434,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs835751000": {
     "rsid": "rs835751000",
@@ -452290,7 +452464,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs286026780": {
     "rsid": "rs286026780",
@@ -452319,7 +452494,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs855254478": {
     "rsid": "rs855254478",
@@ -452348,7 +452524,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs782498446": {
     "rsid": "rs782498446",
@@ -452379,7 +452556,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs358138065": {
     "rsid": "rs358138065",
@@ -452408,7 +452586,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs126253842": {
     "rsid": "rs126253842",
@@ -452437,7 +452616,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs378949237": {
     "rsid": "rs378949237",
@@ -452466,7 +452646,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs636755626": {
     "rsid": "rs636755626",
@@ -452495,7 +452676,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs683829763": {
     "rsid": "rs683829763",
@@ -452524,7 +452706,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs509291640": {
     "rsid": "rs509291640",
@@ -452553,7 +452736,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs422477130": {
     "rsid": "rs422477130",
@@ -452582,7 +452766,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs530625640": {
     "rsid": "rs530625640",
@@ -452611,7 +452796,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs302500602": {
     "rsid": "rs302500602",
@@ -452640,7 +452826,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs686071881": {
     "rsid": "rs686071881",
@@ -452669,7 +452856,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs874349317": {
     "rsid": "rs874349317",
@@ -452698,7 +452886,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs841020683": {
     "rsid": "rs841020683",
@@ -452727,7 +452916,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs147416880": {
     "rsid": "rs147416880",
@@ -452756,7 +452946,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs361916994": {
     "rsid": "rs361916994",
@@ -452785,7 +452976,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs360787347": {
     "rsid": "rs360787347",
@@ -452814,7 +453006,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs426128021": {
     "rsid": "rs426128021",
@@ -452843,7 +453036,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs125179868": {
     "rsid": "rs125179868",
@@ -452872,7 +453066,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs460501048": {
     "rsid": "rs460501048",
@@ -452901,7 +453096,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs295289754": {
     "rsid": "rs295289754",
@@ -452930,7 +453126,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs520749561": {
     "rsid": "rs520749561",
@@ -452959,7 +453156,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs619848539": {
     "rsid": "rs619848539",
@@ -452988,7 +453186,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs740547496": {
     "rsid": "rs740547496",
@@ -453017,7 +453216,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs310443725": {
     "rsid": "rs310443725",
@@ -453046,7 +453246,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs845662917": {
     "rsid": "rs845662917",
@@ -453075,7 +453276,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs716778863": {
     "rsid": "rs716778863",
@@ -453104,7 +453306,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs878305057": {
     "rsid": "rs878305057",
@@ -453133,7 +453336,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs420325397": {
     "rsid": "rs420325397",
@@ -453162,7 +453366,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs639724533": {
     "rsid": "rs639724533",
@@ -453191,7 +453396,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs226361935": {
     "rsid": "rs226361935",
@@ -453220,7 +453426,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs348032862": {
     "rsid": "rs348032862",
@@ -453249,7 +453456,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs447017850": {
     "rsid": "rs447017850",
@@ -453278,7 +453486,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs783863412": {
     "rsid": "rs783863412",
@@ -453307,7 +453516,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs606895785": {
     "rsid": "rs606895785",
@@ -453336,7 +453546,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs437153058": {
     "rsid": "rs437153058",
@@ -453365,7 +453576,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs238699468": {
     "rsid": "rs238699468",
@@ -453394,7 +453606,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs645143671": {
     "rsid": "rs645143671",
@@ -453423,7 +453636,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs811356860": {
     "rsid": "rs811356860",
@@ -453452,7 +453666,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs110609781": {
     "rsid": "rs110609781",
@@ -453481,7 +453696,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs475031932": {
     "rsid": "rs475031932",
@@ -453510,7 +453726,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs432900369": {
     "rsid": "rs432900369",
@@ -453539,7 +453756,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs489457195": {
     "rsid": "rs489457195",
@@ -453568,7 +453786,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs463992601": {
     "rsid": "rs463992601",
@@ -453597,7 +453816,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs921306930": {
     "rsid": "rs921306930",
@@ -453628,7 +453848,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs535686732": {
     "rsid": "rs535686732",
@@ -453657,7 +453878,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs10599434": {
     "rsid": "rs138155932",
@@ -453686,7 +453908,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs237436840": {
     "rsid": "rs237436840",
@@ -453715,7 +453938,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs420769744": {
     "rsid": "rs420769744",
@@ -453744,7 +453968,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs481889163": {
     "rsid": "rs481889163",
@@ -453773,7 +453998,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs287360987": {
     "rsid": "rs287360987",
@@ -453802,7 +454028,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs440153986": {
     "rsid": "rs440153986",
@@ -453831,7 +454058,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs880651039": {
     "rsid": "rs880651039",
@@ -453860,7 +454088,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs215874006": {
     "rsid": "rs215874006",
@@ -453889,7 +454118,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs774276520": {
     "rsid": "rs774276520",
@@ -453918,7 +454148,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs668366477": {
     "rsid": "rs668366477",
@@ -453947,7 +454178,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs787997662": {
     "rsid": "rs787997662",
@@ -453976,7 +454208,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs485094062": {
     "rsid": "rs485094062",
@@ -454005,7 +454238,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs153773729": {
     "rsid": "rs153773729",
@@ -454034,7 +454268,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs553902036": {
     "rsid": "rs553902036",
@@ -454063,7 +454298,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs158634125": {
     "rsid": "rs158634125",
@@ -454092,7 +454328,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs178498525": {
     "rsid": "rs178498525",
@@ -454121,7 +454358,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs742549341": {
     "rsid": "rs742549341",
@@ -454150,7 +454388,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs238938684": {
     "rsid": "rs238938684",
@@ -454179,7 +454418,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs599341850": {
     "rsid": "rs599341850",
@@ -454208,7 +454448,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs706001782": {
     "rsid": "rs706001782",
@@ -454237,7 +454478,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs307853327": {
     "rsid": "rs307853327",
@@ -454266,7 +454508,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs641230431": {
     "rsid": "rs641230431",
@@ -454295,7 +454538,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs417479303": {
     "rsid": "rs417479303",
@@ -454324,7 +454568,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs844149103": {
     "rsid": "rs844149103",
@@ -454353,7 +454598,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs426017424": {
     "rsid": "rs426017424",
@@ -454382,7 +454628,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs917821731": {
     "rsid": "rs917821731",
@@ -454412,7 +454659,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs352362652": {
     "rsid": "rs352362652",
@@ -454441,7 +454689,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs158836784": {
     "rsid": "rs158836784",
@@ -454470,7 +454719,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs210845753": {
     "rsid": "rs210845753",
@@ -454499,7 +454749,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs405182771": {
     "rsid": "rs405182771",
@@ -454528,7 +454779,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs732275104": {
     "rsid": "rs732275104",
@@ -454557,7 +454809,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs633519498": {
     "rsid": "rs633519498",
@@ -454586,7 +454839,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs756909386": {
     "rsid": "rs756909386",
@@ -454615,7 +454869,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs406420368": {
     "rsid": "rs406420368",
@@ -454644,7 +454899,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs279627706": {
     "rsid": "rs279627706",
@@ -454673,7 +454929,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs739390504": {
     "rsid": "rs739390504",
@@ -454702,7 +454959,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs750330460": {
     "rsid": "rs750330460",
@@ -454731,7 +454989,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs654546197": {
     "rsid": "rs654546197",
@@ -454760,7 +455019,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs594470552": {
     "rsid": "rs594470552",
@@ -454789,7 +455049,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs701073639": {
     "rsid": "rs701073639",
@@ -454818,7 +455079,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs524667387": {
     "rsid": "rs524667387",
@@ -454847,7 +455109,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs231700321": {
     "rsid": "rs231700321",
@@ -454876,7 +455139,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs563464622": {
     "rsid": "rs563464622",
@@ -454905,7 +455169,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs137185918": {
     "rsid": "rs137185918",
@@ -454934,7 +455199,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs282616157": {
     "rsid": "rs282616157",
@@ -454963,7 +455229,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs640230210": {
     "rsid": "rs640230210",
@@ -454992,7 +455259,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs781714240": {
     "rsid": "rs781714240",
@@ -455021,7 +455289,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs723663921": {
     "rsid": "rs723663921",
@@ -455050,7 +455319,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs242898454": {
     "rsid": "rs242898454",
@@ -455079,7 +455349,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs607843886": {
     "rsid": "rs607843886",
@@ -455108,7 +455379,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs453462093": {
     "rsid": "rs453462093",
@@ -455137,7 +455409,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs493680345": {
     "rsid": "rs493680345",
@@ -455166,7 +455439,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs999061642": {
     "rsid": "rs999061642",
@@ -455195,7 +455469,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs179599626": {
     "rsid": "rs179599626",
@@ -455224,7 +455499,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs127545521": {
     "rsid": "rs127545521",
@@ -455253,7 +455529,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs882427395": {
     "rsid": "rs882427395",
@@ -455282,7 +455559,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs494879275": {
     "rsid": "rs494879275",
@@ -455311,7 +455589,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs590892218": {
     "rsid": "rs590892218",
@@ -455340,7 +455619,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs682200173": {
     "rsid": "rs682200173",
@@ -455369,7 +455649,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs487130700": {
     "rsid": "rs487130700",
@@ -455398,7 +455679,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs943065277": {
     "rsid": "rs943065277",
@@ -455427,7 +455709,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs860804891": {
     "rsid": "rs860804891",
@@ -455456,7 +455739,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs411204097": {
     "rsid": "rs411204097",
@@ -455485,7 +455769,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs861679272": {
     "rsid": "rs861679272",
@@ -455514,7 +455799,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs129353082": {
     "rsid": "rs129353082",
@@ -455543,7 +455829,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs920879586": {
     "rsid": "rs920879586",
@@ -455572,7 +455859,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs202356503": {
     "rsid": "rs202356503",
@@ -455601,7 +455889,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs317673533": {
     "rsid": "rs317673533",
@@ -455630,7 +455919,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs260893759": {
     "rsid": "rs260893759",
@@ -455659,7 +455949,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs356408439": {
     "rsid": "rs356408439",
@@ -455688,7 +455979,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs593751382": {
     "rsid": "rs593751382",
@@ -455717,7 +456009,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs679886633": {
     "rsid": "rs679886633",
@@ -455746,7 +456039,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs489008558": {
     "rsid": "rs489008558",
@@ -455775,7 +456069,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs238567343": {
     "rsid": "rs238567343",
@@ -455804,7 +456099,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs595768773": {
     "rsid": "rs595768773",
@@ -455833,7 +456129,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs196457681": {
     "rsid": "rs196457681",
@@ -455862,7 +456159,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs728596451": {
     "rsid": "rs728596451",
@@ -455891,7 +456189,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs126914299": {
     "rsid": "rs126914299",
@@ -455920,7 +456219,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs836772322": {
     "rsid": "rs836772322",
@@ -455949,7 +456249,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs368719285": {
     "rsid": "rs368719285",
@@ -455978,7 +456279,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs935975417": {
     "rsid": "rs935975417",
@@ -456007,7 +456309,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs917022811": {
     "rsid": "rs917022811",
@@ -456038,7 +456341,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs342765797": {
     "rsid": "rs342765797",
@@ -456067,7 +456371,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs782863090": {
     "rsid": "rs782863090",
@@ -456096,7 +456401,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs792026036": {
     "rsid": "rs792026036",
@@ -456125,7 +456431,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs609783076": {
     "rsid": "rs609783076",
@@ -456154,7 +456461,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs676727895": {
     "rsid": "rs676727895",
@@ -456183,7 +456491,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs722814490": {
     "rsid": "rs722814490",
@@ -456212,7 +456521,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs590065059": {
     "rsid": "rs590065059",
@@ -456241,7 +456551,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs788611703": {
     "rsid": "rs788611703",
@@ -456270,7 +456581,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs464116093": {
     "rsid": "rs464116093",
@@ -456299,7 +456611,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs417720416": {
     "rsid": "rs417720416",
@@ -456328,7 +456641,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs957726105": {
     "rsid": "rs957726105",
@@ -456357,7 +456671,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs704527978": {
     "rsid": "rs704527978",
@@ -456386,7 +456701,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs249548848": {
     "rsid": "rs249548848",
@@ -456415,7 +456731,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs308213482": {
     "rsid": "rs308213482",
@@ -456444,7 +456761,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs128464764": {
     "rsid": "rs128464764",
@@ -456473,7 +456791,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs404820373": {
     "rsid": "rs404820373",
@@ -456502,7 +456821,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs433180253": {
     "rsid": "rs433180253",
@@ -456531,7 +456851,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs302496363": {
     "rsid": "rs302496363",
@@ -456560,7 +456881,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs636895145": {
     "rsid": "rs636895145",
@@ -456589,7 +456911,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs723252108": {
     "rsid": "rs723252108",
@@ -456618,7 +456941,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs866607538": {
     "rsid": "rs866607538",
@@ -456647,7 +456971,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs826234989": {
     "rsid": "rs826234989",
@@ -456676,7 +457001,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs862115736": {
     "rsid": "rs862115736",
@@ -456705,7 +457031,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs865406776": {
     "rsid": "rs865406776",
@@ -456734,7 +457061,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs494196463": {
     "rsid": "rs494196463",
@@ -456763,7 +457091,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs349128622": {
     "rsid": "rs349128622",
@@ -456792,7 +457121,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs697231723": {
     "rsid": "rs697231723",
@@ -456821,7 +457151,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs602997023": {
     "rsid": "rs602997023",
@@ -456850,7 +457181,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs405057150": {
     "rsid": "rs405057150",
@@ -456879,7 +457211,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs124644473": {
     "rsid": "rs124644473",
@@ -456908,7 +457241,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs654977048": {
     "rsid": "rs654977048",
@@ -456937,7 +457271,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs238636868": {
     "rsid": "rs238636868",
@@ -456966,7 +457301,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs788990811": {
     "rsid": "rs788990811",
@@ -456995,7 +457331,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs662453164": {
     "rsid": "rs662453164",
@@ -457024,7 +457361,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs465362032": {
     "rsid": "rs465362032",
@@ -457053,7 +457391,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs737312114": {
     "rsid": "rs737312114",
@@ -457082,7 +457421,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs792001796": {
     "rsid": "rs792001796",
@@ -457111,7 +457451,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs248362695": {
     "rsid": "rs248362695",
@@ -457140,7 +457481,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs744965199": {
     "rsid": "rs744965199",
@@ -457169,7 +457511,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs434118749": {
     "rsid": "rs434118749",
@@ -457198,7 +457541,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs365754116": {
     "rsid": "rs365754116",
@@ -457227,7 +457571,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs173662944": {
     "rsid": "rs173662944",
@@ -457256,7 +457601,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs514869279": {
     "rsid": "rs514869279",
@@ -457285,7 +457631,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs163154815": {
     "rsid": "rs163154815",
@@ -457314,7 +457661,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs218442174": {
     "rsid": "rs218442174",
@@ -457343,7 +457691,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs197452757": {
     "rsid": "rs197452757",
@@ -457372,7 +457721,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs444219492": {
     "rsid": "rs444219492",
@@ -457401,7 +457751,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs557565851": {
     "rsid": "rs557565851",
@@ -457432,7 +457783,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs758435265": {
     "rsid": "rs758435265",
@@ -457463,7 +457815,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs343832477": {
     "rsid": "rs343832477",
@@ -457492,7 +457845,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs489790568": {
     "rsid": "rs489790568",
@@ -457521,7 +457875,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs253977318": {
     "rsid": "rs253977318",
@@ -457550,7 +457905,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs951904529": {
     "rsid": "rs951904529",
@@ -457580,7 +457936,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs891464804": {
     "rsid": "rs891464804",
@@ -457609,7 +457966,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs144656888": {
     "rsid": "rs144656888",
@@ -457638,7 +457996,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs794341186": {
     "rsid": "rs794341186",
@@ -457667,7 +458026,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs967775416": {
     "rsid": "rs967775416",
@@ -457696,7 +458056,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs266786479": {
     "rsid": "rs266786479",
@@ -457725,7 +458086,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs577643021": {
     "rsid": "rs577643021",
@@ -457754,7 +458116,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs540442563": {
     "rsid": "rs540442563",
@@ -457783,7 +458146,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs821662285": {
     "rsid": "rs821662285",
@@ -457812,7 +458176,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs806603769": {
     "rsid": "rs806603769",
@@ -457841,7 +458206,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270233559": {
     "rsid": "rs270233559",
@@ -457870,7 +458236,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs711929992": {
     "rsid": "rs711929992",
@@ -457899,7 +458266,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs540654561": {
     "rsid": "rs540654561",
@@ -457930,7 +458298,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs165840459": {
     "rsid": "rs165840459",
@@ -457959,7 +458328,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs851600429": {
     "rsid": "rs851600429",
@@ -457988,7 +458358,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs558266661": {
     "rsid": "rs558266661",
@@ -458017,7 +458388,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs518733879": {
     "rsid": "rs518733879",
@@ -458046,7 +458418,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs860133258": {
     "rsid": "rs860133258",
@@ -458075,7 +458448,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs810760539": {
     "rsid": "rs810760539",
@@ -458104,7 +458478,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs278708429": {
     "rsid": "rs278708429",
@@ -458133,7 +458508,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs896019977": {
     "rsid": "rs896019977",
@@ -458162,7 +458538,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs103306632": {
     "rsid": "rs103306632",
@@ -458191,7 +458568,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs480246333": {
     "rsid": "rs480246333",
@@ -458220,7 +458598,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs712935702": {
     "rsid": "rs712935702",
@@ -458249,7 +458628,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs648996290": {
     "rsid": "rs648996290",
@@ -458278,7 +458658,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs970206034": {
     "rsid": "rs970206034",
@@ -458307,7 +458688,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs422774504": {
     "rsid": "rs422774504",
@@ -458336,7 +458718,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs286678960": {
     "rsid": "rs286678960",
@@ -458365,7 +458748,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs35191525": {
     "rsid": "rs796707590",
@@ -458394,7 +458778,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs171658729": {
     "rsid": "rs171658729",
@@ -458423,7 +458808,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs316618653": {
     "rsid": "rs316618653",
@@ -458452,7 +458838,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs597928085": {
     "rsid": "rs597928085",
@@ -458481,7 +458868,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs164073109": {
     "rsid": "rs164073109",
@@ -458510,7 +458898,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs401049045": {
     "rsid": "rs401049045",
@@ -458539,7 +458928,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs855264862": {
     "rsid": "rs855264862",
@@ -458568,7 +458958,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs659874445": {
     "rsid": "rs659874445",
@@ -458597,7 +458988,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs937275104": {
     "rsid": "rs937275104",
@@ -458626,7 +459018,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs610153600": {
     "rsid": "rs610153600",
@@ -458655,7 +459048,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs244335060": {
     "rsid": "rs244335060",
@@ -458684,7 +459078,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs136608096": {
     "rsid": "rs136608096",
@@ -458713,7 +459108,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs159398593": {
     "rsid": "rs159398593",
@@ -458742,7 +459138,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs348125159": {
     "rsid": "rs348125159",
@@ -458771,7 +459168,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs477975583": {
     "rsid": "rs477975583",
@@ -458800,7 +459198,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs589971124": {
     "rsid": "rs589971124",
@@ -458829,7 +459228,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs642534658": {
     "rsid": "rs642534658",
@@ -458858,7 +459258,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs157767172": {
     "rsid": "rs157767172",
@@ -458887,7 +459288,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs62107492": {
     "rsid": "rs140996893",
@@ -458916,7 +459318,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs518781899": {
     "rsid": "rs518781899",
@@ -458945,7 +459348,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs636183845": {
     "rsid": "rs636183845",
@@ -458974,7 +459378,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs347354625": {
     "rsid": "rs347354625",
@@ -459003,7 +459408,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs2745516": {
     "rsid": "rs199783519",
@@ -459032,7 +459438,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs420006141": {
     "rsid": "rs420006141",
@@ -459061,7 +459468,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs437538911": {
     "rsid": "rs437538911",
@@ -459090,7 +459498,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs418574145": {
     "rsid": "rs418574145",
@@ -459119,7 +459528,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs709207396": {
     "rsid": "rs709207396",
@@ -459148,7 +459558,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs551378903": {
     "rsid": "rs551378903",
@@ -459177,7 +459588,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs370797815": {
     "rsid": "rs370797815",
@@ -459206,7 +459618,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs431878188": {
     "rsid": "rs431878188",
@@ -459235,7 +459648,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs612585854": {
     "rsid": "rs612585854",
@@ -459264,7 +459678,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs593607118": {
     "rsid": "rs593607118",
@@ -459293,7 +459708,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs844674168": {
     "rsid": "rs844674168",
@@ -459322,7 +459738,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs385123379": {
     "rsid": "rs385123379",
@@ -459351,7 +459768,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs552678502": {
     "rsid": "rs552678502",
@@ -459382,7 +459800,8 @@
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs244071518": {
     "rsid": "rs244071518",
@@ -459411,7 +459830,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs356279202": {
     "rsid": "rs356279202",
@@ -459440,7 +459860,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs801236321": {
     "rsid": "rs801236321",
@@ -459469,7 +459890,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs344915660": {
     "rsid": "rs344915660",
@@ -459498,7 +459920,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs433395514": {
     "rsid": "rs433395514",
@@ -459527,7 +459950,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs486101861": {
     "rsid": "rs486101861",
@@ -459556,7 +459980,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs565661547": {
     "rsid": "rs565661547",
@@ -459585,7 +460010,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs667592206": {
     "rsid": "rs667592206",
@@ -459614,7 +460040,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs329984310": {
     "rsid": "rs329984310",
@@ -459643,7 +460070,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs244196830": {
     "rsid": "rs244196830",
@@ -459672,7 +460100,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs156857494": {
     "rsid": "rs156857494",
@@ -459701,7 +460130,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs791552460": {
     "rsid": "rs791552460",
@@ -459730,7 +460160,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs124189747": {
     "rsid": "rs124189747",
@@ -459759,7 +460190,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs410490054": {
     "rsid": "rs410490054",
@@ -459788,7 +460220,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs719642529": {
     "rsid": "rs719642529",
@@ -459817,7 +460250,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs957520168": {
     "rsid": "rs957520168",
@@ -459846,7 +460280,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs357019977": {
     "rsid": "rs357019977",
@@ -459875,7 +460310,8 @@
     "gene": "AFRAM-DEEP-AIM",
     "trait": "Ancestry",
     "description": "African American admixture AIM for Atlantic diaspora deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs4821004": {
     "rsid": "rs4821004",
