@@ -1,107 +1,4 @@
 {
-  "rs1393350": {
-    "rsid": "rs1393350",
-    "chromosome": "11",
-    "position": 89277878,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.9917,
-      "AMR": 0.8775,
-      "EAS": 0.997,
-      "EUR": 0.7565,
-      "SAS": 0.9458,
-      "MENA": 0.9
-    },
-    "subFrequencies": {
-      "Northern European": 0.8,
-      "Southern European": 0.4,
-      "Eastern European": 0.65,
-      "Italian": 0.5,
-      "Greek": 0.55,
-      "Spanish": 0.45,
-      "Balkan": 0.4,
-      "Arab": 0.95,
-      "Levantine": 0.92,
-      "Persian": 0.85,
-      "Kurdish": 0.88,
-      "Assyrian": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "Arabian Ancestry Marker",
-    "description": "West Asian/Middle Eastern Informative Marker - diagnostic for Afroasiatic and Indo-Iranian speaking populations of the Near East.",
-    "build": "GRCh38"
-  },
-  "rs10456276": {
-    "rsid": "rs10456276",
-    "chromosome": "6",
-    "position": 23667920,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.851,
-      "MENA": 0.92,
-      "NAFR": 0.15,
-      "EUR": 0.9652,
-      "EAS": 0.8472,
-      "SAS": 0.8926,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "European Ancestry Marker",
-    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11103337": {
-    "rsid": "rs11103337",
-    "chromosome": "9",
-    "position": 136109424,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.0545,
-      "EUR": 0.1541,
-      "EAS": 0.1062,
-      "SAS": 0.1391,
-      "MENA": 0.2397,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.98,
-      "Esan": 0.96,
-      "Mende": 1.0,
-      "Gambian": 0.98,
-      "Luhya": 0.931
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Intergenic",
-    "trait": "Middle Eastern Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Persian Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
   "rs10456280": {
     "rsid": "rs10456280",
     "chromosome": "6",
@@ -133,7 +30,8 @@
     "trait": "Levantine Ancestry Marker",
     "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs10456279": {
     "rsid": "rs10456279",
@@ -161,115 +59,8 @@
     "trait": "Anatolian Ancestry Marker",
     "description": "EAS/AMR Tie-Breaker - Highly prevalent in Siberia and East Asia, sharply reduced in the Americas.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456281": {
-    "rsid": "rs10456281",
-    "chromosome": "6",
-    "position": 23688492,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "EAS": 0.3968,
-      "EUR": 0.2873,
-      "AFR": 0.4864,
-      "SAS": 0.4376,
-      "MENA": 0.2329,
-      "NAFR": 0.01,
-      "OCE": 0.15
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Caucasian Ancestry Marker",
-    "description": "EAS/AMR Tie-Breaker - Diagnostic for East Asian coastal populations, effectively absent in Native Americans.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456273": {
-    "rsid": "rs10456273",
-    "chromosome": "6",
-    "position": 10552341,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "EUR": 0.9821,
-      "MENA": 1,
-      "NAFR": 0.05,
-      "AFR": 0.9985,
-      "EAS": 1,
-      "SAS": 1,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Intergenic",
-    "trait": "Levantine Ancestry Marker",
-    "description": "EUR/MENA Tie-Breaker - Highly specific to Northern and Central Europe, rare across the Mediterranean.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456275": {
-    "rsid": "rs10456275",
-    "chromosome": "6",
-    "position": 23511760,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.9629,
-      "EAS": 0.9454,
-      "EUR": 0.7117,
-      "SAS": 0.7986,
-      "MENA": 0.7158,
-      "NAFR": 0.91,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "African Ancestry Marker",
-    "description": "NAFR/EUR Tie-Breaker - Distinctive Maghreb marker, filters out false Iberian/Southern European overlap.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456283": {
-    "rsid": "rs10456283",
-    "chromosome": "6",
-    "position": 23715678,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.9947,
-      "EAS": 0.9998,
-      "EUR": 0.9999,
-      "SAS": 0.9998,
-      "MENA": 1,
-      "NAFR": 0.45,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "Caucasian Ancestry Marker",
-    "description": "MENA/SAS Tie-Breaker - Anchors populations to the Iranian plateau and West Asia, filtering out South Asian noise.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "informative"
   },
   "rs1540623": {
     "rsid": "rs1540623",
@@ -294,261 +85,8 @@
     "gene": "Unknown",
     "trait": "Middle Eastern Ancestry Marker",
     "description": "Highly specific marker for Middle Eastern populations.",
-    "build": "GRCh38"
-  },
-  "rs10488635": {
-    "rsid": "rs10488635",
-    "chromosome": "7",
-    "position": 155588009,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.6498,
-      "EAS": 1,
-      "EUR": 0.996,
-      "SAS": 0.999,
-      "MENA": 0.9864
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Anatolian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Anatolian populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456272": {
-    "rsid": "rs10456272",
-    "chromosome": "6",
-    "position": 23154117,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.8759,
-      "EAS": 0.8244,
-      "EUR": 0.7256,
-      "SAS": 0.8845,
-      "MENA": 0.898
-    },
-    "subFrequencies": {
-      "Berber": 0.97,
-      "Tuareg": 0.94,
-      "Kabyle": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Anatolian Ancestry Marker",
-    "description": "Saharan Amazigh Marker - diagnostic for the indigenous Berber populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs9999901": {
-    "rsid": "rs9999901",
-    "chromosome": "4",
-    "position": 178772318,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1581,
-      "EAS": 0.1101,
-      "EUR": 0.008,
-      "SAS": 0.1728,
-      "MENA": 0.0137
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs9999904": {
-    "rsid": "rs9999904",
-    "chromosome": "4",
-    "position": 181199420,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.469,
-      "EAS": 0.2609,
-      "EUR": 0.2773,
-      "SAS": 0.3252,
-      "MENA": 0.3333
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1393358": {
-    "rsid": "rs1393358",
-    "chromosome": "3",
-    "position": 79798907,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.7005,
-      "EAS": 0.6448,
-      "EUR": 0.4831,
-      "SAS": 0.4724,
-      "MENA": 0.398
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10407235": {
-    "rsid": "rs10407235",
-    "chromosome": "19",
-    "position": 7356723,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.4516,
-      "EAS": 0.001,
-      "EUR": 0.008,
-      "SAS": 0.0348,
-      "MENA": 0.0476
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1393360": {
-    "rsid": "rs1393360",
-    "chromosome": "3",
-    "position": 79799775,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.702,
-      "EAS": 0.6448,
-      "EUR": 0.4831,
-      "SAS": 0.4734,
-      "MENA": 0.3973
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10407231": {
-    "rsid": "rs10407231",
-    "chromosome": "19",
-    "position": 13574875,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.6437,
-      "EAS": 0.1349,
-      "EUR": 0.7922,
-      "SAS": 0.454,
-      "MENA": 0.8082
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1393355": {
-    "rsid": "rs1393355",
-    "chromosome": "11",
-    "position": 100628073,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.3018,
-      "EAS": 0.253,
-      "EUR": 0.0358,
-      "SAS": 0.135,
-      "MENA": 0.0612
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1333047": {
-    "rsid": "rs1333047",
-    "chromosome": "9",
-    "position": 22124505,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.966,
-      "EAS": 0.6964,
-      "EUR": 0.4831,
-      "SAS": 0.5992,
-      "MENA": 0.6599
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Arabian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "tier": "diagnostic"
   },
   "rs6601495": {
     "rsid": "rs6601495",
@@ -571,9 +109,11 @@
     "weight": 10,
     "gene": "Unknown",
     "trait": "South Asian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Arabian populations.",
+    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Arabian populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "status": "orbit_review",
+    "tier": "supporting"
   },
   "rs1333048": {
     "rsid": "rs1333048",
@@ -598,7 +138,8 @@
     "trait": "Armenian Ancestry Marker",
     "description": "Ancestry Informative Marker for Armenian populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs10456208": {
     "rsid": "rs10456208",
@@ -623,134 +164,8 @@
     "gene": "Unknown",
     "trait": "Middle Eastern Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Druze Ancestry Marker.",
-    "build": "GRCh38"
-  },
-  "rs10456211": {
-    "rsid": "rs10456211",
-    "chromosome": "6",
-    "position": 10006287,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0091,
-      "EAS": 0.0526,
-      "EUR": 0.2157,
-      "SAS": 0.1881,
-      "MENA": 0.1986
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Middle Eastern Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Druze Ancestry Marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456214": {
-    "rsid": "rs10456214",
-    "chromosome": "6",
-    "position": 18288173,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.8858,
-      "AMR": 0.9409,
-      "EAS": 0.999,
-      "EUR": 0.9105,
-      "SAS": 0.953,
-      "MENA": 0.94
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "Unknown",
-    "trait": "Middle Eastern Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Druze Ancestry Marker.",
-    "build": "GRCh38"
-  },
-  "rs10456274": {
-    "rsid": "rs10456274",
-    "chromosome": "6",
-    "position": 23469452,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.4977,
-      "EAS": 0.6488,
-      "EUR": 0.5716,
-      "SAS": 0.59,
-      "MENA": 0.5068,
-      "NAFR": 0.4,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "East Asian Ancestry Marker",
-    "description": "MENA/EUR Tie-Breaker - Frequent in the Levant and Anatolia, drops off sharply in Southern Europe.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10757279": {
-    "rsid": "rs10757279",
-    "chromosome": "9",
-    "position": 22124631,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.1589,
-      "EAS": 0.5367,
-      "EUR": 0.4722,
-      "SAS": 0.5031,
-      "MENA": 0.551
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Middle Eastern Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Jordanian Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10757274": {
-    "rsid": "rs10757274",
-    "chromosome": "9",
-    "position": 22096056,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.8245,
-      "EAS": 0.4712,
-      "EUR": 0.508,
-      "SAS": 0.5164,
-      "MENA": 0.4082
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Middle Eastern Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Kurdish Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "tier": "diagnostic"
   },
   "rs10456277": {
     "rsid": "rs10456277",
@@ -777,57 +192,8 @@
     "trait": "North African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Kurdish Ancestry Marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs9999905": {
-    "rsid": "rs9999905",
-    "chromosome": "4",
-    "position": 179639938,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1876,
-      "EAS": 0.0069,
-      "EUR": 0.0676,
-      "SAS": 0.1616,
-      "MENA": 0.1804
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11215545": {
-    "rsid": "rs11215545",
-    "chromosome": "11",
-    "position": 115416032,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.0923,
-      "EAS": 0.2024,
-      "EUR": 0.4334,
-      "SAS": 0.2035,
-      "MENA": 0.2329
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs1800409": {
     "rsid": "rs1800409",
@@ -853,57 +219,8 @@
     "trait": "Levantine Ancestry Marker",
     "description": "Ancestry Informative Marker for Levantine populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11215554": {
-    "rsid": "rs11215554",
-    "chromosome": "11",
-    "position": 96773634,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.0454,
-      "EAS": 0.0724,
-      "EUR": 0.3052,
-      "SAS": 0.2587,
-      "MENA": 0.1803
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1800416": {
-    "rsid": "rs1800416",
-    "chromosome": "15",
-    "position": 27926148,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.764,
-      "EAS": 0.999,
-      "EUR": 0.998,
-      "SAS": 1,
-      "MENA": 0.9932
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs11215555": {
     "rsid": "rs11215555",
@@ -928,7 +245,8 @@
     "gene": "Unknown",
     "trait": "Levantine Ancestry Marker",
     "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs11215557": {
     "rsid": "rs11215557",
@@ -953,182 +271,8 @@
     "gene": "Unknown",
     "trait": "Levantine Ancestry Marker",
     "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38"
-  },
-  "rs1800419": {
-    "rsid": "rs1800419",
-    "chromosome": "15",
-    "position": 27851392,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.3714,
-      "EAS": 0.5605,
-      "EUR": 0.5626,
-      "SAS": 0.4427,
-      "MENA": 0.4422
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11215558": {
-    "rsid": "rs11215558",
-    "chromosome": "11",
-    "position": 115438200,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.1195,
-      "EAS": 0.006,
-      "EUR": 0.168,
-      "SAS": 0.092,
-      "MENA": 0.1667
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1800410": {
-    "rsid": "rs1800410",
-    "chromosome": "15",
-    "position": 27985038,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.6929,
-      "EAS": 0.1538,
-      "EUR": 0.8559,
-      "SAS": 0.7393,
-      "MENA": 0.8673
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1800411": {
-    "rsid": "rs1800411",
-    "chromosome": "15",
-    "position": 27966775,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.7617,
-      "EAS": 0.8442,
-      "EUR": 0.3221,
-      "SAS": 0.6503,
-      "MENA": 0.3571
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "East Asian Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs11215550": {
-    "rsid": "rs11215550",
-    "chromosome": "11",
-    "position": 98469692,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.4395,
-      "EAS": 0.1994,
-      "EUR": 0.0924,
-      "SAS": 0.1626,
-      "MENA": 0.1667
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10757278": {
-    "rsid": "rs10757278",
-    "chromosome": "9",
-    "position": 22124478,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1589,
-      "EAS": 0.5437,
-      "EUR": 0.4742,
-      "SAS": 0.5041,
-      "MENA": 0.551
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Levantine Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs12186491": {
-    "rsid": "rs12186491",
-    "chromosome": "5",
-    "position": 148213934,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.7511,
-      "EAS": 0.3046,
-      "EUR": 0.0815,
-      "SAS": 0.1462,
-      "MENA": 0.1297
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Unknown",
-    "trait": "African Ancestry Marker",
-    "description": "Ancestry Informative Marker for Levantine populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "tier": "diagnostic"
   },
   "rs10456278": {
     "rsid": "rs10456278",
@@ -1155,7 +299,8 @@
     "trait": "North African Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Persian Ancestry Marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "informative"
   },
   "rs10757275": {
     "rsid": "rs10757275",
@@ -1180,7 +325,8 @@
     "trait": "West Asian Ancestry Marker",
     "description": "Ancestry Informative Marker for West Asian populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs10456284": {
     "rsid": "rs10456284",
@@ -1207,7 +353,8 @@
     "trait": "West Asian Ancestry Marker",
     "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs10456367": {
     "rsid": "rs10456367",
@@ -1222,7 +369,7 @@
       "AFR": 0.02,
       "AMR": 0.02,
       "EAS": 0.01,
-      "EUR": 0.0,
+      "EUR": 0,
       "SAS": 0.1,
       "MENA": 0.94
     },
@@ -1238,7 +385,8 @@
     "trait": "Songhai Ancestry Marker",
     "description": "North Mesopotamian Marker - highly informative for Kurdish and Northern Fertile Crescent populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs4988238": {
     "rsid": "rs4988238",
@@ -1269,7 +417,8 @@
     "gene": "LCT",
     "trait": "Middle Eastern Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Maasai Ancestry Marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs60910145": {
     "rsid": "rs60910145",
@@ -1290,7 +439,7 @@
     "subFrequencies": {
       "Yoruba": 0.42,
       "Esan": 0.5,
-      "Samaritan": 1.0,
+      "Samaritan": 1,
       "Palestinian": 0.95,
       "Druze": 0.98,
       "Lebanese": 0.92,
@@ -1300,9 +449,11 @@
     "weight": 4,
     "gene": "APOL1",
     "trait": "African ancestry, Kidney disease risk (trypanosome resistance)",
-    "description": "APOL1 G1 risk variant (I384M) is always in linkage with rs73885319 defining the G1 haplotype. Contributes to a highly differentiated lineage common in West Central/West Africa. Selection driven by protozoal infection. Unique to recent African ancestry.",
+    "description": "Middle Eastern informative marker. Distinguishes from European.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "status": "orbit_review",
+    "tier": "supporting"
   },
   "rs12913832": {
     "rsid": "rs12913832",
@@ -1325,10 +476,10 @@
       "Luo": 0.5,
       "Maasai": 0.5,
       "Gambian": 0.9779,
-      "Yoruba": 1.0,
-      "Mende": 1.0,
-      "Esan": 1.0,
-      "Luhya": 1.0,
+      "Yoruba": 1,
+      "Mende": 1,
+      "Esan": 1,
+      "Luhya": 1,
       "GLL": 0.9463,
       "ASW": 0.8607,
       "ACB": 0.9219,
@@ -1354,7 +505,8 @@
     "trait": "Ancestral Pigmentation Marker",
     "description": "The 'A' allele is the ancestral version found in Africa. The 'G' allele is the primary driver of blue eye color in Europeans.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "supporting"
   },
   "rs1129038": {
     "rsid": "rs1129038",
@@ -1376,10 +528,10 @@
       "Luo": 0.5,
       "Maasai": 0.5,
       "Gambian": 0.9779,
-      "Yoruba": 1.0,
-      "Mende": 1.0,
-      "Esan": 1.0,
-      "Luhya": 1.0,
+      "Yoruba": 1,
+      "Mende": 1,
+      "Esan": 1,
+      "Luhya": 1,
       "GLL": 0.9463,
       "ASW": 0.8607,
       "ACB": 0.9219,
@@ -1408,32 +560,8 @@
     "trait": "European Ancestry Marker",
     "description": "HERC2/OCA2 region marker - highly informative for Middle Eastern and Mediterranean populations.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs1042522": {
-    "rsid": "rs1042522",
-    "chromosome": "17",
-    "position": 7676154,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.6687,
-      "EUR": 0.2853,
-      "EAS": 0.4137,
-      "SAS": 0.4918,
-      "MENA": 0.3537
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "TP53 variant - found at varying frequencies in Middle Eastern and European populations.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "informative"
   },
   "rs10456205": {
     "rsid": "rs10456205",
@@ -1457,8 +585,10 @@
     "weight": 4,
     "gene": "Unknown",
     "trait": "Bamoun Ancestry Marker",
-    "description": "North African (MENA) Marker - informative for Maghreb and North African populations.",
-    "build": "GRCh38"
+    "description": "[Orbit Review: separation < 0.10] North African (MENA) Marker - informative for Maghreb and North African populations.",
+    "build": "GRCh38",
+    "status": "orbit_review",
+    "tier": "supporting"
   },
   "rs1042525": {
     "rsid": "rs1042525",
@@ -1483,7 +613,8 @@
     "gene": "Unknown",
     "trait": "Middle Eastern Ancestry Marker",
     "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: German Ancestry Marker.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs10456292": {
     "rsid": "rs10456292",
@@ -1508,43 +639,11 @@
     "weight": 6,
     "gene": "Intergenic",
     "trait": "Hmong Ancestry Marker",
-    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
+    "description": "[Orbit Review: separation < 0.10] MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs10456301": {
-    "rsid": "rs10456301",
-    "chromosome": "6",
-    "position": 24308127,
-    "region": "Middle Eastern",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.9803,
-      "EAS": 0.9931,
-      "EUR": 0.9254,
-      "SAS": 0.9243,
-      "MENA": 0.9082,
-      "CAS": 0.9,
-      "NAFR": 0.2,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Uzbek": 0.85,
-      "Kazakh": 0.92,
-      "Kyrgyz": 0.9,
-      "Turkmen": 0.8,
-      "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "East Asian Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Somali Ancestry Marker.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "status": "orbit_review",
+    "tier": "supporting"
   },
   "rs5857297": {
     "rsid": "rs5857297",
@@ -1572,7 +671,8 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Common Mediterranean/Levantine marker often elevated in Jewish Diasporic populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs16891982": {
     "rsid": "rs16891982",
@@ -1596,12 +696,12 @@
       "Somali": 0.5,
       "Amhara": 0.2,
       "Dinka": 0.05,
-      "Yoruba": 0.0,
+      "Yoruba": 0,
       "Luo": 0.5,
       "Maasai": 0.5,
       "Gambian": 0.0044,
       "Mende": 0.0118,
-      "Esan": 0.0,
+      "Esan": 0,
       "Luhya": 0.0051,
       "GLL": 0.0014,
       "ASW": 0.2131,
@@ -1626,85 +726,8 @@
     "trait": "Skin pigmentation, Ancestry",
     "description": "The ancestral allele (C) is common in East Africa, whereas the derived allele is characteristic of Europeans and some West Asians. In East Africa, higher frequency of the non-European allele differentiates Cushitic/Omotic groups from Bantu and Nilotic groups. Relates to adaptation in areas of high altitude UV.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs4988235": {
-    "rsid": "rs4988235",
-    "chromosome": "2",
-    "position": 135851076,
-    "region": "Middle Eastern",
-    "color": "#E67E22",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.0272,
-      "AMR": 0.05,
-      "EUR": 0.508,
-      "SAS": 0.1135,
-      "EAS": 0.0021,
-      "MENA": 0.0612,
-      "OCE": 0.05
-    },
-    "subFrequencies": {
-      "Northern European": 0.85,
-      "Southern European": 0.3,
-      "German": 0.75,
-      "British": 0.9,
-      "Scandinavian": 0.95,
-      "Italian": 0.4,
-      "Spanish": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "MCM6",
-    "trait": "Ancestry",
-    "description": "Lactase Persistence Marker - highly prevalent in Northern and Central European populations (Germany/UK/Scandinavia).",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs2814778": {
-    "rsid": "rs2814778",
-    "chromosome": "1",
-    "position": 159204893,
-    "region": "Middle Eastern",
-    "color": "#E67E22",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "AMR": 0.02,
-      "EUR": 0.005,
-      "EAS": 0.001,
-      "SAS": 0.01,
-      "MENA": 0.05,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Mandinka": 0.97,
-      "Nuer": 0.05,
-      "Luo": 0.5,
-      "Maasai": 0.5,
-      "Gambian": 1.0,
-      "Yoruba": 0.9954,
-      "Mende": 1.0,
-      "Esan": 1.0,
-      "Luhya": 1.0,
-      "GLL": 0.9957,
-      "ASW": 0.7951,
-      "ACB": 0.8854,
-      "North_European": 0.006,
-      "South_European": 0.006,
-      "West_European": 0.006,
-      "East_European": 0.006
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "ACKR1",
-    "trait": "Ancestry",
-    "description": "Duffy negative marker - African/Arabian admixture indicator.",
-    "build": "GRCh38"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "highly-informative"
   },
   "rs264197586": {
     "rsid": "rs264197586",
@@ -1735,7 +758,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs251243414": {
     "rsid": "rs251243414",
@@ -1766,7 +790,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs872059510": {
     "rsid": "rs872059510",
@@ -1797,7 +822,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs618378954": {
     "rsid": "rs618378954",
@@ -1828,7 +854,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs338114356": {
     "rsid": "rs338114356",
@@ -1859,7 +886,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs985565163": {
     "rsid": "rs985565163",
@@ -1890,7 +918,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs466939409": {
     "rsid": "rs466939409",
@@ -1921,7 +950,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs258043600": {
     "rsid": "rs258043600",
@@ -1952,7 +982,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs493729435": {
     "rsid": "rs493729435",
@@ -1983,7 +1014,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs687888705": {
     "rsid": "rs687888705",
@@ -2014,7 +1046,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs437176475": {
     "rsid": "rs437176475",
@@ -2045,7 +1078,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs611029576": {
     "rsid": "rs611029576",
@@ -2076,7 +1110,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs604221194": {
     "rsid": "rs604221194",
@@ -2107,7 +1142,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs338444541": {
     "rsid": "rs338444541",
@@ -2138,7 +1174,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs311524801": {
     "rsid": "rs311524801",
@@ -2169,7 +1206,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs146232847": {
     "rsid": "rs775996116",
@@ -2200,7 +1238,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs745727576": {
     "rsid": "rs745727576",
@@ -2231,7 +1270,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs712438006": {
     "rsid": "rs712438006",
@@ -2262,7 +1302,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs425033448": {
     "rsid": "rs425033448",
@@ -2293,7 +1334,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs302287908": {
     "rsid": "rs302287908",
@@ -2324,7 +1366,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs328693562": {
     "rsid": "rs328693562",
@@ -2355,7 +1398,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs650976021": {
     "rsid": "rs650976021",
@@ -2386,7 +1430,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs410861105": {
     "rsid": "rs410861105",
@@ -2417,7 +1462,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs783338515": {
     "rsid": "rs783338515",
@@ -2448,7 +1494,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs384201236": {
     "rsid": "rs384201236",
@@ -2479,7 +1526,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs861168787": {
     "rsid": "rs861168787",
@@ -2510,7 +1558,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs222222774": {
     "rsid": "rs222222774",
@@ -2541,7 +1590,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs273352566": {
     "rsid": "rs273352566",
@@ -2572,7 +1622,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs165305248": {
     "rsid": "rs165305248",
@@ -2603,7 +1654,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs786339113": {
     "rsid": "rs786339113",
@@ -2634,7 +1686,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs556502945": {
     "rsid": "rs556502945",
@@ -2648,7 +1701,7 @@
     ],
     "frequencies": {
       "MENA": 0.772,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.094,
       "SAS": 0.001,
       "EAS": 0.032
@@ -2666,7 +1719,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs941042459": {
     "rsid": "rs941042459",
@@ -2680,7 +1734,7 @@
     ],
     "frequencies": {
       "MENA": 0.8,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.087,
       "SAS": 0.266,
       "EAS": 0.047
@@ -2698,39 +1752,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
-  },
-  "rs139897419": {
-    "rsid": "rs139897419",
-    "chromosome": "17",
-    "position": 137303582,
-    "region": "Middle Eastern",
-    "color": "#E67E22",
-    "alleles": [
-      "A",
-      "C"
-    ],
-    "frequencies": {
-      "MENA": 1,
-      "EUR": 1,
-      "AFR": 1,
-      "SAS": 1,
-      "EAS": 0.006
-    },
-    "subFrequencies": {
-      "Levantine": 0.91,
-      "Arabian": 0.814,
-      "Iranian": 0.821,
-      "Anatolian": 0.741,
-      "Mesopotamian": 0.688
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "MENA-DEEP-AIM",
-    "trait": "Ancestry",
-    "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs244016711": {
     "rsid": "rs244016711",
@@ -2761,7 +1784,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs576857447": {
     "rsid": "rs576857447",
@@ -2775,7 +1799,7 @@
     ],
     "frequencies": {
       "MENA": 0.906,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.134,
       "SAS": 0.23,
       "EAS": 0.001
@@ -2793,7 +1817,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs202711805": {
     "rsid": "rs202711805",
@@ -2824,7 +1849,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs609433885": {
     "rsid": "rs609433885",
@@ -2855,7 +1881,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs405497771": {
     "rsid": "rs405497771",
@@ -2886,7 +1913,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs845115929": {
     "rsid": "rs845115929",
@@ -2917,7 +1945,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs326914794": {
     "rsid": "rs326914794",
@@ -2948,7 +1977,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs104327513": {
     "rsid": "rs104327513",
@@ -2979,7 +2009,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs792706103": {
     "rsid": "rs792706103",
@@ -3010,7 +2041,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs634518920": {
     "rsid": "rs634518920",
@@ -3041,7 +2073,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs743164004": {
     "rsid": "rs743164004",
@@ -3072,7 +2105,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs256691901": {
     "rsid": "rs256691901",
@@ -3103,7 +2137,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs831702672": {
     "rsid": "rs831702672",
@@ -3134,7 +2169,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs983853893": {
     "rsid": "rs983853893",
@@ -3165,7 +2201,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs480252943": {
     "rsid": "rs480252943",
@@ -3196,7 +2233,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs842805324": {
     "rsid": "rs842805324",
@@ -3227,7 +2265,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs519223817": {
     "rsid": "rs519223817",
@@ -3258,7 +2297,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs986980930": {
     "rsid": "rs986980930",
@@ -3272,7 +2312,7 @@
     ],
     "frequencies": {
       "MENA": 0.815,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.138,
       "SAS": 0.299,
       "EAS": 0.034
@@ -3290,7 +2330,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs499380920": {
     "rsid": "rs499380920",
@@ -3321,7 +2362,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs520855540": {
     "rsid": "rs520855540",
@@ -3352,7 +2394,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs489082767": {
     "rsid": "rs489082767",
@@ -3383,7 +2426,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs476055981": {
     "rsid": "rs476055981",
@@ -3414,7 +2458,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs514973780": {
     "rsid": "rs514973780",
@@ -3445,7 +2490,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs378086361": {
     "rsid": "rs378086361",
@@ -3476,7 +2522,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs225792386": {
     "rsid": "rs225792386",
@@ -3507,7 +2554,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs943258321": {
     "rsid": "rs943258321",
@@ -3538,7 +2586,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs616025814": {
     "rsid": "rs616025814",
@@ -3569,7 +2618,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs664323147": {
     "rsid": "rs664323147",
@@ -3600,7 +2650,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs789797027": {
     "rsid": "rs789797027",
@@ -3631,7 +2682,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs418939753": {
     "rsid": "rs418939753",
@@ -3662,7 +2714,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs376329667": {
     "rsid": "rs376329667",
@@ -3676,7 +2729,7 @@
     ],
     "frequencies": {
       "MENA": 0.797,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.078,
       "SAS": 0.001,
       "EAS": 0.013
@@ -3694,7 +2747,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs815925656": {
     "rsid": "rs815925656",
@@ -3725,7 +2779,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs585956468": {
     "rsid": "rs585956468",
@@ -3756,7 +2811,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs872321495": {
     "rsid": "rs872321495",
@@ -3787,7 +2843,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs721013493": {
     "rsid": "rs721013493",
@@ -3818,7 +2875,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs841950518": {
     "rsid": "rs841950518",
@@ -3849,7 +2907,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs245960791": {
     "rsid": "rs245960791",
@@ -3880,7 +2939,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs809456573": {
     "rsid": "rs809456573",
@@ -3911,7 +2971,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs604232602": {
     "rsid": "rs604232602",
@@ -3942,7 +3003,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs333270313": {
     "rsid": "rs333270313",
@@ -3973,7 +3035,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs136872275": {
     "rsid": "rs136872275",
@@ -4004,7 +3067,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs844033183": {
     "rsid": "rs844033183",
@@ -4035,7 +3099,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs392539469": {
     "rsid": "rs392539469",
@@ -4066,7 +3131,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs630711270": {
     "rsid": "rs630711270",
@@ -4097,7 +3163,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs794761037": {
     "rsid": "rs794761037",
@@ -4128,7 +3195,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs392554779": {
     "rsid": "rs392554779",
@@ -4159,7 +3227,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs943372758": {
     "rsid": "rs943372758",
@@ -4190,7 +3259,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs719483436": {
     "rsid": "rs719483436",
@@ -4221,7 +3291,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs256360926": {
     "rsid": "rs256360926",
@@ -4252,7 +3323,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs452791881": {
     "rsid": "rs452791881",
@@ -4283,7 +3355,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs642073761": {
     "rsid": "rs642073761",
@@ -4314,7 +3387,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs234285833": {
     "rsid": "rs234285833",
@@ -4345,7 +3419,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs257379907": {
     "rsid": "rs257379907",
@@ -4376,7 +3451,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs156018114": {
     "rsid": "rs156018114",
@@ -4407,7 +3483,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs852592427": {
     "rsid": "rs852592427",
@@ -4438,7 +3515,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs340417121": {
     "rsid": "rs340417121",
@@ -4469,7 +3547,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs169134042": {
     "rsid": "rs169134042",
@@ -4500,7 +3579,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs200224379": {
     "rsid": "rs200224379",
@@ -4531,7 +3611,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs345079377": {
     "rsid": "rs345079377",
@@ -4562,7 +3643,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs839054785": {
     "rsid": "rs839054785",
@@ -4593,7 +3675,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs466885734": {
     "rsid": "rs466885734",
@@ -4624,7 +3707,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs282143317": {
     "rsid": "rs282143317",
@@ -4655,7 +3739,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs864563890": {
     "rsid": "rs864563890",
@@ -4686,7 +3771,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270282937": {
     "rsid": "rs270282937",
@@ -4717,7 +3803,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs587516802": {
     "rsid": "rs587516802",
@@ -4748,7 +3835,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs798425545": {
     "rsid": "rs798425545",
@@ -4779,7 +3867,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs700944407": {
     "rsid": "rs700944407",
@@ -4810,7 +3899,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs238647293": {
     "rsid": "rs238647293",
@@ -4841,7 +3931,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs367327177": {
     "rsid": "rs367327177",
@@ -4872,7 +3963,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs420007546": {
     "rsid": "rs420007546",
@@ -4903,7 +3995,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs649434332": {
     "rsid": "rs649434332",
@@ -4934,7 +4027,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs420342186": {
     "rsid": "rs420342186",
@@ -4965,39 +4059,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
-  },
-  "rs921194662": {
-    "rsid": "rs921194662",
-    "chromosome": "12",
-    "position": 48795092,
-    "region": "Middle Eastern",
-    "color": "#E67E22",
-    "alleles": [
-      "G",
-      "T"
-    ],
-    "frequencies": {
-      "MENA": 1,
-      "EUR": 1,
-      "AFR": 0.0001,
-      "SAS": 1,
-      "EAS": 1
-    },
-    "subFrequencies": {
-      "Levantine": 0.816,
-      "Arabian": 0.824,
-      "Iranian": 0.727,
-      "Anatolian": 0.77,
-      "Mesopotamian": 0.625
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "MENA-DEEP-AIM",
-    "trait": "Ancestry",
-    "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "tier": "informative"
   },
   "rs121875550": {
     "rsid": "rs121875550",
@@ -5028,7 +4091,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs813455711": {
     "rsid": "rs813455711",
@@ -5059,7 +4123,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs297591994": {
     "rsid": "rs297591994",
@@ -5090,7 +4155,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs793245835": {
     "rsid": "rs793245835",
@@ -5121,7 +4187,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs686042676": {
     "rsid": "rs686042676",
@@ -5152,7 +4219,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs624446349": {
     "rsid": "rs624446349",
@@ -5183,7 +4251,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs724506300": {
     "rsid": "rs724506300",
@@ -5214,7 +4283,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs335451824": {
     "rsid": "rs335451824",
@@ -5245,7 +4315,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs402104974": {
     "rsid": "rs402104974",
@@ -5276,7 +4347,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs383837897": {
     "rsid": "rs383837897",
@@ -5307,7 +4379,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs323310186": {
     "rsid": "rs323310186",
@@ -5338,7 +4411,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs107029532": {
     "rsid": "rs107029532",
@@ -5369,7 +4443,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs154477346": {
     "rsid": "rs154477346",
@@ -5400,7 +4475,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs239293687": {
     "rsid": "rs239293687",
@@ -5431,7 +4507,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs618783108": {
     "rsid": "rs618783108",
@@ -5462,7 +4539,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs686332813": {
     "rsid": "rs686332813",
@@ -5493,7 +4571,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs289167712": {
     "rsid": "rs289167712",
@@ -5524,7 +4603,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs475602048": {
     "rsid": "rs475602048",
@@ -5555,7 +4635,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs338597566": {
     "rsid": "rs338597566",
@@ -5586,7 +4667,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs763957588": {
     "rsid": "rs763957588",
@@ -5617,7 +4699,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs492203969": {
     "rsid": "rs492203969",
@@ -5648,7 +4731,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs452469887": {
     "rsid": "rs452469887",
@@ -5679,7 +4763,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs677123483": {
     "rsid": "rs677123483",
@@ -5710,7 +4795,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs145204935": {
     "rsid": "rs145204935",
@@ -5741,7 +4827,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs361689989": {
     "rsid": "rs361689989",
@@ -5772,7 +4859,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs569734281": {
     "rsid": "rs569734281",
@@ -5803,7 +4891,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs705640544": {
     "rsid": "rs705640544",
@@ -5834,7 +4923,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs152334228": {
     "rsid": "rs152334228",
@@ -5865,7 +4955,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "informative"
   },
   "rs917992607": {
     "rsid": "rs917992607",
@@ -5896,7 +4987,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs632361733": {
     "rsid": "rs632361733",
@@ -5927,7 +5019,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs791123880": {
     "rsid": "rs791123880",
@@ -5958,7 +5051,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs411470442": {
     "rsid": "rs411470442",
@@ -5989,7 +5083,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs827855205": {
     "rsid": "rs827855205",
@@ -6020,7 +5115,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs411041110": {
     "rsid": "rs411041110",
@@ -6051,7 +5147,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs695863237": {
     "rsid": "rs695863237",
@@ -6082,7 +5179,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs466049303": {
     "rsid": "rs466049303",
@@ -6113,7 +5211,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs506800343": {
     "rsid": "rs506800343",
@@ -6144,7 +5243,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs482958758": {
     "rsid": "rs482958758",
@@ -6175,7 +5275,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs291696195": {
     "rsid": "rs291696195",
@@ -6206,7 +5307,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs483838010": {
     "rsid": "rs483838010",
@@ -6237,7 +5339,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs329634866": {
     "rsid": "rs329634866",
@@ -6268,7 +5371,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs519292575": {
     "rsid": "rs519292575",
@@ -6299,7 +5403,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs795871003": {
     "rsid": "rs795871003",
@@ -6330,7 +5435,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs294962262": {
     "rsid": "rs294962262",
@@ -6361,7 +5467,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs615389667": {
     "rsid": "rs615389667",
@@ -6392,7 +5499,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs826791651": {
     "rsid": "rs826791651",
@@ -6423,7 +5531,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs312959302": {
     "rsid": "rs312959302",
@@ -6454,7 +5563,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs282340529": {
     "rsid": "rs282340529",
@@ -6485,7 +5595,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs209435872": {
     "rsid": "rs209435872",
@@ -6516,7 +5627,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs461243512": {
     "rsid": "rs461243512",
@@ -6547,7 +5659,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs336168719": {
     "rsid": "rs336168719",
@@ -6578,7 +5691,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs381490305": {
     "rsid": "rs381490305",
@@ -6609,7 +5723,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs381127102": {
     "rsid": "rs381127102",
@@ -6640,7 +5755,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs708171636": {
     "rsid": "rs708171636",
@@ -6671,7 +5787,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs954552541": {
     "rsid": "rs954552541",
@@ -6702,7 +5819,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs236833433": {
     "rsid": "rs236833433",
@@ -6733,7 +5851,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs200971741": {
     "rsid": "rs200971741",
@@ -6764,7 +5883,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs656033427": {
     "rsid": "rs656033427",
@@ -6795,7 +5915,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs597121943": {
     "rsid": "rs597121943",
@@ -6826,7 +5947,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs231412988": {
     "rsid": "rs231412988",
@@ -6857,7 +5979,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs471124075": {
     "rsid": "rs471124075",
@@ -6888,7 +6011,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs495740017": {
     "rsid": "rs495740017",
@@ -6919,7 +6043,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs468766120": {
     "rsid": "rs468766120",
@@ -6950,7 +6075,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs590092747": {
     "rsid": "rs590092747",
@@ -6981,7 +6107,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs137059993": {
     "rsid": "rs137059993",
@@ -7012,7 +6139,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs818406888": {
     "rsid": "rs818406888",
@@ -7043,7 +6171,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs771175105": {
     "rsid": "rs771175105",
@@ -7074,7 +6203,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs416140439": {
     "rsid": "rs416140439",
@@ -7105,7 +6235,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs487496432": {
     "rsid": "rs487496432",
@@ -7136,7 +6267,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs131827329": {
     "rsid": "rs131827329",
@@ -7167,7 +6299,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "informative"
   },
   "rs128965340": {
     "rsid": "rs128965340",
@@ -7198,7 +6331,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs932686368": {
     "rsid": "rs932686368",
@@ -7229,7 +6363,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs681780080": {
     "rsid": "rs681780080",
@@ -7260,7 +6395,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs499532357": {
     "rsid": "rs499532357",
@@ -7291,7 +6427,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs430558602": {
     "rsid": "rs430558602",
@@ -7322,7 +6459,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs422170989": {
     "rsid": "rs422170989",
@@ -7353,7 +6491,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs280404390": {
     "rsid": "rs280404390",
@@ -7384,7 +6523,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs707545329": {
     "rsid": "rs707545329",
@@ -7415,7 +6555,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs779941460": {
     "rsid": "rs779941460",
@@ -7446,7 +6587,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs814188219": {
     "rsid": "rs814188219",
@@ -7477,7 +6619,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs874772363": {
     "rsid": "rs874772363",
@@ -7508,7 +6651,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs548022021": {
     "rsid": "rs548022021",
@@ -7540,7 +6684,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs635010784": {
     "rsid": "rs635010784",
@@ -7571,7 +6716,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs559411517": {
     "rsid": "rs559411517",
@@ -7602,7 +6748,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs776286242": {
     "rsid": "rs776286242",
@@ -7633,7 +6780,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs927105768": {
     "rsid": "rs927105768",
@@ -7664,7 +6812,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs653201752": {
     "rsid": "rs653201752",
@@ -7695,7 +6844,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs118647661": {
     "rsid": "rs118647661",
@@ -7726,7 +6876,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs913933152": {
     "rsid": "rs913933152",
@@ -7757,7 +6908,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs771583961": {
     "rsid": "rs771583961",
@@ -7788,7 +6940,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs297824027": {
     "rsid": "rs297824027",
@@ -7819,7 +6972,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs259882422": {
     "rsid": "rs259882422",
@@ -7850,7 +7004,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs855526121": {
     "rsid": "rs855526121",
@@ -7881,7 +7036,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs658662912": {
     "rsid": "rs658662912",
@@ -7912,7 +7068,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs515136625": {
     "rsid": "rs515136625",
@@ -7943,7 +7100,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs472632939": {
     "rsid": "rs472632939",
@@ -7974,7 +7132,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs106392050": {
     "rsid": "rs106392050",
@@ -8005,7 +7164,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs131721435": {
     "rsid": "rs131721435",
@@ -8036,7 +7196,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs327943040": {
     "rsid": "rs327943040",
@@ -8067,7 +7228,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs424973099": {
     "rsid": "rs424973099",
@@ -8098,7 +7260,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs506662752": {
     "rsid": "rs506662752",
@@ -8129,7 +7292,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs672951211": {
     "rsid": "rs672951211",
@@ -8160,7 +7324,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs738248129": {
     "rsid": "rs738248129",
@@ -8191,7 +7356,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs788945689": {
     "rsid": "rs788945689",
@@ -8222,7 +7388,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs238694175": {
     "rsid": "rs238694175",
@@ -8253,7 +7420,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs830558118": {
     "rsid": "rs830558118",
@@ -8284,7 +7452,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs475493739": {
     "rsid": "rs475493739",
@@ -8315,7 +7484,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs841800387": {
     "rsid": "rs841800387",
@@ -8346,7 +7516,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs404742436": {
     "rsid": "rs404742436",
@@ -8377,7 +7548,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs803590595": {
     "rsid": "rs803590595",
@@ -8408,7 +7580,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs360433940": {
     "rsid": "rs360433940",
@@ -8439,7 +7612,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs833391648": {
     "rsid": "rs833391648",
@@ -8470,7 +7644,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs758103589": {
     "rsid": "rs758103589",
@@ -8501,7 +7676,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs265834727": {
     "rsid": "rs265834727",
@@ -8532,7 +7708,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs646395287": {
     "rsid": "rs646395287",
@@ -8563,7 +7740,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270281197": {
     "rsid": "rs270281197",
@@ -8594,7 +7772,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs861210243": {
     "rsid": "rs861210243",
@@ -8625,7 +7804,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs518514260": {
     "rsid": "rs518514260",
@@ -8656,7 +7836,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs360177918": {
     "rsid": "rs360177918",
@@ -8687,7 +7868,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs973971957": {
     "rsid": "rs973971957",
@@ -8718,7 +7900,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs508489130": {
     "rsid": "rs508489130",
@@ -8749,7 +7932,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs368114575": {
     "rsid": "rs368114575",
@@ -8780,39 +7964,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
-  },
-  "rs901396890": {
-    "rsid": "rs901396890",
-    "chromosome": "10",
-    "position": 39083475,
-    "region": "Middle Eastern",
-    "color": "#E67E22",
-    "alleles": [
-      "A",
-      "G"
-    ],
-    "frequencies": {
-      "MENA": 1,
-      "EUR": 1,
-      "AFR": 0.0005,
-      "SAS": 1,
-      "EAS": 1
-    },
-    "subFrequencies": {
-      "Levantine": 0.93,
-      "Arabian": 0.855,
-      "Iranian": 0.837,
-      "Anatolian": 0.738,
-      "Mesopotamian": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "MENA-DEEP-AIM",
-    "trait": "Ancestry",
-    "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "tier": "diagnostic"
   },
   "rs197804873": {
     "rsid": "rs197804873",
@@ -8843,7 +7996,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs133837053": {
     "rsid": "rs133837053",
@@ -8874,7 +8028,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs998897008": {
     "rsid": "rs998897008",
@@ -8905,7 +8060,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs216018530": {
     "rsid": "rs216018530",
@@ -8936,7 +8092,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs671072617": {
     "rsid": "rs671072617",
@@ -8967,7 +8124,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs880496674": {
     "rsid": "rs880496674",
@@ -8998,7 +8156,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs283036843": {
     "rsid": "rs283036843",
@@ -9029,7 +8188,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs215808289": {
     "rsid": "rs215808289",
@@ -9060,7 +8220,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs642919670": {
     "rsid": "rs642919670",
@@ -9091,7 +8252,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs140727044": {
     "rsid": "rs140727044",
@@ -9122,7 +8284,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs401952481": {
     "rsid": "rs401952481",
@@ -9153,7 +8316,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs170619060": {
     "rsid": "rs170619060",
@@ -9184,7 +8348,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs353271691": {
     "rsid": "rs353271691",
@@ -9215,7 +8380,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs586089715": {
     "rsid": "rs586089715",
@@ -9246,7 +8412,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs408365783": {
     "rsid": "rs408365783",
@@ -9277,7 +8444,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs104254626": {
     "rsid": "rs104254626",
@@ -9308,7 +8476,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs883659528": {
     "rsid": "rs883659528",
@@ -9339,7 +8508,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs388759475": {
     "rsid": "rs388759475",
@@ -9370,7 +8540,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs525375235": {
     "rsid": "rs525375235",
@@ -9401,7 +8572,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs331173043": {
     "rsid": "rs331173043",
@@ -9432,7 +8604,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs561135757": {
     "rsid": "rs561135757",
@@ -9463,7 +8636,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs962461420": {
     "rsid": "rs962461420",
@@ -9494,7 +8668,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs499939601": {
     "rsid": "rs499939601",
@@ -9525,7 +8700,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs711649279": {
     "rsid": "rs711649279",
@@ -9556,7 +8732,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs315601032": {
     "rsid": "rs315601032",
@@ -9587,7 +8764,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs477738363": {
     "rsid": "rs477738363",
@@ -9618,7 +8796,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs195284444": {
     "rsid": "rs195284444",
@@ -9649,7 +8828,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs137481187": {
     "rsid": "rs137481187",
@@ -9680,7 +8860,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs438989994": {
     "rsid": "rs438989994",
@@ -9711,7 +8892,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs546919802": {
     "rsid": "rs546919802",
@@ -9725,7 +8907,7 @@
     ],
     "frequencies": {
       "MENA": 0.891,
-      "EUR": 0.0,
+      "EUR": 0,
       "AFR": 0.0001,
       "SAS": 0.0002,
       "EAS": 0.043
@@ -9743,7 +8925,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs217282636": {
     "rsid": "rs217282636",
@@ -9774,7 +8957,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs229127499": {
     "rsid": "rs229127499",
@@ -9805,7 +8989,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs881482003": {
     "rsid": "rs881482003",
@@ -9836,7 +9021,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs433338946": {
     "rsid": "rs433338946",
@@ -9867,7 +9053,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs216112569": {
     "rsid": "rs216112569",
@@ -9898,7 +9085,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs342405170": {
     "rsid": "rs342405170",
@@ -9929,7 +9117,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs127986675": {
     "rsid": "rs127986675",
@@ -9960,7 +9149,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs842283532": {
     "rsid": "rs842283532",
@@ -9991,7 +9181,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs711801723": {
     "rsid": "rs711801723",
@@ -10022,7 +9213,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs139529259": {
     "rsid": "rs139529259",
@@ -10053,7 +9245,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "informative"
   },
   "rs729565854": {
     "rsid": "rs729565854",
@@ -10084,7 +9277,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs413162668": {
     "rsid": "rs413162668",
@@ -10115,7 +9309,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs644277229": {
     "rsid": "rs644277229",
@@ -10146,7 +9341,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs221285693": {
     "rsid": "rs221285693",
@@ -10177,7 +9373,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs838701817": {
     "rsid": "rs838701817",
@@ -10208,7 +9405,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs297327335": {
     "rsid": "rs297327335",
@@ -10239,7 +9437,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs124771315": {
     "rsid": "rs124771315",
@@ -10270,7 +9469,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs297864062": {
     "rsid": "rs297864062",
@@ -10301,7 +9501,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs854214937": {
     "rsid": "rs854214937",
@@ -10332,7 +9533,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs711662489": {
     "rsid": "rs711662489",
@@ -10363,7 +9565,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs777831027": {
     "rsid": "rs777831027",
@@ -10394,7 +9597,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs655878202": {
     "rsid": "rs655878202",
@@ -10425,7 +9629,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs320602108": {
     "rsid": "rs320602108",
@@ -10456,7 +9661,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs384767429": {
     "rsid": "rs384767429",
@@ -10487,7 +9693,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs218506631": {
     "rsid": "rs218506631",
@@ -10518,7 +9725,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs602297480": {
     "rsid": "rs602297480",
@@ -10549,7 +9757,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs817787672": {
     "rsid": "rs817787672",
@@ -10580,7 +9789,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs981314097": {
     "rsid": "rs981314097",
@@ -10611,7 +9821,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs692931937": {
     "rsid": "rs692931937",
@@ -10642,7 +9853,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs599815587": {
     "rsid": "rs599815587",
@@ -10673,7 +9885,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs645659806": {
     "rsid": "rs645659806",
@@ -10704,7 +9917,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs864980178": {
     "rsid": "rs864980178",
@@ -10735,7 +9949,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs300060450": {
     "rsid": "rs300060450",
@@ -10766,7 +9981,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs944027985": {
     "rsid": "rs944027985",
@@ -10797,7 +10013,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs568158127": {
     "rsid": "rs568158127",
@@ -10828,7 +10045,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs857870598": {
     "rsid": "rs857870598",
@@ -10859,7 +10077,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs277869350": {
     "rsid": "rs277869350",
@@ -10890,7 +10109,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs195009509": {
     "rsid": "rs195009509",
@@ -10921,7 +10141,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs861063170": {
     "rsid": "rs861063170",
@@ -10952,7 +10173,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs439529284": {
     "rsid": "rs439529284",
@@ -10983,7 +10205,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs657786748": {
     "rsid": "rs657786748",
@@ -11014,7 +10237,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs507560313": {
     "rsid": "rs507560313",
@@ -11045,7 +10269,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs340140016": {
     "rsid": "rs340140016",
@@ -11076,7 +10301,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs188224974": {
     "rsid": "rs188224974",
@@ -11107,7 +10333,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs481920158": {
     "rsid": "rs481920158",
@@ -11138,7 +10365,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270768546": {
     "rsid": "rs270768546",
@@ -11169,7 +10397,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs506307737": {
     "rsid": "rs506307737",
@@ -11200,7 +10429,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs756215358": {
     "rsid": "rs756215358",
@@ -11231,7 +10461,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs926884277": {
     "rsid": "rs926884277",
@@ -11262,7 +10493,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs204283382": {
     "rsid": "rs204283382",
@@ -11293,7 +10525,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs463437293": {
     "rsid": "rs463437293",
@@ -11324,7 +10557,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs754708770": {
     "rsid": "rs754708770",
@@ -11356,7 +10590,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs452156389": {
     "rsid": "rs452156389",
@@ -11387,7 +10622,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs419630420": {
     "rsid": "rs419630420",
@@ -11418,7 +10654,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs366854612": {
     "rsid": "rs366854612",
@@ -11449,7 +10686,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs396621703": {
     "rsid": "rs396621703",
@@ -11480,7 +10718,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs357026173": {
     "rsid": "rs357026173",
@@ -11511,7 +10750,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs126086780": {
     "rsid": "rs126086780",
@@ -11542,7 +10782,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs252314413": {
     "rsid": "rs252314413",
@@ -11573,7 +10814,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs439569987": {
     "rsid": "rs439569987",
@@ -11604,7 +10846,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs716244826": {
     "rsid": "rs716244826",
@@ -11635,7 +10878,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs223748418": {
     "rsid": "rs223748418",
@@ -11666,7 +10910,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs686476156": {
     "rsid": "rs686476156",
@@ -11697,7 +10942,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs677366099": {
     "rsid": "rs677366099",
@@ -11728,7 +10974,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs854245267": {
     "rsid": "rs854245267",
@@ -11759,7 +11006,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs321730756": {
     "rsid": "rs321730756",
@@ -11790,7 +11038,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs663689214": {
     "rsid": "rs663689214",
@@ -11821,7 +11070,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs422628699": {
     "rsid": "rs422628699",
@@ -11852,7 +11102,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs751016251": {
     "rsid": "rs751016251",
@@ -11883,7 +11134,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs685529249": {
     "rsid": "rs685529249",
@@ -11914,7 +11166,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs566090799": {
     "rsid": "rs566090799",
@@ -11946,7 +11199,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "highly-informative"
   },
   "rs380481197": {
     "rsid": "rs380481197",
@@ -11977,7 +11231,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs798220062": {
     "rsid": "rs798220062",
@@ -12008,7 +11263,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs643574812": {
     "rsid": "rs643574812",
@@ -12039,7 +11295,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs606316120": {
     "rsid": "rs606316120",
@@ -12070,7 +11327,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs336475231": {
     "rsid": "rs336475231",
@@ -12101,7 +11359,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs107882773": {
     "rsid": "rs107882773",
@@ -12132,7 +11391,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs948249780": {
     "rsid": "rs948249780",
@@ -12163,7 +11423,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs827414927": {
     "rsid": "rs827414927",
@@ -12194,7 +11455,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs155722780": {
     "rsid": "rs155722780",
@@ -12225,7 +11487,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs176439781": {
     "rsid": "rs176439781",
@@ -12256,7 +11519,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs596191188": {
     "rsid": "rs596191188",
@@ -12287,7 +11551,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs373099289": {
     "rsid": "rs373099289",
@@ -12318,7 +11583,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs217047730": {
     "rsid": "rs217047730",
@@ -12349,7 +11615,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs333620658": {
     "rsid": "rs333620658",
@@ -12380,7 +11647,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs217787446": {
     "rsid": "rs217787446",
@@ -12411,7 +11679,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs652883012": {
     "rsid": "rs652883012",
@@ -12442,7 +11711,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs480213647": {
     "rsid": "rs480213647",
@@ -12473,7 +11743,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs848496067": {
     "rsid": "rs848496067",
@@ -12504,7 +11775,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs235828967": {
     "rsid": "rs235828967",
@@ -12535,7 +11807,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs433697539": {
     "rsid": "rs433697539",
@@ -12566,7 +11839,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs839852170": {
     "rsid": "rs839852170",
@@ -12597,7 +11871,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs748516028": {
     "rsid": "rs748516028",
@@ -12628,7 +11903,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs126546057": {
     "rsid": "rs126546057",
@@ -12659,7 +11935,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270992392": {
     "rsid": "rs270992392",
@@ -12690,7 +11967,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs270750829": {
     "rsid": "rs270750829",
@@ -12721,7 +11999,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs555886410": {
     "rsid": "rs555886410",
@@ -12735,8 +12014,8 @@
     ],
     "frequencies": {
       "MENA": 0.716,
-      "EUR": 0.0,
-      "AFR": 0.0,
+      "EUR": 0,
+      "AFR": 0,
       "SAS": 0.248,
       "EAS": 0.036
     },
@@ -12753,7 +12032,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "highly-informative"
   },
   "rs734963476": {
     "rsid": "rs734963476",
@@ -12784,7 +12064,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs174554132": {
     "rsid": "rs174554132",
@@ -12815,7 +12096,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs267710315": {
     "rsid": "rs267710315",
@@ -12846,7 +12128,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs786710681": {
     "rsid": "rs786710681",
@@ -12877,7 +12160,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs790726632": {
     "rsid": "rs790726632",
@@ -12908,7 +12192,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs833278508": {
     "rsid": "rs833278508",
@@ -12939,7 +12224,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs649390203": {
     "rsid": "rs649390203",
@@ -12970,7 +12256,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs687130520": {
     "rsid": "rs687130520",
@@ -13001,7 +12288,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs208438577": {
     "rsid": "rs208438577",
@@ -13032,7 +12320,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs380479053": {
     "rsid": "rs380479053",
@@ -13063,7 +12352,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs134075338": {
     "rsid": "rs134075338",
@@ -13094,7 +12384,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs267344580": {
     "rsid": "rs267344580",
@@ -13125,7 +12416,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs218898624": {
     "rsid": "rs218898624",
@@ -13156,7 +12448,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs309142193": {
     "rsid": "rs309142193",
@@ -13187,7 +12480,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs890339045": {
     "rsid": "rs890339045",
@@ -13218,7 +12512,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs778498521": {
     "rsid": "rs778498521",
@@ -13249,7 +12544,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs746926794": {
     "rsid": "rs746926794",
@@ -13281,7 +12577,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs684330868": {
     "rsid": "rs684330868",
@@ -13312,7 +12609,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs631933381": {
     "rsid": "rs631933381",
@@ -13343,7 +12641,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs577625987": {
     "rsid": "rs577625987",
@@ -13374,7 +12673,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs714855132": {
     "rsid": "rs714855132",
@@ -13405,7 +12705,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs319245851": {
     "rsid": "rs319245851",
@@ -13436,7 +12737,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs914526618": {
     "rsid": "rs914526618",
@@ -13467,7 +12769,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs362941804": {
     "rsid": "rs362941804",
@@ -13498,7 +12801,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs318261152": {
     "rsid": "rs318261152",
@@ -13529,7 +12833,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs440958026": {
     "rsid": "rs440958026",
@@ -13560,7 +12865,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs798877180": {
     "rsid": "rs798877180",
@@ -13591,7 +12897,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs464530218": {
     "rsid": "rs464530218",
@@ -13622,7 +12929,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs387495379": {
     "rsid": "rs387495379",
@@ -13653,7 +12961,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs741574202": {
     "rsid": "rs741574202",
@@ -13684,7 +12993,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs352672295": {
     "rsid": "rs352672295",
@@ -13715,7 +13025,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs911113851": {
     "rsid": "rs911113851",
@@ -13746,7 +13057,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs352011717": {
     "rsid": "rs352011717",
@@ -13777,7 +13089,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs970448253": {
     "rsid": "rs970448253",
@@ -13808,7 +13121,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs396995611": {
     "rsid": "rs396995611",
@@ -13839,7 +13153,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs103963189": {
     "rsid": "rs103963189",
@@ -13870,7 +13185,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs558237104": {
     "rsid": "rs558237104",
@@ -13901,7 +13217,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs427069866": {
     "rsid": "rs427069866",
@@ -13932,7 +13249,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs615834484": {
     "rsid": "rs615834484",
@@ -13963,7 +13281,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs107201502": {
     "rsid": "rs107201502",
@@ -13994,7 +13313,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs984483033": {
     "rsid": "rs984483033",
@@ -14025,7 +13345,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs994585179": {
     "rsid": "rs994585179",
@@ -14056,7 +13377,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs148861656": {
     "rsid": "rs148861656",
@@ -14087,7 +13409,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs194247668": {
     "rsid": "rs194247668",
@@ -14118,7 +13441,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs570433758": {
     "rsid": "rs570433758",
@@ -14150,7 +13474,8 @@
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "diagnostic"
   },
   "rs652775081": {
     "rsid": "rs652775081",
@@ -14181,7 +13506,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs793770700": {
     "rsid": "rs793770700",
@@ -14212,7 +13538,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs152317835": {
     "rsid": "rs152317835",
@@ -14243,7 +13570,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs587936942": {
     "rsid": "rs587936942",
@@ -14274,7 +13602,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs881275051": {
     "rsid": "rs881275051",
@@ -14305,7 +13634,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs193419882": {
     "rsid": "rs193419882",
@@ -14336,7 +13666,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs517609006": {
     "rsid": "rs517609006",
@@ -14367,7 +13698,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs681860126": {
     "rsid": "rs681860126",
@@ -14398,7 +13730,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs161120196": {
     "rsid": "rs161120196",
@@ -14429,7 +13762,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs523008587": {
     "rsid": "rs523008587",
@@ -14460,7 +13794,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs712114362": {
     "rsid": "rs712114362",
@@ -14491,7 +13826,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs407966805": {
     "rsid": "rs407966805",
@@ -14522,7 +13858,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs385612697": {
     "rsid": "rs385612697",
@@ -14553,7 +13890,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs689327522": {
     "rsid": "rs689327522",
@@ -14584,7 +13922,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs682225535": {
     "rsid": "rs682225535",
@@ -14615,7 +13954,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs907274307": {
     "rsid": "rs907274307",
@@ -14646,7 +13986,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs418660321": {
     "rsid": "rs418660321",
@@ -14677,7 +14018,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs107940390": {
     "rsid": "rs107940390",
@@ -14708,7 +14050,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "highly-informative"
   },
   "rs314357493": {
     "rsid": "rs314357493",
@@ -14739,7 +14082,8 @@
     "gene": "MENA-DEEP-AIM",
     "trait": "Ancestry",
     "description": "Middle Eastern deep-resolution AIM for Levantine/Arabian/Iranian/Anatolian population deconvolution.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "diagnostic"
   },
   "rs10456323": {
     "rsid": "rs10456323",
@@ -14769,9 +14113,11 @@
     "weight": 10,
     "gene": "N/A",
     "trait": "Tigrayan Ancestry Marker",
-    "description": "Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).",
+    "description": "[Orbit Review: separation < 0.10] Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "Group 1a",
+    "status": "orbit_review"
   },
   "rs11162487": {
     "rsid": "rs11162487",
@@ -14800,9 +14146,11 @@
     "weight": 4,
     "gene": "Intergenic",
     "trait": "Ancestry",
-    "description": "UT-AIM250 Marker - African informative.",
+    "description": "[Orbit Review: separation < 0.10] UT-AIM250 Marker - African informative.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "Group 1a",
+    "status": "orbit_review"
   },
   "rs11547466": {
     "rsid": "rs11547466",
@@ -14831,9 +14179,11 @@
     "weight": 10,
     "gene": "N/A",
     "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Luo Ancestry Marker.",
+    "description": "[Orbit Review: separation < 0.10] Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Luo Ancestry Marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "Group 1a",
+    "status": "orbit_review"
   },
   "rs12149626": {
     "rsid": "rs12149626",
@@ -14866,8 +14216,10 @@
     "weight": 10,
     "gene": "N/A",
     "trait": "African Ancestry Marker",
-    "description": "Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Pygmy Marker.",
+    "description": "[Orbit Review: separation < 0.10] Ancestry informative marker. Prior sub-continental label removed: no group-specific divergence evidence. Prior label: Pygmy Marker.",
     "build": "GRCh38",
-    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)"
+    "frequencySource": "Ensembl REST 2026-10-04 (1000G p3 / gnomAD)",
+    "tier": "Group 1a",
+    "status": "orbit_review"
   }
 }

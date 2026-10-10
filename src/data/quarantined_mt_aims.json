@@ -17,7 +17,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L0",
     "description": "Defining marker for mtDNA Haplogroup L0, the oldest maternal lineage, found primarily in Southern African Khoe-San populations.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358281": {
     "rsid": "rs28358281",
@@ -37,7 +38,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L1",
     "description": "Defining marker for mtDNA Haplogroup L1, common in Central and West Africa.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358282": {
     "rsid": "rs28358282",
@@ -57,7 +59,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L2",
     "description": "Defining marker for mtDNA Haplogroup L2, the most common and diverse African maternal lineage.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358283": {
     "rsid": "rs28358283",
@@ -77,7 +80,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L3",
     "description": "Defining marker for mtDNA Haplogroup L3, the lineage from which all non-African maternal haplogroups descended.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358284": {
     "rsid": "rs28358284",
@@ -97,7 +101,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L4",
     "description": "Defining marker for mtDNA Haplogroup L4, common in East Africa.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358285": {
     "rsid": "rs28358285",
@@ -117,7 +122,8 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L5",
     "description": "Defining marker for mtDNA Haplogroup L5, a rare basal lineage found in East Africa.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs28358286": {
     "rsid": "rs28358286",
@@ -137,6 +143,7 @@
     "gene": "mtDNA",
     "trait": "Haplogroup L6",
     "description": "Defining marker for mtDNA Haplogroup L6, found primarily in Ethiopia and Yemen.",
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   }
 }

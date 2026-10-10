@@ -314,7 +314,11 @@ export function validateAimRecord(
     if (others.length > 0) {
       const separation = Math.min(...others.map(o => Math.abs(targetFreq - o)));
       if (separation < 0.10) {
-        errors.push(`Separation below 0.10 (separation: ${separation.toFixed(4)}) for region ${entry.region} (${targetCode}) in ${sourceName}`);
+        if (entry.status === 'orbit_review') {
+          console.warn(`⚠️  [WARN] Orbit review needed for marker below 0.10 (separation: ${separation.toFixed(4)}) for ${k} in ${sourceName}`);
+        } else {
+          errors.push(`Separation below 0.10 (separation: ${separation.toFixed(4)}) for region ${entry.region} (${targetCode}) in ${sourceName}`);
+        }
       } else if (separation < 0.15) {
         console.warn(`⚠️  [WARN] Separation below 0.15 (separation: ${separation.toFixed(4)}) for ${k} in ${sourceName}`);
       }

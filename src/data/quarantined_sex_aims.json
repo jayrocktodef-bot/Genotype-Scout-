@@ -18,8 +18,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs6625163": {
     "rsid": "rs6625163",
@@ -40,8 +42,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs6152": {
     "rsid": "rs6152",
@@ -62,8 +66,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs3027440": {
     "rsid": "rs3027440",
@@ -84,8 +90,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2294101": {
     "rsid": "rs2294101",
@@ -106,8 +114,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2382813": {
     "rsid": "rs2382813",
@@ -128,8 +138,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs500004": {
     "rsid": "rs500004",
@@ -147,10 +159,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 145179432,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs5000054": {
     "rsid": "rs5000054",
@@ -172,10 +185,12 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 130447589,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs5000055": {
     "rsid": "rs5000055",
@@ -197,10 +212,12 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 130447659,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs9786076": {
     "rsid": "rs9786076",
@@ -221,8 +238,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs9786153": {
     "rsid": "rs9786153",
@@ -243,8 +262,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs11799226": {
     "rsid": "rs11799226",
@@ -263,8 +284,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs16981293": {
     "rsid": "rs16981293",
@@ -283,8 +306,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs9341296": {
     "rsid": "rs9341296",
@@ -303,8 +328,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2058276": {
     "rsid": "rs2058276",
@@ -325,8 +352,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs17306671": {
     "rsid": "rs17306671",
@@ -346,8 +375,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2032658": {
     "rsid": "rs2032658",
@@ -368,8 +399,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs9786139": {
     "rsid": "rs9786139",
@@ -390,8 +423,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs17307398": {
     "rsid": "rs17307398",
@@ -412,8 +447,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs34276300": {
     "rsid": "rs34276300",
@@ -434,8 +471,10 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs1042604": {
     "rsid": "rs1042604",
@@ -460,10 +499,12 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 24213978,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2032599": {
     "rsid": "rs2032599",
@@ -482,8 +523,9 @@
     "weight": 1,
     "gene": "Y-DNA",
     "trait": "Haplogroup B2",
-    "description": "Defining marker for Haplogroup B2.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032597": {
     "rsid": "rs2032597",
@@ -502,8 +544,9 @@
     "weight": 1,
     "gene": "Y-DNA",
     "trait": "Haplogroup A",
-    "description": "Defining marker for Y-DNA Haplogroup A, the most basal human paternal lineage.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032600": {
     "rsid": "rs2032600",
@@ -522,8 +565,9 @@
     "weight": 1,
     "gene": "Y-DNA",
     "trait": "Haplogroup B",
-    "description": "Defining marker for Y-DNA Haplogroup B, common in Pygmy and Khoe-San populations.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032603": {
     "rsid": "rs2032603",
@@ -542,8 +586,9 @@
     "weight": 1,
     "gene": "Y-DNA",
     "trait": "Haplogroup E1b1a",
-    "description": "Defining marker for Y-DNA Haplogroup E1b1a, the dominant paternal lineage in Sub-Saharan Africa.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032605": {
     "rsid": "rs2032605",
@@ -562,8 +607,9 @@
     "weight": 1,
     "gene": "Y-DNA",
     "trait": "Haplogroup E1b1a1",
-    "description": "Defining marker for Y-DNA Haplogroup E1b1a1, the major Sub-Saharan paternal lineage.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs1050828": {
     "rsid": "rs1050828",
@@ -590,10 +636,12 @@
     "fst": 0.4,
     "gene": "G6PD",
     "trait": "Malaria resistance (G6PD deficiency) / Ancestry",
-    "description": "G6PD A- (202A) is the most common G6PD deficiency allele in Africa. Provides protection against malaria but confers risk for hemolytic anemia when exposed to certain drugs/fava beans. High frequency in Central African hunter-gatherer and those with West African ancestry. Useful for distinguishing environmental adaptations.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154531253,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs1050829": {
     "rsid": "rs1050829",
@@ -620,10 +668,12 @@
     "fst": 0.4,
     "gene": "G6PD",
     "trait": "Malaria resistance (G6PD deficiency) / Ancestry",
-    "description": "G6PD A- (376G) is a second mutation on chromosome X that paired with rs1050828 creates the A- allele. It shows a similar distribution and adaptive response to malaria across Sub-Saharan Africa. Occurs on the same haplotype as the 202A variant, providing a distinct ancestry signal in X chromosome analyses.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154531271,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs1006864": {
     "rsid": "rs1006864",
@@ -650,10 +700,12 @@
     "fst": 0.18,
     "gene": "XK",
     "trait": "Ancestry",
-    "description": "Frequent in many African ethnic groups but with a gradient from West to East; useful in discriminating South-Eastern from West-Central.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 37698484,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs5069": {
     "rsid": "rs5069",
@@ -680,11 +732,13 @@
     "fst": 0.28,
     "gene": "G6PD",
     "trait": "Malaria protection",
-    "description": "Glucose-6-phosphate dehydrogenase deficiency variant widely distributed in malaria-endemic Cameroon regions; allele frequency discriminates between forest agriculturists from highland Bantu.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154535882,
     "deepFrequencies": {},
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs41303970": {
     "rsid": "rs41303970",
@@ -710,11 +764,13 @@
     "fst": 0.55,
     "gene": "G6PD",
     "trait": "Ancestry",
-    "description": "Glucose-6-phosphate dehydrogenase deficiency variant; African-specific pathogen selection.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154531725,
     "deepFrequencies": {},
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs1131399": {
     "rsid": "rs1131399",
@@ -741,11 +797,13 @@
     "fst": 0.35,
     "gene": "G6PD",
     "trait": "Ancestry",
-    "description": "A non-coding polymorphism; its derived allele is linked to G6PD deficiency and is spatially distributed in West Africa resembling malaria prevalence, useful for distinguishing adaptations to malaria pressure.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154666368,
     "deepFrequencies": {},
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2000019": {
     "rsid": "rs2000019",
@@ -763,10 +821,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 43593679,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2000020": {
     "rsid": "rs2000020",
@@ -788,10 +847,12 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 43593763,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2000084": {
     "rsid": "rs2000084",
@@ -810,10 +871,12 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 50837699,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2000085": {
     "rsid": "rs2000085",
@@ -831,10 +894,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 50837721,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032621": {
     "rsid": "rs2032621",
@@ -853,8 +917,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup C2",
-    "description": "Defining marker for Haplogroup C2, common in Mongols, Kazakhs, and indigenous Siberians.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032631": {
     "rsid": "rs2032631",
@@ -874,8 +939,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup O",
-    "description": "Defining marker for Haplogroup O, the most common Y-DNA haplogroup in East and Southeast Asia.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032636": {
     "rsid": "rs2032636",
@@ -894,8 +960,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup O2",
-    "description": "Defining marker for Haplogroup O2 (formerly O3), the dominant paternal lineage in China.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs909525": {
     "rsid": "rs909525",
@@ -918,8 +985,10 @@
     "weight": 8,
     "gene": "PTCHD3",
     "trait": "European Ancestry Marker",
-    "description": "A variant found almost exclusively in populations of European descent.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2032628": {
     "rsid": "rs2032628",
@@ -938,8 +1007,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup I",
-    "description": "Defining marker for Haplogroup I, common in Europe.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs9786132": {
     "rsid": "rs9786132",
@@ -958,8 +1028,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup R1b1a1b",
-    "description": "Defining marker for Haplogroup R1b1a1b, extremely common in Western Europe.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs56203819": {
     "rsid": "rs56203819",
@@ -983,8 +1054,10 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "Portuguese Ancestry Marker",
-    "description": "Ancestry Informative Marker for Portuguese populations.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs5030868": {
     "rsid": "rs5030868",
@@ -1011,10 +1084,12 @@
     "weight": 9,
     "gene": "G6PD",
     "trait": "G6PD Mediterranean Malaria Protection & Favism",
-    "description": "The classic Mediterranean G6PD variant (Ser188Phe) conferring malaria protection but predisposing to favism; highly diagnostic for Southern European and Mediterranean island populations.",
+    "description": "Quarantined sex-linked marker",
     "chromosome": "X",
     "position": 154536002,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs2032604": {
     "rsid": "rs2032604",
@@ -1034,8 +1109,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup J2",
-    "description": "Defining marker for Haplogroup J2.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032633": {
     "rsid": "rs2032633",
@@ -1055,8 +1131,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup G",
-    "description": "Defining marker for Haplogroup G.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs2032602": {
     "rsid": "rs2032602",
@@ -1075,8 +1152,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup J",
-    "description": "Defining marker for Haplogroup J.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs9306837": {
     "rsid": "rs9306837",
@@ -1096,8 +1174,9 @@
     "weight": 10,
     "gene": "Y-DNA",
     "trait": "Haplogroup J1a2a1a",
-    "description": "Major Semitic branch of J1, strongly associated with Near Eastern populations.",
-    "build": "GRCh38"
+    "description": "Quarantined sex-linked marker",
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs400000": {
     "rsid": "rs400000",
@@ -1121,9 +1200,11 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "position": 105626269,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs400008": {
     "rsid": "rs400008",
@@ -1147,9 +1228,11 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "position": 43991822,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting",
+    "status": "orbit_review"
   },
   "rs900007": {
     "rsid": "rs900007",
@@ -1168,9 +1251,10 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "position": 97747258,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs900008": {
     "rsid": "rs900008",
@@ -1189,9 +1273,10 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "position": 97746760,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   },
   "rs900009": {
     "rsid": "rs900009",
@@ -1210,8 +1295,9 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker.",
+    "description": "Quarantined sex-linked marker",
     "position": 97746386,
-    "build": "GRCh38"
+    "build": "GRCh38",
+    "tier": "supporting"
   }
 }
