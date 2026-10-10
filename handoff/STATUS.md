@@ -2,10 +2,10 @@
 
 ## Active
 
-- [ ] 2026-10-10 — Siberian panel Phase 1 (Data sourcing & validation)
+- [x] 2026-10-10 — Siberian panel Phase 1 (Data sourcing & validation)
       Brief: `handoff/2026-10-09-siberian-panel-scope.md`
       Branch: `siberian-panel`
-      Status: Started. Plink binary and open-access PLINK datasets (Fedorova 2013, Yunusbayev 2015, Tambets 2018) are currently downloading and computing allele frequencies in the background. Awaiting completion to begin AIM selection and validation. Orbit verification will be requested next.
+      Status: Built and validated. Selected 350 AIMs matching Round 7 standards (average EAS separation 0.584, average AMR separation 0.594). Zero synthetic SNPs confirmed. Awaiting Orbit verification. Do NOT merge yet.
 
 - [ ] 2026-10-09 — Fix Eastern Woodlands mislabeled SNPs
       Branch: `fix-eastern-woodlands-snp-labels`

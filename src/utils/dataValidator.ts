@@ -61,6 +61,7 @@ export const PANEL_FILES = new Set([
   'north_african.json',
   'oceanian.json',
   'south_asian.json',
+  'siberian.json',
 ]);
 
 // 1. dbSNP Merged Accessions Map
@@ -369,6 +370,7 @@ export function runFullValidation(customFiles?: string[]) {
     'src/data/aims/north_african.json',
     'src/data/aims/oceanian.json',
     'src/data/aims/south_asian.json',
+    'src/data/aims/siberian.json',
     'src/data/quarantined_sex_aims.json',
     'src/data/quarantined_mt_aims.json'
   ];
