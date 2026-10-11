@@ -116,10 +116,10 @@ const PANEL_METADATA: Record<PanelType, PanelMeta> = {
   },
   microhap: {
     id: 'microhap',
-    label: 'Microhaplotypes (Top 100)',
+    label: 'Microhaplotypes (Top 107)',
     shortLabel: 'Microhaps',
     badge: 'Multi-Allelic',
-    countLabel: '100 Multi-Allelic Haplotypes',
+    countLabel: '107 Multi-Allelic Haplotypes',
     geographicFocus: 'High-Resolution Forensic Clusters',
     modelType: 'Non-Negative Least Squares (NNLS)',
     resolution: 'Multi-Allelic Haplotype Deconvolution',

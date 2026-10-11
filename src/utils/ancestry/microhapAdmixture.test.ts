@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
+import fs from 'fs';
+import path from 'path';
 import { deconvolveMicrohaplotypes, getDetectedMicrohaplotypes } from './microhapAdmixture';
+import { validateMicrohapKernel } from '../dataValidator';
 import microHapKernel from '../../data/raw_aims/microhap_top100_kernel.json';
 
 describe('Microhaplotype Deconvolution Engine', () => {
@@ -120,5 +123,82 @@ describe('Microhaplotype Deconvolution Engine', () => {
     for (let i = 0; i < distances.length - 1; i++) {
       expect(distances[i]).toBeLessThanOrEqual(distances[i + 1]);
     }
+  });
+
+  describe('Microhaplotype Kernel Validator Coverage', () => {
+    it('successfully validates the cleaned microhap kernel file', () => {
+      const kernelPath = path.join(process.cwd(), 'src/data/raw_aims/microhap_top100_kernel.json');
+      const res = validateMicrohapKernel(kernelPath);
+      expect(res.valid).toBe(true);
+      expect(res.errors).toHaveLength(0);
+    });
+
+    it('rejects corrupt locus with invalid haplotype string length', () => {
+      const tempPath = path.join(process.cwd(), '__temp_bad_hap_len.json');
+      try {
+        const corruptLocus = [
+          {
+            id: 'mh_test_bad_len',
+            chrom: '1',
+            pos: 1000,
+            snps: ['rs1', 'rs2'],
+            weights: {
+              AFR: { TGC: 1.0 } // 3 chars for 2 snps
+            }
+          }
+        ];
+        fs.writeFileSync(tempPath, JSON.stringify(corruptLocus));
+        expect(() => validateMicrohapKernel(tempPath)).toThrow(/MICROHAP KERNEL VIOLATION/);
+      } finally {
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+      }
+    });
+
+    it('rejects corrupt locus with frequency sum outside [0.95, 1.05]', () => {
+      const tempPath = path.join(process.cwd(), '__temp_bad_freq_sum.json');
+      try {
+        const corruptLocus = [
+          {
+            id: 'mh_test_bad_sum',
+            chrom: '1',
+            pos: 1000,
+            snps: ['rs1', 'rs2'],
+            weights: {
+              AFR: { AA: 0.8, AT: 0.5 } // sum = 1.3
+            }
+          }
+        ];
+        fs.writeFileSync(tempPath, JSON.stringify(corruptLocus));
+        expect(() => validateMicrohapKernel(tempPath)).toThrow(/MICROHAP KERNEL VIOLATION/);
+      } finally {
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+      }
+    });
+
+    it('rejects duplicate locus IDs in kernel', () => {
+      const tempPath = path.join(process.cwd(), '__temp_dup_id.json');
+      try {
+        const corruptLocus = [
+          {
+            id: 'mh_dup_1',
+            chrom: '1',
+            pos: 1000,
+            snps: ['rs1'],
+            weights: { AFR: { A: 1.0 } }
+          },
+          {
+            id: 'mh_dup_1',
+            chrom: '1',
+            pos: 2000,
+            snps: ['rs2'],
+            weights: { AFR: { T: 1.0 } }
+          }
+        ];
+        fs.writeFileSync(tempPath, JSON.stringify(corruptLocus));
+        expect(() => validateMicrohapKernel(tempPath)).toThrow(/MICROHAP KERNEL VIOLATION/);
+      } finally {
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+      }
+    });
   });
 });
