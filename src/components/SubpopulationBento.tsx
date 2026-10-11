@@ -86,6 +86,8 @@ const PANEL_METADATA: Record<PanelType, PanelMeta> = {
     accent: 'indigo',
     icon: ShieldCheck
   },
+  // Note: One marker (rs2080161) was later excluded due to genotyping issues (Eduardoff et al. 2016).
+  // The panel is effectively 127 markers, but the published set is 128 (Phillips et al. 2014).
   euroforgen: {
     id: 'euroforgen',
     label: 'EuroForGen European',
