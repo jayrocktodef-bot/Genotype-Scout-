@@ -492,7 +492,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
           className="text-[8px] font-mono text-amber-400/80 tracking-[0.1em]"
           style={{ fontVariantNumeric: 'tabular-nums' }}
         >
-          V5.23.0
+          V5.24.0
         </p>
       </div>
     </header>

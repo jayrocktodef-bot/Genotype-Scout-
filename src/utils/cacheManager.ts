@@ -4,7 +4,7 @@ import { clearResults } from '../services/storageService';
  * Unique cache epoch identifier. Bumping this string forces all connecting clients
  * to automatically invalidate stale Service Workers, CacheStorage, and IndexedDB caches.
  */
-export const APP_CACHE_EPOCH = 'v5.23.0_force_clean_20261010';
+export const APP_CACHE_EPOCH = 'v5.24.0_force_clean_20261011';
 
 /**
  * Known IndexedDB database names used by Genotype Scout, workbox, or local storage wrappers.

@@ -221,7 +221,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 SANDBOX READY
               </span>
-              <span className="text-xs font-mono text-zinc-500 hidden sm:inline">v5.23.0</span>
+              <span className="text-xs font-mono text-zinc-500 hidden sm:inline">v5.24.0</span>
             </div>
           </div>
 
