@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Dna, Loader2, X, HelpCircle, Search } from 'lucide-react';
 import { ChromosomePainter, CHROMOSOME_LENGTHS } from './ChromosomePainter';
+import { ChromosomeDetailView } from './ChromosomeDetailView';
 import { computeDatasetLAI, computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
 import {
   ColorblindMode,
@@ -138,6 +139,7 @@ export const ChromosomePainterView = ({
   const [displayLimit, setDisplayLimit] = useState<number>(60);
   const [colorblindMode, setColorblindMode] = useState<ColorblindMode>('default');
   const [showPatterns, setShowPatterns] = useState<boolean>(false);
+  const [selectedDetailChrom, setSelectedDetailChrom] = useState<string | null>(null);
 
   const allMatchedAIMs = useMemo(() => {
     return snpsUsedForLAI.length > 0 ? snpsUsedForLAI : (dataset?.analysis?.aimsUsed || []);
@@ -355,6 +357,7 @@ export const ChromosomePainterView = ({
               onColorblindModeChange={setColorblindMode}
               showPatterns={showPatterns}
               onTogglePatterns={setShowPatterns}
+              onSelectChromosome={(c) => setSelectedDetailChrom(c)}
               onSegmentClick={(chrom, strand, segment, bp) => {
                 setSelectedSegment({ chrom, strand, segment, bp });
                 setActiveChromFocus(chrom);
@@ -362,6 +365,26 @@ export const ChromosomePainterView = ({
                 setIsDrawerOpen(true);
               }}
             />
+
+            {/* Full-Screen Chromosome Detail View Modal */}
+            {selectedDetailChrom && (
+              <ChromosomeDetailView
+                chrom={selectedDetailChrom}
+                onClose={() => setSelectedDetailChrom(null)}
+                onSelectChromosome={(c) => setSelectedDetailChrom(c)}
+                segments={localSegments}
+                aims={allMatchedAIMs}
+                isMale={
+                  dataset?.inferredBiologicalSex === 'MALE' || 
+                  dataset?.analysis?.inferredBiologicalSex === 'MALE' ||
+                  dataset?.inferredSex === 'MALE' ||
+                  Boolean(dataset?.yMap && Object.keys(dataset.yMap).length > 20) ||
+                  Boolean(localSegments?.['Y'] && (localSegments['Y'] as any)?.isApplicable)
+                }
+                colorblindMode={colorblindMode}
+                showPatterns={showPatterns}
+              />
+            )}
 
             {/* Detailed Segment / Chromosome Marker Inspector Drawer */}
             <AnimatePresence>

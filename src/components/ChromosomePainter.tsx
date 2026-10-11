@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Maximize2 } from 'lucide-react';
 import {
   ColorblindMode,
   COLORBLIND_PALETTES,
@@ -6,13 +7,11 @@ import {
   getSegmentPattern,
   ANCESTRY_TEXTURE_PATTERNS
 } from '../constants/ancestryThemes';
-
-export const CHROMOSOME_LENGTHS: Record<string, number> = {
-  "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, 
-  "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, 
-  "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, 
-  "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895, "Y": 57227415
-};
+import {
+  CHROMOSOME_LENGTHS,
+  CENTROMERE_POSITIONS_MB
+} from '../constants/chromosomeMetadata';
+export { CHROMOSOME_LENGTHS, CENTROMERE_POSITIONS_MB };
 
 const REGION_NAMES: Record<string, string> = {
   EUR: 'European',
@@ -80,6 +79,7 @@ interface ChromosomePainterProps {
   onColorblindModeChange?: (mode: ColorblindMode) => void;
   showPatterns?: boolean;
   onTogglePatterns?: (show: boolean) => void;
+  onSelectChromosome?: (chrom: string) => void;
 }
 
 export const ChromosomePainter = ({ 
@@ -92,7 +92,8 @@ export const ChromosomePainter = ({
   colorblindMode: propsColorblindMode,
   onColorblindModeChange,
   showPatterns: propsShowPatterns,
-  onTogglePatterns
+  onTogglePatterns,
+  onSelectChromosome
 }: ChromosomePainterProps) => {
   const [activeContinentFilter, setActiveContinentFilter] = useState<string | null>(null);
   const [internalChromFilter, setInternalChromFilter] = useState<string>('ALL');
@@ -441,12 +442,36 @@ export const ChromosomePainter = ({
             : [];
 
           const chromGenes = KEY_GENES.filter(g => g.chrom === chrom);
+          const centromereMb = CENTROMERE_POSITIONS_MB[chrom] || 0;
+          const centromerePct = (centromereMb * 1000000 / length) * 100;
+          const cp = centromerePct;
+          const strandAClip = `polygon(0 0, ${Math.max(0, cp - 1.2)}% 0, ${cp}% 24%, ${Math.min(100, cp + 1.2)}% 0, 100% 0, 100% 100%, ${Math.min(100, cp + 0.9)}% 100%, ${cp}% 86%, ${Math.max(0, cp - 0.9)}% 100%, 0 100%)`;
+          const strandBClip = `polygon(0 0, ${Math.max(0, cp - 0.9)}% 0, ${cp}% 14%, ${Math.min(100, cp + 0.9)}% 0, 100% 0, 100% 100%, ${Math.min(100, cp + 1.2)}% 100%, ${cp}% 76%, ${Math.max(0, cp - 1.2)}% 100%, 0 100%)`;
 
           return (
-            <div key={chrom} className="group flex flex-col md:flex-row items-stretch gap-2 md:gap-4 p-3 bg-slate-900/30 hover:bg-slate-900/60 rounded-xl border border-white/[0.02] transition-colors relative">
+            <div 
+              key={chrom} 
+              onClick={() => onSelectChromosome?.(chrom)}
+              className="group flex flex-col md:flex-row items-stretch gap-2 md:gap-4 p-3 bg-slate-900/30 hover:bg-slate-900/70 rounded-xl border border-white/[0.03] hover:border-teal-500/30 transition-all cursor-pointer relative"
+              title={`Click to open Chromosome ${chrom} detail view`}
+            >
               {/* Left Label Info */}
-              <div className="flex md:flex-col justify-between md:justify-center w-full md:w-32 shrink-0 border-b md:border-b-0 md:border-r border-white/5 pb-2 md:pb-0 pr-0 md:pr-4">
-                <span className="text-sm font-black text-white">Chr {chrom}</span>
+              <div className="flex md:flex-col justify-between md:justify-center w-full md:w-36 shrink-0 border-b md:border-b-0 md:border-r border-white/5 pb-2 md:pb-0 pr-0 md:pr-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-black text-white group-hover:text-teal-300 transition-colors">Chr {chrom}</span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSelectChromosome?.(chrom);
+                    }}
+                    className="p-1 rounded-lg bg-teal-500/10 hover:bg-teal-500/25 text-teal-400 border border-teal-500/20 transition-all group-hover:scale-110"
+                    title={`Expand Chromosome ${chrom} full-screen detail view`}
+                    aria-label={`Expand Chromosome ${chrom} detail view`}
+                  >
+                    <Maximize2 className="w-3 h-3" />
+                  </button>
+                </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">{(length / 1000000).toFixed(1)} M bp</span>
               </div>
 
@@ -485,8 +510,11 @@ export const ChromosomePainter = ({
                   </div>
                 ) : (
                   <>
-                    {/* Strand A (Maternal) */}
-                    <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                    {/* Strand A (Maternal) with Cytoband Centromere Pinch */}
+                    <div 
+                      className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5"
+                      style={{ clipPath: strandAClip }}
+                    >
                       {strandA.length === 0 ? (
                         <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
                           {chrom === 'Y' ? 'Hemizygous (No Maternal Y — Male XY)' : chromData ? 'No Coverage' : 'No Data'}
@@ -515,11 +543,22 @@ export const ChromosomePainter = ({
                               }}
                               onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos })}
                               onMouseLeave={handleMouseLeave}
-                              onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2);
+                              }}
                             />
                           );
                         })
                       )}
+                      
+                      {/* Centromere Notch Line */}
+                      <div 
+                        className="absolute top-0 bottom-0 w-[1.5px] bg-white/20 pointer-events-none z-30"
+                        style={{ left: `${centromerePct}%` }}
+                        title={`Centromere ~${centromereMb} Mbp`}
+                      />
+
                       {hasStrands && (
                         <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
                           {chrom === 'Y' 
@@ -531,9 +570,12 @@ export const ChromosomePainter = ({
                       )}
                     </div>
 
-                    {/* Strand B (Paternal) */}
+                    {/* Strand B (Paternal) with Cytoband Centromere Pinch */}
                     {hasStrands && (
-                      <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                      <div 
+                        className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5"
+                        style={{ clipPath: strandBClip }}
+                      >
                         {strandB.length === 0 ? (
                           <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
                             {(chrom === 'X' || chrom === '23') && isMale ? 'Hemizygous (No Paternal X — Male XY)' : chrom === 'Y' ? 'No Y Coverage' : chromData ? 'No Coverage' : 'No Data'}
@@ -562,11 +604,22 @@ export const ChromosomePainter = ({
                                 }}
                                 onMouseMove={(e) => handleMouseMove(e, chrom, 'B', { ...seg, start: startPos, end: endPos })}
                                 onMouseLeave={handleMouseLeave}
-                                onClick={() => onSegmentClick?.(chrom, 'B', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onSegmentClick?.(chrom, 'B', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2);
+                                }}
                               />
                             );
                           })
                         )}
+
+                        {/* Centromere Notch Line */}
+                        <div 
+                          className="absolute top-0 bottom-0 w-[1.5px] bg-white/20 pointer-events-none z-30"
+                          style={{ left: `${centromerePct}%` }}
+                          title={`Centromere ~${centromereMb} Mbp`}
+                        />
+
                         <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest flex items-center gap-1.5">
                           <span>
                             {chrom === 'Y' 
