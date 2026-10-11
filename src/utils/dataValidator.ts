@@ -435,6 +435,91 @@ export function lintUniqueWeightSets(filePath: string): { valid: boolean; errors
   return { valid: true, errors: [] };
 }
 
+export function validateMicrohapKernel(filePath: string) {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`[validate:data] Microhap kernel file missing: ${filePath}`);
+  }
+
+  let loci: any[];
+  try {
+    loci = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (err: any) {
+    throw new Error(`[validate:data] Failed to parse JSON in ${filePath}: ${err.message || err}`);
+  }
+
+  if (!Array.isArray(loci)) {
+    throw new Error(`[validate:data] Microhap kernel must be an array: ${filePath}`);
+  }
+
+  const errors: string[] = [];
+  const seenIds = new Set<string>();
+
+  for (const locus of loci) {
+    // 1. Assert each locus has all required fields
+    if (!locus || typeof locus !== 'object') {
+      errors.push(`Invalid locus entry (not an object)`);
+      continue;
+    }
+    if (!locus.id || typeof locus.id !== 'string') {
+      errors.push(`Locus missing valid string 'id': ${JSON.stringify(locus)}`);
+    }
+    if (!locus.chrom || typeof locus.chrom !== 'string') {
+      errors.push(`Locus '${locus.id}' missing valid string 'chrom'`);
+    }
+    if (typeof locus.pos !== 'number' || isNaN(locus.pos)) {
+      errors.push(`Locus '${locus.id}' missing valid numeric 'pos'`);
+    }
+    if (!Array.isArray(locus.snps) || locus.snps.length === 0) {
+      errors.push(`Locus '${locus.id}' missing non-empty 'snps' array`);
+    }
+    if (!locus.weights || typeof locus.weights !== 'object') {
+      errors.push(`Locus '${locus.id}' missing valid 'weights' object`);
+    }
+
+    // 2. Assert no duplicate locus IDs
+    if (locus.id) {
+      if (seenIds.has(locus.id)) {
+        errors.push(`Duplicate locus ID detected: '${locus.id}'`);
+      }
+      seenIds.add(locus.id);
+    }
+
+    if (locus.snps && locus.weights) {
+      const snpCount = locus.snps.length;
+      for (const [pop, haps] of Object.entries(locus.weights as Record<string, any>)) {
+        if (!haps || typeof haps !== 'object') {
+          errors.push(`Locus '${locus.id}' population '${pop}' weights is not an object`);
+          continue;
+        }
+        let freqSum = 0;
+        for (const [hapStr, freq] of Object.entries(haps as Record<string, any>)) {
+          // 3. Assert haplotype string length == SNP count for every haplotype
+          if (hapStr.length !== snpCount) {
+            errors.push(`Locus '${locus.id}' (${pop}): haplotype '${hapStr}' length (${hapStr.length}) != SNP count (${snpCount})`);
+          }
+          if (typeof freq === 'number') {
+            freqSum += freq;
+          }
+        }
+        // 4. Assert per-population frequency sums are within [0.95, 1.05]
+        if (freqSum < 0.95 || freqSum > 1.05) {
+          errors.push(`Locus '${locus.id}' (${pop}): frequency sum ${freqSum.toFixed(4)} outside valid range [0.95, 1.05]`);
+        }
+      }
+    }
+  }
+
+  if (errors.length > 0) {
+    const errorDetails = errors.slice(0, 20).map(e => `  - ${e}`).join('\n') + (errors.length > 20 ? `\n  ... and ${errors.length - 20} more errors` : '');
+    const fullMsg = `\n❌ [validate:data] ${errors.length} MICROHAP KERNEL VIOLATION(S) in ${path.basename(filePath)}:\n${errorDetails}`;
+    console.error(fullMsg);
+    throw new Error(fullMsg);
+  }
+
+  console.log(`✓ [validate:data] ${path.basename(filePath).padEnd(28)}: ${loci.length.toString().padStart(5)} clean microhap loci verified (Lengths & Freq sums valid)`);
+  return { valid: true, errors: [] };
+}
+
 export function runFullValidation(customFiles?: string[]) {
   console.log('🧬 Running Hard-Rule Data Validation against synthetic/mock SNPs...\n');
 
@@ -465,6 +550,12 @@ export function runFullValidation(customFiles?: string[]) {
   const curatedWeightsPath = path.join(process.cwd(), 'src/data/raw_aims/custom_curated_markers.json');
   if (fs.existsSync(curatedWeightsPath)) {
     lintUniqueWeightSets(curatedWeightsPath);
+  }
+
+  // Microhap kernel validation
+  const microhapKernelPath = path.join(process.cwd(), 'src/data/raw_aims/microhap_top100_kernel.json');
+  if (fs.existsSync(microhapKernelPath)) {
+    validateMicrohapKernel(microhapKernelPath);
   }
 
   console.log('\n🎉 All databases strictly comply with the Zero Synthetic SNPs / RSIDs Hard Rule.');
