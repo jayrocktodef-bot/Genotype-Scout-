@@ -1,6 +1,6 @@
 <div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Genotype Scout — V5.22.0
+# Genotype Scout — V5.24.0
 
 > ⚠️ **Research & Educational Bioinformatics Tool.** Genotype Scout is an exploratory platform and is **not an ethnicity calculator**. Results are probabilistic, are **not directly comparable** to commercial black-box ethnicity estimates, and do **not constitute medical or diagnostic advice**.
 
@@ -10,14 +10,14 @@
 
 ---
 
-## ✨ What's New in V5.22.0
+## ✨ What's New in V5.24.0
 
-- **1-Click Legal Terms & Scientific Advisory Assent** — Streamlined, enforceable clickwrap agreement with single-click affirmative assent and master "Select All" toggle covering microarray false-positive warning rates (40–50%+ on rare variants), Research Use Only (RUO) boundaries, and CLIA/CAP clinical confirmation requirements.
-- **Universal Module Index & Command Palette (`⌘K` / `Ctrl+K`)** — Rapid searchable navigation directory indexing all 14 application modules, analytical algorithms, genomic sub-tools, and cross-suite utilities with keyboard navigation (`↑`/`↓`/`Enter`/`Esc`).
-- **Client-Side WebCrypto Session Vault (AES-GCM-256)** — Client-side cryptographic session encryption using PBKDF2 (100,000 iterations, SHA-256) and authenticated AES-GCM-256 to seal sensitive genomic files and cached analysis results locally at rest.
-- **Data Table Interactivity & Direct Exports** — One-click CSV and TSV table downloads across serological blood systems (`BloodTypeView`), genomic marker matrix (`GeneticMarkersBrowser`), and recombination crossovers with WCAG 2.1 AA accessibility attributes (`caption`, `scope="col"`, `aria-sort`).
-- **Cross-Suite Phasing Integration (Chromosome Phaser ↔ Genotype Scout)** — Direct ingestion support for parent-phased dual haplotypes (`Maternal Haplotype` vs `Paternal Haplotype`), enabling true lineage-specific chromosome painting rather than statistical estimation.
-- **Strict Open-Source & Third-Party License Compliance** — Comprehensive data audit replacing proprietary non-commercial databases with open public-domain sources (CPIC clinical guidelines, OpenPGx, public PharmGKB annotations) with zero synthetic SNPs or restrictive license entanglements.
+- **Native Roots Ancestry Discovery** — Three-pillar evidence framework for exploring Native American ancestry: trait panel (SLC16A11, ABCA1, FADS1, EDAR, ABCC11), subclade-resolved uniparental matching (A2/B2/C1/D1/X2a), Diego and Andean regional markers, and ancient-affinity scoring against 46 AADR specimens.
+- **Romani Ancestry Resolution** — 22-marker panel (20 NW-Indian AIMs + 2 direct) with Strong-tier gating (ROH + direct SNP requirements) and community-first presentation.
+- **Navigation Rework** — Typed module registry driving all 17 modules; priority-ordered desktop grid (Scout Profile → Native Roots) with unique Lucide icons per module.
+- **Ancient DNA Re-extraction** — 46 specimens re-extracted from AADR v54.1 with corrected PACKEDANCESTRYMAP offsets and polarity-guard regression tests (Loschbour/Stuttgart anchors).
+- **mtDNA Polarity Cleanup** — PhyloTree Build 17 re-derivation with corrected derived alleles across L1/L2/L3, L0k, D4a, and European U2e.
+- **NNLS Sole Estimator** — Legacy Viterbi-window estimator retired; Non-Negative Least Squares is now the single ancestry engine across all modules.
 
 ---
 
