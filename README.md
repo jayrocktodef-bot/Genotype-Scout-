@@ -2,92 +2,83 @@
 
 # Genotype Scout — V5.24.0
 
-> ⚠️ **Research & Educational Bioinformatics Tool.** Genotype Scout is an exploratory platform and is **not an ethnicity calculator**. Results are probabilistic, are **not directly comparable** to commercial black-box ethnicity estimates, and do **not constitute medical or diagnostic advice**.
+> **Research and education tool.** Genotype Scout is exploratory, not an ethnicity calculator. Results are estimates, not directly comparable to commercial ethnicity reports, and not medical advice.
 
-**Genotype Scout** is a high-performance, privacy-first genomic analysis suite created by Jequan Davis. It processes raw DNA files **entirely inside the browser** via dedicated Web Workers — sensitive genetic data never leaves your device. Installable as a **Progressive Web App (PWA)** for instant offline genomic analysis on any desktop or mobile device.
+**Genotype Scout** is a free DNA analysis app by Jequan Davis. You load your raw DNA file from 23andMe, AncestryDNA, MyHeritage, or FamilyTreeDNA, and it runs a full analysis: ancestry breakdown, chromosome painting, haplogroups, ancient DNA matches, health-related markers, traits, and more.
 
-[🚀 Launch Genotype Scout](https://genotype.writteninthegenome.blog) · [📖 Research Blog](https://writteninthegenome.blog) · [💬 Community](https://www.facebook.com/share/g/1EFyWD35tB/) · [🧬 Chromosome Phaser Studio](https://phaser.writteninthegenome.blog) · [🛠️ Superkit Maker](https://merge.writteninthegenome.blog)
+Everything runs **inside your web browser**. Your DNA file never leaves your device. There is no server, no account, no upload.
 
----
-
-## ✨ What's New in V5.24.0
-
-- **Native Roots Ancestry Discovery** — Three-pillar evidence framework for exploring Native American ancestry: trait panel (SLC16A11, ABCA1, FADS1, EDAR, ABCC11), subclade-resolved uniparental matching (A2/B2/C1/D1/X2a), Diego and Andean regional markers, and ancient-affinity scoring against 46 AADR specimens.
-- **Romani Ancestry Resolution** — 22-marker panel (20 NW-Indian AIMs + 2 direct) with Strong-tier gating (ROH + direct SNP requirements) and community-first presentation.
-- **Navigation Rework** — Typed module registry driving all 17 modules; priority-ordered desktop grid (Scout Profile → Native Roots) with unique Lucide icons per module.
-- **Ancient DNA Re-extraction** — 46 specimens re-extracted from AADR v54.1 with corrected PACKEDANCESTRYMAP offsets and polarity-guard regression tests (Loschbour/Stuttgart anchors).
-- **mtDNA Polarity Cleanup** — PhyloTree Build 17 re-derivation with corrected derived alleles across L1/L2/L3, L0k, D4a, and European U2e.
-- **NNLS Sole Estimator** — Legacy Viterbi-window estimator retired; Non-Negative Least Squares is now the single ancestry engine across all modules.
+[Launch Genotype Scout](https://scout.writteninthegenome.blog) · [Research Blog](https://writteninthegenome.blog) · [Community](https://www.facebook.com/share/g/1EFyWD35tB/) · [Chromosome Phaser Studio](https://phaser.writteninthegenome.blog) · [Superkit Maker](https://merge.writteninthegenome.blog)
 
 ---
 
-## ✨ Core Analytical Features
+## How the ancestry engine works
 
-### 🌍 High-Precision Biogeographical Ancestry
-Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) with Human Origins (K61) reference populations. Your genotype is evaluated against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation, including 95% confidence intervals per population.
+Most DNA tools give you a pie chart and stop there. Scout shows its work.
 
-### 🏛️ Ancient Archaeological Match & Archaic Introgression
-Deep lineage matching connecting user Y-DNA and mtDNA haplogroups against 54 radiocarbon-dated ancient fossil genomes across paleogenomic eras. Direct calculation of Neanderthal and Denisovan introgression affinity across diagnostic genomic loci.
+**Ancestry estimation (the Oracle).** Your DNA is compared against reference populations using a method called non-negative least squares (NNLS). In plain terms: the app looks at thousands of markers in your file, checks how common each variant is in each reference population, and finds the mixture that best explains what it sees. The reference panels were rebuilt in October 2026 with denser, validated population data.
 
-### 🧬 Forensic & Mitochondrial Database Suite
-- **EMPOP Forensic Engine**: Mitochondrial DNA forensic database matching for high-confidence lineage verification.
-- **Phylotree Build 17 & gnomAD mtDNA**: Integrated full Phylotree mtDNA tree navigation and gnomAD mitochondrial allele frequencies.
-- **MITOMAP & hMitoGeo Engines**: Pathogenic mitochondrial mutation tracking and geographical haplogroup distribution mapping.
-- **TMRCA Coalescent Estimator**: Time to Most Recent Common Ancestor timeline estimator for paternal and maternal clades.
-- **YHRD Y-STR Engine**: Y-chromosome Haplotype Reference Database forensic matching.
+**Chromosome painting.** Instead of one overall percentage, the painter walks along each of your chromosomes and figures out which ancestry each segment came from. It uses a published method called Recomb-Mix (2023) that models how DNA gets shuffled each generation. You can see exactly where each piece of your ancestry sits.
 
-### 🩸 Comprehensive Serological & Blood Group Phenotyping
-Predicts major and extended blood systems using ISBT-standardized molecular markers:
-- ABO diplotypes and subgroup variations (A1, A2, B, O1, O2, Bombay $O_h$, Cis-AB).
-- Rh(D) deletion status, Fisher-Race antigens ($C/c$, $E/e$), and weak Rh variants.
-- Extended antigen groups: Duffy ($Fy^a/Fy^b/Fy^{null}$), Kidd, MNS, Kell, Secretor ($FUT2$), Lewis, Diego, Colton, and Dombrock.
-- Direct CSV table export of all observed serological markers and biochemical effects.
+**Family-based phasing.** When you load kits from relatives (a parent, a child), Scout uses the rules of inheritance to sort your DNA into the copy you got from your mother and the copy from your father. This is called Mendelian phasing, and it is more accurate than the statistical guessing most tools rely on. Without family kits, the app falls back to a frequency-based estimate and labels it honestly.
 
-### 🎨 Chromosome Painter & Segmental Painting
-Interactive ideogram visualizer displaying ancestral segment assignments across all 22 autosomes and Chr X. Supports dual phased maternal and paternal tracks when paired with Chromosome Phaser.
+**What the app will not do.** It will not invent precision it does not have. When a result is uncertain, it says so. When the reference data behind an estimate is thin, it tells you. A label never outruns the measurement.
 
 ---
 
-## 🔒 Commitment to Privacy & Security
+## What is in the app
 
-The core philosophy of Genotype Scout is binary-level privacy:
-- **100% In-Browser Computation:** Raw DNA parsing, ancestry calculation, haplogroup classification, and health/trait analysis run locally in client-side Web Workers.
-- **Zero Server Uploads & Zero Telemetry:** No genetic files, variant calls, or usage analytics are transmitted to any remote server.
-- **WebCrypto Session Encryption:** Users can encrypt locally cached sessions using AES-GCM-256 with a custom passphrase via the native WebCrypto API.
-- **Optional Export:** Google Slides export sends an ancestry summary directly to your own authenticated Google account only upon explicit user request.
+- **Scout Profile** — Your genomic passport: file integrity, marker counts, ancestry summary, haplogroups, and ancient matches in one view.
+- **Ancestry Oracle** — Continental and sub-population breakdown with the NNLS engine.
+- **Chromosome Painter** — Segment-by-segment ancestry across all 22 autosomes and the X chromosome, with family phasing when relatives are loaded.
+- **Global PCA** — See where your DNA lands on a principal component map of world populations, including UMAP projection.
+- **Haplotypes** — Y-DNA and mtDNA haplogroup calling, synced with the FamilyTreeDNA Y-tree (110,000+ branches) and PhyloTree Build 17.
+- **Native Roots** — Evidence-based Native American ancestry discovery: trait markers, subclade-resolved haplogroup matching, regional markers (Andean, Arctic), and ancient specimen affinity.
+- **Ancient Matches** — Compare against 46 ancient specimens re-extracted from the Allen Ancient DNA Resource, with f3 shared-drift statistics and archaic (Neanderthal/Denisovan) affinity.
+- **Health** — Polygenic risk scores using only studies validated across multiple ancestries, plus gnomAD rare variant annotation and GWAS trait markers. Research use only, not medical advice.
+- **Traits, Blood Predictor, Rare Variants, Kit Comparison, File Integrity** — Appearance traits, serology prediction, rare variant lookup, side-by-side kit comparison, and upload QC.
 
 ---
 
-## ⚙️ Technical Architecture
+## Privacy
+
+This is the core of the app, not a feature bullet.
+
+- **100% in-browser.** Parsing, ancestry calculation, haplogroup calling, and health analysis all run locally in Web Workers on your machine.
+- **Zero uploads, zero telemetry.** No genetic data and no usage analytics leave your device.
+- **Optional session encryption.** You can encrypt locally cached sessions with a passphrase (AES-GCM-256 via WebCrypto).
+- **No account, no email, no signup.**
+
+---
+
+## Reference data
+
+| Panel | Markers | Purpose |
+| :--- | :---: | :--- |
+| **Master AIMs** | ~17,700 | Curated ancestry-informative markers, Ensembl-validated |
+| **K61 / Human Origins** | Dense | Continental reference frequencies for the NNLS engine |
+| **Sub-population panels** | Various | Kidd55, Seldin128, EuroForGen, Ramos, and microhaplotype sets for fine-scale breakdown |
+| **AADR ancient specimens** | 46 | Re-extracted from the Allen Ancient DNA Resource v54.1 |
+| **FTDNA Y-tree** | 110,000+ branches | Y-DNA haplogroup resolution |
+| **PhyloTree Build 17** | Full tree | mtDNA haplogroup classification |
+
+All coordinates are explicit about their genome build (GRCh37 vs GRCh38). Forward strand only. No synthetic markers, ever.
+
+---
+
+## For developers
 
 | Component | Technology |
 | :--- | :--- |
 | **Runtime** | React 19 + Vite |
-| **Language** | TypeScript (`strict` mode) |
-| **Styling** | Tailwind CSS v4 with custom dark-mode design tokens |
-| **Concurrency** | Multi-threaded Web Worker pool (`navigator.hardwareConcurrency`) |
-| **On-device ML** | ONNX Runtime Web (`onnxruntime-web`) with WebAssembly SIMD |
-| **Admixture Engine** | Human Origins (K61) with Lawson-Hanson NNLS solver |
-| **Cryptography** | WebCrypto API (PBKDF2-HMAC-SHA256, AES-GCM-256) |
-| **PWA** | `vite-plugin-pwa` with Workbox offline precaching and background sync |
-| **Navigation** | Universal Keyboard Command Palette (`⌘K` / `Ctrl+K`) |
+| **Language** | TypeScript (strict mode) |
+| **Styling** | Tailwind CSS v4, dark-mode design tokens |
+| **Concurrency** | Web Worker pool |
+| **PWA** | Installable, works offline |
 
 ---
 
-## 🧬 AIMs Database & Reference Architecture
+## License
 
-| Marker Database / Panel | Marker Count | Purpose / Scope |
-| :--- | :---: | :--- |
-| **Regional & Global AIMs** (`src/data/aims/`) | **21,105** | Curated multi-population marker library spanning 11 biogeographical regions. |
-| **Normalized Master AIMs** (`master_aims_normalized.json`) | **17,886** | Standardized, Ensembl-validated markers with LLR probability weights. |
-| **Cosmopolitan AIMs** | **10,076** | Core high-divergence markers for continental macro-group separation. |
-| **GRAF-10k Panel** | **8,821** | High-resolution genomic ancestry refinement and subcontinental clustering. |
-| **Forensic Microhaplotypes** | **3,053** | High-density multi-SNP forensic microhaplotype loci for mixture deconvolution. |
-| **VISAGE Phenotypic Panel** | Comprehensive | Complex appearance, pigmentation (eye, hair, skin), and phenotypic trait estimation. |
-| **EMPOP & YHRD** | Full Databases | Comprehensive mitochondrial DNA (Phylotree 17) and Y-STR population databases. |
-
----
-
-## 🏗️ License
 Copyright © 2026 Jequan Davis / Written In The Genome. All rights reserved.
 Exploratory bioinformatics software for research and educational purposes.
